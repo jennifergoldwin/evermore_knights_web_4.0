@@ -1,26 +1,224 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GOOGLE FONT */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* CUSTOM FONT */
+@font-face {
+  font-family: "FrizQuadrataRegular";
+  src: url("/assets/font/FrizQuadrataRegular.eot");
+  src: local("FrizQuadrataRegular"),
+    url("/assets/font/FrizQuadrataRegular.woff") format("woff"),
+    url("/assets/font/FrizQuadrataRegular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Friz Quadrata Std Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Friz Quadrata Std Italic"),
+    url("/assets/font/friz-quadrata-std-italic-587033b2c95df.woff")
+      format("woff");
+}
+@font-face {
+  font-family: "Friz Quadrata Std Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Friz Quadrata Std Medium"),
+    url("/assets/font/friz-quadrata-std-medium-5870338ec7ef8.woff")
+      format("woff");
+}
+@font-face {
+  font-family: "Friz Quadrata Std Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Friz Quadrata Std Bold"),
+    url("/assets/font/friz-quadrata-std-bold-587034a220f9f.woff") format("woff");
+}
+@font-face {
+  font-family: "Friz Quadrata Std Bold Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Friz Quadrata Std Bold Italic"),
+    url("/assets/font/friz-quadrata-std-bold-italic-587033d6d4298.woff")
+      format("woff");
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: white;
+  background-color: #1d1b1b;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.bg-navbar {
+  background: rgba(0, 0, 0, 0.1);
+}
+.bg-navbar-mob {
+  background: rgba(0, 0, 0, 0.5);
+}
+.title-text {
+  background: linear-gradient(
+    88.6deg,
+    #f8c383 0%,
+    #ffffb4 48.96%,
+    #f8c383 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+.title-shadow {
+  filter: drop-shadow(1px 1px rgba(0, 0, 0, 0.8));
 }
 
-* {
-  box-sizing: border-box;
+.title-feature {
+  background: linear-gradient(64.44deg, #e6cd99 -5.55%, #a06e05 125.44%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.btn-footer {
+  color: #ffff;
+  font-size: 1.3rem;
+  height: 2.625rem;
+  width: 2.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 1rem; */
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+/* .header-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  transition: all 0.3s;
+} */
+
+.header-link:hover,
+.header-link.active {
+  border-bottom: 2pt solid white;
+  padding-bottom: 0.4rem;
+  color: white;
+}
+
+.header-link {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+}
+
+.sub_nav {
+  /* background: url(/assets/images/li_list.png) no-repeat 1px center; */
+  /* padding: 15px 0 20px 25px; */
+  text-align: left;
+  padding-bottom: 0.85rem;
+}
+
+.btn-li {
+  width: 10px;
+  height: 10px;
+
+  order: 2;
+
+  /* background: white; */
+}
+.bg-grey {
+  background: rgba(217, 217, 217, 0.6);
+  transform: rotate(45deg);
+}
+.b-btn-li {
+  border: 1.2pt solid white;
+  transform: rotate(45deg);
+  padding: 0.179rem;
+}
+
+.showTrans {
+  transition: opacity 1.3s;
+  opacity: 1;
+}
+
+.img-feature::after {
+  background: linear-gradient(
+    180.35deg,
+    #1d1c1c 0.3%,
+    rgba(29, 28, 28, 0) 75.04%
+  );
+  width: 100%;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 10;
+  display: block;
+}
+
+.bg-nft-char {
+  background: url(/assets/images/bg-nft-char.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-nft-weapon {
+  background: url(/assets/images/bg-nft-weapon.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.underline {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(64.44deg, #e6cd99 -5.55%, #a06e05 125.44%);
+}
+
+.border-underline {
+  border-color: rgba(217, 217, 217, 0.1);
+}
+
+.border-gradient-underline {
+  border-color: #e6cd99;
+  border-style: solid;
+}
+
+.bg-popup-world {
+  background: linear-gradient(
+    359.05deg,
+    #1d1b1b 7.45%,
+    rgba(29, 27, 27, 0) 207.7%
+  );
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: transparent !important;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: none !important;
+}
+
+.text-glow {
+  /* border: 1.8004px solid #b59e78; */
+  /* text-shadow: 0px 0px 23.2435px ; */
+  text-shadow: 0px 0px 10px #fff6b9;
+  transform: matrix(1, -0.01, 0, 1, 0, 0);
+  -webkit-text-stroke: 1px #b59e78;
 }
