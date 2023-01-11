@@ -17,7 +17,7 @@ import Story from "../components/Story";
 import HomePage from "../components/Home";
 import Blog from "../components/Blog";
 import $ from "jquery";
-
+import { motion } from "framer-motion";
 export default function Home() {
   const [indexSection, setIndexSection] = React.useState(0);
   const myPage = {
@@ -41,7 +41,7 @@ export default function Home() {
 
     //Check if element is in the viewport
     isInViewport: function (element: any) {
-      console.log(element);
+      // console.log(element);
       var _self = this;
       // check for the section which is the main currently
       var elementMiddle = element.offset().top + element.outerHeight() / 2;
@@ -98,9 +98,23 @@ export default function Home() {
     },
   };
 
-  React.useEffect(() => {
-    myPage.init();
-  }, []);
+  // React.useEffect(() => {
+  //   myPage.init();
+  // }, []);
+
+  const navbar_hidden = {
+    rest: {
+      display: "block",
+    },
+    play: {
+      display: "none",
+      transition: {
+        type: "spring",
+        duration: 1.4,
+        ease: "easeIn",
+      },
+    },
+  };
   return (
     <>
       <div>
@@ -110,13 +124,17 @@ export default function Home() {
           <link rel="icon" href="/logo-ek.ico" />
         </Head>
 
-        <Header />
+        {/* <Header /> */}
         <Navbar />
-
         <div className="fullPage-wrapper">
-          <section className="section">
+          <motion.section
+            whileInView="play"
+            initial="rest"
+            animate="rest"
+            className="section"
+          >
             <HomePage />
-          </section>
+          </motion.section>
           <section className="section">
             <Story />
           </section>

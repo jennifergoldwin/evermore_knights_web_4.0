@@ -19,16 +19,18 @@ const HomePage = () => {
         <source src="/assets/video/landpage.mp4" type="video/mp4" />
       </video>
       <div className="flex absolute w-full h-full">
-        <div className="flex justify-center items-center absolute w-full top-0">
+        <div className="flex justify-center items-center absolute w-full translate-y-[40%] sm:translate-y-[15%] lg:translate-y-[12%] md:lg:translate-y-[15%]">
           <img src="/assets/images/logo_shine.png" alt="" />
         </div>
-        <div className="flex absolute justify-center w-full top-[50%]">
+        {/* <div className="flex absolute justify-center w-full top-[50%]">
           <img src="/assets/images/leaf.png" alt="" />
-        </div>
+        </div> */}
         <div className="flex flex-col-reverse justify-center items-center lg:flex-row absolute w-full bottom-0">
           <div className="hidden lg:flex justify-start items-center w-2/5 pl-4"></div>
           <div className="flex flex-col justify-center items-center lg:w-1/5 w-full">
-            <span className="font-friz-bold text-glow text-3xl">Explore</span>
+            <span className="hidden lg:flex font-friz-bold text-glow text-3xl">
+              Explore
+            </span>
             <svg
               width="71"
               height="68"
@@ -115,9 +117,17 @@ const HomePage = () => {
               </defs>
             </svg>
           </div>
-          <div className="flex items-center justify-center lg:justify-end lg:w-2/5 w-full  pr-4">
-            <img className="pr-4" src="/assets/images/appstore.png" alt="" />
-            <img src="/assets/images/googleplay.png" alt="" />
+          <div className="flex items-center gap-2 justify-center lg:justify-end lg:w-2/5 w-full">
+            <img
+              className="w-36 sm:w-auto h-auto"
+              src="/assets/images/appstore.png"
+              alt=""
+            />
+            <img
+              className="w-36 sm:w-auto h-auto"
+              src="/assets/images/googleplay.png"
+              alt=""
+            />
           </div>
         </div>
       </div>

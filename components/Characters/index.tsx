@@ -89,18 +89,18 @@ const Characters: React.FC = () => {
     swiper.slideTo(x);
   };
   return (
-    <div className="relative overflow-hidden">
-      <div className="grid absolute top-[15%] right-0 z-10 ">
+    <div className="relative overflow-hidden min-h-screen">
+      <div className=" grid absolute top-[15%] right-0 z-10 ">
         <div className="cursor-pointer" onClick={() => handleClick(0)}>
           <img
             className={`${
               index == 0
-                ? "translate-x-[35%] transition-all"
+                ? "translate-x-[45%] transition-all"
                 : "translate-x-[70%]"
             }`}
             src={`${
               index == 0
-                ? "/assets/images/btn-1-active.png"
+                ? "/assets/images/btn-1.png"
                 : "/assets/images/btn-1.png"
             }`}
             alt=""
@@ -110,12 +110,12 @@ const Characters: React.FC = () => {
           <img
             className={`${
               index == 1
-                ? "translate-x-[35%] transition-all"
+                ? "translate-x-[45%] transition-all"
                 : "translate-x-[70%]"
             }`}
             src={`${
               index == 1
-                ? "/assets/images/btn-2-active.png"
+                ? "/assets/images/btn-2.png"
                 : "/assets/images/btn-2.png"
             }`}
             alt=""
@@ -125,12 +125,12 @@ const Characters: React.FC = () => {
           <img
             className={`${
               index == 2
-                ? "translate-x-[35%] transition-all"
+                ? "translate-x-[45%] transition-all"
                 : "translate-x-[70%]"
             }`}
             src={`${
               index == 2
-                ? "/assets/images/btn-3-active.png"
+                ? "/assets/images/btn-3.png"
                 : "/assets/images/btn-3.png"
             }`}
             alt=""
@@ -140,12 +140,12 @@ const Characters: React.FC = () => {
           <img
             className={`${
               index == 3
-                ? "translate-x-[35%] transition-all"
+                ? "translate-x-[45%] transition-all"
                 : "translate-x-[70%]"
             }`}
             src={`${
               index == 3
-                ? "/assets/images/btn-4-active.png"
+                ? "/assets/images/btn-4.png"
                 : "/assets/images/btn-4.png"
             }`}
             alt=""
@@ -155,12 +155,12 @@ const Characters: React.FC = () => {
           <img
             className={`${
               index == 4
-                ? "translate-x-[35%] transition-all"
+                ? "translate-x-[45%] transition-all"
                 : "translate-x-[70%]"
             }`}
             src={`${
               index == 4
-                ? "/assets/images/btn-5-active.png"
+                ? "/assets/images/btn-5.png"
                 : "/assets/images/btn-5.png"
             }`}
             alt=""
@@ -170,12 +170,12 @@ const Characters: React.FC = () => {
           <img
             className={`${
               index == 5
-                ? "translate-x-[35%] transition-all"
+                ? "translate-x-[45%] transition-all"
                 : "translate-x-[70%]"
             }`}
             src={`${
               index == 5
-                ? "/assets/images/btn-6-active.png"
+                ? "/assets/images/btn-6.png"
                 : "/assets/images/btn-6.png"
             }`}
             alt=""
@@ -191,48 +191,73 @@ const Characters: React.FC = () => {
         {characterLists.map((item: any, idx: number) => (
           <SwiperSlide key={idx}>
             <div
-              className={`${item.bg} bg-cover bg-center pl-0 lg:pl-[100px] pt-8`}
+              className={`${item.bg} h-full bg-cover bg-center pl-0 lg:pl-[100px] `}
             >
-              <div className="w-full h-full flex flex-col md:flex-row justify-center items-center">
-                <div className="w-full md:w-2/5 p-4 md:pl-10">
-                  <div className="flex items-center font-friz-bold gap-4">
-                    <h1 className="text-4xl">{item.heroName}</h1>
-                    <span className="title-text font-bold text-lg">
-                      {item.heroSubName}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-6">
-                    <img src="/assets/images/5_star.png" alt="" />
-                    <div className="flex gap-4 font-barlow font-[600]">
-                      <div className="flex items-center gap-2 ">
-                        <Image width={20} height={20} src={item.icon1} alt="" />
-                        <span>{item.title1}</span>
-                      </div>
-                      <div className="flex items-center gap-2 ">
-                        <Image width={20} height={20} src={item.icon2} alt="" />
-                        <span>{item.title2}</span>
+              <div className="w-full h-full flex flex-col-reverse md:flex-row justify-center items-center">
+                <div className=" w-full md:w-2/5 p-4 md:pl-10 flex justify-center items-center md:flex-col">
+                  <div className="pr-4 md:pr-0">
+                    <div className="flex items-center font-friz-bold gap-4">
+                      <h1 className="text-xl md:text-4xl">{item.heroName}</h1>
+                      <span className="title-text font-bold text-base md:text-lg">
+                        {item.heroSubName}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-6">
+                      <img src="/assets/images/5_star.png" alt="" />
+                      <div className="flex gap-4 font-barlow font-[600]">
+                        <div className="flex items-center gap-2 ">
+                          <Image
+                            width={20}
+                            height={20}
+                            src={item.icon1}
+                            alt=""
+                          />
+                          <span className="text-sm md:text-base">
+                            {item.title1}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2 ">
+                          <Image
+                            width={20}
+                            height={20}
+                            src={item.icon2}
+                            alt=""
+                          />
+                          <span className="text-sm md:text-base">
+                            {item.title2}
+                          </span>
+                        </div>
                       </div>
                     </div>
+                    <div className="py-4 w-full ">
+                      <svg
+                        viewBox="0 0 465 3"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 1.5L58.145 0.78L116.237 0.48L232.473 0L348.763 0.48L406.855 0.78L465 1.5L406.855 2.22L348.763 2.52L232.473 3L116.237 2.52L58.145 2.22L0 1.5Z"
+                          fill="#F1D795"
+                        />
+                      </svg>
+                    </div>
+                    <div className="font-lato pb-6 text-xs  md:text-sm">
+                      {item.heroDesc}
+                    </div>
                   </div>
-                  <div className="py-4 w-full">
-                    <svg
-                      viewBox="0 0 465 3"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0 1.5L58.145 0.78L116.237 0.48L232.473 0L348.763 0.48L406.855 0.78L465 1.5L406.855 2.22L348.763 2.52L232.473 3L116.237 2.52L58.145 2.22L0 1.5Z"
-                        fill="#F1D795"
-                      />
-                    </svg>
-                  </div>
-                  <div className="font-lato pb-6  md:text-sm">
-                    {item.heroDesc}
-                  </div>
-                  <img src="/assets/images/youtube-frame.png" alt="" />
+                  <img
+                    className="w-[45%] md:w-[100%]"
+                    src="/assets/images/youtube-frame.png"
+                    alt=""
+                  />
                 </div>
-                <div className="w-full md:w-3/5 self-end">
-                  <img src={item.heroImg} alt="" />
+                <div className="w-full md:w-3/5 self-end relative">
+                  <img className="hidden md:block" src={item.heroImg} alt="" />
+                  <img
+                    className="block md:hidden"
+                    src="/assets/images/grana-mob.png"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>

@@ -51,17 +51,17 @@ const Story = () => {
   //     (document.getElementById(`video${i + 1}`) as HTMLVideoElement).pause();
   //   }
   // }, []);
-  const handleVideo = (swiper: any) => {
-    // console.log(swiper.activeIndex);
-    let now = isPlaying;
-    (document.getElementById(`video${isPlaying}`) as HTMLVideoElement).pause();
-    if (isPlaying >= storyList.length) {
-      now = 1;
-    } else {
-      now = isPlaying + 1;
-    }
-    setIsPlaying(now);
-  };
+  // const handleVideo = (swiper: any) => {
+  //   // console.log(swiper.activeIndex);
+  //   let now = isPlaying;
+  //   (document.getElementById(`video${isPlaying}`) as HTMLVideoElement).pause();
+  //   if (isPlaying >= storyList.length) {
+  //     now = 1;
+  //   } else {
+  //     now = isPlaying + 1;
+  //   }
+  //   setIsPlaying(now);
+  // };
   return (
     <div className="h-screen">
       <Swiper
@@ -116,9 +116,10 @@ const Story = () => {
               `video${swiper.activeIndex + 1}`
             ) as HTMLVideoElement
           ).play();
+          setIsPlaying(swiper.activeIndex + 1);
         }}
         onAutoplayStart={(swiper: any) => {
-          console.log(swiper.activeIndex);
+          // console.log(swiper.activeIndex);
           (
             document.getElementById(
               `video${swiper.activeIndex + 1}`
@@ -129,11 +130,6 @@ const Story = () => {
               `video${swiper.activeIndex + 1}`
             ) as HTMLVideoElement
           ).play();
-          // (
-          //   document.getElementById(
-          //     `${swiper.activeIndex + 1}`
-          //   ) as HTMLVideoElement
-          // ).play();
         }}
       >
         <div className="swiper-pagination hidden  sm:hidden md:block"></div>
@@ -197,7 +193,7 @@ const Story = () => {
                     {item.title}
                   </div>
                   <div className="desc-story-slide relative mt-4">
-                    <div className="absolute top-[-10px] right-[50%] left-[50%]">
+                    <div className="absolute top-[-10px] left-[48.2%]">
                       <svg
                         width="37"
                         height="20"

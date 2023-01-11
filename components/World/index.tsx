@@ -1,8 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import SwiperWorld from "./SwiperWorld";
+import SwiperWorldMob from "./SwiperWorldMob";
 
 const World = () => {
+  const [hoverIdx, setHoverIdx] = React.useState(-1);
+  const [isHover, setIsHover] = React.useState(false);
   const [hiddenOverlay, setHiddenOverlay] = React.useState(false);
   const [hiddenModal, setHiddenModal] = React.useState(false);
   const [idxModal, setIdxModal] = React.useState(0);
@@ -11,6 +14,11 @@ const World = () => {
       opacity: 1,
       //   display: "block",
       cursor: "pointer",
+      transition: {
+        type: "spring",
+        duration: 1.4,
+        ease: "easeIn",
+      },
     },
     play: {
       opacity: 0,
@@ -23,10 +31,21 @@ const World = () => {
       },
     },
   };
+  const hoverAnim = {
+    rest: {
+      filter: "none",
+    },
+    play: {
+      filter: "drop-shadow(0 0 0.55rem #ffc700)",
+    },
+  };
   const handleShowModal = (idx: number) => {
     setIdxModal(idx);
     setHiddenModal(!hiddenModal);
   };
+  React.useState(() => {
+    console.log(isHover);
+  });
   return (
     <div className="relative" onClick={() => console.log("hi")}>
       <motion.div
@@ -226,18 +245,20 @@ const World = () => {
           </svg>
           Temeris
         </div>
-        <p className="w-[55%] text-center">
+        <p className="w-[100%] px-4 lg:px-0 lg:w-[55%] text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
           vulputate libero et velit interdum, ac aliquet odio mattis. Class
           aptent taciti sociosqu{" "}
         </p>
       </motion.div>
-      <SwiperWorld
-        idx={idxModal}
-        isShownModal={hiddenModal}
-        setIsShown={setHiddenModal}
-      />
-      <div className="w-full">
+      <div className="hidden lg:block">
+        <SwiperWorld
+          idx={idxModal}
+          isShownModal={hiddenModal}
+          setIsShown={setHiddenModal}
+        />
+      </div>
+      <div className="w-full hidden lg:block">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -267,7 +288,7 @@ const World = () => {
               preserveAspectRatio="none"
               width="1374"
               height="773"
-              xlinkHref="/assets/images/Temeris%20(World)-image.png"
+              xlinkHref="/assets/images/Temeris%20(World)-background.png"
             />
             <pattern
               id="pattern-2"
@@ -288,7 +309,11 @@ const World = () => {
               <image
                 width="317"
                 height="358"
-                xlinkHref="/assets/images/Temeris%20(World)-image6.png"
+                xlinkHref={
+                  isHover && hoverIdx !== 4
+                    ? "/assets/images/world-grandar-dark.png"
+                    : "/assets/images/world-grandar.png"
+                }
               />
             </pattern>
           </defs>
@@ -325,7 +350,19 @@ const World = () => {
               transform="translate(33 0.691)"
               xlinkHref="#image"
             />
-            <g
+            <motion.g
+              onHoverStart={() => {
+                setIsHover(true);
+                setHoverIdx(0);
+              }}
+              onHoverEnd={() => {
+                setIsHover(false);
+                setHoverIdx(-1);
+              }}
+              initial="rest"
+              variants={hoverAnim}
+              animate={isHover && hoverIdx === 0 ? "play" : "rest"}
+              className="cursor-pointer"
               id="arriane-wrapper"
               data-name="arriane-wrapper"
               onClick={() => handleShowModal(0)}
@@ -336,7 +373,11 @@ const World = () => {
                 width="294.66"
                 height="292.504"
                 transform="translate(309.32 455.531)"
-                xlinkHref="/assets/images/Temeris%20(World)-image2.png"
+                xlinkHref={
+                  isHover && hoverIdx !== 0
+                    ? "/assets/images/world-arriane-dark.png"
+                    : "/assets/images/world-arriane.png"
+                }
               />
               <g id="arriane-point-wrapper" data-name="arriane-point-wrapper">
                 <g id="arriane-point-img" data-name="arriane-point-img">
@@ -370,8 +411,20 @@ const World = () => {
                   />
                 </g>
               </g>
-            </g>
-            <g
+            </motion.g>
+            <motion.g
+              onHoverStart={() => {
+                setIsHover(true);
+                setHoverIdx(1);
+              }}
+              onHoverEnd={() => {
+                setIsHover(false);
+                setHoverIdx(-1);
+              }}
+              initial="rest"
+              variants={hoverAnim}
+              animate={isHover && hoverIdx === 1 ? "play" : "rest"}
+              className="cursor-pointer"
               id="yanshu-wrapper"
               data-name="yanshu-point-wrapper"
               onClick={() => handleShowModal(1)}
@@ -382,7 +435,11 @@ const World = () => {
                 width="397.074"
                 height="489.036"
                 transform="translate(117.918 94.211)"
-                xlinkHref="/assets/images/Temeris%20(World)-image3.png"
+                xlinkHref={
+                  isHover && hoverIdx !== 1
+                    ? "/assets/images/world-yanshu-dark.png"
+                    : "/assets/images/world-yanshu.png"
+                }
               />
               <g id="yashu-point-wrapper" data-name="yashu-point-wrapper">
                 <g id="yanshu-point-img" data-name="yanshu-point-img">
@@ -416,8 +473,20 @@ const World = () => {
                   />
                 </g>
               </g>
-            </g>
-            <g
+            </motion.g>
+            <motion.g
+              onHoverStart={() => {
+                setIsHover(true);
+                setHoverIdx(2);
+              }}
+              onHoverEnd={() => {
+                setIsHover(false);
+                setHoverIdx(-1);
+              }}
+              initial="rest"
+              variants={hoverAnim}
+              animate={isHover && hoverIdx === 2 ? "play" : "rest"}
+              className="cursor-pointer"
               id="sanahara-wrapper"
               data-name="sanahara-wrapper"
               onClick={() => handleShowModal(2)}
@@ -428,7 +497,11 @@ const World = () => {
                 width="759.487"
                 height="364.324"
                 transform="translate(416.875 93.211)"
-                xlinkHref="/assets/images/Temeris%20(World)-image4.png"
+                xlinkHref={
+                  isHover && hoverIdx !== 2
+                    ? "/assets/images/world-sanahara-dark.png"
+                    : "/assets/images/world-sanahara.png"
+                }
               />
               <g id="sanahara-point-wrapper" data-name="sanahara-point-wrapper">
                 <g id="sanahara-point-img" data-name="sanahara-point-img">
@@ -462,8 +535,20 @@ const World = () => {
                   />
                 </g>
               </g>
-            </g>
-            <g
+            </motion.g>
+            <motion.g
+              onHoverStart={() => {
+                setIsHover(true);
+                setHoverIdx(6);
+              }}
+              onHoverEnd={() => {
+                setIsHover(false);
+                setHoverIdx(-1);
+              }}
+              initial="rest"
+              variants={hoverAnim}
+              animate={isHover && hoverIdx === 6 ? "play" : "rest"}
+              className="cursor-pointer"
               id="faringrad-wrapper"
               data-name="faringrad-wrapper"
               onClick={() => handleShowModal(6)}
@@ -474,7 +559,11 @@ const World = () => {
                 width="230.612"
                 height="239.98"
                 transform="translate(1075.87 109.191)"
-                xlinkHref="/assets/images/Temeris%20(World)-image5.png"
+                xlinkHref={
+                  isHover && hoverIdx !== 6
+                    ? "/assets/images/world-faringrad-dark.png"
+                    : "/assets/images/world-faringrad.png"
+                }
               />
               <g
                 id="faringrad-point-wrapper"
@@ -511,8 +600,20 @@ const World = () => {
                   />
                 </g>
               </g>
-            </g>
-            <g
+            </motion.g>
+            <motion.g
+              onHoverStart={() => {
+                setIsHover(true);
+                setHoverIdx(4);
+              }}
+              onHoverEnd={() => {
+                setIsHover(false);
+                setHoverIdx(-1);
+              }}
+              initial="rest"
+              variants={hoverAnim}
+              animate={isHover && hoverIdx === 4 ? "play" : "rest"}
+              className="cursor-pointer"
               id="grandar-wrapper"
               data-name="grandar-wrapper"
               onClick={() => handleShowModal(4)}
@@ -557,8 +658,20 @@ const World = () => {
                   />
                 </g>
               </g>
-            </g>
-            <g
+            </motion.g>
+            <motion.g
+              onHoverStart={() => {
+                setIsHover(true);
+                setHoverIdx(5);
+              }}
+              onHoverEnd={() => {
+                setIsHover(false);
+                setHoverIdx(-1);
+              }}
+              initial="rest"
+              variants={hoverAnim}
+              animate={isHover && hoverIdx === 5 ? "play" : "rest"}
+              className="cursor-pointer"
               id="valensia-wrapper"
               data-name="valensia-wrapper"
               onClick={() => handleShowModal(5)}
@@ -569,7 +682,11 @@ const World = () => {
                 width="401.32"
                 height="310.699"
                 transform="translate(656.215 300.184)"
-                xlinkHref="/assets/images/Temeris%20(World)-image7.png"
+                xlinkHref={
+                  isHover && hoverIdx !== 5
+                    ? "/assets/images/world-valensia-dark.png"
+                    : "/assets/images/world-valensia.png"
+                }
               />
               <g id="valensia-point-wrapper" data-name="valensia-point-wrapper">
                 <g id="valensia-point-img" data-name="valensia-point-img">
@@ -603,8 +720,20 @@ const World = () => {
                   />
                 </g>
               </g>
-            </g>
-            <g
+            </motion.g>
+            <motion.g
+              onHoverStart={() => {
+                setIsHover(true);
+                setHoverIdx(3);
+              }}
+              onHoverEnd={() => {
+                setIsHover(false);
+                setHoverIdx(-1);
+              }}
+              initial="rest"
+              variants={hoverAnim}
+              animate={isHover && hoverIdx === 3 ? "play" : "rest"}
+              className="cursor-pointer"
               id="zanto-wrapper"
               data-name="zanto-wrapper"
               onClick={() => handleShowModal(3)}
@@ -615,7 +744,11 @@ const World = () => {
                 width="177.132"
                 height="91.793"
                 transform="translate(591.945 618.953)"
-                xlinkHref="/assets/images/Temeris%20(World)-image8.png"
+                xlinkHref={
+                  isHover && hoverIdx !== 3
+                    ? "/assets/images/world-zanto-dark.png"
+                    : "/assets/images/world-zanto.png"
+                }
               />
               <g id="zanto-point-wrapper" data-name="zanto-point-wrapper">
                 <g id="zanto-point-img" data-name="zanto-point-img">
@@ -649,9 +782,16 @@ const World = () => {
                   />
                 </g>
               </g>
-            </g>
+            </motion.g>
           </g>
         </svg>
+      </div>
+      <div className="block lg:hidden h-screen bg-[url(/assets/images/world.png)] bg-cover bg-center">
+        <div
+          className={`${hiddenOverlay ? "block" : "hidden"} lg:hidden h-full`}
+        >
+          <SwiperWorldMob />
+        </div>
       </div>
     </div>
   );

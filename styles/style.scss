@@ -6,7 +6,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-color: transparent;
+  background-color: transparent !important;
   b {
     animation-name: countingBar;
     animation-duration: 10s; //autopaly 시간과 맞춰주기
@@ -113,8 +113,10 @@
 .swiper-pagination span.slide1.still i:hover {
   background: url(/assets/images/bg-world-paging_active01.png) no-repeat center
     center;
+  // transform: scale(1.1);
   width: 67px;
   height: 67px;
+  transform: translateX(-15%);
   top: -10px;
 }
 
@@ -125,6 +127,7 @@
     center;
   width: 67px;
   height: 67px;
+  transform: translateX(-15%);
   top: -10px;
 }
 
@@ -135,6 +138,7 @@
     center;
   width: 67px;
   height: 67px;
+  transform: translateX(-15%);
   top: -10px;
 }
 #storyView .slide4.swiper-pagination-bullet-active i,
@@ -144,6 +148,7 @@
     center;
   width: 67px;
   height: 67px;
+  transform: translateX(-15%);
   top: -10px;
 }
 #storyView .slide5.swiper-pagination-bullet-active i,
@@ -153,6 +158,7 @@
     center;
   width: 67px;
   height: 67px;
+  transform: translateX(-15%);
   top: -10px;
 }
 
@@ -179,3 +185,55 @@
 .bg-black-01 {
   background: rgba(217, 217, 217, 0.1);
 }
+
+/*SWIPER WORLD MOBILE*/
+.swiper-pagination.swiper-pagination-sw-mob {
+  bottom: 5% !important;
+}
+.swiper-pagination.swiper-pagination-ufeature-mob {
+  bottom: -20px !important;
+}
+.swiper-pagination.swiper-pagination-ufeature-mob {
+  // bottom: 5% !important;
+  position: relative;
+}
+.swiper-pagination-sw-mob .swiper-pagination-bullet,
+.swiper-pagination-ufeature-mob .swiper-pagination-bullet {
+  transform: rotate(45deg);
+}
+.swiper-pagination-sw-mob .swiper-pagination-bullet .sw-pagi,
+.swiper-pagination-ufeature-mob .swiper-pagination-bullet .sw-pagi {
+  background: white;
+  height: 100%;
+  width: 100%;
+}
+.swiper-pagination-sw-mob .swiper-pagination-bullet-active .sw-pagi-b,
+.swiper-pagination-ufeature-mob .swiper-pagination-bullet-active .sw-pagi-b {
+  border: 1pt solid white;
+  padding: 0.129rem;
+}
+.swiper-pagination-sw-mob .swiper-pagination-bullet-active .btn-li-sw--mob,
+.swiper-pagination-ufeature-mob
+  .swiper-pagination-bullet-active
+  .btn-li-sw--mob {
+  height: 12px;
+  width: 12px;
+}
+.swiper-pagination-sw-mob .swiper-pagination-bullet-active .sw-pagi,
+.swiper-pagination-ufeature-mob .swiper-pagination-bullet-active .sw-pagi {
+  background-color: white;
+}
+.swiper-pagination-sw-mob .swiper-pagination-bullet,
+.swiper-pagination-ufeature-mob .swiper-pagination-bullet {
+  width: auto !important;
+}
+
+// .slideFeature.swiper-slide-active div {
+//   width: 100% !important;
+//   height: 100% !important;
+// }
+
+// .slideFeature.swiper-slide div {
+//   width: 150px !important;
+//   height: auto !important;
+// }

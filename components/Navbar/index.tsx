@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 const Navbar = () => {
   // const [active, setActive] = React.useState(false);
   // const handleClick = () => {
@@ -27,12 +27,26 @@ const Navbar = () => {
     );
   };
 
+  const navbarTransition = {
+    rest: {
+      opacity: 0,
+    },
+    play: {
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 1.4,
+        ease: "easeIn",
+      },
+    },
+  };
   return (
-    <nav className="fixed top-[50%] left-[20px] z-30">
+    <nav className="hidden md:block fixed top-[50%] left-[20px] z-30">
       <ul id="menu">
-        <li className="sub_nav grid grid-cols-2 items-center justify-items-center  gap-1">
+        <motion.li className="sub_nav grid grid-cols-2 items-center justify-items-center  gap-1">
           <div className="flex items-center gap-2">
-            <a href="#homePage" onClick={() => handleActiveLink(0)}>
+            {/* tombol persegi */}
+            <motion.a href="#homePage" onClick={() => handleActiveLink(0)}>
               <div className={`${activeLink[0].status ? "b-btn-li" : ""}`}>
                 <div
                   className={`${
@@ -40,7 +54,8 @@ const Navbar = () => {
                   } btn-li `}
                 ></div>
               </div>
-            </a>
+            </motion.a>
+            {/* garis lurus */}
             <svg
               className={`${activeLink[0].status ? "showTrans" : "opacity-0"} `}
               width="12"
@@ -52,14 +67,17 @@ const Navbar = () => {
               <path opacity="0.5" d="M0 1H12" stroke="white" />
             </svg>
           </div>
-          <span
+          {/* desc navbar */}
+          <motion.span
+            variants={navbarTransition}
             className={`${
               activeLink[0].status ? "showTrans" : "opacity-0"
             }  font-friz-bold text-xs justify-self-start -ml-3`}
           >
             HOME
-          </span>
-        </li>
+          </motion.span>
+        </motion.li>
+
         <li className="sub_nav grid grid-cols-2 items-center justify-items-center gap-1">
           <div className="flex items-center gap-2">
             <a href="#storyPage" onClick={() => handleActiveLink(1)}>
@@ -115,7 +133,7 @@ const Navbar = () => {
           <span
             className={`${
               activeLink[2].status ? "showTrans" : "opacity-0"
-            }  font-friz-bold text-xs justify-self-start -ml-3`}
+            }  font-friz-bold text-xs justify-self-start -ml-3 `}
           >
             ABOUT
           </span>

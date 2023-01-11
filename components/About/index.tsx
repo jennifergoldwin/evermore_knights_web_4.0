@@ -6,11 +6,11 @@ import Modal from "./modal";
 const About = () => {
   const [isShown, setIsShown] = React.useState(false);
   return (
-    <div className="relative  bg-[url(/assets/images/bg-about.png)] bg-left bg-cover ">
+    <div className="relative min-h-screen  bg-[url(/assets/images/bg-about.png)] bg-left bg-cover pt-12 pb-12">
       <Modal isShown={isShown} setIsShown={setIsShown} />
-      <div className=" pl-0 lg:pl-[100px] pt-8">
+      <div className=" pl-0 lg:pl-[100px] pt-8 pb-8">
         <div className="flex flex-col md:flex-row justify-center items-center h-full w-full ">
-          <div className="w-full md:w-1/2 px-10 relative h-full">
+          <div className="text-center md:text-left w-full md:w-1/2 px-10 relative h-full">
             <div className="h-full">
               <div className="font-friz-regular text-2xl">FREE TO PLAY</div>
               <h1
@@ -37,9 +37,9 @@ const About = () => {
                 turn the tide of battle. Witness awesome abilities and pristine
                 gameplay.
               </div>
-              <div className="relative w-full overflow-hidden">
+              <div className="relative w-full overflow-hidden flex justify-center md:justify-start">
                 <iframe
-                  className="w-[80%] h-[260px]"
+                  className="w-[100%] h-[260px]"
                   loading="lazy"
                   src="https://www.youtube.com/embed/-ERMKXPYQl4?autoplay=1"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -55,7 +55,19 @@ const About = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 h-full self-end ">
+          <div className="mt-4 flex md:hidden items-center gap-2 justify-center lg:justify-end lg:w-2/5 w-full">
+            <img
+              className=" w-36 sm:w-auto h-auto"
+              src="/assets/images/appstore.png"
+              alt=""
+            />
+            <img
+              className=" w-36 sm:w-auto h-auto"
+              src="/assets/images/googleplay.png"
+              alt=""
+            />
+          </div>
+          <div className="hidden md:block w-full md:w-1/2 h-full self-end ">
             <img src="/assets/images/about-char.png" alt="" />
           </div>
         </div>
