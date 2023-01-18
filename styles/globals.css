@@ -94,6 +94,18 @@ body {
   /* margin-top: 1rem; */
 }
 
+.btn-footer.home {
+  font-size: 1.6rem !important;
+}
+
+.home-mob-style {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  padding-bottom: 4rem;
+}
 /* .header-link::after {
   content: "";
   display: block;
