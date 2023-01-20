@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import React from "react";
-import { A11y, EffectFade } from "swiper";
+import { A11y, EffectFade, EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useSwiper } from "swiper/react";
 import "swiper/css/effect-fade";
+import "swiper/css";
 const characterLists = [
   {
     bg: "bg-[url(/assets/images/bg-grana.png)]",
@@ -85,6 +86,7 @@ const Characters: React.FC = () => {
   const [index, setIndex] = React.useState(0);
 
   const handleClick = (x: number) => {
+    console.log(x);
     setIndex(x);
     swiper.slideTo(x);
   };
@@ -294,205 +296,6 @@ const Characters: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="relative block md:hidden max-w-full m-auto py-4">
-                    <Swiper slidesPerView={"auto"} spaceBetween={10}>
-                      <SwiperSlide className="!w-fit">
-                        <div className="relative flex flex-col justify-center items-center">
-                          <img src="/assets/images/btn-char-mob.png" alt="" />
-                          <svg
-                            width="22"
-                            height="22"
-                            viewBox="0 0 32 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              x="1.15242"
-                              y="16.2344"
-                              width="21.2932"
-                              height="21.2932"
-                              transform="rotate(-45 1.15242 16.2344)"
-                              stroke="white"
-                            />
-                            <rect
-                              x="7.17188"
-                              y="15.957"
-                              width="12.7942"
-                              height="12.7942"
-                              transform="rotate(-45 7.17188 15.957)"
-                              fill="white"
-                            />
-                          </svg>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide className="!w-fit">
-                        <div className="flex flex-col justify-center items-center">
-                          <img src="/assets/images/btn-char1-mob.png" alt="" />
-                          <svg
-                            width="22"
-                            height="22"
-                            viewBox="0 0 32 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              x="1.15242"
-                              y="16.2344"
-                              width="21.2932"
-                              height="21.2932"
-                              transform="rotate(-45 1.15242 16.2344)"
-                              stroke="white"
-                            />
-                            <rect
-                              x="7.17188"
-                              y="15.957"
-                              width="12.7942"
-                              height="12.7942"
-                              transform="rotate(-45 7.17188 15.957)"
-                              fill="white"
-                            />
-                          </svg>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide className="!w-fit">
-                        <div className="flex flex-col justify-center items-center">
-                          <img src="/assets/images/btn-char-mob.png" alt="" />
-                          <svg
-                            width="22"
-                            height="22"
-                            viewBox="0 0 32 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              x="1.15242"
-                              y="16.2344"
-                              width="21.2932"
-                              height="21.2932"
-                              transform="rotate(-45 1.15242 16.2344)"
-                              stroke="white"
-                            />
-                            <rect
-                              x="7.17188"
-                              y="15.957"
-                              width="12.7942"
-                              height="12.7942"
-                              transform="rotate(-45 7.17188 15.957)"
-                              fill="white"
-                            />
-                          </svg>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide className="!w-fit">
-                        <div className="flex flex-col justify-center items-center">
-                          <img src="/assets/images/btn-char-mob.png" alt="" />
-                          <svg
-                            width="22"
-                            height="22"
-                            viewBox="0 0 32 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              x="1.15242"
-                              y="16.2344"
-                              width="21.2932"
-                              height="21.2932"
-                              transform="rotate(-45 1.15242 16.2344)"
-                              stroke="white"
-                            />
-                            <rect
-                              x="7.17188"
-                              y="15.957"
-                              width="12.7942"
-                              height="12.7942"
-                              transform="rotate(-45 7.17188 15.957)"
-                              fill="white"
-                            />
-                          </svg>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide className="!w-fit">
-                        <div className="flex flex-col justify-center items-center">
-                          <img src="/assets/images/btn-char-mob.png" alt="" />
-                          <svg
-                            width="22"
-                            height="22"
-                            viewBox="0 0 32 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              x="1.15242"
-                              y="16.2344"
-                              width="21.2932"
-                              height="21.2932"
-                              transform="rotate(-45 1.15242 16.2344)"
-                              stroke="white"
-                            />
-                            <rect
-                              x="7.17188"
-                              y="15.957"
-                              width="12.7942"
-                              height="12.7942"
-                              transform="rotate(-45 7.17188 15.957)"
-                              fill="white"
-                            />
-                          </svg>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide className="!w-fit">
-                        <div className="flex flex-col justify-center items-center">
-                          <img src="/assets/images/btn-char-mob.png" alt="" />
-                          <svg
-                            width="22"
-                            height="22"
-                            viewBox="0 0 32 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              x="1.15242"
-                              y="16.2344"
-                              width="21.2932"
-                              height="21.2932"
-                              transform="rotate(-45 1.15242 16.2344)"
-                              stroke="white"
-                            />
-                            <rect
-                              x="7.17188"
-                              y="15.957"
-                              width="12.7942"
-                              height="12.7942"
-                              transform="rotate(-45 7.17188 15.957)"
-                              fill="white"
-                            />
-                          </svg>
-                        </div>
-                      </SwiperSlide>
-                    </Swiper>
-                    <div className="absolute w-full h-[2px] bg-line bottom-[22.5%]"></div>
-                    {/* <ul className="horizonal-slider">
-                      <li className="item">
-                        <img src="/assets/images/btn-char-mob.png" alt="" />
-                      </li>
-                      <li className="item">
-                        <img src="/assets/images/btn-char-mob.png" alt="" />
-                      </li>
-                      <li className="item">
-                        <img src="/assets/images/btn-char-mob.png" alt="" />
-                      </li>
-                      <li className="item">
-                        <img src="/assets/images/btn-char-mob.png" alt="" />
-                      </li>
-                      <li className="item">
-                        <img src="/assets/images/btn-char-mob.png" alt="" />
-                      </li>
-                      <li className="item">
-                        <img src="/assets/images/btn-char-mob.png" alt="" />
-                      </li>
-                    </ul> */}
-                  </div>
                 </div>
                 <div className="w-full md:w-3/5 self-end relative">
                   <img className="hidden md:block" src={item.heroImg} alt="" />
@@ -507,6 +310,51 @@ const Characters: React.FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="block relative md:hidden bg-[#010a1a] py-4">
+        <Swiper
+          slideToClickedSlide
+          centeredSlides
+          slidesPerView={"auto"}
+          spaceBetween={10}
+          onActiveIndexChange={(swiperr: any) => {
+            console.log(`hihi ${swiperr.activeIndex}`);
+            handleClick(swiperr.activeIndex);
+          }}
+        >
+          {[...Array(6)].map((item: any, idx: number) => (
+            <SwiperSlide className="!w-fit" key={idx}>
+              <div className="relative flex flex-col justify-center items-center">
+                <img src="/assets/images/btn-char-mob.png" alt="" />
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="1.15242"
+                    y="16.2344"
+                    width="21.2932"
+                    height="21.2932"
+                    transform="rotate(-45 1.15242 16.2344)"
+                    stroke={idx != index ? "transparent" : "white"}
+                  />
+                  <rect
+                    x="7.17188"
+                    y="15.957"
+                    width="12.7942"
+                    height="12.7942"
+                    transform="rotate(-45 7.17188 15.957)"
+                    fill={idx != index ? "#161F2C" : "white"}
+                  />
+                </svg>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="absolute w-full h-[2px] bg-line bottom-[22.5%]"></div>
+      </div>
     </div>
   );
 };
