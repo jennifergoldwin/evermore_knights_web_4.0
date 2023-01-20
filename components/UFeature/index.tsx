@@ -67,7 +67,20 @@ const UFeature = () => {
           exit={{ y: -10, opacity: 0 }}
           transition={{ duration: 0.1 }}
         >
-          <img src={tabs[selectedTab].img} alt="" />
+          <img src="/assets/video/new_gif.gif" alt="" />
+          {/* <img
+            src="http://i.stack.imgur.com/SBv4T.gif"
+            alt="this slowpoke moves"
+            width="250"
+          /> */}
+          {/* <video
+            loop
+            autoPlay
+            muted
+            className="object-cover h-full w-full relative"
+          >
+            <source src="/assets/video/weapon.webm" type="video/webm" />
+          </video> */}
           {selectedTab === 0 && (
             <img
               className="absolute bottom-[0%] right-[-20%] lg:right-0"
@@ -118,14 +131,18 @@ const UFeature = () => {
             }}
             onSlideChange={() => console.log("slide change")}
           >
-            {[...Array(10)].map((item: any, idx: number) => (
-              <SwiperSlide key={idx} className="!h-fit !w-fit">
-                <img
-                  src={`/assets/images/${idx + 1}.png`}
-                  alt={`img ${idx + 1}`}
-                />
-              </SwiperSlide>
-            ))}
+            {[...Array(selectedTab == 0 ? 10 : 11)].map(
+              (item: any, idx: number) => (
+                <SwiperSlide key={idx} className="!h-fit !w-fit">
+                  <img
+                    src={`/assets/images/${idx + 1}${
+                      selectedTab == 0 ? "" : "-1"
+                    }.png`}
+                    alt={`img ${idx + 1}`}
+                  />
+                </SwiperSlide>
+              )
+            )}
           </Swiper>
           <div className="swiper-pagination swiper-pagination-ufeature-mob" />
           {selectedTab === 0 && (

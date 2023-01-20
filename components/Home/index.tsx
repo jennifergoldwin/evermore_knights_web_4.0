@@ -8,7 +8,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
-import { GiHamburgerMenu } from "react-icons/gi";
+
 const HomePage = () => {
   return (
     <div className="flex h-screen">

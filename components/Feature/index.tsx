@@ -19,7 +19,7 @@ const featureList = [
   },
   {
     url: "/assets/images/feature-3.png",
-    title: "NFT CURRENCY",
+    title: "PREMIUM CURRENCY",
     subtitle:
       "Team up and fight alongside other Commissioners in the world! Earn various guild rewards that will help you on your adventures!",
   },
@@ -117,23 +117,23 @@ const Feature = () => {
             <path
               d="M6.75349 6.58999L4.94197 4.77649L2 7.72167L5.38432 11.1027L14.484 2L19.0058 6.53376"
               stroke="#B59E78"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="1.5"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
             <path
               d="M21.9555 9.41502L23.767 11.2285L26.709 8.29036L23.3246 4.90234L14.2319 14.012L9.70312 9.47828"
               stroke="#B59E78"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="1.5"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
             <path
               d="M17.3283 8.00347L14.3594 5.03125L11.3904 8.00347L14.3594 10.9757L17.3283 8.00347Z"
               stroke="#B59E78"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="1.5"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
           </svg>
         </div>

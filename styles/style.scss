@@ -237,3 +237,95 @@
 //   width: 150px !important;
 //   height: auto !important;
 // }
+
+.side-nav-panel {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  padding-top: 85px;
+  background: linear-gradient(90deg, #000000 10%, rgba(0, 0, 0, 0.1) 100%);
+  transition: 0.5s display;
+}
+
+input[name="toggle-nav"],
+label[for="toggle-nav"] {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 35px;
+  height: 35px;
+  background: #000000;
+  // padding: 0.5rem;
+}
+
+input[name="toggle-nav"] {
+  display: block;
+  cursor: pointer;
+  opacity: 0;
+  // background-color: #000000;
+  z-index: 1091;
+}
+
+label[for="toggle-nav"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1090;
+
+  // // creating the menu button
+  // .menu-icon {
+  //   display: block;
+  //   width: 100%;
+  //   height: 3px;
+  //   border-radius: 10px;
+  //   background-color: white;
+  //   transition: all 0.5s ease;
+
+  //   &::before,
+  //   &::after {
+  //     position: absolute;
+  //     @extend .menu-icon;
+  //     content: "";
+  //   }
+
+  //   &::before {
+  //     top: 7px;
+  //   }
+
+  //   &::after {
+  //     bottom: 7px;
+  //   }
+  // }
+}
+.bg-line {
+  background: rgba(217, 217, 217, 0.1);
+}
+input[name="toggle-nav"]:checked {
+  // & ~ .side-nav-panel {
+  //   left: 0;
+  // }
+
+  // & + label[for="toggle-nav"] {
+  //   .menu-icon {
+  //     // makes the middle bar disappear to help create the X
+  //     background-color: transparent;
+
+  //     &::before,
+  //     &::after {
+  //       background-color: white;
+  //     }
+
+  //     // rotates and positions the top and bottom bar to create the X
+  //     &::before {
+  //       top: 16px;
+  //       transform: rotate(45deg);
+  //     }
+
+  //     &::after {
+  //       bottom: 16px;
+  //       transform: rotate(-45deg);
+  //     }
+  //   }
+  // }
+}

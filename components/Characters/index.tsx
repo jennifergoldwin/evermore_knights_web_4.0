@@ -88,9 +88,43 @@ const Characters: React.FC = () => {
     setIndex(x);
     swiper.slideTo(x);
   };
+
+  // React.useEffect(() => {
+  //   const slider = document.querySelector(
+  //     ".horizontal-slider"
+  //   ) as HTMLElement | null;
+  //   let isDown = false;
+  //   let startX: any;
+  //   let scrollLeft: any;
+
+  //   if (slider != null) {
+  //     slider.addEventListener("mousedown", (e: any) => {
+  //       isDown = true;
+  //       slider.classList.add("active");
+  //       startX = e.pageX - slider.offsetLeft;
+  //       scrollLeft = slider.scrollLeft;
+  //     });
+  //     slider.addEventListener("mouseleave", () => {
+  //       isDown = false;
+  //       slider.classList.remove("active");
+  //     });
+  //     slider.addEventListener("mouseup", () => {
+  //       isDown = false;
+  //       slider.classList.remove("active");
+  //     });
+  //     slider.addEventListener("mousemove", (e: any) => {
+  //       if (!isDown) return;
+  //       e.preventDefault();
+  //       const x = e.pageX - slider.offsetLeft;
+  //       const walk = (x - startX) * 3; //scroll-fast
+  //       slider.scrollLeft = scrollLeft - walk;
+  //       console.log(walk);
+  //     });
+  //   }
+  // });
   return (
-    <div className="relative overflow-hidden min-h-screen">
-      <div className=" grid absolute top-[15%] right-0 z-10 ">
+    <div className="relative overflow-hidden min-h-screen md:min-h-full">
+      <div className="hidden md:grid absolute top-[15%] right-0 z-10 ">
         <div className="cursor-pointer" onClick={() => handleClick(0)}>
           <img
             className={`${
@@ -183,6 +217,7 @@ const Characters: React.FC = () => {
         </div>
       </div>
       <Swiper
+        className="!h-screen md:!h-full"
         modules={[EffectFade]}
         effect={"fade"}
         allowTouchMove={false}
@@ -193,63 +228,271 @@ const Characters: React.FC = () => {
             <div
               className={`${item.bg} h-full bg-cover bg-center pl-0 lg:pl-[100px] `}
             >
-              <div className="w-full h-full flex flex-col-reverse md:flex-row justify-center items-center">
-                <div className=" w-full md:w-2/5 p-4 md:pl-10 flex justify-center items-center md:flex-col">
-                  <div className="pr-4 md:pr-0">
-                    <div className="flex items-center font-friz-bold gap-4">
-                      <h1 className="text-xl md:text-4xl">{item.heroName}</h1>
-                      <span className="title-text font-bold text-base md:text-lg">
-                        {item.heroSubName}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-6">
-                      <img src="/assets/images/5_star.png" alt="" />
-                      <div className="flex gap-4 font-barlow font-[600]">
-                        <div className="flex items-center gap-2 ">
-                          <Image
-                            width={20}
-                            height={20}
-                            src={item.icon1}
-                            alt=""
-                          />
-                          <span className="text-sm md:text-base">
-                            {item.title1}
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-2 ">
-                          <Image
-                            width={20}
-                            height={20}
-                            src={item.icon2}
-                            alt=""
-                          />
-                          <span className="text-sm md:text-base">
-                            {item.title2}
-                          </span>
+              <div className="relative w-full h-full flex flex-col-reverse md:flex-row justify-end md:justify-center items-center">
+                <div className="bg-gradient-black w-full md:w-2/5 absolute z-[2] bottom-[0%] md:static">
+                  <div className=" p-2 md:pl-10 flex justify-center items-center md:flex-col">
+                    <div className="md:pr-0">
+                      <div className="flex items-center font-friz-bold gap-4">
+                        <h1 className="text-xl md:text-4xl">{item.heroName}</h1>
+                        <span className="title-text font-bold text-base md:text-lg">
+                          {item.heroSubName}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-6">
+                        <img src="/assets/images/5_star.png" alt="" />
+                        <div className="flex gap-4 font-barlow font-[600]">
+                          <div className="flex items-center gap-2 ">
+                            <Image
+                              width={20}
+                              height={20}
+                              src={item.icon1}
+                              alt=""
+                            />
+                            <span className="text-sm md:text-base">
+                              {item.title1}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2 ">
+                            <Image
+                              width={20}
+                              height={20}
+                              src={item.icon2}
+                              alt=""
+                            />
+                            <span className="text-sm md:text-base">
+                              {item.title2}
+                            </span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="py-4 w-full ">
-                      <svg
-                        viewBox="0 0 465 3"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 1.5L58.145 0.78L116.237 0.48L232.473 0L348.763 0.48L406.855 0.78L465 1.5L406.855 2.22L348.763 2.52L232.473 3L116.237 2.52L58.145 2.22L0 1.5Z"
-                          fill="#F1D795"
+                      <div className="py-4 w-full ">
+                        <svg
+                          viewBox="0 0 465 3"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0 1.5L58.145 0.78L116.237 0.48L232.473 0L348.763 0.48L406.855 0.78L465 1.5L406.855 2.22L348.763 2.52L232.473 3L116.237 2.52L58.145 2.22L0 1.5Z"
+                            fill="#F1D795"
+                          />
+                        </svg>
+                      </div>
+                      <div className="flex md:flex-col flex-row justify-center items-center">
+                        <div className="font-lato pb-0 md:pb-6 text-xs sm:text-sm  md:text-sm">
+                          {item.heroDesc}
+                        </div>
+                        <img
+                          className="w-[35%] h-auto md:w-[100%] hidden md:block"
+                          src="/assets/images/youtube-frame.png"
+                          alt=""
                         />
-                      </svg>
-                    </div>
-                    <div className="font-lato pb-6 text-xs  md:text-sm">
-                      {item.heroDesc}
+                        <img
+                          className="w-[40%] block md:hidden"
+                          src="/assets/images/youtube-frame-mob.png"
+                          alt=""
+                        />
+                      </div>
                     </div>
                   </div>
-                  <img
-                    className="w-[45%] md:w-[100%]"
-                    src="/assets/images/youtube-frame.png"
-                    alt=""
-                  />
+                  <div className="relative block md:hidden max-w-full m-auto py-4">
+                    <Swiper slidesPerView={"auto"} spaceBetween={10}>
+                      <SwiperSlide className="!w-fit">
+                        <div className="relative flex flex-col justify-center items-center">
+                          <img src="/assets/images/btn-char-mob.png" alt="" />
+                          <svg
+                            width="22"
+                            height="22"
+                            viewBox="0 0 32 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              x="1.15242"
+                              y="16.2344"
+                              width="21.2932"
+                              height="21.2932"
+                              transform="rotate(-45 1.15242 16.2344)"
+                              stroke="white"
+                            />
+                            <rect
+                              x="7.17188"
+                              y="15.957"
+                              width="12.7942"
+                              height="12.7942"
+                              transform="rotate(-45 7.17188 15.957)"
+                              fill="white"
+                            />
+                          </svg>
+                        </div>
+                      </SwiperSlide>
+                      <SwiperSlide className="!w-fit">
+                        <div className="flex flex-col justify-center items-center">
+                          <img src="/assets/images/btn-char1-mob.png" alt="" />
+                          <svg
+                            width="22"
+                            height="22"
+                            viewBox="0 0 32 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              x="1.15242"
+                              y="16.2344"
+                              width="21.2932"
+                              height="21.2932"
+                              transform="rotate(-45 1.15242 16.2344)"
+                              stroke="white"
+                            />
+                            <rect
+                              x="7.17188"
+                              y="15.957"
+                              width="12.7942"
+                              height="12.7942"
+                              transform="rotate(-45 7.17188 15.957)"
+                              fill="white"
+                            />
+                          </svg>
+                        </div>
+                      </SwiperSlide>
+                      <SwiperSlide className="!w-fit">
+                        <div className="flex flex-col justify-center items-center">
+                          <img src="/assets/images/btn-char-mob.png" alt="" />
+                          <svg
+                            width="22"
+                            height="22"
+                            viewBox="0 0 32 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              x="1.15242"
+                              y="16.2344"
+                              width="21.2932"
+                              height="21.2932"
+                              transform="rotate(-45 1.15242 16.2344)"
+                              stroke="white"
+                            />
+                            <rect
+                              x="7.17188"
+                              y="15.957"
+                              width="12.7942"
+                              height="12.7942"
+                              transform="rotate(-45 7.17188 15.957)"
+                              fill="white"
+                            />
+                          </svg>
+                        </div>
+                      </SwiperSlide>
+                      <SwiperSlide className="!w-fit">
+                        <div className="flex flex-col justify-center items-center">
+                          <img src="/assets/images/btn-char-mob.png" alt="" />
+                          <svg
+                            width="22"
+                            height="22"
+                            viewBox="0 0 32 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              x="1.15242"
+                              y="16.2344"
+                              width="21.2932"
+                              height="21.2932"
+                              transform="rotate(-45 1.15242 16.2344)"
+                              stroke="white"
+                            />
+                            <rect
+                              x="7.17188"
+                              y="15.957"
+                              width="12.7942"
+                              height="12.7942"
+                              transform="rotate(-45 7.17188 15.957)"
+                              fill="white"
+                            />
+                          </svg>
+                        </div>
+                      </SwiperSlide>
+                      <SwiperSlide className="!w-fit">
+                        <div className="flex flex-col justify-center items-center">
+                          <img src="/assets/images/btn-char-mob.png" alt="" />
+                          <svg
+                            width="22"
+                            height="22"
+                            viewBox="0 0 32 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              x="1.15242"
+                              y="16.2344"
+                              width="21.2932"
+                              height="21.2932"
+                              transform="rotate(-45 1.15242 16.2344)"
+                              stroke="white"
+                            />
+                            <rect
+                              x="7.17188"
+                              y="15.957"
+                              width="12.7942"
+                              height="12.7942"
+                              transform="rotate(-45 7.17188 15.957)"
+                              fill="white"
+                            />
+                          </svg>
+                        </div>
+                      </SwiperSlide>
+                      <SwiperSlide className="!w-fit">
+                        <div className="flex flex-col justify-center items-center">
+                          <img src="/assets/images/btn-char-mob.png" alt="" />
+                          <svg
+                            width="22"
+                            height="22"
+                            viewBox="0 0 32 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              x="1.15242"
+                              y="16.2344"
+                              width="21.2932"
+                              height="21.2932"
+                              transform="rotate(-45 1.15242 16.2344)"
+                              stroke="white"
+                            />
+                            <rect
+                              x="7.17188"
+                              y="15.957"
+                              width="12.7942"
+                              height="12.7942"
+                              transform="rotate(-45 7.17188 15.957)"
+                              fill="white"
+                            />
+                          </svg>
+                        </div>
+                      </SwiperSlide>
+                    </Swiper>
+                    <div className="absolute w-full h-[2px] bg-line bottom-[22.5%]"></div>
+                    {/* <ul className="horizonal-slider">
+                      <li className="item">
+                        <img src="/assets/images/btn-char-mob.png" alt="" />
+                      </li>
+                      <li className="item">
+                        <img src="/assets/images/btn-char-mob.png" alt="" />
+                      </li>
+                      <li className="item">
+                        <img src="/assets/images/btn-char-mob.png" alt="" />
+                      </li>
+                      <li className="item">
+                        <img src="/assets/images/btn-char-mob.png" alt="" />
+                      </li>
+                      <li className="item">
+                        <img src="/assets/images/btn-char-mob.png" alt="" />
+                      </li>
+                      <li className="item">
+                        <img src="/assets/images/btn-char-mob.png" alt="" />
+                      </li>
+                    </ul> */}
+                  </div>
                 </div>
                 <div className="w-full md:w-3/5 self-end relative">
                   <img className="hidden md:block" src={item.heroImg} alt="" />

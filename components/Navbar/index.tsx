@@ -7,6 +7,7 @@ const Navbar = () => {
   // const handleClick = () => {
   //   setActive(!active);
   // };
+  const [idxHover, setIdxHover] = React.useState(0);
   const [activeLink, setActiveLink] = React.useState([
     { idx: 0, status: true },
     { idx: 1, status: false },
@@ -40,12 +41,233 @@ const Navbar = () => {
       },
     },
   };
+  const navbarTransition1 = {
+    rest: {
+      opacity: 1,
+    },
+    play: {
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 1.4,
+        ease: "easeIn",
+      },
+    },
+  };
   return (
     <nav className="hidden md:block fixed top-[50%] left-[20px] z-30">
-      <ul id="menu">
+      <ul id="menu" className="py-2">
+        <motion.li
+          whileHover="play"
+          initial="rest"
+          animate={activeLink[0].status ? "play" : "rest"}
+          onClick={() => handleActiveLink(0)}
+          className="sub_nav flex gap-8  items-center justify-items-center"
+        >
+          <a href="#homePage">
+            <div
+              className={`${
+                activeLink[0].status ? "b-btn-li" : "b-btn-li-none"
+              }`}
+            >
+              <div
+                className={`${
+                  activeLink[0].status ? "bg-white" : "bg-grey"
+                } btn-li `}
+              ></div>
+            </div>
+          </a>
+          {/* desc navbar */}
+          <motion.div
+            variants={navbarTransition}
+            className={`${
+              activeLink[0].status ? "showWhite text-base" : "showGrey text-sm"
+            }  font-friz-bold  justify-self-start -ml-3`}
+          >
+            HOME
+          </motion.div>
+        </motion.li>
+
+        <motion.li
+          whileHover="play"
+          initial="rest"
+          animate={activeLink[1].status ? "play" : "rest"}
+          onClick={() => handleActiveLink(1)}
+          className="sub_nav flex gap-8  items-center justify-items-center"
+        >
+          <a href="#storyPage">
+            <div
+              className={`${
+                activeLink[1].status ? "b-btn-li" : "b-btn-li-none"
+              }`}
+            >
+              <div
+                className={`${
+                  activeLink[1].status ? "bg-white" : "bg-grey"
+                } btn-li`}
+              ></div>
+            </div>
+          </a>
+          <motion.div
+            variants={navbarTransition}
+            className={`${
+              activeLink[1].status ? "showWhite text-base" : "showGrey text-sm"
+            }  font-friz-bold  justify-self-start -ml-3`}
+          >
+            STORY
+          </motion.div>
+        </motion.li>
+        <motion.li
+          whileHover="play"
+          initial="rest"
+          animate={activeLink[2].status ? "play" : "rest"}
+          onClick={() => handleActiveLink(2)}
+          className="sub_nav flex gap-8  items-center justify-items-center"
+        >
+          <a href="#aboutPage">
+            <div
+              className={`${
+                activeLink[2].status ? "b-btn-li" : "b-btn-li-none"
+              }`}
+            >
+              <div
+                className={`${
+                  activeLink[2].status ? "bg-white" : "bg-grey"
+                } btn-li`}
+              ></div>
+            </div>
+          </a>
+          <motion.div
+            variants={navbarTransition}
+            className={`${
+              activeLink[2].status ? "showWhite text-base" : "showGrey text-sm"
+            }  font-friz-bold  justify-self-start -ml-3`}
+          >
+            ABOUT
+          </motion.div>
+        </motion.li>
+        <motion.li
+          whileHover="play"
+          initial="rest"
+          animate={activeLink[3].status ? "play" : "rest"}
+          onClick={() => handleActiveLink(3)}
+          className="sub_nav flex gap-8  items-center justify-items-center"
+        >
+          <a href="#characterPage">
+            <div
+              className={`${
+                activeLink[3].status ? "b-btn-li" : "b-btn-li-none"
+              }`}
+            >
+              <div
+                className={`${
+                  activeLink[3].status ? "bg-white" : "bg-grey"
+                } btn-li`}
+              ></div>
+            </div>
+          </a>
+          <motion.div
+            variants={navbarTransition}
+            className={`${
+              activeLink[3].status ? "showWhite text-base" : "showGrey text-sm"
+            }  font-friz-bold  justify-self-start -ml-3`}
+          >
+            CHARACTER
+          </motion.div>
+        </motion.li>
+        <motion.li
+          whileHover="play"
+          initial="rest"
+          animate={activeLink[4].status ? "play" : "rest"}
+          onClick={() => handleActiveLink(4)}
+          className="sub_nav flex gap-8  items-center justify-items-center"
+        >
+          <a href="#uFeaturePage">
+            <div
+              className={`${
+                activeLink[4].status ? "b-btn-li" : "b-btn-li-none"
+              }`}
+            >
+              <div
+                className={`${
+                  activeLink[4].status ? "bg-white" : "bg-grey"
+                } btn-li`}
+              ></div>
+            </div>
+          </a>
+          <motion.div
+            variants={navbarTransition}
+            className={`${
+              activeLink[4].status ? "showWhite text-base" : "showGrey text-sm"
+            }  font-friz-bold  justify-self-start -ml-3`}
+          >
+            UNIQUE FEATURE
+          </motion.div>
+        </motion.li>
+        <motion.li
+          whileHover="play"
+          initial="rest"
+          animate={activeLink[5].status ? "play" : "rest"}
+          onClick={() => handleActiveLink(5)}
+          className="sub_nav flex gap-8  items-center justify-items-center"
+        >
+          <a href="#worldPage">
+            <div
+              className={`${
+                activeLink[5].status ? "b-btn-li" : "b-btn-li-none"
+              }`}
+            >
+              <div
+                className={`${
+                  activeLink[5].status ? "bg-white" : "bg-grey"
+                } btn-li`}
+              ></div>
+            </div>
+          </a>
+          <motion.div
+            variants={navbarTransition}
+            className={`${
+              activeLink[5].status ? "showWhite text-base" : "showGrey text-sm"
+            }  font-friz-bold  justify-self-start -ml-3`}
+          >
+            WORLD MAP
+          </motion.div>
+        </motion.li>
+        <motion.li
+          whileHover="play"
+          initial="rest"
+          animate={activeLink[6].status ? "play" : "rest"}
+          onClick={() => handleActiveLink(6)}
+          className="sub_nav flex gap-8 items-center justify-items-center"
+        >
+          <a href="#featurePage">
+            <div
+              className={`${
+                activeLink[6].status ? "b-btn-li" : "b-btn-li-none"
+              }`}
+            >
+              <div
+                className={`${
+                  activeLink[6].status ? "bg-white" : "bg-grey"
+                } btn-li`}
+              ></div>
+            </div>
+          </a>
+
+          <motion.div
+            variants={navbarTransition}
+            className={`${
+              activeLink[6].status ? "showWhite text-base" : "showGrey text-sm"
+            }  font-friz-bold  justify-self-start -ml-3`}
+          >
+            FEATURES
+          </motion.div>
+        </motion.li>
+      </ul>
+      {/* <ul id="menu">
         <motion.li className="sub_nav grid grid-cols-2 items-center justify-items-center  gap-1">
           <div className="flex items-center gap-2">
-            {/* tombol persegi */}
+           
             <motion.a href="#homePage" onClick={() => handleActiveLink(0)}>
               <div className={`${activeLink[0].status ? "b-btn-li" : ""}`}>
                 <div
@@ -55,7 +277,7 @@ const Navbar = () => {
                 ></div>
               </div>
             </motion.a>
-            {/* garis lurus */}
+           
             <svg
               className={`${activeLink[0].status ? "showTrans" : "opacity-0"} `}
               width="12"
@@ -67,15 +289,14 @@ const Navbar = () => {
               <path opacity="0.5" d="M0 1H12" stroke="white" />
             </svg>
           </div>
-          {/* desc navbar */}
-          <motion.span
-            variants={navbarTransition}
+         
+          <span
             className={`${
               activeLink[0].status ? "showTrans" : "opacity-0"
             }  font-friz-bold text-xs justify-self-start -ml-3`}
           >
             HOME
-          </motion.span>
+          </span>
         </motion.li>
 
         <li className="sub_nav grid grid-cols-2 items-center justify-items-center gap-1">
@@ -258,7 +479,7 @@ const Navbar = () => {
             FEATURES
           </span>
         </li>
-      </ul>
+      </ul> */}
     </nav>
   );
 };

@@ -6,9 +6,9 @@ import Modal from "./modal";
 const About = () => {
   const [isShown, setIsShown] = React.useState(false);
   return (
-    <div className="relative min-h-screen  bg-[url(/assets/images/bg-about.png)] bg-left bg-cover pt-12 pb-12">
+    <div className="relative min-h-screen md:min-h-[80vh]  bg-[url(/assets/images/bg-about.png)] bg-left bg-cover pt-12">
       <Modal isShown={isShown} setIsShown={setIsShown} />
-      <div className="pl-0 lg:pl-[100px] pt-8 pb-8 flex flex-col md:flex-row justify-center items-center h-full w-full ">
+      <div className="pl-0 lg:pl-[100px] pt-8  flex flex-col md:flex-row justify-center items-center h-full w-full ">
         <div className="text-center md:text-left w-full md:w-1/2 px-10 relative h-full">
           <div className="h-full">
             <div className="font-friz-regular text-2xl">FREE TO PLAY</div>
