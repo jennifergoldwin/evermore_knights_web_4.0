@@ -132,29 +132,30 @@ export default function Home() {
             initial="rest"
             animate="rest"
             className="section"
+            id="homePage"
           >
             <HomePage />
           </motion.section>
-          <section className="section">
+          <section className="section" id="storyPage">
             <Story />
           </section>
-          <section className="section">
+          <section className="section" id="aboutPage">
             <About />
           </section>
 
-          <section className="section">
+          <section className="section" id="characterPage">
             <Characters />
           </section>
-          <section className="section">
+          <section className="section" id="uFeaturePage">
             <UFeature />
           </section>
-          <section className="section">
+          <section className="section" id="worldPage">
             <World />
           </section>
-          <section className="section">
+          <section className="section" id="featurePage">
             <Feature />
           </section>
-          <section className="section">
+          <section className="section" id="blogPage">
             <Blog title="LATEST NEWS" isAvailNewsPage />
           </section>
         </div>

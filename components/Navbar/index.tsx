@@ -16,6 +16,7 @@ const Navbar = () => {
     { idx: 4, status: false },
     { idx: 5, status: false },
     { idx: 6, status: false },
+    { idx: 7, status: false },
     // { idx: 3, status: false },
   ]);
   const handleActiveLink = (e: any) => {
@@ -261,6 +262,36 @@ const Navbar = () => {
             }  font-friz-bold  justify-self-start -ml-3`}
           >
             FEATURES
+          </motion.div>
+        </motion.li>
+        <motion.li
+          whileHover="play"
+          initial="rest"
+          animate={activeLink[7].status ? "play" : "rest"}
+          onClick={() => handleActiveLink(7)}
+          className="sub_nav flex gap-8 items-center justify-items-center"
+        >
+          <a href="#blogPage">
+            <div
+              className={`${
+                activeLink[7].status ? "b-btn-li" : "b-btn-li-none"
+              }`}
+            >
+              <div
+                className={`${
+                  activeLink[7].status ? "bg-white" : "bg-grey"
+                } btn-li`}
+              ></div>
+            </div>
+          </a>
+
+          <motion.div
+            variants={navbarTransition}
+            className={`${
+              activeLink[7].status ? "showWhite text-base" : "showGrey text-sm"
+            }  font-friz-bold  justify-self-start -ml-3`}
+          >
+            BLOG
           </motion.div>
         </motion.li>
       </ul>
