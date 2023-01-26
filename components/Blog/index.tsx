@@ -35,7 +35,7 @@ const Blog: React.FC<IBlog> = ({
   return (
     <div className={bg1}>
       <div
-        className={`${bg} w-full h-screen relative   bg-center bg-cover flex flex-col justify-center pl-4 sm:pl-[90px]`}
+        className={`${bg} w-full h-screen relative   bg-center bg-cover flex flex-col justify-center pl-4 md:pl-[10%]`}
       >
         <div className="pb-6">
           <h1 className="font-friz-bold title-feature text-xl pb-2">{title}</h1>

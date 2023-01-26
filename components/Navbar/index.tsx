@@ -82,7 +82,9 @@ const Navbar = () => {
           <motion.div
             variants={navbarTransition}
             className={`${
-              activeLink[0].status ? "showWhite text-base" : "showGrey text-sm"
+              activeLink[0].status
+                ? "showWhite text-xs lg:text-base"
+                : "showGrey text-xs lg:text-sm"
             }  font-friz-bold  justify-self-start -ml-3`}
           >
             HOME
@@ -112,7 +114,9 @@ const Navbar = () => {
           <motion.div
             variants={navbarTransition}
             className={`${
-              activeLink[1].status ? "showWhite text-base" : "showGrey text-sm"
+              activeLink[1].status
+                ? "showWhite text-xs lg:text-base"
+                : "showGrey text-xs lg:text-sm"
             }  font-friz-bold  justify-self-start -ml-3`}
           >
             STORY
@@ -141,7 +145,9 @@ const Navbar = () => {
           <motion.div
             variants={navbarTransition}
             className={`${
-              activeLink[2].status ? "showWhite text-base" : "showGrey text-sm"
+              activeLink[2].status
+                ? "showWhite text-xs lg:text-base"
+                : "showGrey text-xs lg:text-sm"
             }  font-friz-bold  justify-self-start -ml-3`}
           >
             ABOUT
@@ -170,7 +176,9 @@ const Navbar = () => {
           <motion.div
             variants={navbarTransition}
             className={`${
-              activeLink[3].status ? "showWhite text-base" : "showGrey text-sm"
+              activeLink[3].status
+                ? "showWhite text-xs lg:text-base"
+                : "showGrey text-xs lg:text-sm"
             }  font-friz-bold  justify-self-start -ml-3`}
           >
             CHARACTER
@@ -199,7 +207,9 @@ const Navbar = () => {
           <motion.div
             variants={navbarTransition}
             className={`${
-              activeLink[4].status ? "showWhite text-base" : "showGrey text-sm"
+              activeLink[4].status
+                ? "showWhite text-xs lg:text-base"
+                : "showGrey text-xs lg:text-sm"
             }  font-friz-bold  justify-self-start -ml-3`}
           >
             UNIQUE FEATURE
@@ -228,7 +238,9 @@ const Navbar = () => {
           <motion.div
             variants={navbarTransition}
             className={`${
-              activeLink[5].status ? "showWhite text-base" : "showGrey text-sm"
+              activeLink[5].status
+                ? "showWhite text-xs lg:text-base"
+                : "showGrey text-xs lg:text-sm"
             }  font-friz-bold  justify-self-start -ml-3`}
           >
             WORLD MAP
@@ -258,7 +270,9 @@ const Navbar = () => {
           <motion.div
             variants={navbarTransition}
             className={`${
-              activeLink[6].status ? "showWhite text-base" : "showGrey text-sm"
+              activeLink[6].status
+                ? "showWhite text-xs lg:text-base"
+                : "showGrey text-xs lg:text-sm"
             }  font-friz-bold  justify-self-start -ml-3`}
           >
             FEATURES
@@ -288,7 +302,9 @@ const Navbar = () => {
           <motion.div
             variants={navbarTransition}
             className={`${
-              activeLink[7].status ? "showWhite text-base" : "showGrey text-sm"
+              activeLink[7].status
+                ? "showWhite text-xs lg:text-base"
+                : "showGrey text-xs lg:text-sm"
             }  font-friz-bold  justify-self-start -ml-3`}
           >
             BLOG

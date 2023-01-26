@@ -170,10 +170,10 @@ const Story = () => {
           </div>
           <div className="swiper-line block sm:block md:hidden w-full h-[2px] bg-black-01 absolute z-[4] " />
         </div>
-        <div className="swiper-button-prev !top-[unset] bottom-[52px] !hidden sm:!hidden md:!flex">
+        <div className="swiper-button-prev !top-[unset] bottom-[52px] !left-[10%] !hidden sm:!hidden md:!flex">
           <img src="/assets/images/arrow-left.png" alt="" />
         </div>
-        <div className="swiper-button-next !top-[unset] bottom-[52px] !hidden sm:!hidden md:!flex">
+        <div className="swiper-button-next !top-[unset] bottom-[52px] !right-[10%] !hidden sm:!hidden md:!flex">
           <img src="/assets/images/arrow-right.png" alt="" />
         </div>
         {storyList.map((item: any, idx: number) => (
@@ -189,11 +189,11 @@ const Story = () => {
               </video>
               <div className="flex flex-col items-center justify-center absolute h-full ">
                 <div className="w-[85%] sm:w-[65%]">
-                  <div className="title-story-slide font-friz-bold  text-4xl text-center">
-                    {item.title}
+                  <div className="w-full flex justify-center title-story-slide font-friz-bold  text-4xl text-center">
+                    <div>{item.title}</div>
                   </div>
-                  <div className="desc-story-slide relative mt-4">
-                    <div className="absolute top-[-10px] left-[48.2%]">
+                  <div className="flex justify-center desc-story-slide relative mt-4">
+                    <div className="absolute top-[-10px] w-full flex justify-center">
                       <svg
                         width="37"
                         height="20"
@@ -224,7 +224,7 @@ const Story = () => {
                         />
                       </svg>
                     </div>
-                    <p className="text-center font-lato text-sm sm:text-base md:text-lg lg:text-xl p-4">
+                    <p className="w-full lf:w-[80%] text-center font-lato text-sm sm:text-base md:text-lg lg:text-xl p-4">
                       {item.subtitle}
                     </p>
                   </div>

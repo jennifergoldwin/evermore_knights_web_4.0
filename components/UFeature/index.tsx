@@ -29,7 +29,7 @@ const UFeature = () => {
     <div
       className={`${tabs[selectedTab].bg} w-full flex  items-center flex-col min-h-screen relative overflow-hidden pt-12 pb-12`}
     >
-      <div className="border-b-[1.5pt] border-underline w-fit pt-8 mb-8 ">
+      <div className="border-b-[1.5pt] border-underline w-fit pt-8 mb-8 md:mb-0 ">
         <ul className="flex gap-4">
           {tabs.map((item: any, idx: number) => (
             <li
@@ -67,7 +67,10 @@ const UFeature = () => {
           exit={{ y: -10, opacity: 0 }}
           transition={{ duration: 0.1 }}
         >
-          <img src="/assets/video/new_gif.gif" alt="" />
+          <div className="py-6">
+            <img src="/assets/video/new_gif.gif" alt="" />
+          </div>
+
           {/* <img
             src="http://i.stack.imgur.com/SBv4T.gif"
             alt="this slowpoke moves"

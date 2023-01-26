@@ -7,9 +7,23 @@ import {
   FaDiscord,
   FaYoutube,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 import { RiInstagramFill } from "react-icons/ri";
 
 const HomePage = () => {
+  const arrow_trans = {
+    rest: {
+      opacity: 0,
+    },
+    play: {
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 1.4,
+        ease: "easeIn",
+      },
+    },
+  };
   return (
     <div className="flex h-screen">
       {/* <iframe
@@ -28,7 +42,13 @@ const HomePage = () => {
       </video>
       <div className="flex absolute w-full h-full">
         <div className="flex justify-center items-center absolute w-full translate-y-[40%] sm:translate-y-[15%] lg:translate-y-[12%] md:lg:translate-y-[15%]">
-          <img src="/assets/images/logo_shine.png" alt="" />
+          <motion.img
+            whileInView="play"
+            initial="rest"
+            animate="rest"
+            src="/assets/images/logo_shine.png"
+            alt=""
+          />
         </div>
         {/* <div className="flex absolute justify-center w-full top-[50%]">
           <img src="/assets/images/leaf.png" alt="" />
@@ -37,12 +57,12 @@ const HomePage = () => {
           <div className="lg:absolute bottom-[10%] lg:bottom-0 flex gap-2 right-0 lg:p-3">
             <img
               onClick={() => console.log("hi im clicked")}
-              className="w-36 sm:w-auto h-auto z-20"
+              className="w-36 sm:w-auto h-auto md:z-20"
               src="/assets/images/appstore.png"
               alt=""
             />
             <img
-              className="w-36 sm:w-auto h-auto z-20"
+              className="w-36 sm:w-auto h-auto md:z-20"
               src="/assets/images/googleplay.png"
               alt=""
             />
@@ -103,7 +123,10 @@ const HomePage = () => {
             </a>
           </div>
         </div>
-        <div className="fixed bottom-0  flex flex-col justify-center items-center w-full z-10">
+        <motion.div
+          variants={arrow_trans}
+          className="fixed bottom-0  flex flex-col justify-center items-center w-full"
+        >
           <span className="hidden lg:flex font-friz-bold text-glow text-3xl">
             Explore
           </span>
@@ -186,7 +209,7 @@ const HomePage = () => {
               </filter>
             </defs>
           </svg>
-        </div>
+        </motion.div>
         {/* <div className="flex flex-col-reverse justify-center items-center lg:flex-row absolute w-full bottom-0">
           <div className="hidden lg:flex justify-start items-center w-2/5 pl-4"></div>
           <div className=" flex flex-col justify-center items-center lg:w-1/5 w-full">

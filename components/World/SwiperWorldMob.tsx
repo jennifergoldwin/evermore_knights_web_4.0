@@ -85,6 +85,7 @@ const SwiperWorldMob = () => {
       >
         {worldMobList.map((item: any, index: number) => (
           <SwiperSlide
+            onClick={() => setShowModal(!showModal)}
             key={index + 1}
             className="h-full flex justify-center items-center"
           >
@@ -124,10 +125,7 @@ const SwiperWorldMob = () => {
               </svg>
 
               <img src={item.url} alt="" />
-              <div
-                onClick={() => setShowModal(!showModal)}
-                className="flex justify-center items-center font-friz-medium text-sm cursor-pointer"
-              >
+              <div className="flex justify-center items-center font-friz-medium text-sm cursor-pointer">
                 <svg
                   width="17"
                   height="17"

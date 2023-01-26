@@ -94,11 +94,11 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
         }}
         onSwiper={(swiper) => setSwiper(swiper)}
       >
-        <div className="swiper-button-prev lg:!left-[13%]">
+        <div className="swiper-button-prev">
           <img src="/assets/images/arrow-left.png" />
         </div>
 
-        <div className="swiper-button-next lg:!right-[13%]">
+        <div className="swiper-button-next">
           <img src="/assets/images/arrow-right.png" />
         </div>
         {worldList.map((item) => (
@@ -111,7 +111,13 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
                   className="absolute left-[-11%] top-[-11%]"
                 />
                 <div className="w-[695px] p-8">
-                  <img src={item.url} alt="arriane" />
+                  <div className="w-full flex justify-center items-center">
+                    <img
+                      className="w-[85%] lf:w-full"
+                      src={item.url}
+                      alt="arriane"
+                    />
+                  </div>
                   <div className=" flex flex-col justify-center items-center text-center">
                     <h1 className="font-friz-bold text-xl text-black pt-3">
                       {item.title}
@@ -126,7 +132,7 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
                 </div>
               </div>
               <div
-                className="text-white text-center font-lato font-[700] cursor-pointer py-4"
+                className="text-white text-center font-lato font-[700] cursor-pointer py-2"
                 onClick={() => setIsShown(false)}
               >
                 Tap to close

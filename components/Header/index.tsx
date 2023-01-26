@@ -145,7 +145,7 @@ const Header = () => {
           <ul id="menu" className="py-2">
             <li
               onClick={() => handleActiveLink(0)}
-              className="sub_nav flex gap-8  items-center justify-items-center"
+              className="sub_nav mob flex gap-8  items-center justify-items-center"
             >
               <a href="#homePage">
                 <div
@@ -174,7 +174,7 @@ const Header = () => {
 
             <li
               onClick={() => handleActiveLink(1)}
-              className="sub_nav flex gap-8  items-center justify-items-center"
+              className="sub_nav mob flex gap-8  items-center justify-items-center"
             >
               <a href="#storyPage">
                 <div
@@ -201,7 +201,7 @@ const Header = () => {
             </li>
             <li
               onClick={() => handleActiveLink(2)}
-              className="sub_nav flex gap-8  items-center justify-items-center"
+              className="sub_nav mob flex gap-8  items-center justify-items-center"
             >
               <a href="#aboutPage">
                 <div
@@ -228,7 +228,7 @@ const Header = () => {
             </li>
             <li
               onClick={() => handleActiveLink(3)}
-              className="sub_nav flex gap-8  items-center justify-items-center"
+              className="sub_nav mob flex gap-8  items-center justify-items-center"
             >
               <a href="#characterPage">
                 <div
@@ -255,7 +255,7 @@ const Header = () => {
             </li>
             <li
               onClick={() => handleActiveLink(4)}
-              className="sub_nav flex gap-8  items-center justify-items-center"
+              className="sub_nav mob flex gap-8  items-center justify-items-center"
             >
               <a href="#uFeaturePage">
                 <div
@@ -282,7 +282,7 @@ const Header = () => {
             </li>
             <li
               onClick={() => handleActiveLink(5)}
-              className="sub_nav flex gap-8  items-center justify-items-center"
+              className="sub_nav mob flex gap-8  items-center justify-items-center"
             >
               <a href="#worldPage">
                 <div
@@ -309,7 +309,7 @@ const Header = () => {
             </li>
             <li
               onClick={() => handleActiveLink(6)}
-              className="sub_nav flex gap-8  items-center justify-items-center"
+              className="sub_nav mob flex gap-8  items-center justify-items-center"
             >
               <a href="#featurePage">
                 <div

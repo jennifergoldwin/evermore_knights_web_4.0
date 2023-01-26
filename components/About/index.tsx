@@ -6,15 +6,17 @@ import Modal from "./modal";
 const About = () => {
   const [isShown, setIsShown] = React.useState(false);
   return (
-    <div className="relative min-h-screen md:min-h-[80vh]  bg-[url(/assets/images/bg-about.png)] bg-left bg-cover pt-12">
+    <div className="relative min-h-screen md:min-h-full lg:min-h-[80vh]  bg-[url(/assets/images/bg-about.png)] bg-left bg-cover pt-12">
       <Modal isShown={isShown} setIsShown={setIsShown} />
-      <div className="pl-0 lg:pl-[100px] pt-8  flex flex-col md:flex-row justify-center items-center h-full w-full ">
-        <div className="text-center md:text-left w-full md:w-1/2 px-10 relative h-full">
+      <div className="pl-0 md:pl-[10%] flex flex-col md:flex-row justify-center items-center h-full w-full ">
+        <div className="text-center md:text-left w-full md:w-1/2 px-4 lf:px-6 relative h-full">
           <div className="h-full">
-            <div className="font-friz-regular text-2xl">FREE TO PLAY</div>
+            <div className="font-friz-regular text-xl lg:text-2xl">
+              FREE TO PLAY
+            </div>
             <h1
               data-content="turn-based"
-              className="font-friz-bold title-text title-shadow text-4xl "
+              className="font-friz-bold title-text title-shadow text-3xl lg:text-4xl "
             >
               TURN BASED RPG COMBAT
             </h1>
@@ -31,14 +33,14 @@ const About = () => {
               </svg>
             </div>
 
-            <div className="font-lato pb-6  md:text-xl">
+            <div className="font-lato pb-3 lg:pb-6 text-base  lg:text-xl">
               Anime - inspired RPG combat! Strategy and planning can easily turn
               the tide of battle. Witness awesome abilities and pristine
               gameplay.
             </div>
             <div className="relative w-full overflow-hidden flex justify-center md:justify-start">
               <iframe
-                className="w-[100%] h-[260px]"
+                className="w-[90%] h-[280px] md:h-[200px] lf:h-[280px]"
                 loading="lazy"
                 src="https://www.youtube.com/embed/-ERMKXPYQl4?autoplay=1"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -51,6 +53,9 @@ const About = () => {
                 src="/assets/images/youtube-frame.png"
                 alt=""
               /> */}
+          </div>
+          <div className="absolute hidden lg:flex  bottom-0  lg:-bottom-[20%] -left-[10%]">
+            <img src="/assets/images/leaf.png" alt="" />
           </div>
         </div>
 
@@ -66,7 +71,7 @@ const About = () => {
             alt=""
           />
         </div>
-        <div className="hidden md:block w-full md:w-1/2 h-full self-end ">
+        <div className="hidden md:flex w-full md:w-1/2 h-full justify-end ">
           <img src="/assets/images/about-char.png" alt="" />
         </div>
       </div>

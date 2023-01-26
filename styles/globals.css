@@ -103,7 +103,7 @@ body {
   width: 100%;
   flex-direction: column;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   padding-bottom: 4rem;
 }
 /* .header-link::after {
@@ -136,6 +136,9 @@ body {
   /* padding: 15px 0 20px 25px; */
   text-align: left;
   padding-bottom: 0.85rem;
+  margin-inline-start: 0rem;
+}
+.sub_nav.mob {
   margin-inline-start: 2rem;
 }
 

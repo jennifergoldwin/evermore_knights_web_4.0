@@ -126,14 +126,14 @@ const Characters: React.FC = () => {
   // });
   return (
     <div className="relative overflow-hidden min-h-screen md:min-h-full">
-      <div className="hidden md:grid absolute top-[15%] right-0 z-10 ">
+      <div className="hidden md:flex gap-0 md:gap-2 justify-center h-full  flex-col  absolute m-auto right-0 z-10">
         <div className="cursor-pointer" onClick={() => handleClick(0)}>
           <img
             className={`${
               index == 0
-                ? "translate-x-[45%] transition-all"
-                : "translate-x-[70%]"
-            }`}
+                ? "translate-x-[70%] lg:translate-x-[50%] transition-all"
+                : "translate-x-[80%] lg:translate-x-[60%]"
+            } w-[80%] lg:w-[100%] `}
             src={`${
               index == 0
                 ? "/assets/images/btn-1.png"
@@ -146,9 +146,9 @@ const Characters: React.FC = () => {
           <img
             className={`${
               index == 1
-                ? "translate-x-[45%] transition-all"
-                : "translate-x-[70%]"
-            }`}
+                ? "translate-x-[70%] lg:translate-x-[50%] transition-all"
+                : "translate-x-[80%] lg:translate-x-[60%]"
+            } w-[80%] lg:w-[100%]`}
             src={`${
               index == 1
                 ? "/assets/images/btn-2.png"
@@ -161,9 +161,9 @@ const Characters: React.FC = () => {
           <img
             className={`${
               index == 2
-                ? "translate-x-[45%] transition-all"
-                : "translate-x-[70%]"
-            }`}
+                ? "translate-x-[70%] lg:translate-x-[50%] transition-all"
+                : "translate-x-[80%] lg:translate-x-[60%]"
+            } w-[80%] lg:w-[100%]`}
             src={`${
               index == 2
                 ? "/assets/images/btn-3.png"
@@ -176,9 +176,9 @@ const Characters: React.FC = () => {
           <img
             className={`${
               index == 3
-                ? "translate-x-[45%] transition-all"
-                : "translate-x-[70%]"
-            }`}
+                ? "translate-x-[70%] lg:translate-x-[50%] transition-all"
+                : "translate-x-[80%] lg:translate-x-[60%]"
+            } w-[80%] lg:w-[100%]`}
             src={`${
               index == 3
                 ? "/assets/images/btn-4.png"
@@ -191,9 +191,9 @@ const Characters: React.FC = () => {
           <img
             className={`${
               index == 4
-                ? "translate-x-[45%] transition-all"
-                : "translate-x-[70%]"
-            }`}
+                ? "translate-x-[70%] lg:translate-x-[50%] transition-all"
+                : "translate-x-[80%] lg:translate-x-[60%]"
+            } w-[80%] lg:w-[100%]`}
             src={`${
               index == 4
                 ? "/assets/images/btn-5.png"
@@ -206,9 +206,9 @@ const Characters: React.FC = () => {
           <img
             className={`${
               index == 5
-                ? "translate-x-[45%] transition-all"
-                : "translate-x-[70%]"
-            }`}
+                ? "translate-x-[70%] lg:translate-x-[50%] transition-all"
+                : "translate-x-[80%] lg:translate-x-[60%]"
+            } w-[80%] lg:w-[100%]`}
             src={`${
               index == 5
                 ? "/assets/images/btn-6.png"
@@ -227,16 +227,16 @@ const Characters: React.FC = () => {
       >
         {characterLists.map((item: any, idx: number) => (
           <SwiperSlide key={idx}>
-            <div
-              className={`${item.bg} h-full bg-cover bg-center pl-0 lg:pl-[100px] `}
-            >
-              <div className="relative w-full h-full flex flex-col-reverse md:flex-row justify-end md:justify-center items-center">
-                <div className="bg-gradient-black w-full md:w-2/5 absolute z-[2] bottom-[0%] md:static">
-                  <div className=" p-2 md:pl-10 flex justify-center items-center md:flex-col">
+            <div className={`${item.bg} h-full bg-cover bg-center `}>
+              <div className="ml-0 md:ml-[10%] pt-6 relative w-full h-full flex flex-col-reverse md:flex-row justify-end md:justify-center items-center">
+                <div className="bg-gradient-black w-full md:w-2/6 lg:w-2/5 absolute z-[2] bottom-[0%] md:static">
+                  <div className="p-2 md:p-0 flex justify-center items-center md:flex-col">
                     <div className="md:pr-0">
                       <div className="flex items-center font-friz-bold gap-4">
-                        <h1 className="text-xl md:text-4xl">{item.heroName}</h1>
-                        <span className="title-text font-bold text-base md:text-lg">
+                        <h1 className="text-xl md:text-2xl lg:text-4xl">
+                          {item.heroName}
+                        </h1>
+                        <span className="title-text font-bold text-sm md:text-base lg:text-lg">
                           {item.heroSubName}
                         </span>
                       </div>
@@ -250,7 +250,7 @@ const Characters: React.FC = () => {
                               src={item.icon1}
                               alt=""
                             />
-                            <span className="text-sm md:text-base">
+                            <span className="text-sm lg:text-base">
                               {item.title1}
                             </span>
                           </div>
@@ -261,7 +261,7 @@ const Characters: React.FC = () => {
                               src={item.icon2}
                               alt=""
                             />
-                            <span className="text-sm md:text-base">
+                            <span className="text-sm lg:text-base">
                               {item.title2}
                             </span>
                           </div>
@@ -280,7 +280,7 @@ const Characters: React.FC = () => {
                         </svg>
                       </div>
                       <div className="flex md:flex-col flex-row justify-center items-center">
-                        <div className="font-lato pb-0 md:pb-6 text-xs sm:text-sm  md:text-sm">
+                        <div className="font-lato mb-0 sm:mb-2 lg:mb-4 text-xs  lg:text-sm">
                           {item.heroDesc}
                         </div>
                         <img
@@ -297,8 +297,14 @@ const Characters: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-full md:w-3/5 self-end relative">
-                  <img className="hidden md:block" src={item.heroImg} alt="" />
+                <div className="w-full overflow-hidden  md:w-4/6 lg:w-3/5 self-end relative">
+                  <img
+                    className={`hidden ${
+                      idx !== 3 ? "translate-x-[-10%]" : "translate-x-[-0%]"
+                    } md:block`}
+                    src={item.heroImg}
+                    alt=""
+                  />
                   <img
                     className="block md:hidden"
                     src="/assets/images/grana-mob.png"

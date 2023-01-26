@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       screens: {
         mf: "565px",
+        lf: "1225px",
       },
       fontFamily: {
         "friz-bold": ["Friz Quadrata Std Bold", "sans-serif"],

@@ -3,6 +3,7 @@ import React from "react";
 import { motion, useScroll } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/effect-coverflow";
 import { EffectCoverflow } from "swiper";
 const featureList = [
   {
@@ -66,7 +67,7 @@ const Feature = () => {
       transform: "rotate(180deg)",
       transition: {
         type: "spring",
-        duration: 0.2,
+        duration: 1.3,
         ease: "easeIn",
       },
     },
@@ -149,6 +150,7 @@ const Feature = () => {
             stretch: 100,
             depth: 0,
             modifier: 1.5,
+            slideShadows: true,
           }}
           centeredSlides
           slideToClickedSlide
@@ -165,13 +167,11 @@ const Feature = () => {
             setIndex(swiper.activeIndex);
           }}
         >
-          {featureList.map((item: any, index: number) => (
-            <SwiperSlide key={index + 1} className="slideFeature !w-fit !h-fit">
-              <div className=" object-cover w-fit h-auto">
-                <img
-                  src={`/assets/images/feature-${index + 1}-mob.png`}
-                  alt=""
-                />
+          {featureList.map((item: any, idx: number) => (
+            <SwiperSlide key={idx + 1} className="slideFeature !w-fit !h-fit">
+              <div className=" object-cover w-fit h-auto relative">
+                <div className="overlay" />
+                <img src={`/assets/images/feature-${idx + 1}-mob.png`} alt="" />
               </div>
             </SwiperSlide>
           ))}

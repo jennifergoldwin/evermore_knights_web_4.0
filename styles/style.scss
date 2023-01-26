@@ -41,7 +41,7 @@
 }
 
 #storyView .swiper-pagination span {
-  width: 210px;
+  width: 150px;
   height: 25px;
   outline: none;
 }
@@ -56,7 +56,8 @@
   }
 }
 #storyView .swiper-pagination {
-  width: 100%;
+  width: 80%;
+  margin: auto;
   bottom: 97px;
   position: relative;
   z-index: 2;
@@ -328,4 +329,39 @@ input[name="toggle-nav"]:checked {
   //     }
   //   }
   // }
+}
+
+#featureSwiper .swiper-wrapper .swiper-slide-active .overlay {
+  background-color: transparent;
+}
+
+@media screen and (min-width: 1420px) {
+  #swiperWorld .swiper-button-prev {
+    left: 23% !important;
+  }
+  #swiperWorld .swiper-button-next {
+    right: 23% !important;
+  }
+}
+@media screen and (max-width: 1209px) {
+  #swiperWorld .swiper-button-prev {
+    left: 13% !important;
+  }
+  #swiperWorld .swiper-button-next {
+    right: 13% !important;
+  }
+}
+@media screen and (min-width: 1209px) and (max-width: 1420px) {
+  #swiperWorld .swiper-button-prev {
+    left: 19% !important;
+  }
+  #swiperWorld .swiper-button-next {
+    right: 19% !important;
+  }
+}
+
+.story-subtitle {
+  // min-height: 6.5em;
+  width: 80%;
+  // line-height: 1.125;
 }
