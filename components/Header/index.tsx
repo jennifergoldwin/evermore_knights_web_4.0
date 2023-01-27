@@ -32,20 +32,17 @@ const Header = () => {
     );
   };
   return (
-    <header id="header-top" className="opacity-100 fixed w-full top-0 z-10">
-      <div className=" hidden sm:flex relative  bg-navbar  justify-between items-center px-6 py-3 font-friz-bold w-full">
+    <header className="opacity-100 fixed w-full top-0 z-10">
+      <div
+        id="header-top"
+        className=" hidden sm:flex relative  bg-navbar  justify-between items-center px-6 py-3 font-friz-bold w-full"
+      >
         <h1 className="hidden sm:flex logo main w-1/2 sm:w-1/3">
           <a href="#firstPage" title="evermore knights">
             <img src="/assets/images/logo.png" alt="evermore knights" />
           </a>
         </h1>
-        {/* <button
-          onClick={() => setActive(!active)}
-          className=" inline-flex  sm:hidden text-white outline-none"
-        >
-          {active ? <MdClose /> : <GiHamburgerMenu />}
-        </button> */}
-        <div className="hidden sm:flex" id="gnb w-1/3">
+        <div className="hidden sm:flex">
           <ul id="menu" className="flex justify-around gap-4">
             <li>
               <a

@@ -36,7 +36,7 @@ const HomePage = () => {
     // let nav = document.querySelectorAll(".border-wrapper") as NodeList;
 
     if (inView) {
-      header.classList.add("hidden");
+      header.classList.add("!hidden");
       arrow.classList.remove("hidden");
 
       // for (let i = 0; i < nav.length; i++) {
@@ -50,7 +50,7 @@ const HomePage = () => {
       // nav[0].childNodes[0].classList.remove("bg-grey");
       // nav[0].childNodes[0].classList.add("bg-white");
     } else {
-      header.classList.remove("hidden");
+      header.classList.remove("!hidden");
       arrow.classList.add("hidden");
 
       // for (let i = 0; i < nav.length; i++) {

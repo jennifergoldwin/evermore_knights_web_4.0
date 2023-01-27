@@ -85,8 +85,8 @@ const Navbar = () => {
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
           <a className="nav-link" href="#homePage">
-            <div className="border-wrapper">
-              <div className="btn-li"></div>
+            <div className="border-wrapper b-btn-li">
+              <div className="btn-li bg-white"></div>
             </div>
           </a>
           {/* desc navbar */}
@@ -110,8 +110,8 @@ const Navbar = () => {
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
           <a className="nav-link" href="#storyPage">
-            <div className="border-wrapper">
-              <div className="btn-li"></div>
+            <div className="border-wrapper b-btn-li-none">
+              <div className="btn-li bg-grey"></div>
             </div>
           </a>
           <motion.div
@@ -134,8 +134,8 @@ const Navbar = () => {
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
           <a className="nav-link" href="#aboutPage">
-            <div className="border-wrapper">
-              <div className="btn-li"></div>
+            <div className="border-wrapper b-btn-li-none">
+              <div className="btn-li bg-grey"></div>
             </div>
           </a>
           <motion.div
@@ -158,8 +158,8 @@ const Navbar = () => {
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
           <a className="nav-link" href="#characterPage">
-            <div className="border-wrapper">
-              <div className="btn-li"></div>
+            <div className="border-wrapper b-btn-li-none">
+              <div className="btn-li bg-grey"></div>
             </div>
           </a>
           <motion.div
@@ -182,8 +182,8 @@ const Navbar = () => {
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
           <a className="nav-link" href="#uFeaturePage">
-            <div className="border-wrapper">
-              <div className="btn-li"></div>
+            <div className="border-wrapper b-btn-li-none">
+              <div className="btn-li bg-grey"></div>
             </div>
           </a>
           <motion.div
@@ -206,8 +206,8 @@ const Navbar = () => {
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
           <a className="nav-link" href="#worldPage">
-            <div className="border-wrapper">
-              <div className="btn-li"></div>
+            <div className="border-wrapper b-btn-li-none">
+              <div className="btn-li bg-grey"></div>
             </div>
           </a>
           <motion.div
@@ -230,12 +230,8 @@ const Navbar = () => {
           className="sub_nav flex gap-8 items-center justify-items-center"
         >
           <a className="nav-link" href="#featurePage">
-            <div className="border-wrapper">
-              <div
-                className={`${
-                  activeLink[6].status ? "bg-white" : "bg-grey"
-                } btn-li`}
-              ></div>
+            <div className="border-wrapper b-btn-li-none">
+              <div className="btn-li bg-grey"></div>
             </div>
           </a>
 
@@ -259,8 +255,8 @@ const Navbar = () => {
           className="sub_nav flex gap-8 items-center justify-items-center"
         >
           <a className="nav-link" href="#blogPage">
-            <div className="border-wrapper">
-              <div className="btn-li"></div>
+            <div className="border-wrapper b-btn-li-none">
+              <div className="btn-li bg-grey"></div>
             </div>
           </a>
 
