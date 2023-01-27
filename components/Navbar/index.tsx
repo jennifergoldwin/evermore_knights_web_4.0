@@ -27,15 +27,17 @@ const Navbar = () => {
     myPage.scrollThere(targetEl, 400);
     let nav = document.querySelectorAll(".border-wrapper") as NodeList;
     for (let i = 0; i < nav.length; i++) {
-      nav[i].classList.remove("b-btn-li");
-      nav[i].classList.add("b-btn-li-none");
-      nav[i].childNodes[0].classList.remove("bg-white");
-      nav[i].childNodes[0].classList.add("bg-grey");
+      let curr = nav[i] as HTMLElement;
+      curr.classList.remove("b-btn-li");
+      curr.classList.add("b-btn-li-none");
+      (curr.childNodes[0] as HTMLElement).classList.remove("bg-white");
+      (curr.childNodes[0] as HTMLElement).classList.add("bg-grey");
     }
-    nav[idx].classList.remove("b-btn-li-none");
-    nav[idx].classList.add("b-btn-li");
-    nav[idx].childNodes[0].classList.remove("bg-grey");
-    nav[idx].childNodes[0].classList.add("bg-white");
+    let curr = nav[idx] as HTMLElement;
+    curr.classList.remove("b-btn-li-none");
+    curr.classList.add("b-btn-li");
+    (curr.childNodes[0] as HTMLElement).classList.remove("bg-grey");
+    (curr.childNodes[0] as HTMLElement).classList.add("bg-white");
 
     setActiveLink(
       activeLink.map((link) =>
