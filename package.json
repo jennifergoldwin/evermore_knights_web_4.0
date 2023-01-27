@@ -17,12 +17,15 @@
     "framer-motion": "^7.10.0",
     "jquery": "^3.6.3",
     "next": "13.0.6",
+    "next-optimized-images": "^2.6.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
+    "react-intersection-observer": "^9.4.1",
     "sass": "^1.57.1",
     "swiper": "^8.4.5",
-    "typescript": "4.9.4"
+    "typescript": "4.9.4",
+    "webp-loader": "^0.6.0"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.14",

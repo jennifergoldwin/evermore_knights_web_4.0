@@ -9,8 +9,14 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { RiInstagramFill } from "react-icons/ri";
+import { useInView } from "react-intersection-observer";
 
 const HomePage = () => {
+  const [ref, inView, entry] = useInView({
+    /* Optional options */
+    threshold: 0.5,
+    triggerOnce: false,
+  });
   const arrow_trans = {
     rest: {
       opacity: 0,
@@ -24,8 +30,39 @@ const HomePage = () => {
       },
     },
   };
+  React.useEffect(() => {
+    let header = document.getElementById("header-top") as HTMLElement;
+    let arrow = document.getElementById("explore-arrow") as HTMLElement;
+    // let nav = document.querySelectorAll(".border-wrapper") as NodeList;
+
+    if (inView) {
+      header.classList.add("hidden");
+      arrow.classList.remove("hidden");
+
+      // for (let i = 0; i < nav.length; i++) {
+      //   nav[i].classList.remove("b-btn-li");
+      //   nav[i].classList.add("b-btn-li-none");
+      //   nav[i].childNodes[0].classList.remove("bg-white");
+      //   nav[i].childNodes[0].classList.add("bg-grey");
+      // }
+      // nav[0].classList.remove("b-btn-li-none");
+      // nav[0].classList.add("b-btn-li");
+      // nav[0].childNodes[0].classList.remove("bg-grey");
+      // nav[0].childNodes[0].classList.add("bg-white");
+    } else {
+      header.classList.remove("hidden");
+      arrow.classList.add("hidden");
+
+      // for (let i = 0; i < nav.length; i++) {
+      //   nav[i].classList.remove("b-btn-li");
+      //   nav[i].classList.add("b-btn-li-none");
+      //   nav[i].childNodes[0].classList.remove("bg-white");
+      //   nav[i].childNodes[0].classList.add("bg-grey");
+      // }
+    }
+  }, [inView]);
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen" ref={ref}>
       {/* <iframe
         className="w-full h-full"
         src="https://www.youtube.com/embed/-ERMKXPYQl4?controls=0?autoplay=1"
@@ -124,7 +161,7 @@ const HomePage = () => {
           </div>
         </div>
         <motion.div
-          variants={arrow_trans}
+          id="explore-arrow"
           className="fixed bottom-0  flex flex-col justify-center items-center w-full"
         >
           <span className="hidden lg:flex font-friz-bold text-glow text-3xl">

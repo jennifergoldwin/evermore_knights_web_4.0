@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -5,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, EffectCoverflow } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
+import Image from "next/image";
 const UFeature = () => {
   const tabs = [
     {
@@ -67,23 +69,30 @@ const UFeature = () => {
           exit={{ y: -10, opacity: 0 }}
           transition={{ duration: 0.1 }}
         >
-          <div className="py-6">
+          {/* <Image
+            src="/assets/video/weapon.webm"
+            alt="User profile photo"
+            width={300}
+            height={300}
+            priority
+          /> */}
+          {/* <div className="py-6">
             <img src="/assets/video/new_gif.gif" alt="" />
-          </div>
+          </div> */}
 
           {/* <img
             src="http://i.stack.imgur.com/SBv4T.gif"
             alt="this slowpoke moves"
             width="250"
           /> */}
-          {/* <video
+          <video
             loop
             autoPlay
             muted
             className="object-cover h-full w-full relative"
           >
-            <source src="/assets/video/weapon.webm" type="video/webm" />
-          </video> */}
+            <source src="/assets/video/char_webm.webm" type="video/webm" />
+          </video>
           {selectedTab === 0 && (
             <img
               className="absolute bottom-[0%] right-[-20%] lg:right-0"

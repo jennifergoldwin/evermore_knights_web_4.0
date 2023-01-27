@@ -17,6 +17,7 @@ const Footer = () => {
   };
   return (
     <motion.div
+      id="footer"
       whileInView="play"
       initial="rest"
       animate="rest"

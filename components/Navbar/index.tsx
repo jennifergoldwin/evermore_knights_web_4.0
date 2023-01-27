@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { myPage } from "../../service";
+import $ from "jquery";
 const Navbar = () => {
   // const [active, setActive] = React.useState(false);
   // const handleClick = () => {
@@ -19,10 +21,25 @@ const Navbar = () => {
     { idx: 7, status: false },
     // { idx: 3, status: false },
   ]);
-  const handleActiveLink = (e: any) => {
+  const handleActiveLink = (idx: any, e: any, href: any) => {
+    e.preventDefault();
+    var targetEl = $("a[id=" + href + "]");
+    myPage.scrollThere(targetEl, 400);
+    let nav = document.querySelectorAll(".border-wrapper") as NodeList;
+    for (let i = 0; i < nav.length; i++) {
+      nav[i].classList.remove("b-btn-li");
+      nav[i].classList.add("b-btn-li-none");
+      nav[i].childNodes[0].classList.remove("bg-white");
+      nav[i].childNodes[0].classList.add("bg-grey");
+    }
+    nav[idx].classList.remove("b-btn-li-none");
+    nav[idx].classList.add("b-btn-li");
+    nav[idx].childNodes[0].classList.remove("bg-grey");
+    nav[idx].childNodes[0].classList.add("bg-white");
+
     setActiveLink(
       activeLink.map((link) =>
-        link.idx === parseInt(e)
+        link.idx === parseInt(idx)
           ? { ...link, status: true }
           : { ...link, status: false }
       )
@@ -62,20 +79,12 @@ const Navbar = () => {
           whileHover="play"
           initial="rest"
           animate={activeLink[0].status ? "play" : "rest"}
-          onClick={() => handleActiveLink(0)}
+          onClick={(e) => handleActiveLink(0, e, "homePage")}
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
-          <a href="#homePage">
-            <div
-              className={`${
-                activeLink[0].status ? "b-btn-li" : "b-btn-li-none"
-              }`}
-            >
-              <div
-                className={`${
-                  activeLink[0].status ? "bg-white" : "bg-grey"
-                } btn-li `}
-              ></div>
+          <a className="nav-link" href="#homePage">
+            <div className="border-wrapper">
+              <div className="btn-li"></div>
             </div>
           </a>
           {/* desc navbar */}
@@ -95,20 +104,12 @@ const Navbar = () => {
           whileHover="play"
           initial="rest"
           animate={activeLink[1].status ? "play" : "rest"}
-          onClick={() => handleActiveLink(1)}
+          onClick={(e) => handleActiveLink(1, e, "storyPage")}
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
-          <a href="#storyPage">
-            <div
-              className={`${
-                activeLink[1].status ? "b-btn-li" : "b-btn-li-none"
-              }`}
-            >
-              <div
-                className={`${
-                  activeLink[1].status ? "bg-white" : "bg-grey"
-                } btn-li`}
-              ></div>
+          <a className="nav-link" href="#storyPage">
+            <div className="border-wrapper">
+              <div className="btn-li"></div>
             </div>
           </a>
           <motion.div
@@ -122,24 +123,17 @@ const Navbar = () => {
             STORY
           </motion.div>
         </motion.li>
+
         <motion.li
           whileHover="play"
           initial="rest"
           animate={activeLink[2].status ? "play" : "rest"}
-          onClick={() => handleActiveLink(2)}
+          onClick={(e) => handleActiveLink(2, e, "aboutPage")}
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
-          <a href="#aboutPage">
-            <div
-              className={`${
-                activeLink[2].status ? "b-btn-li" : "b-btn-li-none"
-              }`}
-            >
-              <div
-                className={`${
-                  activeLink[2].status ? "bg-white" : "bg-grey"
-                } btn-li`}
-              ></div>
+          <a className="nav-link" href="#aboutPage">
+            <div className="border-wrapper">
+              <div className="btn-li"></div>
             </div>
           </a>
           <motion.div
@@ -153,24 +147,17 @@ const Navbar = () => {
             ABOUT
           </motion.div>
         </motion.li>
+
         <motion.li
           whileHover="play"
           initial="rest"
           animate={activeLink[3].status ? "play" : "rest"}
-          onClick={() => handleActiveLink(3)}
+          onClick={(e) => handleActiveLink(3, e, "characterPage")}
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
-          <a href="#characterPage">
-            <div
-              className={`${
-                activeLink[3].status ? "b-btn-li" : "b-btn-li-none"
-              }`}
-            >
-              <div
-                className={`${
-                  activeLink[3].status ? "bg-white" : "bg-grey"
-                } btn-li`}
-              ></div>
+          <a className="nav-link" href="#characterPage">
+            <div className="border-wrapper">
+              <div className="btn-li"></div>
             </div>
           </a>
           <motion.div
@@ -184,24 +171,17 @@ const Navbar = () => {
             CHARACTER
           </motion.div>
         </motion.li>
+
         <motion.li
           whileHover="play"
           initial="rest"
           animate={activeLink[4].status ? "play" : "rest"}
-          onClick={() => handleActiveLink(4)}
+          onClick={(e) => handleActiveLink(4, e, "uFeaturePage")}
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
-          <a href="#uFeaturePage">
-            <div
-              className={`${
-                activeLink[4].status ? "b-btn-li" : "b-btn-li-none"
-              }`}
-            >
-              <div
-                className={`${
-                  activeLink[4].status ? "bg-white" : "bg-grey"
-                } btn-li`}
-              ></div>
+          <a className="nav-link" href="#uFeaturePage">
+            <div className="border-wrapper">
+              <div className="btn-li"></div>
             </div>
           </a>
           <motion.div
@@ -215,24 +195,17 @@ const Navbar = () => {
             UNIQUE FEATURE
           </motion.div>
         </motion.li>
+
         <motion.li
           whileHover="play"
           initial="rest"
           animate={activeLink[5].status ? "play" : "rest"}
-          onClick={() => handleActiveLink(5)}
+          onClick={(e) => handleActiveLink(5, e, "worldPage")}
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
-          <a href="#worldPage">
-            <div
-              className={`${
-                activeLink[5].status ? "b-btn-li" : "b-btn-li-none"
-              }`}
-            >
-              <div
-                className={`${
-                  activeLink[5].status ? "bg-white" : "bg-grey"
-                } btn-li`}
-              ></div>
+          <a className="nav-link" href="#worldPage">
+            <div className="border-wrapper">
+              <div className="btn-li"></div>
             </div>
           </a>
           <motion.div
@@ -246,19 +219,16 @@ const Navbar = () => {
             WORLD MAP
           </motion.div>
         </motion.li>
+
         <motion.li
           whileHover="play"
           initial="rest"
           animate={activeLink[6].status ? "play" : "rest"}
-          onClick={() => handleActiveLink(6)}
+          onClick={(e) => handleActiveLink(6, e, "featurePage")}
           className="sub_nav flex gap-8 items-center justify-items-center"
         >
-          <a href="#featurePage">
-            <div
-              className={`${
-                activeLink[6].status ? "b-btn-li" : "b-btn-li-none"
-              }`}
-            >
+          <a className="nav-link" href="#featurePage">
+            <div className="border-wrapper">
               <div
                 className={`${
                   activeLink[6].status ? "bg-white" : "bg-grey"
@@ -278,24 +248,17 @@ const Navbar = () => {
             FEATURES
           </motion.div>
         </motion.li>
+
         <motion.li
           whileHover="play"
           initial="rest"
           animate={activeLink[7].status ? "play" : "rest"}
-          onClick={() => handleActiveLink(7)}
+          onClick={(e) => handleActiveLink(7, e, "blogPage")}
           className="sub_nav flex gap-8 items-center justify-items-center"
         >
-          <a href="#blogPage">
-            <div
-              className={`${
-                activeLink[7].status ? "b-btn-li" : "b-btn-li-none"
-              }`}
-            >
-              <div
-                className={`${
-                  activeLink[7].status ? "bg-white" : "bg-grey"
-                } btn-li`}
-              ></div>
+          <a className="nav-link" href="#blogPage">
+            <div className="border-wrapper">
+              <div className="btn-li"></div>
             </div>
           </a>
 

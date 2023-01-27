@@ -365,3 +365,6 @@ input[name="toggle-nav"]:checked {
   width: 80%;
   // line-height: 1.125;
 }
+html {
+  scroll-snap-type: y mandatory;
+}
