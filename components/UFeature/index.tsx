@@ -30,7 +30,7 @@ const UFeature = () => {
     <div
       className={`${tabs[selectedTab].bg} w-full flex  items-center flex-col min-h-screen relative overflow-hidden pt-8 pb-4`}
     >
-      <div className="border-b-[1.5pt] border-underline w-fit pt-8 mb-0 md:mb-0 ">
+      <div className="border-b-[1.5pt] border-underline w-fit pt-8 mb-8 md:mb-0 ">
         <ul className="flex gap-4">
           {tabs.map((item: any, idx: number) => (
             <li
@@ -108,7 +108,7 @@ const UFeature = () => {
             {tabs[selectedTab].desc}
           </span>
         </motion.div>
-        <div className="overflow-hidden contents md:hidden ">
+        <div className="overflow-hidden  contents md:hidden ">
           <Swiper
             className="!h-fit "
             id="swiperUFeatureMob"

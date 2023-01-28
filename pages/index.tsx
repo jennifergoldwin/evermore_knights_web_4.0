@@ -149,15 +149,12 @@ export default function Home() {
           render={(comp) => (
             <ReactFullpage.Wrapper>
               <div className="ek section" id="panel1" data-anchor="homePage">
-                {/* <a id="homePage"></a> */}
                 <HomePage />
               </div>
               <div className="ek section" id="panel2" data-anchor="storyPage">
-                {/* <a id="storyPage"></a> */}
                 <Story />
               </div>
               <div className="ek section" id="panel3" data-anchor="aboutPage">
-                {/* <a id="aboutPage"></a> */}
                 <About />
               </div>
               <div
