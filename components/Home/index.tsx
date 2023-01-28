@@ -35,7 +35,7 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
         muted
         className="object-cover h-full w-full relative"
       >
-        <source src="/assets/video/landpage.webm" type="video/webm" />
+        <source src="/assets/video/landpage.mp4" type="video/mp4" />
       </video>
       <div className="flex absolute w-full h-full">
         <div className="flex justify-center items-center absolute w-full translate-y-[40%] sm:translate-y-[15%] lg:translate-y-[12%] md:lg:translate-y-[15%]">
