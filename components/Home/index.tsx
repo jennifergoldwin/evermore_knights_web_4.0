@@ -9,8 +9,10 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { RiInstagramFill } from "react-icons/ri";
-
-const HomePage = () => {
+interface IHomePage {
+  fullpageApi: any;
+}
+const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
   React.useEffect(() => {
     let header = document.getElementById("header-top") as HTMLElement;
     let arrow = document.getElementById("explore-arrow") as HTMLElement;
@@ -118,6 +120,7 @@ const HomePage = () => {
           </div>
         </div>
         <motion.div
+          onClick={() => fullpageApi.moveTo(2, "storyPage")}
           id="explore-arrow"
           className="fixed bottom-0  flex flex-col justify-center items-center w-full"
         >

@@ -1,7 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { motion } from "framer-motion";
-const Footer = () => {
+interface IFooter {
+  fullpageApi: any;
+}
+const Footer: React.FC<IFooter> = ({ fullpageApi }) => {
   const arrow_trans = {
     rest: {
       opacity: 0,
@@ -24,6 +27,7 @@ const Footer = () => {
       className="flex w-full bg-[#1D1B1B] flex-col justify-center items-center gap-5 py-5 align-bottom"
     >
       <motion.div
+        onClick={() => fullpageApi.moveTo(1, "homePage")}
         variants={arrow_trans}
         className="flex flex-col justify-center items-center"
       >

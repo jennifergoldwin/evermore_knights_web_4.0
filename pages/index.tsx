@@ -114,7 +114,6 @@ export default function Home() {
           anchors={anchors}
           menu="#menu"
           css3
-          offsetSections
           afterLoad={(destination) => {
             let header = document.getElementById("header-top") as HTMLElement;
             let arrow = document.getElementById("explore-arrow") as HTMLElement;
@@ -146,10 +145,10 @@ export default function Home() {
               arrow.classList.add("hidden");
             }
           }}
-          render={(comp) => (
+          render={({ state, fullpageApi }) => (
             <ReactFullpage.Wrapper>
               <div className="ek section" id="panel1" data-anchor="homePage">
-                <HomePage />
+                <HomePage fullpageApi={fullpageApi} />
               </div>
               <div className="ek section" id="panel2" data-anchor="storyPage">
                 <Story />
@@ -179,7 +178,7 @@ export default function Home() {
               </div>
               <div className="ek section" id="panel8" data-anchor="blogPage">
                 <Blog title="LATEST NEWS" isAvailNewsPage />
-                <Footer />
+                <Footer fullpageApi={fullpageApi} />
               </div>
               {/* <div className="w-full section lastPage fp-auto-height"></div> */}
             </ReactFullpage.Wrapper>
