@@ -149,10 +149,10 @@ export default function Home() {
           render={(comp) => (
             <ReactFullpage.Wrapper>
               <div className="ek section" id="panel1" data-anchor="homePage">
-                <HomePage />
+                <Story />
               </div>
               <div className="ek section" id="panel2" data-anchor="storyPage">
-                <Story />
+                <HomePage />
               </div>
               <div className="ek section" id="panel3" data-anchor="aboutPage">
                 <About />

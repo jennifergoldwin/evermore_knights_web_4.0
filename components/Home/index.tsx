@@ -9,39 +9,8 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { RiInstagramFill } from "react-icons/ri";
-import { useInView } from "react-intersection-observer";
-import { useRouter } from "next/router";
 
 const HomePage = () => {
-  const [ref, inView, entry] = useInView({
-    /* Optional options */
-    threshold: 0.5,
-    triggerOnce: false,
-  });
-  const arrow_trans = {
-    rest: {
-      opacity: 0,
-    },
-    play: {
-      opacity: 1,
-      transition: {
-        type: "spring",
-        duration: 1.4,
-        ease: "easeIn",
-      },
-    },
-  };
-  // React.useEffect(() => {
-  //   let home = document.getElementById("home-section") as HTMLElement;
-  //   home.classList.remove("!hidden");
-  //   window.addEventListener("scroll", () => {
-  //     if (inView) {
-  //       home.classList.remove("!hidden");
-  //     } else {
-  //       home.classList.add("!hidden");
-  //     }
-  //   });
-  // }, []);
   React.useEffect(() => {
     let header = document.getElementById("header-top") as HTMLElement;
     let arrow = document.getElementById("explore-arrow") as HTMLElement;
@@ -50,7 +19,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div id="home-section" className=" flex h-screen" ref={ref}>
+    <div id="home-section" className="relative flex h-screen">
       {/* <iframe
         className="w-full h-full"
         src="https://www.youtube.com/embed/-ERMKXPYQl4?controls=0?autoplay=1"
