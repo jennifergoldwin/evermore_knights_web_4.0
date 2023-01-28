@@ -182,7 +182,7 @@ const Feature = () => {
           <p className="font-lato font-normal">{featureList[index].subtitle}</p>
         </div>
       </div>
-      <div className="w-full hidden h-full bg-[#1D1C1C] lg:flex">
+      <div className="w-full min-h-screen hidden h-full bg-[#1D1C1C] lg:flex">
         {featureList.map((item: any, idx: number) => (
           <motion.div
             key={idx + 1}

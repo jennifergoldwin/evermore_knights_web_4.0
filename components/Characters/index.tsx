@@ -124,8 +124,8 @@ const Characters: React.FC = () => {
   //   }
   // });
   return (
-    <div className="relative overflow-hidden min-h-screen md:min-h-full">
-      <div className="hidden md:flex gap-0 md:gap-2 justify-center h-full  flex-col  absolute m-auto right-0 z-10">
+    <div className="relative overflow-hidden min-h-screen ">
+      <div className="hidden lg:flex gap-0 lg:gap-2 justify-center h-full  flex-col  absolute m-auto right-0 z-10">
         <div className="cursor-pointer" onClick={() => handleClick(0)}>
           <img
             className={`${
@@ -218,7 +218,7 @@ const Characters: React.FC = () => {
         </div>
       </div>
       <Swiper
-        className="!h-screen md:!h-full"
+        className="!h-screen "
         modules={[EffectFade]}
         effect={"fade"}
         allowTouchMove={false}
@@ -227,10 +227,10 @@ const Characters: React.FC = () => {
         {characterLists.map((item: any, idx: number) => (
           <SwiperSlide key={idx}>
             <div className={`${item.bg} h-full bg-cover bg-center `}>
-              <div className="ml-0 md:ml-[10%] pt-6 relative w-full h-full flex flex-col-reverse md:flex-row justify-end md:justify-center items-center">
-                <div className="bg-gradient-black w-full md:w-2/6 lg:w-2/5 absolute z-[2] bottom-[0%] md:static">
-                  <div className="p-2 md:p-0 flex justify-center items-center md:flex-col">
-                    <div className="md:pr-0">
+              <div className="ml-0 lg:ml-[10%] pt-6 relative w-full h-full flex flex-col-reverse lg:flex-row justify-end lg:justify-center items-center">
+                <div className="bg-gradient-black w-full lg:w-2/5 absolute z-[2] bottom-[0%] lg:static">
+                  <div className="p-2 lg:p-0 flex justify-center items-center lg:flex-col">
+                    <div className="md:p-3 lg:pr-0">
                       <div className="flex items-center font-friz-bold gap-4">
                         <h1 className="text-xl md:text-2xl lg:text-4xl">
                           {item.heroName}
@@ -278,17 +278,17 @@ const Characters: React.FC = () => {
                           />
                         </svg>
                       </div>
-                      <div className="flex md:flex-col flex-row justify-center items-center">
+                      <div className="flex lg:flex-col flex-row justify-center items-center">
                         <div className="font-lato mb-0 sm:mb-2 lg:mb-4 text-xs  lg:text-sm">
                           {item.heroDesc}
                         </div>
                         <img
-                          className="w-[35%] h-auto md:w-[100%] hidden md:block"
+                          className="w-[35%] h-auto lg:w-[100%] hidden lg:block"
                           src="/assets/images/youtube-frame.png"
                           alt=""
                         />
                         <img
-                          className="w-[40%] block md:hidden"
+                          className="w-[40%] block lg:hidden"
                           src="/assets/images/youtube-frame-mob.png"
                           alt=""
                         />
@@ -296,16 +296,16 @@ const Characters: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-full overflow-hidden  md:w-4/6 lg:w-3/5 self-end relative">
+                <div className="w-full overflow-hidden  lg:w-3/5 self-end relative">
                   <img
                     className={`hidden ${
                       idx !== 3 ? "translate-x-[-10%]" : "translate-x-[-0%]"
-                    } md:block`}
+                    } lg:block`}
                     src={item.heroImg}
                     alt=""
                   />
                   <img
-                    className="block md:hidden"
+                    className="block lg:hidden"
                     src="/assets/images/grana-mob.png"
                     alt=""
                   />
@@ -315,7 +315,7 @@ const Characters: React.FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="block relative md:hidden bg-[#010a1a] py-4">
+      <div className="block relative lg:hidden bg-[#010a1a] py-4">
         <Swiper
           slideToClickedSlide
           centeredSlides

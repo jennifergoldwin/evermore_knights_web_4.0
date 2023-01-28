@@ -46,6 +46,7 @@ const HomePage = () => {
     let header = document.getElementById("header-top") as HTMLElement;
     let arrow = document.getElementById("explore-arrow") as HTMLElement;
     header.classList.add("!hidden");
+    arrow.classList.remove("hidden");
   }, []);
 
   return (
@@ -57,6 +58,7 @@ const HomePage = () => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       ></iframe> */}
       <video
+        data-keepplaying
         loop
         autoPlay
         muted

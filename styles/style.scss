@@ -403,3 +403,52 @@ html {
 .fp-watermark {
   display: none !important;
 }
+
+.sub_nav.active .nav-link .border-wrapper {
+  border: 1.2pt solid white;
+  transform: rotate(45deg);
+  padding: 0.179rem;
+}
+
+.sub_nav.active .nav-link .border-wrapper .btn-li {
+  background: white;
+}
+
+.sub_nav .nav-link .border-wrapper {
+  border: 1.2pt solid transparent;
+  padding: 0.179rem;
+  transform: rotate(45deg);
+}
+
+.sub_nav .nav-link .border-wrapper .btn-li {
+  background: grey;
+}
+
+.sub_nav.active .nav-title {
+  color: white;
+  opacity: 1;
+  font-size: medium;
+}
+.sub_nav .nav-title {
+  color: rgba(217, 217, 217, 0.6);
+  opacity: 0;
+  font-size: small;
+}
+.sub_nav.mob .nav-title {
+  opacity: 1;
+  font-size: large;
+}
+.sub_nav:hover {
+  .nav-title {
+    opacity: 1;
+    transition: opacity 1.3s;
+  }
+}
+.fp-overflow {
+  // overflow-y: hidden !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.fp-overflow::-webkit-scrollbar {
+  display: none;
+}

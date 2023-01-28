@@ -6,10 +6,10 @@ import Modal from "./modal";
 const About = () => {
   const [isShown, setIsShown] = React.useState(false);
   return (
-    <div className="relative min-h-screen md:min-h-full lg:min-h-[100vh]  bg-[url(/assets/images/bg-about.png)] bg-left bg-cover ">
+    <div className="relative min-h-screen   bg-[url(/assets/images/bg-about.png)] bg-left bg-cover flex justify-center items-center lg:items-end">
       <Modal isShown={isShown} setIsShown={setIsShown} />
-      <div className="pl-0 md:pl-[10%] flex flex-col md:flex-row justify-center items-center h-full w-full ">
-        <div className="text-center md:text-left w-full md:w-1/2 px-4 lf:px-6 relative h-full">
+      <div className="pl-0 lg:pl-[10%] flex flex-col lg:flex-row justify-center items-center h-full w-full ">
+        <div className="text-center lg:text-left w-full lg:w-1/2 px-4 lf:px-6 relative h-full">
           <div className="h-full">
             <div className="font-friz-regular text-xl lg:text-2xl">
               FREE TO PLAY
@@ -38,9 +38,9 @@ const About = () => {
               the tide of battle. Witness awesome abilities and pristine
               gameplay.
             </div>
-            <div className="relative w-full overflow-hidden flex justify-center md:justify-start">
+            <div className="relative w-full overflow-hidden flex justify-center lg:justify-start">
               <iframe
-                className="w-[90%] h-[280px] md:h-[200px] lf:h-[280px]"
+                className="w-[90%] h-[280px] lg:h-[200px] lf:h-[280px]"
                 loading="lazy"
                 src="https://www.youtube.com/embed/-ERMKXPYQl4?autoplay=1"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -59,7 +59,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="mt-4 flex md:hidden items-center gap-2 justify-center lg:justify-end lg:w-2/5 w-full">
+        <div className="mt-4 flex lg:hidden items-center gap-2 justify-center lg:justify-end lg:w-2/5 w-full">
           <img
             className=" w-36 sm:w-auto h-auto"
             src="/assets/images/appstore.png"
@@ -71,7 +71,7 @@ const About = () => {
             alt=""
           />
         </div>
-        <div className="hidden md:flex w-full md:w-1/2 h-full justify-end ">
+        <div className="hidden lg:flex w-full lg:w-1/2 h-full justify-end ">
           <img src="/assets/images/about-char.png" alt="" />
         </div>
       </div>

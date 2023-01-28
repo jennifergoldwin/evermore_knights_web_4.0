@@ -152,27 +152,18 @@ body {
   background: rgba(217, 217, 217, 0.6);
   transform: rotate(45deg);
 }
-.b-btn-li {
-  border: 1.2pt solid white;
-  transform: rotate(45deg);
-  padding: 0.179rem;
-}
+/* .b-btn-li {
+ 
+} */
 .b-btn-li-none {
-  border: 1.2pt solid transparent;
+  /* border: 1.2pt solid transparent; */
   /* transform: rotate(45deg); */
-  padding: 0.179rem;
+  /* padding: 0.179rem; */
 }
 
 .showTrans {
   transition: opacity 1.3s;
   opacity: 1;
-}
-
-.showWhite {
-  color: white;
-}
-.showGrey {
-  color: rgba(217, 217, 217, 0.6);
 }
 
 .img-feature::after {

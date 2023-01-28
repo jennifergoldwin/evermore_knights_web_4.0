@@ -11,7 +11,7 @@ const Navbar = () => {
   // };
   const [idxHover, setIdxHover] = React.useState(0);
   const [activeLink, setActiveLink] = React.useState([
-    { idx: 0, status: true },
+    { idx: 0, status: false },
     { idx: 1, status: false },
     { idx: 2, status: false },
     { idx: 3, status: false },
@@ -22,23 +22,22 @@ const Navbar = () => {
     // { idx: 3, status: false },
   ]);
   const handleActiveLink = (idx: any, e: any, href: any) => {
-    e.preventDefault();
-    var targetEl = $("a[id=" + href + "]");
-    // myPage.scrollThere(targetEl, 400);
-    let nav = document.querySelectorAll(".border-wrapper") as NodeList;
-    for (let i = 0; i < nav.length; i++) {
-      let curr = nav[i] as HTMLElement;
-      curr.classList.remove("b-btn-li");
-      curr.classList.add("b-btn-li-none");
-      (curr.childNodes[0] as HTMLElement).classList.remove("bg-white");
-      (curr.childNodes[0] as HTMLElement).classList.add("bg-grey");
-    }
-    let curr = nav[idx] as HTMLElement;
-    curr.classList.remove("b-btn-li-none");
-    curr.classList.add("b-btn-li");
-    (curr.childNodes[0] as HTMLElement).classList.remove("bg-grey");
-    (curr.childNodes[0] as HTMLElement).classList.add("bg-white");
-
+    // e.preventDefault();
+    // var targetEl = $("a[id=" + href + "]");
+    // // myPage.scrollThere(targetEl, 400);
+    // let nav = document.querySelectorAll(".border-wrapper") as NodeList;
+    // for (let i = 0; i < nav.length; i++) {
+    //   let curr = nav[i] as HTMLElement;
+    //   curr.classList.remove("b-btn-li");
+    //   curr.classList.add("b-btn-li-none");
+    //   (curr.childNodes[0] as HTMLElement).classList.remove("bg-white");
+    //   (curr.childNodes[0] as HTMLElement).classList.add("bg-grey");
+    // }
+    // let curr = nav[idx] as HTMLElement;
+    // curr.classList.remove("b-btn-li-none");
+    // curr.classList.add("b-btn-li");
+    // (curr.childNodes[0] as HTMLElement).classList.remove("bg-grey");
+    // (curr.childNodes[0] as HTMLElement).classList.add("bg-white");
     setActiveLink(
       activeLink.map((link) =>
         link.idx === parseInt(idx)
@@ -75,210 +74,122 @@ const Navbar = () => {
     },
   };
   return (
-    <nav className="hidden md:block fixed top-[50%] left-[20px] z-30">
+    <nav className="hidden lg:block fixed top-[50%] left-[20px] z-30">
       <ul id="menu" className="py-2">
-        <motion.li
+        <li
           data-menuanchor="homePage"
-          whileHover="play"
-          initial="rest"
-          animate={activeLink[0].status ? "play" : "rest"}
-          onClick={(e) => handleActiveLink(0, e, "homePage")}
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
           <a className="nav-link" href="#homePage">
             <div className="border-wrapper b-btn-li">
-              <div className="btn-li bg-white"></div>
+              <div className="btn-li"></div>
             </div>
           </a>
           {/* desc navbar */}
-          <motion.div
-            variants={navbarTransition}
-            className={`${
-              activeLink[0].status
-                ? "showWhite text-xs lg:text-base"
-                : "showGrey text-xs lg:text-sm"
-            }  font-friz-bold  justify-self-start -ml-3`}
-          >
+          <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
             HOME
-          </motion.div>
-        </motion.li>
+          </div>
+        </li>
 
-        <motion.li
+        <li
           data-menuanchor="storyPage"
-          whileHover="play"
-          initial="rest"
-          animate={activeLink[1].status ? "play" : "rest"}
-          onClick={(e) => handleActiveLink(1, e, "storyPage")}
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
           <a className="nav-link" href="#storyPage">
             <div className="border-wrapper b-btn-li-none">
-              <div className="btn-li bg-grey"></div>
+              <div className="btn-li"></div>
             </div>
           </a>
-          <motion.div
-            variants={navbarTransition}
-            className={`${
-              activeLink[1].status
-                ? "showWhite text-xs lg:text-base"
-                : "showGrey text-xs lg:text-sm"
-            }  font-friz-bold  justify-self-start -ml-3`}
-          >
+          <div className=" font-friz-bold  justify-self-start -ml-3 nav-title">
             STORY
-          </motion.div>
-        </motion.li>
+          </div>
+        </li>
 
-        <motion.li
+        <li
           data-menuanchor="aboutPage"
-          whileHover="play"
-          initial="rest"
-          animate={activeLink[2].status ? "play" : "rest"}
-          onClick={(e) => handleActiveLink(2, e, "aboutPage")}
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
           <a className="nav-link" href="#aboutPage">
             <div className="border-wrapper b-btn-li-none">
-              <div className="btn-li bg-grey"></div>
+              <div className="btn-li"></div>
             </div>
           </a>
-          <motion.div
-            variants={navbarTransition}
-            className={`${
-              activeLink[2].status
-                ? "showWhite text-xs lg:text-base"
-                : "showGrey text-xs lg:text-sm"
-            }  font-friz-bold  justify-self-start -ml-3`}
-          >
+          <div className=" font-friz-bold  justify-self-start -ml-3 nav-title">
             ABOUT
-          </motion.div>
-        </motion.li>
+          </div>
+        </li>
 
-        <motion.li
+        <li
           data-menuanchor="characterPage"
-          whileHover="play"
-          initial="rest"
-          animate={activeLink[3].status ? "play" : "rest"}
-          onClick={(e) => handleActiveLink(3, e, "characterPage")}
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
           <a className="nav-link" href="#characterPage">
             <div className="border-wrapper b-btn-li-none">
-              <div className="btn-li bg-grey"></div>
+              <div className="btn-li"></div>
             </div>
           </a>
-          <motion.div
-            variants={navbarTransition}
-            className={`${
-              activeLink[3].status
-                ? "showWhite text-xs lg:text-base"
-                : "showGrey text-xs lg:text-sm"
-            }  font-friz-bold  justify-self-start -ml-3`}
-          >
+          <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
             CHARACTER
-          </motion.div>
-        </motion.li>
+          </div>
+        </li>
 
-        <motion.li
+        <li
           data-menuanchor="uFeaturePage"
-          whileHover="play"
-          initial="rest"
-          animate={activeLink[4].status ? "play" : "rest"}
-          onClick={(e) => handleActiveLink(4, e, "uFeaturePage")}
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
           <a className="nav-link" href="#uFeaturePage">
             <div className="border-wrapper b-btn-li-none">
-              <div className="btn-li bg-grey"></div>
+              <div className="btn-li"></div>
             </div>
           </a>
-          <motion.div
-            variants={navbarTransition}
-            className={`${
-              activeLink[4].status
-                ? "showWhite text-xs lg:text-base"
-                : "showGrey text-xs lg:text-sm"
-            }  font-friz-bold  justify-self-start -ml-3`}
-          >
+          <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
             UNIQUE FEATURE
-          </motion.div>
-        </motion.li>
+          </div>
+        </li>
 
-        <motion.li
+        <li
           data-menuanchor="worldPage"
-          whileHover="play"
-          initial="rest"
-          animate={activeLink[5].status ? "play" : "rest"}
-          onClick={(e) => handleActiveLink(5, e, "worldPage")}
           className="sub_nav flex gap-8  items-center justify-items-center"
         >
           <a className="nav-link" href="#worldPage">
             <div className="border-wrapper b-btn-li-none">
-              <div className="btn-li bg-grey"></div>
+              <div className="btn-li"></div>
             </div>
           </a>
-          <motion.div
-            variants={navbarTransition}
-            className={`${
-              activeLink[5].status
-                ? "showWhite text-xs lg:text-base"
-                : "showGrey text-xs lg:text-sm"
-            }  font-friz-bold  justify-self-start -ml-3`}
-          >
+          <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
             WORLD MAP
-          </motion.div>
-        </motion.li>
+          </div>
+        </li>
 
-        <motion.li
+        <li
           data-menuanchor="featurePage"
-          whileHover="play"
-          initial="rest"
-          animate={activeLink[6].status ? "play" : "rest"}
-          onClick={(e) => handleActiveLink(6, e, "featurePage")}
           className="sub_nav flex gap-8 items-center justify-items-center"
         >
           <a className="nav-link" href="#featurePage">
             <div className="border-wrapper b-btn-li-none">
-              <div className="btn-li bg-grey"></div>
+              <div className="btn-li"></div>
             </div>
           </a>
 
-          <motion.div
-            variants={navbarTransition}
-            className={`${
-              activeLink[6].status
-                ? "showWhite text-xs lg:text-base"
-                : "showGrey text-xs lg:text-sm"
-            }  font-friz-bold  justify-self-start -ml-3`}
-          >
+          <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
             FEATURES
-          </motion.div>
-        </motion.li>
+          </div>
+        </li>
 
-        <motion.li
+        <li
           data-menuanchor="blogPage"
-          whileHover="play"
-          initial="rest"
-          animate={activeLink[7].status ? "play" : "rest"}
-          onClick={(e) => handleActiveLink(7, e, "blogPage")}
           className="sub_nav flex gap-8 items-center justify-items-center"
         >
           <a className="nav-link" href="#blogPage">
             <div className="border-wrapper b-btn-li-none">
-              <div className="btn-li bg-grey"></div>
+              <div className="btn-li"></div>
             </div>
           </a>
 
-          <motion.div
-            variants={navbarTransition}
-            className={`${
-              activeLink[7].status
-                ? "showWhite text-xs lg:text-base"
-                : "showGrey text-xs lg:text-sm"
-            }  font-friz-bold  justify-self-start -ml-3`}
-          >
+          <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
             BLOG
-          </motion.div>
-        </motion.li>
+          </div>
+        </li>
       </ul>
       {/* <ul id="menu">
         <motion.li className="sub_nav grid grid-cols-2 items-center justify-items-center  gap-1">

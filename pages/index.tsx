@@ -114,6 +114,7 @@ export default function Home() {
           anchors={anchors}
           menu="#menu"
           css3
+          offsetSections
           afterLoad={(destination) => {
             let header = document.getElementById("header-top") as HTMLElement;
             let arrow = document.getElementById("explore-arrow") as HTMLElement;
@@ -147,31 +148,39 @@ export default function Home() {
           }}
           render={(comp) => (
             <ReactFullpage.Wrapper>
-              <div className="ek section" id="panel1">
+              <div className="ek section" id="panel1" data-anchor="homePage">
                 {/* <a id="homePage"></a> */}
                 <HomePage />
               </div>
-              <div className="ek section" id="panel2">
+              <div className="ek section" id="panel2" data-anchor="storyPage">
                 {/* <a id="storyPage"></a> */}
                 <Story />
               </div>
-              <div className="ek section" id="panel3">
+              <div className="ek section" id="panel3" data-anchor="aboutPage">
                 {/* <a id="aboutPage"></a> */}
                 <About />
               </div>
-              <div className="ek section" id="panel4">
+              <div
+                className="ek section"
+                id="panel4"
+                data-anchor="characterPage"
+              >
                 <Characters />
               </div>
-              <div className="ek section" id="panel5">
+              <div
+                className="ek section"
+                id="panel5"
+                data-anchor="uFeaturePage"
+              >
                 <UFeature />
               </div>
-              <div className="ek section" id="panel6">
+              <div className="ek section" id="panel6" data-anchor="worldPage">
                 <World />
               </div>
-              <div className="ek section" id="panel7">
+              <div className="ek section" id="panel7" data-anchor="featurePage">
                 <Feature />
               </div>
-              <div className="ek section" id="panel8">
+              <div className="ek section" id="panel8" data-anchor="blogPage">
                 <Blog title="LATEST NEWS" isAvailNewsPage />
                 <Footer />
               </div>

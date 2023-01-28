@@ -10,6 +10,7 @@ import {
 import { RiInstagramFill } from "react-icons/ri";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
+import Navbar from "../Navbar";
 const Header = () => {
   const [active, setActive] = React.useState(false);
   const [activeLink, setActiveLink] = React.useState([
@@ -35,7 +36,7 @@ const Header = () => {
     <header className="opacity-100 fixed w-full top-0 z-10">
       <div
         id="header-top"
-        className=" hidden sm:flex relative  bg-navbar  justify-between items-center px-6 py-3 font-friz-bold w-full"
+        className=" hidden lg:flex relative  bg-navbar  justify-between items-center px-6 py-3 font-friz-bold w-full"
       >
         <h1 className="hidden sm:flex logo main w-1/2 sm:w-1/3">
           <a href="#firstPage" title="evermore knights">
@@ -120,7 +121,7 @@ const Header = () => {
         </div>
       </div>
       {/* mobile view */}
-      <div className="relative block sm:hidden">
+      <div className="relative block lg:hidden">
         <input
           type="checkbox"
           name="toggle-nav"
@@ -136,6 +137,123 @@ const Header = () => {
         </label>
         <section className={`${active ? "flex" : "hidden"} side-nav-panel`}>
           <ul id="menu" className="py-2">
+            <li
+              data-menuanchor="homePage"
+              className="sub_nav mob flex gap-8  items-center justify-items-center"
+            >
+              <a className="nav-link" href="#homePage">
+                <div className="border-wrapper b-btn-li">
+                  <div className="btn-li"></div>
+                </div>
+              </a>
+              {/* desc navbar */}
+              <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
+                HOME
+              </div>
+            </li>
+
+            <li
+              data-menuanchor="storyPage"
+              className="sub_nav mob flex gap-8  items-center justify-items-center"
+            >
+              <a className="nav-link" href="#storyPage">
+                <div className="border-wrapper b-btn-li-none">
+                  <div className="btn-li"></div>
+                </div>
+              </a>
+              <div className=" font-friz-bold  justify-self-start -ml-3 nav-title">
+                STORY
+              </div>
+            </li>
+
+            <li
+              data-menuanchor="aboutPage"
+              className="sub_nav mob flex gap-8  items-center justify-items-center"
+            >
+              <a className="nav-link" href="#aboutPage">
+                <div className="border-wrapper b-btn-li-none">
+                  <div className="btn-li"></div>
+                </div>
+              </a>
+              <div className=" font-friz-bold  justify-self-start -ml-3 nav-title">
+                ABOUT
+              </div>
+            </li>
+
+            <li
+              data-menuanchor="characterPage"
+              className="sub_nav mob flex gap-8  items-center justify-items-center"
+            >
+              <a className="nav-link" href="#characterPage">
+                <div className="border-wrapper b-btn-li-none">
+                  <div className="btn-li"></div>
+                </div>
+              </a>
+              <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
+                CHARACTER
+              </div>
+            </li>
+
+            <li
+              data-menuanchor="uFeaturePage"
+              className="sub_nav mob flex gap-8  items-center justify-items-center"
+            >
+              <a className="nav-link" href="#uFeaturePage">
+                <div className="border-wrapper b-btn-li-none">
+                  <div className="btn-li"></div>
+                </div>
+              </a>
+              <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
+                UNIQUE FEATURE
+              </div>
+            </li>
+
+            <li
+              data-menuanchor="worldPage"
+              className="sub_nav mob flex gap-8  items-center justify-items-center"
+            >
+              <a className="nav-link" href="#worldPage">
+                <div className="border-wrapper b-btn-li-none">
+                  <div className="btn-li"></div>
+                </div>
+              </a>
+              <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
+                WORLD MAP
+              </div>
+            </li>
+
+            <li
+              data-menuanchor="featurePage"
+              className="sub_nav mob flex gap-8 items-center justify-items-center"
+            >
+              <a className="nav-link" href="#featurePage">
+                <div className="border-wrapper b-btn-li-none">
+                  <div className="btn-li"></div>
+                </div>
+              </a>
+
+              <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
+                FEATURES
+              </div>
+            </li>
+
+            <li
+              data-menuanchor="blogPage"
+              className="sub_nav mob flex gap-8 items-center justify-items-center"
+            >
+              <a className="nav-link" href="#blogPage">
+                <div className="border-wrapper b-btn-li-none">
+                  <div className="btn-li"></div>
+                </div>
+              </a>
+
+              <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
+                BLOG
+              </div>
+            </li>
+          </ul>
+          {/* <Navbar /> */}
+          {/* <ul id="menu" className="py-2">
             <li
               onClick={() => handleActiveLink(0)}
               className="sub_nav mob flex gap-8  items-center justify-items-center"
@@ -153,7 +271,7 @@ const Header = () => {
                   ></div>
                 </div>
               </a>
-              {/* desc navbar */}
+             
               <div
                 className={`${
                   activeLink[0].status
@@ -327,7 +445,7 @@ const Header = () => {
                 FEATURES
               </span>
             </li>
-          </ul>
+          </ul> */}
         </section>
       </div>
       {/* <div

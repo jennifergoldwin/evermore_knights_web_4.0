@@ -179,6 +179,7 @@ const Story = () => {
           <SwiperSlide className="h-full" key={idx + 1}>
             <div className="flex flex-col h-screen">
               <video
+                data-keepplaying
                 muted
                 preload="none"
                 id={`video${idx + 1}`}
