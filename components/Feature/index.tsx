@@ -163,7 +163,6 @@ const Feature = () => {
             },
           }}
           onActiveIndexChange={(swiper: any) => {
-            console.log(`haha ${swiper.activeIndex}`);
             setIndex(swiper.activeIndex);
           }}
         >

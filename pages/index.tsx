@@ -16,12 +16,10 @@ import $ from "jquery";
 import { myPage } from "../service";
 import Layout from "../components/Layout";
 import { useInView } from "react-intersection-observer";
-
+import { motion } from "framer-motion";
+import ReactFullpage from "@fullpage/react-fullpage";
+import Footer from "../components/Footer";
 export default function Home() {
-  React.useEffect(() => {
-    myPage.init();
-  }, []);
-
   const navbar_hidden = {
     rest: {
       display: "block",
@@ -36,99 +34,69 @@ export default function Home() {
     },
   };
 
+  function isScrolledIntoView(elem: any) {
+    var $elem = $(elem);
+    var $window = $(window);
+    var docViewTop = $window.scrollTop();
+    var docViewBottom = docViewTop! + $window.height()!;
+
+    var elemTop = $elem.offset()!.top;
+    var elemBottom = elemTop + $elem.height()!;
+
+    return elemBottom <= docViewBottom && elemTop >= docViewTop!;
+  }
+
   // React.useEffect(() => {
-  //   $(window).on("mousewheel", function (e: any) {
-  //     // get Y-axis value of each div:
+  //   if (homeVisible) {
+  //     (document.getElementById("panel1") as HTMLElement).style.visibility =
+  //       "visible";
+  //     (document.getElementById("panel2") as HTMLElement).style.visibility =
+  //       "hidden";
+  //   } else if (!homeVisible) {
+  //     (document.getElementById("panel1") as HTMLElement).style.visibility =
+  //       "hidden";
+  //   }
+  // }, [homeVisible]);
 
-  //     var div1y = $("#panel1").offset()!.top,
-  //       div2y = $("#panel2").offset()!.top,
-  //       div3y = $("#panel3").offset()!.top,
-  //       div4y = $("#panel4").offset()!.top,
-  //       div5y = $("#panel5").offset()!.top,
-  //       div6y = $("#panel6").offset()!.top,
-  //       div7y = $("#panel7").offset()!.top,
-  //       div8y = $("#panel8").offset()!.top,
-  //       // get window's current scroll position:
-  //       lastScrollTop = $(this).scrollTop(),
-  //       // for getting user's scroll direction:
-  //       scrollDirection,
-  //       // for determining the previous and next divs to scroll to, based on lastScrollTop:
-  //       targetUp,
-  //       targetDown,
-  //       // for determining which of targetUp or targetDown to scroll to, based on scrollDirection:
-  //       targetElement;
-  //     // get scroll direction:
-  //     if (e.originalEvent.wheelDelta > 0) {
-  //       scrollDirection = "up";
-  //     } else if (e.originalEvent.wheelDelta <= 0) {
-  //       scrollDirection = "down";
-  //     } // end if
-
-  //     // prevent default behavior (page scroll):
-  //     e.preventDefault();
-
-  //     // condition: determine the previous and next divs to scroll to, based on lastScrollTop:
-  //     if (lastScrollTop === div1y) {
-  //       targetUp = $("#panel1");
-  //       targetDown = $("#panel2");
-  //     } else if (lastScrollTop === div2y) {
-  //       targetUp = $("#panel1");
-  //       targetDown = $("#panel3");
-  //     } else if (lastScrollTop === div3y) {
-  //       targetUp = $("#panel2");
-  //       targetDown = $("#panel4");
-  //     } else if (lastScrollTop === div4y) {
-  //       targetUp = $("#panel3");
-  //       targetDown = $("#panel5");
-  //     } else if (lastScrollTop === div5y) {
-  //       targetUp = $("#panel4");
-  //       targetDown = $("#panel6");
-  //     } else if (lastScrollTop === div6y) {
-  //       targetUp = $("#panel5");
-  //       targetDown = $("#panel7");
-  //     } else if (lastScrollTop === div7y) {
-  //       targetUp = $("#panel6");
-  //       targetDown = $("#panel8");
-  //     } else if (lastScrollTop === div8y) {
-  //       targetUp = $("#panel7");
-  //       targetDown = $("#panel8");
-  //     } else if (lastScrollTop! < div2y) {
-  //       targetUp = $("#panel1");
-  //       targetDown = $("#panel2");
-  //     } else if (lastScrollTop! < div3y) {
-  //       targetUp = $("#panel2");
-  //       targetDown = $("#panel3");
-  //     } else if (lastScrollTop! < div4y) {
-  //       targetUp = $("#panel3");
-  //       targetDown = $("#panel4");
-  //     } else if (lastScrollTop! < div5y) {
-  //       targetUp = $("#panel4");
-  //       targetDown = $("#panel5");
-  //     } else if (lastScrollTop! < div6y) {
-  //       targetUp = $("#panel5");
-  //       targetDown = $("#panel6");
-  //     } else if (lastScrollTop! < div7y) {
-  //       targetUp = $("#panel6");
-  //       targetDown = $("#panel7");
-  //     } else if (lastScrollTop! < div8y) {
-  //       targetUp = $("#panel7");
-  //       targetDown = $("#panel8");
-  //     } else if (lastScrollTop! > div8y) {
-  //       targetUp = $("#panel8");
-  //       targetDown = $("#footer");
-  //     } // end else if
-
-  //     // condition: determine which of targetUp or targetDown to scroll to, based on scrollDirection:
-  //     if (scrollDirection === "down") {
-  //       targetElement = targetDown;
-  //     } else if (scrollDirection === "up") {
-  //       targetElement = targetUp;
-  //     } // end else if
-
-  //     // scroll smoothly to the target element:
-  //     scrollThere(targetElement, 400);
-  //   });
-  // });
+  // React.useEffect(() => {
+  //   if (storyVisible) {
+  //     (document.getElementById("panel2") as HTMLElement).style.visibility =
+  //       "visible";
+  //     console.log("story true");
+  //   } else if (!storyVisible) {
+  //     (document.getElementById("panel2") as HTMLElement).style.visibility =
+  //       "hidden";
+  //     console.log("story false");
+  //   }
+  // }, [storyVisible]);
+  // React.useEffect(() => {
+  //   const scrollFunc = () => {
+  //     let sections = document.querySelectorAll(
+  //       ".section"
+  //     ) as NodeListOf<HTMLElement>;
+  //     sections.forEach((element) => {
+  //       if (isScrolledIntoView(element)) {
+  //         element.style.visibility = "visible";
+  //       } else {
+  //         element.style.visibility = "hidden";
+  //       }
+  //     });
+  //   };
+  //   window.removeEventListener("scroll", scrollFunc);
+  //   window.addEventListener("scroll", scrollFunc, { passive: true });
+  //   return () => window.removeEventListener("scroll", scrollFunc);
+  // }, []);
+  const anchors = [
+    "homePage",
+    "storyPage",
+    "aboutPage",
+    "characterPage",
+    "uFeaturePage",
+    "worldPage",
+    "featurePage",
+    "blogPage",
+    "lastPage",
+  ];
   return (
     <>
       <div>
@@ -139,21 +107,92 @@ export default function Home() {
         </Head>
 
         <Navbar />
-        {/* <div className="section" id="panel1">
-          <a id="homePage"></a>
-          <HomePage />
-        </div>
-        <Page /> */}
-        <div className="fullPage-wrapper">
-          <div className="section" id="panel1">
+        <ReactFullpage
+          licenseKey="1E34D667-A0AC4189-A23E357E-0228F2D8"
+          scrollOverflow
+          lazyLoading
+          anchors={anchors}
+          menu="#menu"
+          css3
+          afterLoad={(destination) => {
+            let header = document.getElementById("header-top") as HTMLElement;
+            let arrow = document.getElementById("explore-arrow") as HTMLElement;
+
+            let game = document.querySelector(
+              ".header-link.game"
+            ) as HTMLElement;
+
+            let blog = document.querySelector(
+              ".header-link.blog"
+            ) as HTMLElement;
+            if (
+              !window.location.href.includes("#homePage") &&
+              !window.location.href.includes("#blogPage")
+            ) {
+              game.classList.add("active");
+              blog.classList.remove("active");
+            }
+
+            if (window.location.href.includes("#blogPage")) {
+              game.classList.remove("active");
+              blog.classList.add("active");
+            }
+            if (window.location.href.includes("#homePage")) {
+              header.classList.add("!hidden");
+              arrow.classList.remove("hidden");
+            } else {
+              header.classList.remove("!hidden");
+              arrow.classList.add("hidden");
+            }
+          }}
+          render={(comp) => (
+            <ReactFullpage.Wrapper>
+              <div className="ek section" id="panel1">
+                {/* <a id="homePage"></a> */}
+                <HomePage />
+              </div>
+              <div className="ek section" id="panel2">
+                {/* <a id="storyPage"></a> */}
+                <Story />
+              </div>
+              <div className="ek section" id="panel3">
+                {/* <a id="aboutPage"></a> */}
+                <About />
+              </div>
+              <div className="ek section" id="panel4">
+                <Characters />
+              </div>
+              <div className="ek section" id="panel5">
+                <UFeature />
+              </div>
+              <div className="ek section" id="panel6">
+                <World />
+              </div>
+              <div className="ek section" id="panel7">
+                <Feature />
+              </div>
+              <div className="ek section" id="panel8">
+                <Blog title="LATEST NEWS" isAvailNewsPage />
+                <Footer />
+              </div>
+              {/* <div className="w-full section lastPage fp-auto-height"></div> */}
+            </ReactFullpage.Wrapper>
+          )}
+        />
+        {/* <div className="fullPage-wrapper relative">
+          <div
+            className="fp-section section relative active"
+            id="panel1"
+            ref={homeRef}
+          >
             <a id="homePage"></a>
             <HomePage />
           </div>
-          <div className="section" id="panel2">
+          <div className="fp-section section" id="panel2" ref={storyRef}>
             <a id="storyPage"></a>
             <Story />
-          </div>
-          <div className="section" id="panel3">
+          </div> */}
+        {/* <div className="section" id="panel3">
             <a id="aboutPage"></a>
             <About />
           </div>
@@ -177,8 +216,8 @@ export default function Home() {
           <div className="section" id="panel8">
             <a id="blogPage"></a>
             <Blog title="LATEST NEWS" isAvailNewsPage />
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </>
   );

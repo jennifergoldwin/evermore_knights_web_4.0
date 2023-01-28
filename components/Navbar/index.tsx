@@ -24,7 +24,7 @@ const Navbar = () => {
   const handleActiveLink = (idx: any, e: any, href: any) => {
     e.preventDefault();
     var targetEl = $("a[id=" + href + "]");
-    myPage.scrollThere(targetEl, 400);
+    // myPage.scrollThere(targetEl, 400);
     let nav = document.querySelectorAll(".border-wrapper") as NodeList;
     for (let i = 0; i < nav.length; i++) {
       let curr = nav[i] as HTMLElement;
@@ -78,6 +78,7 @@ const Navbar = () => {
     <nav className="hidden md:block fixed top-[50%] left-[20px] z-30">
       <ul id="menu" className="py-2">
         <motion.li
+          data-menuanchor="homePage"
           whileHover="play"
           initial="rest"
           animate={activeLink[0].status ? "play" : "rest"}
@@ -103,6 +104,7 @@ const Navbar = () => {
         </motion.li>
 
         <motion.li
+          data-menuanchor="storyPage"
           whileHover="play"
           initial="rest"
           animate={activeLink[1].status ? "play" : "rest"}
@@ -127,6 +129,7 @@ const Navbar = () => {
         </motion.li>
 
         <motion.li
+          data-menuanchor="aboutPage"
           whileHover="play"
           initial="rest"
           animate={activeLink[2].status ? "play" : "rest"}
@@ -151,6 +154,7 @@ const Navbar = () => {
         </motion.li>
 
         <motion.li
+          data-menuanchor="characterPage"
           whileHover="play"
           initial="rest"
           animate={activeLink[3].status ? "play" : "rest"}
@@ -175,6 +179,7 @@ const Navbar = () => {
         </motion.li>
 
         <motion.li
+          data-menuanchor="uFeaturePage"
           whileHover="play"
           initial="rest"
           animate={activeLink[4].status ? "play" : "rest"}
@@ -199,6 +204,7 @@ const Navbar = () => {
         </motion.li>
 
         <motion.li
+          data-menuanchor="worldPage"
           whileHover="play"
           initial="rest"
           animate={activeLink[5].status ? "play" : "rest"}
@@ -223,6 +229,7 @@ const Navbar = () => {
         </motion.li>
 
         <motion.li
+          data-menuanchor="featurePage"
           whileHover="play"
           initial="rest"
           animate={activeLink[6].status ? "play" : "rest"}
@@ -248,6 +255,7 @@ const Navbar = () => {
         </motion.li>
 
         <motion.li
+          data-menuanchor="blogPage"
           whileHover="play"
           initial="rest"
           animate={activeLink[7].status ? "play" : "rest"}

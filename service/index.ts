@@ -66,7 +66,7 @@ export const myPage = {
 
     $(window)
       .off()
-      .on("wheel", function (e: any) {
+      .on("scroll", function (e: any) {
         e.preventDefault;
         if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
           //scroll up

@@ -43,11 +43,9 @@ const World = () => {
     setIdxModal(idx);
     setHiddenModal(!hiddenModal);
   };
-  React.useState(() => {
-    console.log(isHover);
-  });
+
   return (
-    <div className="relative" onClick={() => console.log("hi")}>
+    <div className="relative">
       <motion.div
         variants={overlayWorld_trans}
         onClick={() => setHiddenOverlay(true)}

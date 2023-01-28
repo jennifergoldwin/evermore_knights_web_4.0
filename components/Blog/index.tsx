@@ -77,8 +77,6 @@ const Blog: React.FC<IBlog> = ({
                 slidesPerView: 2,
               },
             }}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
           >
             {blogList.map((item: any, index: number) => (
               <SwiperSlide

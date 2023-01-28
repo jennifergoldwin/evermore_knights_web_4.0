@@ -86,7 +86,6 @@ const Characters: React.FC = () => {
   const [index, setIndex] = React.useState(0);
 
   const handleClick = (x: number) => {
-    console.log(x);
     setIndex(x);
     swiper.slideTo(x);
   };
@@ -323,7 +322,6 @@ const Characters: React.FC = () => {
           slidesPerView={"auto"}
           spaceBetween={10}
           onActiveIndexChange={(swiperr: any) => {
-            console.log(`hihi ${swiperr.activeIndex}`);
             handleClick(swiperr.activeIndex);
           }}
         >

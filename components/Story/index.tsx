@@ -119,7 +119,6 @@ const Story = () => {
           setIsPlaying(swiper.activeIndex + 1);
         }}
         onAutoplayStart={(swiper: any) => {
-          // console.log(swiper.activeIndex);
           (
             document.getElementById(
               `video${swiper.activeIndex + 1}`

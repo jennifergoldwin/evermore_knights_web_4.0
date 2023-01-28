@@ -13,6 +13,7 @@
     animation-timing-function: ease-in;
     animation-iteration-count: 1;
     animation-direction: alternate;
+
     animation-fill-mode: forwards;
   }
 }
@@ -367,4 +368,38 @@ input[name="toggle-nav"]:checked {
 }
 html {
   scroll-snap-type: y mandatory;
+}
+
+.fullPage-wrapper {
+  width: 100% !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.fullpage-wrapper .ek.fp-section.active {
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+}
+
+.fullpage-wrapper .ek.fp-section {
+  width: 100% !important;
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 0;
+  transition: all 0.8s ease;
+}
+.fp-viewing-lastPage #fullpage .lastPage {
+  position: fixed;
+  bottom: 0;
+  opacity: 1;
+  transition: all 0.8s ease;
+  z-index: 2;
+}
+.fp-watermark {
+  display: none !important;
 }

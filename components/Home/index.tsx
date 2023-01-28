@@ -10,6 +10,7 @@ import {
 import { motion } from "framer-motion";
 import { RiInstagramFill } from "react-icons/ri";
 import { useInView } from "react-intersection-observer";
+import { useRouter } from "next/router";
 
 const HomePage = () => {
   const [ref, inView, entry] = useInView({
@@ -30,39 +31,25 @@ const HomePage = () => {
       },
     },
   };
+  // React.useEffect(() => {
+  //   let home = document.getElementById("home-section") as HTMLElement;
+  //   home.classList.remove("!hidden");
+  //   window.addEventListener("scroll", () => {
+  //     if (inView) {
+  //       home.classList.remove("!hidden");
+  //     } else {
+  //       home.classList.add("!hidden");
+  //     }
+  //   });
+  // }, []);
   React.useEffect(() => {
     let header = document.getElementById("header-top") as HTMLElement;
     let arrow = document.getElementById("explore-arrow") as HTMLElement;
-    // let nav = document.querySelectorAll(".border-wrapper") as NodeList;
+    header.classList.add("!hidden");
+  }, []);
 
-    if (inView) {
-      header.classList.add("!hidden");
-      arrow.classList.remove("hidden");
-
-      // for (let i = 0; i < nav.length; i++) {
-      //   nav[i].classList.remove("b-btn-li");
-      //   nav[i].classList.add("b-btn-li-none");
-      //   nav[i].childNodes[0].classList.remove("bg-white");
-      //   nav[i].childNodes[0].classList.add("bg-grey");
-      // }
-      // nav[0].classList.remove("b-btn-li-none");
-      // nav[0].classList.add("b-btn-li");
-      // nav[0].childNodes[0].classList.remove("bg-grey");
-      // nav[0].childNodes[0].classList.add("bg-white");
-    } else {
-      header.classList.remove("!hidden");
-      arrow.classList.add("hidden");
-
-      // for (let i = 0; i < nav.length; i++) {
-      //   nav[i].classList.remove("b-btn-li");
-      //   nav[i].classList.add("b-btn-li-none");
-      //   nav[i].childNodes[0].classList.remove("bg-white");
-      //   nav[i].childNodes[0].classList.add("bg-grey");
-      // }
-    }
-  }, [inView]);
   return (
-    <div className="flex h-screen" ref={ref}>
+    <div id="home-section" className=" flex h-screen" ref={ref}>
       {/* <iframe
         className="w-full h-full"
         src="https://www.youtube.com/embed/-ERMKXPYQl4?controls=0?autoplay=1"
@@ -75,7 +62,7 @@ const HomePage = () => {
         muted
         className="object-cover h-full w-full relative"
       >
-        <source src="/assets/video/landpage.mp4" type="video/mp4" />
+        <source src="/assets/video/landpage.webm" type="video/webm" />
       </video>
       <div className="flex absolute w-full h-full">
         <div className="flex justify-center items-center absolute w-full translate-y-[40%] sm:translate-y-[15%] lg:translate-y-[12%] md:lg:translate-y-[15%]">
@@ -93,7 +80,6 @@ const HomePage = () => {
         <div className="home-mob-style lg:">
           <div className="lg:absolute bottom-[10%] lg:bottom-0 flex gap-2 right-0 lg:p-3">
             <img
-              onClick={() => console.log("hi im clicked")}
               className="w-36 sm:w-auto h-auto md:z-20"
               src="/assets/images/appstore.png"
               alt=""

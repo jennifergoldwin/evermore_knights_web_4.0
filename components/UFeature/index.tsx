@@ -25,13 +25,12 @@ const UFeature = () => {
     },
   ];
   const [selectedTab, setSelectedTab] = React.useState(0);
-  //   console.log(`ss ${tabs.indexOf(selectedTab)}`);
 
   return (
     <div
-      className={`${tabs[selectedTab].bg} w-full flex  items-center flex-col min-h-screen relative overflow-hidden pt-12 pb-12`}
+      className={`${tabs[selectedTab].bg} w-full flex  items-center flex-col min-h-screen relative overflow-hidden pt-8 pb-4`}
     >
-      <div className="border-b-[1.5pt] border-underline w-fit pt-8 mb-8 md:mb-0 ">
+      <div className="border-b-[1.5pt] border-underline w-fit pt-8 mb-0 md:mb-0 ">
         <ul className="flex gap-4">
           {tabs.map((item: any, idx: number) => (
             <li
@@ -46,9 +45,7 @@ const UFeature = () => {
                   : ""
               } my-2 text-sm sm:text-xl cursor-pointer`}
               onClick={() => {
-                setSelectedTab(idx),
-                  console.log(idx),
-                  console.log(tabs[selectedTab].bg);
+                setSelectedTab(idx);
               }}
             >
               {`${item.label}`}
@@ -62,7 +59,7 @@ const UFeature = () => {
       </div>
       <AnimatePresence>
         <motion.div
-          className="hidden items-center justify-center flex-col md:flex"
+          className="hidden items-center justify-center flex-col md:flex "
           key={selectedTab ? tabs[selectedTab].label : "empty"}
           initial={{ y: 10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -141,7 +138,6 @@ const UFeature = () => {
                 );
               },
             }}
-            onSlideChange={() => console.log("slide change")}
           >
             {[...Array(selectedTab == 0 ? 10 : 11)].map(
               (item: any, idx: number) => (

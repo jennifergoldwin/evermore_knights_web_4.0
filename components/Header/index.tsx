@@ -44,22 +44,18 @@ const Header = () => {
         </h1>
         <div className="hidden sm:flex">
           <ul id="menu" className="flex justify-around gap-4">
-            <li>
+            <li data-menuanchor="storyPage">
               <a
-                className={`${
-                  activeLink[0].status ? "active" : ""
-                } header-link`}
-                href="#gamePage"
+                className="header-link game"
+                href="#storyPage"
                 onClick={() => handleActiveLink(0)}
               >
                 GAME INTRO
               </a>
             </li>
-            <li>
+            <li dadata-menuanchor="blogPage">
               <a
-                className={`${
-                  activeLink[1].status ? "active" : ""
-                } header-link`}
+                className="header-link blog"
                 href="#blogPage"
                 onClick={() => handleActiveLink(1)}
               >

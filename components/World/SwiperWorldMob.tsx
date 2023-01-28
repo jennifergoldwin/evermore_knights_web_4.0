@@ -80,8 +80,6 @@ const SwiperWorldMob = () => {
             );
           },
         }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {worldMobList.map((item: any, index: number) => (
           <SwiperSlide
