@@ -94,8 +94,6 @@ export default function Home() {
     "uFeaturePage",
     "worldPage",
     "featurePage",
-    "blogPage",
-    "lastPage",
   ];
   return (
     <>
@@ -122,21 +120,18 @@ export default function Home() {
               ".header-link.game"
             ) as HTMLElement;
 
-            let blog = document.querySelector(
-              ".header-link.blog"
-            ) as HTMLElement;
-            if (
-              !window.location.href.includes("#homePage") &&
-              !window.location.href.includes("#blogPage")
-            ) {
+            // let blog = document.querySelector(
+            //   ".header-link.blog"
+            // ) as HTMLElement;
+            if (!window.location.href.includes("#homePage")) {
               game.classList.add("active");
-              blog.classList.remove("active");
+              // blog.classList.remove("active");
             }
 
-            if (window.location.href.includes("#blogPage")) {
-              game.classList.remove("active");
-              blog.classList.add("active");
-            }
+            // if (window.location.href.includes("#blogPage")) {
+            //   game.classList.remove("active");
+            //   blog.classList.add("active");
+            // }
             if (window.location.href.includes("#homePage")) {
               header.classList.add("!hidden");
               arrow.classList.remove("hidden");
@@ -175,11 +170,12 @@ export default function Home() {
               </div>
               <div className="ek section" id="panel7" data-anchor="featurePage">
                 <Feature />
-              </div>
-              <div className="ek section" id="panel8" data-anchor="blogPage">
-                <Blog title="LATEST NEWS" isAvailNewsPage />
                 <Footer fullpageApi={fullpageApi} />
               </div>
+              {/* <div className="ek section" id="panel8" data-anchor="blogPage">
+                <Blog title="LATEST NEWS" isAvailNewsPage />
+                
+              </div> */}
               {/* <div className="w-full section lastPage fp-auto-height"></div> */}
             </ReactFullpage.Wrapper>
           )}

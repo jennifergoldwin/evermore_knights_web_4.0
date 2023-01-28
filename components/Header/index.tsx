@@ -54,7 +54,7 @@ const Header = () => {
                 GAME INTRO
               </a>
             </li>
-            <li dadata-menuanchor="blogPage">
+            {/* <li dadata-menuanchor="blogPage">
               <a
                 className="header-link blog"
                 href="#blogPage"
@@ -62,7 +62,7 @@ const Header = () => {
               >
                 BLOG
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="sosmed_wrapper hidden sm:flex gap-1 w-1/3 justify-end items-center">
@@ -237,7 +237,7 @@ const Header = () => {
               </div>
             </li>
 
-            <li
+            {/* <li
               data-menuanchor="blogPage"
               className="sub_nav mob flex gap-8 items-center justify-items-center"
             >
@@ -250,7 +250,7 @@ const Header = () => {
               <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
                 BLOG
               </div>
-            </li>
+            </li> */}
           </ul>
           {/* <Navbar /> */}
           {/* <ul id="menu" className="py-2">

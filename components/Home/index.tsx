@@ -51,7 +51,7 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
           <img src="/assets/images/leaf.png" alt="" />
         </div> */}
         <div className="home-mob-style lg:">
-          <div className="lg:absolute bottom-[10%] lg:bottom-0 flex gap-2 right-0 lg:p-3">
+          {/* <div className="lg:absolute bottom-[10%] lg:bottom-0 flex gap-2 right-0 lg:p-3">
             <img
               className="w-36 sm:w-auto h-auto md:z-20"
               src="/assets/images/appstore.png"
@@ -62,7 +62,7 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
               src="/assets/images/googleplay.png"
               alt=""
             />
-          </div>
+          </div> */}
 
           <div className="lg:hidden grid grid-cols-6 gap-3">
             <a

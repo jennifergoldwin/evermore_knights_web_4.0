@@ -176,7 +176,7 @@ const Navbar = () => {
           </div>
         </li>
 
-        <li
+        {/* <li
           data-menuanchor="blogPage"
           className="sub_nav flex gap-8 items-center justify-items-center"
         >
@@ -189,7 +189,7 @@ const Navbar = () => {
           <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
             BLOG
           </div>
-        </li>
+        </li> */}
       </ul>
       {/* <ul id="menu">
         <motion.li className="sub_nav grid grid-cols-2 items-center justify-items-center  gap-1">

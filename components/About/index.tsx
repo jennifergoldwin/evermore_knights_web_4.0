@@ -59,7 +59,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="mt-4 flex lg:hidden items-center gap-2 justify-center lg:justify-end lg:w-2/5 w-full">
+        {/* <div className="mt-4 flex lg:hidden items-center gap-2 justify-center lg:justify-end lg:w-2/5 w-full">
           <img
             className=" w-36 sm:w-auto h-auto"
             src="/assets/images/appstore.png"
@@ -70,7 +70,7 @@ const About = () => {
             src="/assets/images/googleplay.png"
             alt=""
           />
-        </div>
+        </div> */}
         <div className="hidden lg:flex w-full lg:w-1/2 h-full justify-end ">
           <img src="/assets/images/about-char.png" alt="" />
         </div>
