@@ -306,7 +306,7 @@ const Characters: React.FC = () => {
                   />
                   <img
                     className="block lg:hidden"
-                    src="/assets/images/grana-mob.png"
+                    src={`${item.heroImg.split(".png")[0]}-mob.png`}
                     alt=""
                   />
                 </div>
@@ -328,7 +328,7 @@ const Characters: React.FC = () => {
           {[...Array(6)].map((item: any, idx: number) => (
             <SwiperSlide className="!w-fit" key={idx}>
               <div className="relative flex flex-col justify-center items-center">
-                <img src="/assets/images/btn-char-mob.png" alt="" />
+                <img src={`/assets/images/btn-${idx + 1}-mob.png`} alt="" />
                 <svg
                   width="22"
                   height="22"
