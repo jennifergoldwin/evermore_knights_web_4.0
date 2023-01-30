@@ -45,7 +45,7 @@ const Header = () => {
         </h1>
         <div className="hidden sm:flex">
           <ul id="menu" className="flex justify-around gap-4">
-            <li data-menuanchor="storyPage">
+            <li data-menuanchor="storyPage" id="story">
               <a
                 className="header-link game"
                 href="#storyPage"

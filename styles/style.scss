@@ -453,3 +453,19 @@ html {
 .fp-overflow::-webkit-scrollbar {
   display: none;
 }
+
+#header-top {
+  // visibility: hidden;
+  opacity: 0;
+}
+
+#header-top:hover {
+  // visibility: visible;
+  opacity: 1;
+}
+
+#story.active .header-link.game {
+  border-bottom: 2pt solid white;
+  padding-bottom: 0.4rem;
+  color: white;
+}

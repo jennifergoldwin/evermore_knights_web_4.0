@@ -11,14 +11,14 @@ const UFeature = () => {
   const tabs = [
     {
       bg: "bg-nft-char",
-      img: "/assets/images/nft-char.png",
+      img: "/assets/video/char_webm.gif",
       label: "NFT CHARACTER",
       desc: "Every character will be unique in both appearance and attributes. Build them as you wish to better assist you in your adventure!",
       abImg: "/assets/images/bg-ab-char.png",
     },
     {
       bg: "bg-nft-weapon",
-      img: "/assets/images/nft-weapon.png",
+      img: "/assets/images/weapon.gif",
       label: "NFT WEAPON",
       desc: "Every weapon will be unique in both appearance and attributes. Build them as you wish to better assist you in your adventure!",
       abImg: "/assets/images/bg-ab-weapon.png",
@@ -73,23 +73,23 @@ const UFeature = () => {
             height={300}
             priority
           /> */}
-          {/* <div className="py-6">
-            <img src="/assets/video/new_gif.gif" alt="" />
-          </div> */}
+          <div className="py-6">
+            <img src="/assets/video/char.gif" alt="" />
+          </div>
 
           {/* <img
             src="http://i.stack.imgur.com/SBv4T.gif"
             alt="this slowpoke moves"
             width="250"
           /> */}
-          <video
+          {/* <video
             loop
             autoPlay
             muted
             className="object-cover h-full w-full relative"
           >
             <source src="/assets/video/char_webm.webm" type="video/webm" />
-          </video>
+          </video> */}
           {selectedTab === 0 && (
             <img
               className="absolute bottom-[0%] right-[-20%] lg:right-0"

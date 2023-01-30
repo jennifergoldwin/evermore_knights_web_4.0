@@ -13,12 +13,12 @@ interface IHomePage {
   fullpageApi: any;
 }
 const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
-  React.useEffect(() => {
-    let header = document.getElementById("header-top") as HTMLElement;
-    let arrow = document.getElementById("explore-arrow") as HTMLElement;
-    header.classList.add("!hidden");
-    arrow.classList.remove("hidden");
-  }, []);
+  // React.useEffect(() => {
+  //   let header = document.getElementById("header-top") as HTMLElement;
+  //   let arrow = document.getElementById("explore-arrow") as HTMLElement;
+  //   header.classList.add("!hidden");
+  //   arrow.classList.remove("hidden");
+  // }, []);
 
   return (
     <div id="home-section" className="relative flex h-screen">
