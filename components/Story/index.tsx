@@ -103,14 +103,20 @@ const Story = () => {
           delay: 10000,
           waitForTransition: true,
           disableOnInteraction: false,
-          stopOnLastSlide: true,
+          stopOnLastSlide: false,
         }}
         onActiveIndexChange={(swiper: any) => {
           const prog = document.querySelector(
             `.swiper-pagination-bullet.slide${swiper.activeIndex}`
           ) as HTMLElement;
           if (prog) {
-            prog.classList.add("done");
+            for (let i = 1; i <= swiper.activeIndex; i++) {
+              (
+                document.querySelector(
+                  `.swiper-pagination-bullet.slide${i}`
+                ) as HTMLElement
+              ).classList.add("done");
+            }
           }
           (
             document.getElementById(
@@ -123,6 +129,17 @@ const Story = () => {
             ) as HTMLVideoElement
           ).play();
           setIsPlaying(swiper.activeIndex + 1);
+          if (swiper.activeIndex == 0) {
+            for (let i = 1; i <= storyList.length; i++) {
+              const curr = document.querySelector(
+                `.swiper-pagination-bullet.slide${i}`
+              ) as HTMLElement;
+              if (curr) {
+                curr.classList.remove("done");
+              }
+            }
+            // swiper.slideTo(0);
+          }
         }}
         onAutoplayStart={(swiper: any) => {
           (
