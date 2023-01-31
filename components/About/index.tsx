@@ -8,8 +8,8 @@ const About = () => {
   return (
     <div className="relative min-h-screen   bg-[url(/assets/images/bg-about.png)] bg-left bg-cover flex justify-center items-center">
       <Modal isShown={isShown} setIsShown={setIsShown} />
-      <div className="pl-0 lg:pl-[6%] flex flex-col lg:flex-row justify-center items-center min-h-screen w-full ">
-        <div className="text-center lg:text-left w-full lg:w-1/2 px-4 lf:px-6 relative h-full flex justify-center items-center">
+      <div className="pl-0 lf:pl-[6%] flex flex-col lf:flex-row justify-center items-center min-h-screen w-full ">
+        <div className="text-center lf:text-left w-full md:w-[80%] lg:w-[70%] lf:w-1/2 px-4 lf:px-6 relative h-full flex justify-center items-center">
           <div className="h-full flex flex-col justify-center">
             <div className="font-friz-regular text-xl lg:text-2xl">
               FREE TO PLAY
@@ -38,9 +38,9 @@ const About = () => {
               the tide of battle. Witness awesome abilities and pristine
               gameplay.
             </div>
-            <div className="relative w-full overflow-hidden flex justify-center lg:justify-start">
+            <div className="relative w-full overflow-hidden flex justify-center lf:justify-start">
               <iframe
-                className="w-[90%] h-[280px] lg:h-[200px] lf:h-[280px]"
+                className="w-[90%] h-[280px]  lg:h-[400px]  lf:h-[280px]"
                 loading="lazy"
                 src="https://www.youtube.com/embed/-ERMKXPYQl4?autoplay=1"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -54,7 +54,7 @@ const About = () => {
                 alt=""
               /> */}
           </div>
-          <div className="absolute hidden lg:flex  bottom-0  lg:-bottom-[20%] -left-[10%]">
+          <div className="absolute hidden lf:flex  bottom-0  lg:-bottom-[20%] -left-[10%]">
             <img src="/assets/images/leaf.png" alt="" />
           </div>
         </div>
@@ -71,7 +71,7 @@ const About = () => {
             alt=""
           />
         </div> */}
-        <div className="hidden lg:flex h-screen justify-end w-auto">
+        <div className="hidden lf:flex h-screen justify-end w-auto">
           <img src="/assets/images/about-char.png" alt="" />
         </div>
       </div>
