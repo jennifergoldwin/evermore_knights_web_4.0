@@ -71,8 +71,12 @@ const About = () => {
             alt=""
           />
         </div> */}
-        <div className="hidden lf:flex h-screen justify-end w-auto">
-          <img src="/assets/images/about-char.png" alt="" />
+        <div className="hidden lf:flex  justify-end lf:w-1/2 ">
+          <img
+            className="h-screen object-cover w-auto fixed  bottom-0 translate-x-[10%] lgd:translate-x-[0%]"
+            src="/assets/images/about-char.png"
+            alt=""
+          />
         </div>
       </div>
     </div>
