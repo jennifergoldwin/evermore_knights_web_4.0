@@ -106,7 +106,6 @@ export default function Home() {
 
         <Navbar />
         <ReactFullpage
-          licenseKey="1E34D667-A0AC4189-A23E357E-0228F2D8"
           scrollOverflow
           lazyLoading
           anchors={anchors}

@@ -11,14 +11,14 @@ const UFeature = () => {
   const tabs = [
     {
       bg: "bg-nft-char",
-      img: "/assets/video/char_webm.gif",
+      img: "/assets/video/char.gif",
       label: "NFT CHARACTER",
       desc: "Every character will be unique in both appearance and attributes. Build them as you wish to better assist you in your adventure!",
       abImg: "/assets/images/bg-ab-char.png",
     },
     {
       bg: "bg-nft-weapon",
-      img: "/assets/images/weapon.gif",
+      img: "/assets/video/weapon.gif",
       label: "NFT WEAPON",
       desc: "Every weapon will be unique in both appearance and attributes. Build them as you wish to better assist you in your adventure!",
       abImg: "/assets/images/bg-ab-weapon.png",
@@ -74,7 +74,7 @@ const UFeature = () => {
             priority
           /> */}
           <div className="py-6">
-            <img src="/assets/video/char.gif" alt="" />
+            <img src={tabs[selectedTab].img} alt="" />
           </div>
 
           {/* <img
@@ -88,7 +88,7 @@ const UFeature = () => {
             muted
             className="object-cover h-full w-full relative"
           >
-            <source src="/assets/video/char_webm.webm" type="video/webm" />
+            <source src="/assets/video/weapon.mp4" type="video/webm" />
           </video> */}
           {selectedTab === 0 && (
             <img

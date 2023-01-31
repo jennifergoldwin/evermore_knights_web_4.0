@@ -243,21 +243,22 @@ const World = () => {
           </svg>
           Temeris
         </div>
-        <p className="w-[100%] px-4 lg:px-0 lg:w-[55%] text-center">
+        <p className="w-[100%] px-4 lf:px-0 lf:w-[55%] text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
           vulputate libero et velit interdum, ac aliquet odio mattis. Class
           aptent taciti sociosqu{" "}
         </p>
       </motion.div>
-      <div className="hidden lg:block">
+      <div className="hidden lf:block">
         <SwiperWorld
           idx={idxModal}
           isShownModal={hiddenModal}
           setIsShown={setHiddenModal}
         />
       </div>
-      <div className="w-full hidden lg:block">
+      <div className="w-full h-full  hidden lf:block">
         <svg
+          className="object-cover"
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
           viewBox="0 0 1440 774"
@@ -784,9 +785,9 @@ const World = () => {
           </g>
         </svg>
       </div>
-      <div className="block lg:hidden h-screen bg-[url(/assets/images/world.png)] bg-cover bg-center">
+      <div className="block lf:hidden h-screen bg-[url(/assets/images/world.png)] bg-cover bg-center">
         <div
-          className={`${hiddenOverlay ? "block" : "hidden"} lg:hidden h-full`}
+          className={`${hiddenOverlay ? "block" : "hidden"} lf:hidden h-full`}
         >
           <SwiperWorldMob />
         </div>
