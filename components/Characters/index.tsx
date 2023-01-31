@@ -299,7 +299,7 @@ const Characters: React.FC = () => {
                 <div className="w-full overflow-hidden  lg:w-3/5  relative">
                   <img
                     className={`hidden translate-x-[-20%] lf:translate-x-[-10%]
-                    } lg:block h-screen fixed object-cover top-0 z-10`}
+                    } lg:block h-screen fixed object-cover top-0 `}
                     src={item.heroImg}
                     alt=""
                   />
