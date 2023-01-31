@@ -18,7 +18,7 @@ const UFeature = () => {
     },
     {
       bg: "bg-nft-weapon",
-      img: "/assets/video/weapon.gif",
+      img: "/assets/video/weap.gif",
       label: "NFT WEAPON",
       desc: "Every weapon will be unique in both appearance and attributes. Build them as you wish to better assist you in your adventure!",
       abImg: "/assets/images/bg-ab-weapon.png",
