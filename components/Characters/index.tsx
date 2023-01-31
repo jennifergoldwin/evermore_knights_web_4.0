@@ -227,7 +227,7 @@ const Characters: React.FC = () => {
         {characterLists.map((item: any, idx: number) => (
           <SwiperSlide key={idx}>
             <div className={`${item.bg} h-full bg-cover bg-center `}>
-              <div className="ml-0 lg:ml-[10%] lg:pl-0 lgf:ml-0 lgf:pl-[10%] pt-6 relative w-full h-full flex flex-col-reverse lg:flex-row justify-end lg:justify-center items-center">
+              <div className="ml-0 lg:ml-[8%] lg:pl-0 lgf:ml-0 lgf:pl-[8%] pt-6 relative w-full h-full flex flex-col-reverse lg:flex-row justify-end lg:justify-center items-center">
                 <div className="bg-gradient-black w-full lg:w-2/5 absolute z-[2] bottom-[0%] lg:static">
                   <div className="p-2 lg:p-0 flex justify-center items-center lg:flex-col">
                     <div className="md:p-3 lg:pr-0">
@@ -298,9 +298,8 @@ const Characters: React.FC = () => {
                 </div>
                 <div className="w-full overflow-hidden  lg:w-3/5  relative">
                   <img
-                    className={`hidden ${
-                      idx !== 3 ? "translate-x-[-10%]" : "translate-x-[-0%]"
-                    } lg:block`}
+                    className={`hidden translate-x-[-20%] lf:translate-x-[-10%]
+                    } lg:block h-screen fixed object-cover top-0 z-10`}
                     src={item.heroImg}
                     alt=""
                   />

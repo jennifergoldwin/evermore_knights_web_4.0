@@ -62,6 +62,16 @@ const Story = () => {
   //   }
   //   setIsPlaying(now);
   // };
+  const resetProgress = () => {
+    for (let i = 1; i <= storyList.length; i++) {
+      const curr = document.querySelector(
+        `.swiper-pagination-bullet.slide${i}`
+      ) as HTMLElement;
+      if (curr) {
+        curr.classList.remove("done");
+      }
+    }
+  };
   return (
     <div className="h-screen">
       <Swiper
@@ -110,6 +120,7 @@ const Story = () => {
             `.swiper-pagination-bullet.slide${swiper.activeIndex}`
           ) as HTMLElement;
           if (prog) {
+            resetProgress();
             for (let i = 1; i <= swiper.activeIndex; i++) {
               (
                 document.querySelector(
@@ -130,15 +141,7 @@ const Story = () => {
           ).play();
           setIsPlaying(swiper.activeIndex + 1);
           if (swiper.activeIndex == 0) {
-            for (let i = 1; i <= storyList.length; i++) {
-              const curr = document.querySelector(
-                `.swiper-pagination-bullet.slide${i}`
-              ) as HTMLElement;
-              if (curr) {
-                curr.classList.remove("done");
-              }
-            }
-            // swiper.slideTo(0);
+            resetProgress();
           }
         }}
         onAutoplayStart={(swiper: any) => {
