@@ -106,9 +106,28 @@
   left: -18px;
   width: 47px;
   height: 47px;
-  background: url(/assets/images/bg-world-paging-desktop.png) no-repeat center
-    center;
+
   z-index: 14;
+}
+#storyView .swiper-pagination .slide1 i {
+  background: url(/assets/images/bg-world-paging_inactive01.png) no-repeat
+    center center;
+}
+#storyView .swiper-pagination .slide2 i {
+  background: url(/assets/images/bg-world-paging_inactive02.png) no-repeat
+    center center;
+}
+#storyView .swiper-pagination .slide3 i {
+  background: url(/assets/images/bg-world-paging_inactive01.png) no-repeat
+    center center;
+}
+#storyView .swiper-pagination .slide4 i {
+  background: url(/assets/images/bg-world-paging_inactive04.png) no-repeat
+    center center;
+}
+#storyView .swiper-pagination .slide5 i {
+  background: url(/assets/images/bg-world-paging_inactive05.png) no-repeat
+    center center;
 }
 #storyView .slide1.swiper-pagination-bullet-active i,
 #storyView .slide1 i:hover,
@@ -426,7 +445,7 @@ html {
 
 .sub_nav.active .nav-title {
   color: white;
-  opacity: 1;
+  // opacity: 1;
   font-size: medium;
 }
 .sub_nav .nav-title {
@@ -454,18 +473,18 @@ html {
   display: none;
 }
 
-#header-top {
-  // visibility: hidden;
-  opacity: 0;
-}
+// #header-top {
+//   // visibility: hidden;
+//   opacity: 0;
+// }
 
-#header-top:hover {
-  // visibility: visible;
-  opacity: 1;
-}
+// #header-top:hover {
+//   // visibility: visible;
+//   opacity: 1;
+// }
 
-#story.active .header-link.game {
-  border-bottom: 2pt solid white;
-  padding-bottom: 0.4rem;
-  color: white;
-}
+// #story.active .header-link.game {
+//   border-bottom: 2pt solid white;
+//   padding-bottom: 0.4rem;
+//   color: white;
+// }

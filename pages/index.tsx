@@ -112,7 +112,7 @@ export default function Home() {
           menu="#menu"
           css3
           afterLoad={(destination) => {
-            // let header = document.getElementById("header-top") as HTMLElement;
+            let header = document.getElementById("header-top") as HTMLElement;
             let arrow = document.getElementById("explore-arrow") as HTMLElement;
 
             let game = document.querySelector(
@@ -134,10 +134,10 @@ export default function Home() {
             //   blog.classList.add("active");
             // }
             if (window.location.href.includes("#homePage")) {
-              // header.classList.add("!hidden");
+              header.classList.add("!hidden");
               arrow.classList.remove("hidden");
             } else {
-              // header.classList.remove("!hidden");
+              header.classList.remove("!hidden");
               arrow.classList.add("hidden");
             }
           }}

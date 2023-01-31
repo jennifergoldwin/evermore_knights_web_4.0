@@ -6,11 +6,11 @@ import Modal from "./modal";
 const About = () => {
   const [isShown, setIsShown] = React.useState(false);
   return (
-    <div className="relative min-h-screen   bg-[url(/assets/images/bg-about.png)] bg-left bg-cover flex justify-center items-center lg:items-end">
+    <div className="relative min-h-screen   bg-[url(/assets/images/bg-about.png)] bg-left bg-cover flex justify-center items-center">
       <Modal isShown={isShown} setIsShown={setIsShown} />
-      <div className="pl-0 lg:pl-[10%] flex flex-col lg:flex-row justify-center items-center h-full w-full ">
-        <div className="text-center lg:text-left w-full lg:w-1/2 px-4 lf:px-6 relative h-full">
-          <div className="h-full">
+      <div className="pl-0 lg:pl-[6%] flex flex-col lg:flex-row justify-center items-center min-h-screen w-full ">
+        <div className="text-center lg:text-left w-full lg:w-1/2 px-4 lf:px-6 relative h-full flex justify-center items-center">
+          <div className="h-full flex flex-col justify-center">
             <div className="font-friz-regular text-xl lg:text-2xl">
               FREE TO PLAY
             </div>
@@ -71,7 +71,7 @@ const About = () => {
             alt=""
           />
         </div> */}
-        <div className="hidden lg:flex w-full lg:w-1/2 h-full justify-end ">
+        <div className="hidden lg:flex h-screen justify-end w-auto">
           <img src="/assets/images/about-char.png" alt="" />
         </div>
       </div>

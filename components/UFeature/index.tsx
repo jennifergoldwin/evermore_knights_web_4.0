@@ -28,7 +28,7 @@ const UFeature = () => {
 
   return (
     <div
-      className={`${tabs[selectedTab].bg} w-full flex  items-center flex-col min-h-screen relative overflow-hidden pt-8 pb-4`}
+      className={`${tabs[selectedTab].bg} w-full flex justify-center  items-center flex-col min-h-screen relative overflow-hidden pt-8 pb-4`}
     >
       <div className="border-b-[1.5pt] border-underline w-fit pt-8 mb-8 md:mb-0 ">
         <ul className="flex gap-4">
@@ -73,7 +73,7 @@ const UFeature = () => {
             height={300}
             priority
           /> */}
-          <div className="py-6">
+          <div className="pt-6 pb-6 md:pt-0">
             <img src={tabs[selectedTab].img} alt="" />
           </div>
 
