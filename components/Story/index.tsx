@@ -106,6 +106,12 @@ const Story = () => {
           stopOnLastSlide: true,
         }}
         onActiveIndexChange={(swiper: any) => {
+          const prog = document.querySelector(
+            `.swiper-pagination-bullet.slide${swiper.activeIndex}`
+          ) as HTMLElement;
+          if (prog) {
+            prog.classList.add("done");
+          }
           (
             document.getElementById(
               `video${swiper.activeIndex + 1}`
@@ -145,7 +151,12 @@ const Story = () => {
                 isPlaying == 1 ? "opacity-0" : "opacity-1"
               }`}
             >
-              <img src="/assets/images/bg-world-paging.png" alt="" />
+              <img
+                src={`/assets/images/bg-world-paging_inactive0${
+                  isPlaying == 1 ? "1" : isPlaying - 1
+                }.png`}
+                alt=""
+              />
             </span>
             <span className="current  flex justify-center items-center">
               <img
@@ -158,7 +169,12 @@ const Story = () => {
                 isPlaying == storyList.length ? "opacity-0" : "opacity-1"
               }`}
             >
-              <img src="/assets/images/bg-world-paging.png" alt="" />
+              <img
+                src={`/assets/images/bg-world-paging_inactive0${
+                  isPlaying == storyList.length ? isPlaying : isPlaying + 1
+                }.png`}
+                alt=""
+              />
             </span>
             <span
               className=" w-[32px] h-[32px] justify-self-end"

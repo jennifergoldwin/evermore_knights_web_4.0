@@ -13,8 +13,12 @@
     animation-timing-function: ease-in;
     animation-iteration-count: 1;
     animation-direction: alternate;
-
     animation-fill-mode: forwards;
+  }
+}
+.swiper-pagination-bullet.done {
+  b {
+    width: 100% !important;
   }
 }
 .swiper-pagination-bullet {
