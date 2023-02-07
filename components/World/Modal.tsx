@@ -17,7 +17,10 @@ const Modal: React.FC<Imodal> = ({ url, desc, showModal, setShowModal }) => {
           >
             <div className="relative w-auto my-6 mx-6 max-w-3xl">
               {/*content*/}
-              <div className=" shadow-lg relative flex flex-col w-full bg-[url(/assets/images/bg-modal-world-mob.png)] bg-center bg-cover bg-no-repeat outline-none focus:outline-none">
+              <div
+                className=" shadow-lg relative flex flex-col w-full bg-[url(/assets/images/bg-modal-world-mob.png)] bg-top bg-no-repeat outline-none focus:outline-none"
+                style={{ backgroundSize: "100% 100%" }}
+              >
                 <div className="relative p-6 flex-auto">
                   <img src={url} alt="" />
                   <p className="font-lato text-opacity-[0.5] text-black text-[0.6rem] sm:text-xs py-6">

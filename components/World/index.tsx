@@ -243,10 +243,9 @@ const World = () => {
           </svg>
           Temeris
         </div>
-        <p className="w-[100%] px-4 lf:px-0 lf:w-[55%] text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-          vulputate libero et velit interdum, ac aliquet odio mattis. Class
-          aptent taciti sociosqu{" "}
+        <p className="w-[100%] px-4 sm:px-0 lf:w-[55%] text-center">
+          Gather a team of adventurers to explore the fantastical continent in
+          the World of Temeris
         </p>
       </motion.div>
       <div className="hidden lf:block">

@@ -256,9 +256,21 @@ body {
 .bg-gradient-black {
   background: linear-gradient(180deg, rgba(0, 14, 39, 0) 1.49%, #010a1a 61.65%);
 }
-
-@media screen and (min-width: 768px) {
+.bg-gradient-black-1 {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 14, 39, 0) -2.24%,
+    #010a1a 66.34%
+  );
+}
+@media screen and (min-width: 1024px) {
   .bg-gradient-black {
+    background: transparent;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .bg-gradient-black-1 {
     background: transparent;
   }
 }

@@ -5,6 +5,7 @@ import {
   FaTelegramPlane,
   FaTwitter,
   FaDiscord,
+  FaTiktok,
   FaYoutube,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -33,12 +34,21 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
         loop
         autoPlay
         muted
-        className="object-cover h-full w-full relative"
+        className="object-cover h-full w-full relative hidden sm:block"
       >
         <source src="/assets/video/landpage.mp4" type="video/mp4" />
       </video>
+      <video
+        data-keepplaying
+        loop
+        autoPlay
+        muted
+        className="object-cover h-full w-full relative block sm:hidden"
+      >
+        <source src="/assets/video/landpage_mob.mp4" type="video/mp4" />
+      </video>
       <div className="flex absolute w-full h-full">
-        <div className="flex justify-center items-center absolute w-full translate-y-[40%] sm:translate-y-[15%] lg:translate-y-[12%] md:lg:translate-y-[15%]">
+        <div className="flex justify-center items-center absolute w-full translate-y-[40%] sf:translate-y-[15%]  lg:translate-y-[12%] md:lg:translate-y-[15%]">
           <motion.img
             whileInView="play"
             initial="rest"
@@ -50,7 +60,8 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
         {/* <div className="flex absolute justify-center w-full top-[50%]">
           <img src="/assets/images/leaf.png" alt="" />
         </div> */}
-        <div className="home-mob-style lg:">
+        <div className="home-mob-style ">
+          <div className="absolute bg-gradient-black-1 h-[400px] bottom-0 w-full z-[1]"></div>
           {/* <div className="lg:absolute bottom-[10%] lg:bottom-0 flex gap-2 right-0 lg:p-3">
             <img
               className="w-36 sm:w-auto h-auto md:z-20"
@@ -64,7 +75,7 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
             />
           </div> */}
 
-          <div className="lg:hidden grid grid-cols-6 gap-3">
+          <div className="lg:hidden grid grid-cols-6 gap-3 z-[2]">
             <a
               href="https://www.facebook.com/EvermoreKnightsOfficial"
               rel="noreferrer"
@@ -84,16 +95,7 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
             </a>
 
             <a
-              href="https://discord.gg/evermoreknights"
-              target="_blank"
-              rel="noreferrer"
-              className="btn-footer home"
-            >
-              <FaTelegramPlane />
-            </a>
-
-            <a
-              href="https://www.instagram.com/evermore.knights/"
+              href="https://discord.com/invite/evermoreknights"
               rel="noreferrer"
               target="_blank"
               className="btn-footer home"
@@ -102,7 +104,7 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
             </a>
 
             <a
-              href="https://www.tiktok.com/@evermoreknights"
+              href="https://www.instagram.com/evermore.knights/"
               rel="noreferrer"
               target="_blank"
               className="btn-footer home"
@@ -115,6 +117,14 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
               target="_blank"
               className="btn-footer home"
             >
+              <FaTiktok />
+            </a>
+            <a
+              href="https://www.youtube.com/@evermoreknights"
+              rel="noreferrer"
+              target="_blank"
+              className="btn-footer"
+            >
               <FaYoutube />
             </a>
           </div>
@@ -122,7 +132,7 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
         <motion.div
           onClick={() => fullpageApi.moveTo(2, "storyPage")}
           id="explore-arrow"
-          className="fixed bottom-0  flex flex-col justify-center items-center w-full"
+          className=" fixed bottom-0  flex flex-col justify-center items-center w-full z-[2]"
         >
           <span className="hidden lg:flex font-friz-bold text-glow text-3xl">
             Explore

@@ -10,37 +10,37 @@ const featureList = [
     url: "/assets/images/feature-1.png",
     title: "PVP ARENA MODE",
     subtitle:
-      "Team up and fight alongside other Commissioners in the world! Earn various guild rewards that will help you on your adventures!",
+      "Player versus Player is a feature in many games where players can compete against each other in direct combat or competition. This mode allows players to test their skills against others in a controlled and challenging environment.",
   },
   {
     url: "/assets/images/feature-2.png",
     title: "DAILY DUNGEON",
     subtitle:
-      "Team up and fight alongside other Commissioners in the world! Earn various guild rewards that will help you on your adventures!",
+      "Accept the challenge in the Trials of the Havens to receive blessings from the gods and make your team stronger to face upcoming threats in the world of Temeris.",
   },
   {
     url: "/assets/images/feature-3.png",
     title: "PREMIUM CURRENCY",
     subtitle:
-      "Team up and fight alongside other Commissioners in the world! Earn various guild rewards that will help you on your adventures!",
+      "Gather various types of currency that will make it easier for you to embark on further adventures in the world of Temeris.",
   },
   {
     url: "/assets/images/feature-4.png",
     title: "VARIANT ELEMENTS",
     subtitle:
-      "Team up and fight alongside other Commissioners in the world! Earn various guild rewards that will help you on your adventures!",
+      "Elements are crucial, study and face your enemies with the appropriate elements to inflict greater damage upon them.",
   },
   {
     url: "/assets/images/feature-5.png",
     title: "DREAD TOWER",
     subtitle:
-      "Start your descension towards the deepest abyss. Unravel the secrets between its dark floors and battle dangerous foes!",
+      "Mysterious towers rise from the depths of the sea. Many brave souls race to enter and prove their strength by challenging the monsters guarding each floor.",
   },
   {
     url: "/assets/images/feature-6.png",
     title: "GUILD",
     subtitle:
-      "Team up and fight alongside other Commissioners in the world! Earn various guild rewards that will help you on your adventures!",
+      "Join a Guild to conquer territories with your team and protect them from threats.",
   },
 ];
 const Feature = () => {

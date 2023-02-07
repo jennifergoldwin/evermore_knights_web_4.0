@@ -86,6 +86,38 @@ export default function Home() {
   //   window.addEventListener("scroll", scrollFunc, { passive: true });
   //   return () => window.removeEventListener("scroll", scrollFunc);
   // }, []);
+
+  React.useEffect(() => {
+    let menu = document.querySelectorAll(
+      ".nav-burger"
+    ) as NodeListOf<HTMLElement>;
+    let arrow = document.getElementById("explore-arrow") as HTMLElement;
+    let header = document.getElementById("header-top") as HTMLElement;
+
+    if (window.location.href.includes("#homePage")) {
+      menu[0].classList.add("black");
+      menu[1].classList.add("black");
+      arrow.classList.remove("hidden");
+      header.classList.add("!hidden");
+    } else if (
+      window.location.href.includes("#storyPage") ||
+      window.location.href.includes("#aboutPage") ||
+      window.location.href.includes("#characterPage") ||
+      window.location.href.includes("#uFeaturePage") ||
+      window.location.href.includes("#worldPage") ||
+      window.location.href.includes("#featurePage")
+    ) {
+      menu[0].classList.remove("black");
+      menu[1].classList.remove("black");
+      arrow.classList.add("hidden");
+      header.classList.remove("!hidden");
+    } else {
+      menu[0].classList.add("black");
+      menu[1].classList.add("black");
+      arrow.classList.remove("hidden");
+      header.classList.add("!hidden");
+    }
+  }, []);
   const anchors = [
     "homePage",
     "storyPage",
@@ -95,6 +127,7 @@ export default function Home() {
     "worldPage",
     "featurePage",
   ];
+
   return (
     <>
       <div>
@@ -114,7 +147,9 @@ export default function Home() {
           afterLoad={(destination) => {
             let header = document.getElementById("header-top") as HTMLElement;
             let arrow = document.getElementById("explore-arrow") as HTMLElement;
-
+            let menu = document.querySelectorAll(
+              ".nav-burger"
+            ) as NodeListOf<HTMLElement>;
             let game = document.querySelector(
               ".header-link.game"
             ) as HTMLElement;
@@ -136,9 +171,13 @@ export default function Home() {
             if (window.location.href.includes("#homePage")) {
               header.classList.add("!hidden");
               arrow.classList.remove("hidden");
+              menu[0].classList.add("black");
+              menu[1].classList.add("black");
             } else {
               header.classList.remove("!hidden");
               arrow.classList.add("hidden");
+              menu[0].classList.remove("black");
+              menu[1].classList.remove("black");
             }
           }}
           render={({ state, fullpageApi }) => (

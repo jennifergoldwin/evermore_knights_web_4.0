@@ -6,8 +6,8 @@ import Modal from "./modal";
 const About = () => {
   const [isShown, setIsShown] = React.useState(false);
   return (
-    <div className="relative min-h-screen   bg-[url(/assets/images/bg-about.png)] bg-left bg-cover flex justify-center items-center">
-      <Modal isShown={isShown} setIsShown={setIsShown} />
+    <div className="relative min-h-screen bg-[url(/assets/images/bg-about.png)] bg-left bg-cover flex justify-center items-center">
+      {/* <Modal isShown={isShown} setIsShown={setIsShown} /> */}
       <div className="pl-0 lf:pl-[6%] flex flex-col lf:flex-row justify-center items-center min-h-screen w-full ">
         <div className="text-center lf:text-left w-full md:w-[80%] lg:w-[70%] lf:w-1/2 px-4 lf:px-6 relative h-full flex justify-center items-center">
           <div className="h-full flex flex-col justify-center">
@@ -71,9 +71,9 @@ const About = () => {
             alt=""
           />
         </div> */}
-        <div className="hidden lf:flex  justify-end lf:w-1/2 ">
+        <div className="hidden lf:flex  justify-end lf:w-1/2 relative">
           <img
-            className="h-screen object-cover w-auto fixed  bottom-0 translate-x-[10%] lgd:translate-x-[0%]"
+            className="h-screen object-cover w-auto fixed  top-0 translate-x-[10%] lgd:translate-x-[0%]"
             src="/assets/images/about-char.png"
             alt=""
           />

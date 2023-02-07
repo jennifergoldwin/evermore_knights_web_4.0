@@ -279,7 +279,7 @@ label[for="toggle-nav"] {
   left: 20px;
   width: 35px;
   height: 35px;
-  background: #000000;
+  // background: #000000;
   // padding: 0.5rem;
 }
 
@@ -492,3 +492,9 @@ html {
 //   padding-bottom: 0.4rem;
 //   color: white;
 // }
+.nav-burger.black {
+  background: #000000;
+}
+.nav-burger {
+  background: transparent;
+}

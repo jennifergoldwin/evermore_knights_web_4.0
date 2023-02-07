@@ -74,7 +74,7 @@ const Navbar = () => {
     },
   };
   return (
-    <nav className="hidden lg:block fixed top-[50%] left-[20px] z-30">
+    <nav className="hidden lg:flex fixed h-full  justify-center items-center left-[20px] z-30">
       <ul id="menu" className="py-2">
         <li
           data-menuanchor="homePage"

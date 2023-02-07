@@ -5,10 +5,11 @@ import {
   FaTelegramPlane,
   FaTwitter,
   FaDiscord,
+  FaTiktok,
   FaYoutube,
 } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { CgMenu } from "react-icons/cg";
 import { MdClose } from "react-icons/md";
 import Navbar from "../Navbar";
 const Header = () => {
@@ -85,16 +86,7 @@ const Header = () => {
           </a>
 
           <a
-            href="https://discord.gg/evermoreknights"
-            target="_blank"
-            rel="noreferrer"
-            className="btn-footer"
-          >
-            <FaTelegramPlane />
-          </a>
-
-          <a
-            href="https://www.instagram.com/evermore.knights/"
+            href="https://discord.com/invite/evermoreknights"
             rel="noreferrer"
             target="_blank"
             className="btn-footer"
@@ -103,7 +95,7 @@ const Header = () => {
           </a>
 
           <a
-            href="https://www.tiktok.com/@evermoreknights"
+            href="https://www.instagram.com/evermore.knights/"
             rel="noreferrer"
             target="_blank"
             className="btn-footer"
@@ -116,6 +108,14 @@ const Header = () => {
             target="_blank"
             className="btn-footer"
           >
+            <FaTiktok />
+          </a>
+          <a
+            href="https://www.youtube.com/@evermoreknights"
+            rel="noreferrer"
+            target="_blank"
+            className="btn-footer"
+          >
             <FaYoutube />
           </a>
         </div>
@@ -123,119 +123,133 @@ const Header = () => {
       {/* mobile view */}
       <div className="relative block lg:hidden">
         <input
+          className="nav-burger black"
           type="checkbox"
           name="toggle-nav"
           onClick={() => setActive(!active)}
         />
-        <label htmlFor="toggle-nav">
+        <label htmlFor="toggle-nav" className="nav-burger black">
           {active ? (
             <MdClose className="text-2xl" />
           ) : (
-            <GiHamburgerMenu className="text-2xl" />
+            <CgMenu className="text-3xl" />
           )}
           {/* <span className="menu-icon"></span> */}
         </label>
         <section className={`${active ? "flex" : "hidden"} side-nav-panel`}>
           <ul id="menu" className="py-2">
-            <li
-              data-menuanchor="homePage"
-              className="sub_nav mob flex gap-8  items-center justify-items-center"
-            >
-              <a className="nav-link" href="#homePage">
-                <div className="border-wrapper b-btn-li">
-                  <div className="btn-li"></div>
+            <a href="#homePage">
+              <li
+                data-menuanchor="homePage"
+                className="sub_nav mob flex gap-8  items-center justify-items-center"
+              >
+                <div className="nav-link">
+                  <div className="border-wrapper b-btn-li">
+                    <div className="btn-li"></div>
+                  </div>
                 </div>
-              </a>
-              {/* desc navbar */}
-              <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
-                HOME
-              </div>
-            </li>
-
-            <li
-              data-menuanchor="storyPage"
-              className="sub_nav mob flex gap-8  items-center justify-items-center"
-            >
-              <a className="nav-link" href="#storyPage">
-                <div className="border-wrapper b-btn-li-none">
-                  <div className="btn-li"></div>
+                {/* desc navbar */}
+                <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
+                  HOME
                 </div>
-              </a>
-              <div className=" font-friz-bold  justify-self-start -ml-3 nav-title">
-                STORY
-              </div>
-            </li>
-
-            <li
-              data-menuanchor="aboutPage"
-              className="sub_nav mob flex gap-8  items-center justify-items-center"
-            >
-              <a className="nav-link" href="#aboutPage">
-                <div className="border-wrapper b-btn-li-none">
-                  <div className="btn-li"></div>
+              </li>
+            </a>
+            <a href="#storyPage">
+              <li
+                data-menuanchor="storyPage"
+                className="sub_nav mob flex gap-8  items-center justify-items-center"
+              >
+                <div className="nav-link">
+                  <div className="border-wrapper b-btn-li-none">
+                    <div className="btn-li"></div>
+                  </div>
                 </div>
-              </a>
-              <div className=" font-friz-bold  justify-self-start -ml-3 nav-title">
-                ABOUT
-              </div>
-            </li>
-
-            <li
-              data-menuanchor="characterPage"
-              className="sub_nav mob flex gap-8  items-center justify-items-center"
-            >
-              <a className="nav-link" href="#characterPage">
-                <div className="border-wrapper b-btn-li-none">
-                  <div className="btn-li"></div>
+                <div className=" font-friz-bold  justify-self-start -ml-3 nav-title">
+                  STORY
                 </div>
-              </a>
-              <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
-                CHARACTER
-              </div>
-            </li>
+              </li>
+            </a>
 
-            <li
-              data-menuanchor="uFeaturePage"
-              className="sub_nav mob flex gap-8  items-center justify-items-center"
-            >
-              <a className="nav-link" href="#uFeaturePage">
-                <div className="border-wrapper b-btn-li-none">
-                  <div className="btn-li"></div>
+            <a href="#aboutPage">
+              <li
+                data-menuanchor="aboutPage"
+                className="sub_nav mob flex gap-8  items-center justify-items-center"
+              >
+                <div className="nav-link">
+                  <div className="border-wrapper b-btn-li-none">
+                    <div className="btn-li"></div>
+                  </div>
                 </div>
-              </a>
-              <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
-                UNIQUE FEATURE
-              </div>
-            </li>
-
-            <li
-              data-menuanchor="worldPage"
-              className="sub_nav mob flex gap-8  items-center justify-items-center"
-            >
-              <a className="nav-link" href="#worldPage">
-                <div className="border-wrapper b-btn-li-none">
-                  <div className="btn-li"></div>
+                <div className=" font-friz-bold  justify-self-start -ml-3 nav-title">
+                  ABOUT
                 </div>
-              </a>
-              <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
-                WORLD MAP
-              </div>
-            </li>
+              </li>
+            </a>
 
-            <li
-              data-menuanchor="featurePage"
-              className="sub_nav mob flex gap-8 items-center justify-items-center"
-            >
-              <a className="nav-link" href="#featurePage">
-                <div className="border-wrapper b-btn-li-none">
-                  <div className="btn-li"></div>
+            <a href="#characterPage">
+              <li
+                data-menuanchor="characterPage"
+                className="sub_nav mob flex gap-8  items-center justify-items-center"
+              >
+                <div className="nav-link">
+                  <div className="border-wrapper b-btn-li-none">
+                    <div className="btn-li"></div>
+                  </div>
                 </div>
-              </a>
+                <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
+                  CHARACTER
+                </div>
+              </li>
+            </a>
 
-              <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
-                FEATURES
-              </div>
-            </li>
+            <a href="#uFeaturePage">
+              <li
+                data-menuanchor="uFeaturePage"
+                className="sub_nav mob flex gap-8  items-center justify-items-center"
+              >
+                <div className="nav-link">
+                  <div className="border-wrapper b-btn-li-none">
+                    <div className="btn-li"></div>
+                  </div>
+                </div>
+                <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
+                  UNIQUE FEATURE
+                </div>
+              </li>
+            </a>
+
+            <a href="#worldPage">
+              <li
+                data-menuanchor="worldPage"
+                className="sub_nav mob flex gap-8  items-center justify-items-center"
+              >
+                <div className="nav-link">
+                  <div className="border-wrapper b-btn-li-none">
+                    <div className="btn-li"></div>
+                  </div>
+                </div>
+                <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
+                  WORLD MAP
+                </div>
+              </li>
+            </a>
+
+            <a href="#featurePage">
+              <li
+                data-menuanchor="featurePage"
+                className="sub_nav mob flex gap-8 items-center justify-items-center"
+              >
+                <div className="nav-link">
+                  <div className="border-wrapper b-btn-li-none">
+                    <div className="btn-li"></div>
+                  </div>
+                </div>
+
+                <div className="font-friz-bold  justify-self-start -ml-3 nav-title">
+                  FEATURES
+                </div>
+              </li>
+            </a>
 
             {/* <li
               data-menuanchor="blogPage"

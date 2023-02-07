@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useSwiper } from "swiper/react";
 import "swiper/css/effect-fade";
 import "swiper/css";
+import Modal from "../About/modal";
 const characterLists = [
   {
     bg: "bg-[url(/assets/images/bg-grana.png)]",
@@ -18,6 +19,7 @@ const characterLists = [
     title1: "Wind",
     icon2: "/assets/images/staff.png",
     title2: "Staff",
+    link: "https://www.youtube.com/embed/DlmUCgQglE0",
   },
   {
     bg: "bg-[url(/assets/images/bg-laslow.png)]",
@@ -30,6 +32,7 @@ const characterLists = [
     title1: "Fire",
     icon2: "/assets/images/dagger.png",
     title2: "Staff",
+    link: "https://www.youtube.com/embed/V8zy2ILphNI",
   },
   {
     bg: "bg-[url(/assets/images/bg-quinn.png)]",
@@ -42,6 +45,7 @@ const characterLists = [
     title1: "Thunder",
     icon2: "/assets/images/bow.png",
     title2: "Bow",
+    link: "https://www.youtube.com/embed/t4lPwTg7pQw",
   },
   {
     bg: "bg-[url(/assets/images/bg-curtis.png)]",
@@ -54,6 +58,7 @@ const characterLists = [
     title1: "Natural",
     icon2: "/assets/images/staff.png",
     title2: "Staff",
+    link: "https://www.youtube.com/embed/V_NyGlC9O_M",
   },
   {
     bg: "bg-[url(/assets/images/bg-gashani.png)]",
@@ -66,6 +71,7 @@ const characterLists = [
     title1: "Fire",
     icon2: "/assets/images/staff.png",
     title2: "Staff",
+    link: "",
   },
   {
     bg: "bg-[url(/assets/images/bg-trista.png)]",
@@ -78,13 +84,14 @@ const characterLists = [
     title1: "Fire",
     icon2: "/assets/images/sword.png",
     title2: "Sword",
+    link: "",
   },
 ];
 const Characters: React.FC = () => {
   // const swiper = useSwiper();
   const [swiper, setSwiper] = React.useState(useSwiper());
   const [index, setIndex] = React.useState(0);
-
+  const [isShown, setIsShown] = React.useState(false);
   const handleClick = (x: number) => {
     setIndex(x);
     swiper.slideTo(x);
@@ -125,6 +132,11 @@ const Characters: React.FC = () => {
   // });
   return (
     <div className="relative overflow-hidden min-h-screen ">
+      <Modal
+        isShown={isShown}
+        setIsShown={setIsShown}
+        src={characterLists[index].link}
+      />
       <div className="hidden lg:flex gap-0 lg:gap-2 justify-center h-full  flex-col  absolute m-auto right-0 z-10">
         <div className="cursor-pointer" onClick={() => handleClick(0)}>
           <img
@@ -232,10 +244,10 @@ const Characters: React.FC = () => {
                   <div className="p-2 lg:p-0 flex justify-center items-center lg:flex-col">
                     <div className="md:p-3 lg:pr-0">
                       <div className="flex items-center font-friz-bold gap-4">
-                        <h1 className="text-xl md:text-2xl lg:text-4xl">
+                        <h1 className="text-xl sm:text-2xl lg:text-4xl">
                           {item.heroName}
                         </h1>
-                        <span className="title-text font-bold text-sm md:text-base lg:text-lg">
+                        <span className="title-text font-bold text-sm sm:text-base lg:text-lg">
                           {item.heroSubName}
                         </span>
                       </div>
@@ -249,7 +261,7 @@ const Characters: React.FC = () => {
                               src={item.icon1}
                               alt=""
                             />
-                            <span className="text-sm lg:text-base">
+                            <span className="text-sm sm:text-base">
                               {item.title1}
                             </span>
                           </div>
@@ -260,7 +272,7 @@ const Characters: React.FC = () => {
                               src={item.icon2}
                               alt=""
                             />
-                            <span className="text-sm lg:text-base">
+                            <span className="text-sm sm:text-base">
                               {item.title2}
                             </span>
                           </div>
@@ -278,16 +290,31 @@ const Characters: React.FC = () => {
                           />
                         </svg>
                       </div>
-                      <div className="flex lg:flex-col flex-row justify-center items-center">
-                        <div className="font-lato mb-0 sm:mb-2 lg:mb-4 text-xs  lg:text-sm">
+                      <div className="flex lg:flex-col flex-row justify-center h-full items-center">
+                        <div className="w-3/5 lg:w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-base  lg:text-sm flex  justify-center">
                           {item.heroDesc}
                         </div>
+                        {/* <div
+                          className="w-2/5 relative pt-[30%] sm:pt-[20%] lg:pt-[56.25%]  lg:w-full max-w-full"
+                          onClick={() => setIsShown(true)}
+                        >
+                          <iframe
+                            className="absolute top-0 left-0  w-full h-full "
+                            
+                            src={`${item.link}?autoplay=0&showinfo=0&controls=0`}
+                          ></iframe>
+                        </div> */}
+
                         <img
-                          className="w-[35%] h-auto lg:w-[100%] hidden lg:block"
+                          onClick={() => setIsShown(true)}
+                          className={`w-[35%] h-auto lg:w-[100%] hidden lg:block ${
+                            item.link === "" ? "opacity-0" : "opacity-1"
+                          }`}
                           src="/assets/images/youtube-frame.png"
                           alt=""
                         />
                         <img
+                          onClick={() => setIsShown(true)}
                           className="w-[40%] block lg:hidden"
                           src="/assets/images/youtube-frame-mob.png"
                           alt=""
@@ -298,7 +325,7 @@ const Characters: React.FC = () => {
                 </div>
                 <div className="w-full overflow-hidden  lg:w-3/5  relative">
                   <img
-                    className={`hidden translate-x-[-20%] lf:translate-x-[-10%]
+                    className={`hidden translate-x-[-20%] lf:translate-x-[0%]
                     } lg:block h-screen fixed object-cover top-0 `}
                     src={item.heroImg}
                     alt=""
