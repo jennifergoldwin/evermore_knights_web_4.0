@@ -174,6 +174,17 @@ body {
   );
   width: 100%;
 }
+.overlay-story {
+  background: linear-gradient(180deg, rgba(1, 10, 26, 0) 0.7%, #000000 71.2%);
+  backdrop-filter: blur(2px);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
 .overlay {
   position: absolute;
   top: 0;

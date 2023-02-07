@@ -13,30 +13,30 @@ const storyList = [
     subtitle:
       "In the beginning, there were the Heavenly Emissaries. Within the darkness of the void they created light. From that light the very stars were born, called the Stars of Salvation. The stars adorned the once dark void, and spawned a myriad of countless worlds. Only one was able to sustain life. They named it Temeris, meaning ‘born from nothing, and into abundance.",
   },
-  // {
-  //   url: "/assets/video/video-2.mp4",
-  //   title: "AGE OF GODS",
-  //   subtitle:
-  //     "Then they created the First Gods, beings of great power and had them watch over Temeris in their stead. With the First Gods, life was beautiful, and abundant. The denizens of the world however were imperfect and needed guidance. It was up to The First Gods, to guide all life toward a better tomorrow",
-  // },
-  // {
-  //   url: "/assets/video/video-3.mp4",
-  //   title: "HUMANS AND NATIONS",
-  //   subtitle:
-  //     "As life went on, the inhabitants formed their own groups and races. Some of them, especially humans, were able to innovate and create spectacular marvels. As they raised grand civilizations and developed intricate inventions. And thus, the seven nations formed under the sovereignty of the First Gods. Until balance came asunder through years of conflict and turmoil. Ultimately, the Gods then decided to leave their creations behind.",
-  // },
-  // {
-  //   url: "/assets/video/video-4.mp4",
-  //   title: "THE MIST",
-  //   subtitle:
-  //     "Mankind however did not yield, as they forged their own paths ahead, creating a world governed by the deeds and exploits of humans, instead of that of the heavens. Unfortunately, that didn't last long, as an unknown threat known as the “Mist” appeared. It spawned the Dread, abominable atrocities that consumed all living things. Once the Mist descended, the only option was to flee.",
-  // },
-  // {
-  //   url: "/assets/video/video-5.mp4",
-  //   title: "EVERMORE KNIGHTS",
-  //   subtitle:
-  //     "From this conflict, Godfric Reunafel of Arriane united the houses to create the Evermore Kingdom. He then established what is known today as the Evermore Knights. It became home to the brightest and strongest heroes throughout Temeris.",
-  // },
+  {
+    url: "/assets/video/video-2.mp4",
+    title: "AGE OF GODS",
+    subtitle:
+      "Then they created the First Gods, beings of great power and had them watch over Temeris in their stead. With the First Gods, life was beautiful, and abundant. The denizens of the world however were imperfect and needed guidance. It was up to The First Gods, to guide all life toward a better tomorrow",
+  },
+  {
+    url: "/assets/video/video-3.mp4",
+    title: "HUMANS AND NATIONS",
+    subtitle:
+      "As life went on, the inhabitants formed their own groups and races. Some of them, especially humans, were able to innovate and create spectacular marvels. As they raised grand civilizations and developed intricate inventions. And thus, the seven nations formed under the sovereignty of the First Gods. Until balance came asunder through years of conflict and turmoil. Ultimately, the Gods then decided to leave their creations behind.",
+  },
+  {
+    url: "/assets/video/video-4.mp4",
+    title: "THE MIST",
+    subtitle:
+      "Mankind however did not yield, as they forged their own paths ahead, creating a world governed by the deeds and exploits of humans, instead of that of the heavens. Unfortunately, that didn't last long, as an unknown threat known as the “Mist” appeared. It spawned the Dread, abominable atrocities that consumed all living things. Once the Mist descended, the only option was to flee.",
+  },
+  {
+    url: "/assets/video/video-5.mp4",
+    title: "EVERMORE KNIGHTS",
+    subtitle:
+      "From this conflict, Godfric Reunafel of Arriane united the houses to create the Evermore Kingdom. He then established what is known today as the Evermore Knights. It became home to the brightest and strongest heroes throughout Temeris.",
+  },
 ];
 const Story = () => {
   const [isPlaying, setIsPlaying] = React.useState(1);
@@ -223,8 +223,9 @@ const Story = () => {
               >
                 <source src={item.url} type="video/mp4" />
               </video>
-              <div className="flex flex-col items-center justify-center absolute h-full ">
-                <div className="w-[85%] sm:w-[65%]">
+              <div className="overlay-story opacity-[0.8] sm:opacity-[0]"></div>
+              <div className="z-20 flex flex-col items-center justify-center absolute h-fit bottom-[20%] sm:bottom-0  sm:h-full ">
+                <div className="w-[90%] sm:w-[65%]">
                   <div className="w-full flex justify-center title-story-slide font-friz-bold  text-4xl text-center">
                     <div>{item.title}</div>
                   </div>
