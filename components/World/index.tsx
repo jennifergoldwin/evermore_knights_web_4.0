@@ -255,7 +255,7 @@ const World = () => {
           setIsShown={setHiddenModal}
         />
       </div>
-      <div className="w-full h-full  hidden lf:block">
+      <div className="w-full h-screen  hidden lf:block">
         <svg
           className="object-cover"
           xmlns="http://www.w3.org/2000/svg"

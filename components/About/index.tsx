@@ -59,7 +59,7 @@ const About = () => {
             </div> */}
               <img
                 onClick={() => setIsShown(true)}
-                className="cursor-pointer w-[80%] h-auto"
+                className="cursor-pointer w-full lf:w-[80%] h-auto"
                 src="/assets/images/youtube-frame.png"
                 alt=""
               />
