@@ -48,7 +48,7 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
         <source src="/assets/video/landpage_mob.mp4" type="video/mp4" />
       </video>
       <div className="flex absolute w-full h-full">
-        <div className="flex justify-center items-center absolute w-full translate-y-[40%] sf:translate-y-[15%]  lg:translate-y-[12%] md:lg:translate-y-[15%]">
+        <div className="flex justify-center items-center absolute w-full translate-y-[40%] sf:translate-y-[15%]  lf:translate-y-[12%] md:translate-y-[15%]">
           <motion.img
             whileInView="play"
             initial="rest"

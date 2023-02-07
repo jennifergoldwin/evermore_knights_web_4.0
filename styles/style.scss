@@ -414,13 +414,13 @@ html {
   visibility: hidden;
   opacity: 0;
   z-index: 0;
-  transition: all 0.8s ease;
+  transition: all 0.5s ease-in-out;
 }
 .fp-viewing-lastPage #fullpage .lastPage {
   position: fixed;
   bottom: 0;
   opacity: 1;
-  transition: all 0.8s ease;
+  transition: all 0.5s ease-in-out;
   z-index: 2;
 }
 .fp-watermark {
