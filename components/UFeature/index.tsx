@@ -28,7 +28,7 @@ const UFeature = () => {
 
   return (
     <div
-      className={`${tabs[selectedTab].bg} w-full flex md:justify-center  items-center flex-col min-h-screen relative overflow-hidden pt-8 pb-4`}
+      className={`${tabs[selectedTab].bg} w-full flex md:justify-center  items-center flex-col min-h-screen relative overflow-hidden pt-5 `}
     >
       <div className="border-b-[1.5pt] border-underline w-fit pt-8 mb-8 md:mb-0 ">
         <ul className="flex gap-4">
@@ -73,8 +73,14 @@ const UFeature = () => {
             height={300}
             priority
           /> */}
-          <div className="pt-6 pb-6 md:pt-0">
-            <img src={tabs[selectedTab].img} alt="" />
+          <div className="pt-6 pb-6 md:pt-[0rem] flex justify-center">
+            <img
+              className={`${
+                selectedTab === 1 ? "lg:w-[85%]" : "lg:w-[95%]"
+              } w-full`}
+              src={tabs[selectedTab].img}
+              alt=""
+            />
           </div>
 
           {/* <img
@@ -104,7 +110,7 @@ const UFeature = () => {
               alt=""
             />
           )}
-          <span className="text-center w-[65%] font-lato font-[400] pb-4">
+          <span className="text-center w-[65%] font-lato font-[400] pb-0">
             {tabs[selectedTab].desc}
           </span>
         </motion.div>
