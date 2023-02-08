@@ -25,54 +25,67 @@ const UFeature = () => {
     },
   ];
   const [selectedTab, setSelectedTab] = React.useState(0);
-
+  const tabAnim = {
+    rest: {
+      opacity: "0",
+      transition: {
+        type: "keyframes",
+        duration: 1.4,
+        // ease: "easeIn",
+      },
+    },
+    play: {
+      opacity: "1",
+      transition: {
+        type: "keyframes",
+        duration: 1.4,
+        // ease: "easeIn",
+      },
+    },
+  };
   return (
-    <div
-      className={`${tabs[selectedTab].bg} w-full flex md:justify-center  items-center flex-col min-h-screen relative overflow-hidden pt-5 `}
-    >
-      <div className="border-b-[1.5pt] border-underline w-fit pt-8 mb-8 md:mb-0 ">
-        <ul className="flex gap-4">
-          {tabs.map((item: any, idx: number) => (
-            <li
-              key={item.label}
-              className={`${
-                idx === selectedTab
-                  ? "font-friz-bold title-text"
-                  : "font-friz-regular"
-              } ${
-                idx == 0
-                  ? "border-r-[1.5pt] pr-4 border-gradient-underline"
-                  : ""
-              } my-2 text-sm sm:text-xl cursor-pointer`}
-              onClick={() => {
-                setSelectedTab(idx);
-              }}
-            >
-              {`${item.label}`}
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, default: { ease: "easeInOut" } }}
+        className={`${tabs[selectedTab].bg} transition-opacity w-full flex md:justify-center  items-center flex-col min-h-screen relative overflow-hidden pt-8 `}
+      >
+        <div className="border-b-[1.5pt] border-underline w-fit pt-8 mb-8 md:mb-0 ">
+          <ul className="flex gap-4">
+            {tabs.map((item: any, idx: number) => (
+              <li
+                key={item.label}
+                className={`${
+                  idx === selectedTab
+                    ? "font-friz-bold title-text font-extrabold"
+                    : "font-friz-bold "
+                } ${
+                  idx == 0
+                    ? "border-r-[1.5pt] pr-4 border-gradient-underline"
+                    : ""
+                } my-2 text-base sm:text-xl cursor-pointer`}
+                onClick={() => {
+                  setSelectedTab(idx);
+                }}
+              >
+                {`${item.label}`}
 
-              {idx === selectedTab ? (
-                <motion.div className="underline" layoutId="underline" />
-              ) : null}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <AnimatePresence>
+                {idx === selectedTab ? (
+                  <motion.div className="underline" />
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* <AnimatePresence> */}
         <motion.div
           className="hidden items-center justify-center flex-col md:flex "
           key={selectedTab ? tabs[selectedTab].label : "empty"}
-          initial={{ y: 10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -10, opacity: 0 }}
-          transition={{ duration: 0.1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, type: "keyframes" }}
         >
-          {/* <Image
-            src="/assets/video/weapon.webm"
-            alt="User profile photo"
-            width={300}
-            height={300}
-            priority
-          /> */}
           <div className="pt-6 pb-6 md:pt-[0rem] flex justify-center">
             <img
               className={`${
@@ -83,19 +96,6 @@ const UFeature = () => {
             />
           </div>
 
-          {/* <img
-            src="http://i.stack.imgur.com/SBv4T.gif"
-            alt="this slowpoke moves"
-            width="250"
-          /> */}
-          {/* <video
-            loop
-            autoPlay
-            muted
-            className="object-cover h-full w-full relative"
-          >
-            <source src="/assets/video/weapon.mp4" type="video/webm" />
-          </video> */}
           {selectedTab === 0 && (
             <img
               className="absolute bottom-[0%] right-[-20%] lg:right-0"
@@ -186,8 +186,9 @@ const UFeature = () => {
             </span>
           </div>
         </div>
-      </AnimatePresence>
-    </div>
+        {/* </AnimatePresence> */}
+      </motion.div>
+    </AnimatePresence>
   );
 };
 export default UFeature;

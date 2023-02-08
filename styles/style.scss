@@ -335,34 +335,34 @@ label[for="toggle-nav"] {
 .bg-line {
   background: rgba(217, 217, 217, 0.1);
 }
-input[name="toggle-nav"]:checked {
-  // & ~ .side-nav-panel {
-  //   left: 0;
-  // }
+// input[name="toggle-nav"]:checked {
+//   & ~ .side-nav-panel {
+//     left: 0;
+//   }
 
-  // & + label[for="toggle-nav"] {
-  //   .menu-icon {
-  //     // makes the middle bar disappear to help create the X
-  //     background-color: transparent;
+//   & + label[for="toggle-nav"] {
+//     .menu-icon {
+//       // makes the middle bar disappear to help create the X
+//       background-color: transparent;
 
-  //     &::before,
-  //     &::after {
-  //       background-color: white;
-  //     }
+//       &::before,
+//       &::after {
+//         background-color: white;
+//       }
 
-  //     // rotates and positions the top and bottom bar to create the X
-  //     &::before {
-  //       top: 16px;
-  //       transform: rotate(45deg);
-  //     }
+//       // rotates and positions the top and bottom bar to create the X
+//       &::before {
+//         top: 16px;
+//         transform: rotate(45deg);
+//       }
 
-  //     &::after {
-  //       bottom: 16px;
-  //       transform: rotate(-45deg);
-  //     }
-  //   }
-  // }
-}
+//       &::after {
+//         bottom: 16px;
+//         transform: rotate(-45deg);
+//       }
+//     }
+//   }
+// }
 
 #featureSwiper .swiper-wrapper .swiper-slide-active .overlay {
   background-color: transparent;

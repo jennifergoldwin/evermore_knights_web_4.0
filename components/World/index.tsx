@@ -431,7 +431,7 @@ const World = () => {
           <g
             id="Temeris_World_"
             data-name="Temeris (World)"
-            clip-path="url(#clip-path)"
+            clipPath="url(#clip-path)"
           >
             <rect
               id="Rectangle_51"
@@ -547,7 +547,7 @@ const World = () => {
               transform="translate(6.733 -32.866)"
               fill="none"
               stroke="#707070"
-              stroke-width="1"
+              strokeWidth="1"
               opacity="0.5"
             />
             <path
@@ -557,7 +557,7 @@ const World = () => {
               transform="translate(4.733 -32.866)"
               fill="none"
               stroke="#fff"
-              stroke-width="1"
+              strokeWidth="1"
               opacity="0.5"
             />
             <motion.g
@@ -581,7 +581,7 @@ const World = () => {
                     d="M309.688,362.961c-9.376,0-16.977,6.578-16.977,14.691s7.6,14.691,16.977,14.691h30.564l9.877,14.8,9.877-14.8h30.564c9.376,0,16.977-6.578,16.977-14.691s-7.6-14.691-16.977-14.691Z"
                     transform="translate(-292.711 -362.961)"
                     fill="rgba(0,0,0,0.4)"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                   />
                   <path
                     id="Union_4"
@@ -589,7 +589,7 @@ const World = () => {
                     transform="translate(-292.58 -363.11)"
                     fill="rgba(0,0,0,0.4)"
                     stroke="#707070"
-                    stroke-width="1"
+                    strokeWidth="1"
                   />
                 </g>
                 <g
@@ -634,7 +634,7 @@ const World = () => {
                     d="M440.688,517.641c-9.376,0-16.977,6.577-16.977,14.691s7.6,14.691,16.977,14.691h30.564l9.877,14.8,9.877-14.8h30.564c9.376,0,16.977-6.578,16.977-14.691s-7.6-14.691-16.977-14.691Z"
                     transform="translate(-423.711 -517.641)"
                     fill="rgba(0,0,0,0.4)"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                   />
                   <path
                     id="Union_2"
@@ -642,7 +642,7 @@ const World = () => {
                     transform="translate(-423.58 -517.789)"
                     fill="rgba(0,0,0,0.4)"
                     stroke="#707070"
-                    stroke-width="1"
+                    strokeWidth="1"
                   />
                 </g>
                 <g
@@ -687,7 +687,7 @@ const World = () => {
                     d="M724.977,205.246c-9.376,0-16.977,6.577-16.977,14.691s7.6,14.691,16.977,14.691h30.564l9.877,14.8,9.877-14.8H805.86c9.376,0,16.977-6.578,16.977-14.691s-7.6-14.691-16.977-14.691Z"
                     transform="translate(-708 -205.246)"
                     fill="rgba(0,0,0,0.4)"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                   />
                   <path
                     id="Union_6"
@@ -695,7 +695,7 @@ const World = () => {
                     transform="translate(-707.869 -205.395)"
                     fill="rgba(0,0,0,0.4)"
                     stroke="#707070"
-                    stroke-width="1"
+                    strokeWidth="1"
                   />
                 </g>
                 <g
@@ -740,7 +740,7 @@ const World = () => {
                     d="M822.891,401.84c-9.376,0-16.977,6.577-16.977,14.691s7.6,14.691,16.977,14.691h30.564l9.877,14.8,9.877-14.8h30.564c9.376,0,16.977-6.577,16.977-14.691s-7.6-14.691-16.977-14.691Z"
                     transform="translate(-805.914 -401.84)"
                     fill="rgba(0,0,0,0.4)"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                   />
                   <path
                     id="Union_12"
@@ -748,7 +748,7 @@ const World = () => {
                     transform="translate(-805.783 -401.989)"
                     fill="rgba(0,0,0,0.4)"
                     stroke="#707070"
-                    stroke-width="1"
+                    strokeWidth="1"
                   />
                 </g>
                 <g
@@ -793,7 +793,7 @@ const World = () => {
                     d="M1107.851,347.711c-9.376,0-16.971,6.578-16.971,14.691s7.595,14.691,16.971,14.691h30.56l9.888,14.8,9.877-14.8h30.56c9.376,0,16.981-6.578,16.981-14.691s-7.605-14.691-16.981-14.691Z"
                     transform="translate(-1090.88 -347.711)"
                     fill="rgba(0,0,0,0.4)"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                   />
                   <path
                     id="Union_10"
@@ -801,7 +801,7 @@ const World = () => {
                     transform="translate(-1090.75 -347.86)"
                     fill="rgba(0,0,0,0.4)"
                     stroke="#707070"
-                    stroke-width="1"
+                    strokeWidth="1"
                   />
                 </g>
                 <g
@@ -846,7 +846,7 @@ const World = () => {
                     d="M1172.391,217.32c-9.376,0-16.981,6.578-16.981,14.691s7.605,14.691,16.981,14.691h30.56l9.877,14.8,9.877-14.8h30.57c9.376,0,16.971-6.577,16.971-14.691s-7.594-14.691-16.971-14.691Z"
                     transform="translate(-1155.41 -217.32)"
                     fill="rgba(0,0,0,0.4)"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                   />
                   <path
                     id="Union_8"
@@ -854,7 +854,7 @@ const World = () => {
                     transform="translate(-1155.279 -217.469)"
                     fill="rgba(0,0,0,0.4)"
                     stroke="#707070"
-                    stroke-width="1"
+                    strokeWidth="1"
                   />
                 </g>
                 <g id="FARINGRAD" transform="translate(12.779 8.197)">
@@ -895,7 +895,7 @@ const World = () => {
                     d="M647.977,625.953c-9.376,0-16.977,6.578-16.977,14.691s7.6,14.691,16.977,14.691h30.564l9.877,14.8,9.877-14.8H728.86c9.376,0,16.977-6.577,16.977-14.691s-7.6-14.691-16.977-14.691Z"
                     transform="translate(-631 -625.953)"
                     fill="rgba(0,0,0,0.4)"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                   />
                   <path
                     id="Union_14"
@@ -903,7 +903,7 @@ const World = () => {
                     transform="translate(-630.869 -626.102)"
                     fill="rgba(0,0,0,0.4)"
                     stroke="#707070"
-                    stroke-width="1"
+                    strokeWidth="1"
                   />
                 </g>
                 <g

@@ -155,11 +155,11 @@ body {
 /* .b-btn-li {
  
 } */
-.b-btn-li-none {
-  /* border: 1.2pt solid transparent; */
-  /* transform: rotate(45deg); */
-  /* padding: 0.179rem; */
-}
+/* .b-btn-li-none {
+  border: 1.2pt solid transparent;
+  transform: rotate(45deg);
+  padding: 0.179rem;
+} */
 
 .showTrans {
   transition: opacity 1.3s;
@@ -258,11 +258,11 @@ body {
   /* background: white; */
 }
 
-.shadow-world {
-  /* filter: ; */
-  /* filter: drop-shadow(0 0 0.55rem #ffc700); */
-  /* box-shadow: inset 0px 532px 4px rgba(0, 0, 0, 0.7); */
-}
+/* .shadow-world {
+
+  filter: drop-shadow(0 0 0.55rem #ffc700);
+  box-shadow: inset 0px 532px 4px rgba(0, 0, 0, 0.7);
+} */
 
 .bg-gradient-black {
   background: linear-gradient(180deg, rgba(0, 14, 39, 0) 1.49%, #010a1a 61.65%);
