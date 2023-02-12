@@ -291,7 +291,11 @@ const Characters: React.FC = () => {
                         </svg>
                       </div>
                       <div className="flex lg:flex-col flex-row justify-center h-full items-center">
-                        <div className="w-3/5 lg:w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-base  lg:text-sm flex  justify-center">
+                        <div
+                          className={`${
+                            item.link === "" ? "w-full" : "w-3/5"
+                          } lg:w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-base  lg:text-sm flex  justify-center`}
+                        >
                           {item.heroDesc}
                         </div>
                         {/* <div
@@ -315,7 +319,10 @@ const Characters: React.FC = () => {
                         />
                         <img
                           onClick={() => setIsShown(true)}
-                          className="w-[40%] block lg:hidden"
+                          className={`w-[40%]  lg:hidden ${
+                            item.link === "" ? "hidden" : "block"
+                          }`}
+                          // className="w-[40%] block lg:hidden"
                           src="/assets/images/youtube-frame-mob.png"
                           alt=""
                         />
