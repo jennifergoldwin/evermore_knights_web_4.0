@@ -103,7 +103,7 @@ const Feature = () => {
   const [index, setIndex] = React.useState(0);
   return (
     <>
-      <div className="flex lg:hidden flex-col w-full min-h-screen pt-12 pb-12">
+      <div className="flex lg:hidden flex-col w-full h-screen pt-12 pb-12">
         <div className="flex justify-center items-center flex-col pt-8 pb-8">
           <h1 className="font-friz-bold title-feature text-3xl">
             ALL FEATURES
@@ -182,7 +182,7 @@ const Feature = () => {
           <p className="font-lato font-normal">{featureList[index].subtitle}</p>
         </div>
       </div>
-      <div className="w-full min-h-screen hidden h-full bg-[#1D1C1C] lg:flex">
+      <div className="w-full h-screen hidden bg-[#1D1C1C] lg:flex">
         {featureList.map((item: any, idx: number) => (
           <motion.div
             key={idx + 1}
