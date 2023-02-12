@@ -131,7 +131,7 @@ const Characters: React.FC = () => {
   //   }
   // });
   return (
-    <div className="relative overflow-hidden min-h-screen ">
+    <div className="relative overflow-hidden m-h-screen ">
       <Modal
         isShown={isShown}
         setIsShown={setIsShown}

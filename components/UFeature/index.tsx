@@ -49,7 +49,7 @@ const UFeature = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, default: { ease: "easeInOut" } }}
-        className={`${tabs[selectedTab].bg} transition-opacity w-full flex md:justify-center  items-center flex-col min-h-screen relative overflow-hidden pt-8 `}
+        className={`${tabs[selectedTab].bg} transition-opacity w-full flex md:justify-center  items-center flex-col h-screen relative overflow-hidden pt-8 `}
       >
         <div className="border-b-[1.5pt] border-underline w-fit pt-8 mb-8 md:mb-0 ">
           <ul className="flex gap-4">
@@ -114,7 +114,7 @@ const UFeature = () => {
             {tabs[selectedTab].desc}
           </span>
         </motion.div>
-        <div className="overflow-hidden  contents md:hidden ">
+        <div className="overflow-hidden  flex flex-col md:hidden ">
           <Swiper
             className="!h-fit "
             id="swiperUFeatureMob"
@@ -173,17 +173,13 @@ const UFeature = () => {
               alt=""
             />
           )}
-          <div className="flex w-full justify-center">
-            <img
-              className="absolute bottom-[0%] "
-              src={tabs[selectedTab].abImg}
-              alt=""
-            />
-          </div>
-          <div className="flex w-full justify-center">
-            <span className="text-center w-[85%] font-lato font-[400] pb-4 absolute bottom-[10px]">
-              {tabs[selectedTab].desc}
-            </span>
+          <div className="flex w-full justify-center pt-8 relative">
+            <img className=" " src={tabs[selectedTab].abImg} alt="" />
+            <div className="flex w-full justify-center absolute h-full items-center left-0 right-0">
+              <span className="text-center w-[85%] font-lato font-[400] pb-4 ">
+                {tabs[selectedTab].desc}
+              </span>
+            </div>
           </div>
         </div>
         {/* </AnimatePresence> */}
