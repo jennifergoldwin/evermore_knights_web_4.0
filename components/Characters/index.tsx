@@ -19,7 +19,8 @@ const characterLists = [
     title1: "Wind",
     icon2: "/assets/images/staff.png",
     title2: "Staff",
-    link: "https://www.youtube.com/embed/DlmUCgQglE0",
+    link: "/assets/video/grana.mp4",
+    star: "/assets/images/5_star.png",
   },
   {
     bg: "bg-[url(/assets/images/bg-laslow.png)]",
@@ -32,7 +33,8 @@ const characterLists = [
     title1: "Fire",
     icon2: "/assets/images/dagger.png",
     title2: "Staff",
-    link: "https://www.youtube.com/embed/V8zy2ILphNI",
+    link: "/assets/video/laslow.mp4",
+    star: "/assets/images/4_star.png",
   },
   {
     bg: "bg-[url(/assets/images/bg-quinn.png)]",
@@ -45,7 +47,8 @@ const characterLists = [
     title1: "Thunder",
     icon2: "/assets/images/bow.png",
     title2: "Bow",
-    link: "https://www.youtube.com/embed/t4lPwTg7pQw",
+    link: "/assets/video/quinn.mp4",
+    star: "/assets/images/4_star.png",
   },
   {
     bg: "bg-[url(/assets/images/bg-curtis.png)]",
@@ -58,7 +61,8 @@ const characterLists = [
     title1: "Natural",
     icon2: "/assets/images/staff.png",
     title2: "Staff",
-    link: "https://www.youtube.com/embed/V_NyGlC9O_M",
+    link: "/assets/video/curtis.mp4",
+    star: "/assets/images/4_star.png",
   },
   {
     bg: "bg-[url(/assets/images/bg-gashani.png)]",
@@ -72,6 +76,7 @@ const characterLists = [
     icon2: "/assets/images/staff.png",
     title2: "Staff",
     link: "",
+    star: "/assets/images/5_star.png",
   },
   {
     bg: "bg-[url(/assets/images/bg-trista.png)]",
@@ -85,15 +90,16 @@ const characterLists = [
     icon2: "/assets/images/sword.png",
     title2: "Sword",
     link: "",
+    star: "/assets/images/5_star.png",
   },
 ];
 const Characters: React.FC = () => {
   // const swiper = useSwiper();
   const [swiper, setSwiper] = React.useState(useSwiper());
-  const [index, setIndex] = React.useState(0);
+  const [indexChar, setIndexChar] = React.useState(0);
   const [isShown, setIsShown] = React.useState(false);
   const handleClick = (x: number) => {
-    setIndex(x);
+    setIndexChar(x);
     swiper.slideTo(x);
   };
 
@@ -133,20 +139,21 @@ const Characters: React.FC = () => {
   return (
     <div className="relative overflow-hidden m-h-screen ">
       <Modal
+        id="character"
         isShown={isShown}
         setIsShown={setIsShown}
-        src={characterLists[index].link}
+        src={characterLists[indexChar].link}
       />
       <div className="hidden lg:flex gap-0 lg:gap-2 justify-center h-full  flex-col  absolute m-auto right-0 z-10">
         <div className="cursor-pointer" onClick={() => handleClick(0)}>
           <img
             className={`${
-              index == 0
+              indexChar == 0
                 ? "translate-x-[70%] lg:translate-x-[50%] transition-all"
                 : "translate-x-[80%] lg:translate-x-[60%]"
             } w-[80%] lg:w-[100%] `}
             src={`${
-              index == 0
+              indexChar == 0
                 ? "/assets/images/btn-1.png"
                 : "/assets/images/btn-1.png"
             }`}
@@ -156,12 +163,12 @@ const Characters: React.FC = () => {
         <div className="cursor-pointer" onClick={() => handleClick(1)}>
           <img
             className={`${
-              index == 1
+              indexChar == 1
                 ? "translate-x-[70%] lg:translate-x-[50%] transition-all"
                 : "translate-x-[80%] lg:translate-x-[60%]"
             } w-[80%] lg:w-[100%]`}
             src={`${
-              index == 1
+              indexChar == 1
                 ? "/assets/images/btn-2.png"
                 : "/assets/images/btn-2.png"
             }`}
@@ -171,12 +178,12 @@ const Characters: React.FC = () => {
         <div className="cursor-pointer" onClick={() => handleClick(2)}>
           <img
             className={`${
-              index == 2
+              indexChar == 2
                 ? "translate-x-[70%] lg:translate-x-[50%] transition-all"
                 : "translate-x-[80%] lg:translate-x-[60%]"
             } w-[80%] lg:w-[100%]`}
             src={`${
-              index == 2
+              indexChar == 2
                 ? "/assets/images/btn-3.png"
                 : "/assets/images/btn-3.png"
             }`}
@@ -186,12 +193,12 @@ const Characters: React.FC = () => {
         <div className="cursor-pointer" onClick={() => handleClick(3)}>
           <img
             className={`${
-              index == 3
+              indexChar == 3
                 ? "translate-x-[70%] lg:translate-x-[50%] transition-all"
                 : "translate-x-[80%] lg:translate-x-[60%]"
             } w-[80%] lg:w-[100%]`}
             src={`${
-              index == 3
+              indexChar == 3
                 ? "/assets/images/btn-4.png"
                 : "/assets/images/btn-4.png"
             }`}
@@ -201,12 +208,12 @@ const Characters: React.FC = () => {
         <div className="cursor-pointer" onClick={() => handleClick(4)}>
           <img
             className={`${
-              index == 4
+              indexChar == 4
                 ? "translate-x-[70%] lg:translate-x-[50%] transition-all"
                 : "translate-x-[80%] lg:translate-x-[60%]"
             } w-[80%] lg:w-[100%]`}
             src={`${
-              index == 4
+              indexChar == 4
                 ? "/assets/images/btn-5.png"
                 : "/assets/images/btn-5.png"
             }`}
@@ -216,12 +223,12 @@ const Characters: React.FC = () => {
         <div className="cursor-pointer" onClick={() => handleClick(5)}>
           <img
             className={`${
-              index == 5
+              indexChar == 5
                 ? "translate-x-[70%] lg:translate-x-[50%] transition-all"
                 : "translate-x-[80%] lg:translate-x-[60%]"
             } w-[80%] lg:w-[100%]`}
             src={`${
-              index == 5
+              indexChar == 5
                 ? "/assets/images/btn-6.png"
                 : "/assets/images/btn-6.png"
             }`}
@@ -252,7 +259,7 @@ const Characters: React.FC = () => {
                         </span>
                       </div>
                       <div className="flex items-center gap-6">
-                        <img src="/assets/images/5_star.png" alt="" />
+                        <img src={item.star} alt="" />
                         <div className="flex gap-4 font-barlow font-[600]">
                           <div className="flex items-center gap-2 ">
                             <Image
@@ -310,9 +317,14 @@ const Characters: React.FC = () => {
                         </div> */}
 
                         <img
-                          onClick={() => setIsShown(true)}
+                          onClick={() => {
+                            console.log(indexChar);
+                            setIsShown(true);
+                          }}
                           className={`w-[35%] h-auto lg:w-[100%] hidden lg:block ${
-                            item.link === "" ? "opacity-0" : "opacity-1"
+                            item.link === ""
+                              ? "opacity-0 invisible"
+                              : "opacity-1 visible"
                           }`}
                           src="/assets/images/youtube-frame.png"
                           alt=""
@@ -375,7 +387,7 @@ const Characters: React.FC = () => {
                     width="21.2932"
                     height="21.2932"
                     transform="rotate(-45 1.15242 16.2344)"
-                    stroke={idx != index ? "transparent" : "white"}
+                    stroke={idx != indexChar ? "transparent" : "white"}
                   />
                   <rect
                     x="7.17188"
@@ -383,7 +395,7 @@ const Characters: React.FC = () => {
                     width="12.7942"
                     height="12.7942"
                     transform="rotate(-45 7.17188 15.957)"
-                    fill={idx != index ? "#161F2C" : "white"}
+                    fill={idx != indexChar ? "#161F2C" : "white"}
                   />
                 </svg>
               </div>

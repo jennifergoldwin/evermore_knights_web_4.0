@@ -145,11 +145,11 @@ const Story = () => {
           }
         }}
         onAutoplayStart={(swiper: any) => {
-          (
-            document.getElementById(
-              `video${swiper.activeIndex + 1}`
-            ) as HTMLVideoElement
-          ).load();
+          // (
+          //   document.getElementById(
+          //     `video${swiper.activeIndex + 1}`
+          //   ) as HTMLVideoElement
+          // ).load();
           (
             document.getElementById(
               `video${swiper.activeIndex + 1}`

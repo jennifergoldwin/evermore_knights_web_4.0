@@ -189,7 +189,6 @@ const Feature = () => {
             initial="rest"
             animate="rest"
             whileHover="play"
-            whileTap="play"
             className="w-1/6 border-[#E6CD99] border-[1pt] relative overflow-hidden"
           >
             <motion.div variants={overlay_trans} className="overlay" />

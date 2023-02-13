@@ -4,8 +4,24 @@ interface Imodal {
   isShown: boolean;
   setIsShown: any;
   src: any;
+  id: any;
 }
-const Modal: React.FC<Imodal> = ({ isShown, setIsShown, src }) => {
+const Modal: React.FC<Imodal> = ({ isShown, setIsShown, src, id }) => {
+  React.useEffect(() => {
+    handleClick();
+  });
+
+  const handleClick = () => {
+    const video = document.getElementById(
+      `video-modal-${id}`
+    ) as HTMLVideoElement;
+    video.src = src;
+    if (isShown) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  };
   return (
     <div
       className={`${
@@ -14,21 +30,28 @@ const Modal: React.FC<Imodal> = ({ isShown, setIsShown, src }) => {
       id="channelModal"
     >
       <div className="h-full flex justify-center items-center flex-col">
-        <div className="w-[90%] sm:w-[70%] flex flex-col">
+        <div className="w-[95%] h-auto lg:w-[60%] flex flex-col">
           <button
-            onClick={() => setIsShown(false)}
+            onClick={() => {
+              setIsShown(false);
+              handleClick();
+            }}
             type="button"
-            className="float-right font-bold text-2xl grid justify-items-end"
+            className="float-right font-bold text-3xl grid justify-items-end"
             aria-label="Close"
           >
             <MdClose />
           </button>
-          <div className="w-full relative pt-[48.25%] max-w-full">
+          <video preload="none" controls id={`video-modal-${id}`}>
+            <source src={src} type="video/m p4" />
+          </video>
+          {/* <div className="w-full relative pt-[48.25%] max-w-full">
             <iframe
+              id="video-modal"
               className="absolute top-0 left-0 right-0 bottom-0 w-full h-full "
               src={`${src}`}
             ></iframe>
-          </div>
+          </div> */}
           {/* <iframe
             className="responsive-iframe w-full h-[382px] left-0 top-[2px]"
             loading="lazy"

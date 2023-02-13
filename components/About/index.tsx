@@ -8,9 +8,11 @@ const About = () => {
   return (
     <div className="relative overflow-hidden h-screen   ">
       <Modal
+        id="about"
         isShown={isShown}
         setIsShown={setIsShown}
-        src="https://www.youtube.com/embed/-ERMKXPYQl4?autoplay=1"
+        // src="https://www.youtube-nocookie.com/embed/-ERMKXPYQl4"
+        src="/assets/video/trailer.mp4"
       />
       <div
         className={`bg-[url(/assets/images/bg-about.png)] bg-left bg-cover h-full `}
