@@ -507,3 +507,10 @@ html {
 .nav-burger {
   background: transparent;
 }
+.outer-video {
+  overflow: hidden;
+  position: relative;
+  border-radius: 18px;
+  border: 3.8px solid transparent;
+  background: linear-gradient(45deg, #e6cd99, #a06e05) border-box;
+}

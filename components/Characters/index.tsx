@@ -137,13 +137,14 @@ const Characters: React.FC = () => {
   //   }
   // });
   return (
-    <div className="relative overflow-hidden m-h-screen ">
+    <div className="relative overflow-hidden h-screen">
       <Modal
         id="character"
         isShown={isShown}
         setIsShown={setIsShown}
         src={characterLists[indexChar].link}
       />
+
       <div className="hidden lg:flex gap-0 lg:gap-2 justify-center h-full  flex-col  absolute m-auto right-0 z-10">
         <div className="cursor-pointer" onClick={() => handleClick(0)}>
           <img

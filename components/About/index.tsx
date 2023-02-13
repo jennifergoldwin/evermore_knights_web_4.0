@@ -6,7 +6,7 @@ import Modal from "./modal";
 const About = () => {
   const [isShown, setIsShown] = React.useState(false);
   return (
-    <div className="relative overflow-hidden h-screen   ">
+    <div className="relative overflow-hidden h-screen">
       <Modal
         id="about"
         isShown={isShown}
