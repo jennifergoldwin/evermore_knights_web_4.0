@@ -128,7 +128,7 @@ const Characters: React.FC = () => {
   };
 
   return (
-    <div className="relative overflow-hidden min-h-screen">
+    <div className="relative overflow-hidden min-h-screen lg:h-screen">
       <Modal
         id="character"
         isShown={isShown}
@@ -228,6 +228,112 @@ const Characters: React.FC = () => {
           />
         </div>
       </div>
+      {/* <div
+        className={`${characterLists[indexChar].bg} h-full bg-cover bg-center `}
+      >
+        <div className="ml-0 lg:ml-[8%] lg:pl-0 lgf:ml-0 lgf:pl-[8%] pt-6 relative w-full h-full flex flex-col-reverse lg:flex-row justify-end lg:justify-center items-center">
+          <div className="bg-gradient-black w-full lg:w-2/5 absolute z-[2] bottom-[0%] lg:static">
+            <div className="p-2 lg:p-0 flex justify-center items-center lg:flex-col">
+              <div className="md:p-3 lg:pr-0">
+                <div className="flex items-center font-friz-bold gap-4">
+                  <h1 className="text-xl sm:text-2xl lg:text-4xl">
+                    {characterLists[indexChar].heroName}
+                  </h1>
+                  <span className="title-text font-bold text-sm sm:text-base lg:text-lg">
+                    {characterLists[indexChar].heroSubName}
+                  </span>
+                </div>
+                <div className="flex items-center gap-6">
+                  <img src={characterLists[indexChar].star} alt="" />
+                  <div className="flex gap-4 font-barlow font-[600]">
+                    <div className="flex items-center gap-2 ">
+                      <Image
+                        width={20}
+                        height={20}
+                        src={characterLists[indexChar].icon1}
+                        alt=""
+                      />
+                      <span className="text-sm sm:text-base">
+                        {characterLists[indexChar].title1}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 ">
+                      <Image
+                        width={20}
+                        height={20}
+                        src={characterLists[indexChar].icon2}
+                        alt=""
+                      />
+                      <span className="text-sm sm:text-base">
+                        {characterLists[indexChar].title2}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="py-4 w-full ">
+                  <svg
+                    viewBox="0 0 465 3"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 1.5L58.145 0.78L116.237 0.48L232.473 0L348.763 0.48L406.855 0.78L465 1.5L406.855 2.22L348.763 2.52L232.473 3L116.237 2.52L58.145 2.22L0 1.5Z"
+                      fill="#F1D795"
+                    />
+                  </svg>
+                </div>
+                <div className="flex lg:flex-col flex-row justify-center h-full items-center">
+                  <div
+                    className={`${
+                      characterLists[indexChar].link === "" ? "w-full" : "w-3/5"
+                    } lg:w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-base  lg:text-sm flex  justify-center`}
+                  >
+                    {characterLists[indexChar].heroDesc}
+                  </div>
+
+                  <img
+                    onClick={() => {
+                      console.log(indexChar);
+                      setIsShown(true);
+                    }}
+                    className={`w-[35%] h-auto lg:w-[100%] hidden lg:block ${
+                      characterLists[indexChar].link === ""
+                        ? "opacity-0 invisible"
+                        : "opacity-1 visible"
+                    }`}
+                    src="/assets/images/youtube-frame.png"
+                    alt=""
+                  />
+                  <img
+                    onClick={() => setIsShown(true)}
+                    className={`w-[40%]  lg:hidden ${
+                      characterLists[indexChar].link === "" ? "hidden" : "block"
+                    }`}
+                    src="/assets/images/youtube-frame-mob.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="w-full overflow-hidden  lg:w-3/5  relative">
+            <img
+              className={`hidden translate-x-[-20%] lf:translate-x-[-8%]
+                    } lg:block h-screen fixed object-cover top-0 `}
+              src={characterLists[indexChar].heroImg}
+              loading="lazy"
+              alt=""
+            />
+            <img
+              className="block lg:hidden"
+              src={`${
+                characterLists[indexChar].heroImg.split(".png")[0]
+              }-mob.png`}
+              alt=""
+            />
+          </div>
+        </div>
+      </div> */}
       {characterLists.map((item: any, idx: number) => (
         <div
           key={idx}
