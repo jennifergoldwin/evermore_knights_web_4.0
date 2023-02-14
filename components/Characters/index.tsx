@@ -7,6 +7,7 @@ import { useSwiper } from "swiper/react";
 import "swiper/css/effect-fade";
 import "swiper/css";
 import Modal from "../About/modal";
+import { motion, AnimatePresence, useAnimationControls } from "framer-motion";
 const characterLists = [
   {
     bg: "bg-[url(/assets/images/bg-grana.png)]",
@@ -96,48 +97,38 @@ const characterLists = [
 const Characters: React.FC = () => {
   // const swiper = useSwiper();
   const [swiper, setSwiper] = React.useState(useSwiper());
+  const [statusClick, setStatusClick] = React.useState(false);
   const [indexChar, setIndexChar] = React.useState(0);
   const [isShown, setIsShown] = React.useState(false);
   const handleClick = (x: number) => {
     setIndexChar(x);
-    swiper.slideTo(x);
+
+    setTimeout(() => {
+      setStatusClick(true);
+    }, 1000);
+    // swiper.slideTo(x);
+  };
+  const animSlide = {
+    rest: {
+      opacity: "0",
+      transition: {
+        // type: "keyframes",
+        duration: 1.4,
+        ease: "easeIn",
+      },
+    },
+    play: {
+      opacity: "1",
+      transition: {
+        // type: "keyframes",
+        duration: 1.4,
+        ease: "easeIn",
+      },
+    },
   };
 
-  // React.useEffect(() => {
-  //   const slider = document.querySelector(
-  //     ".horizontal-slider"
-  //   ) as HTMLElement | null;
-  //   let isDown = false;
-  //   let startX: any;
-  //   let scrollLeft: any;
-
-  //   if (slider != null) {
-  //     slider.addEventListener("mousedown", (e: any) => {
-  //       isDown = true;
-  //       slider.classList.add("active");
-  //       startX = e.pageX - slider.offsetLeft;
-  //       scrollLeft = slider.scrollLeft;
-  //     });
-  //     slider.addEventListener("mouseleave", () => {
-  //       isDown = false;
-  //       slider.classList.remove("active");
-  //     });
-  //     slider.addEventListener("mouseup", () => {
-  //       isDown = false;
-  //       slider.classList.remove("active");
-  //     });
-  //     slider.addEventListener("mousemove", (e: any) => {
-  //       if (!isDown) return;
-  //       e.preventDefault();
-  //       const x = e.pageX - slider.offsetLeft;
-  //       const walk = (x - startX) * 3; //scroll-fast
-  //       slider.scrollLeft = scrollLeft - walk;
-  //       console.log(walk);
-  //     });
-  //   }
-  // });
   return (
-    <div className="relative overflow-hidden h-screen">
+    <div className="relative overflow-hidden min-h-screen">
       <Modal
         id="character"
         isShown={isShown}
@@ -237,7 +228,106 @@ const Characters: React.FC = () => {
           />
         </div>
       </div>
-      <Swiper
+      {characterLists.map((item: any, idx: number) => (
+        <div
+          key={idx}
+          className={`${item.bg} slide-char ${
+            indexChar === idx ? "active" : "inactive"
+          } h-full bg-cover bg-center `}
+        >
+          <div className="ml-0 lg:ml-[8%] lg:pl-0 lgf:ml-0 lgf:pl-[8%] pt-6 relative w-full h-full flex flex-col-reverse lg:flex-row justify-end lg:justify-center items-center">
+            <div className="bg-gradient-black w-full lg:w-2/5 absolute z-[2] bottom-[0%] lg:static">
+              <div className="p-2 lg:p-0 flex justify-center items-center lg:flex-col">
+                <div className="md:p-3 lg:pr-0">
+                  <div className="flex items-center font-friz-bold gap-4">
+                    <h1 className="text-xl sm:text-2xl lg:text-4xl">
+                      {item.heroName}
+                    </h1>
+                    <span className="title-text font-bold text-sm sm:text-base lg:text-lg">
+                      {item.heroSubName}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-6">
+                    <img src={item.star} alt="" />
+                    <div className="flex gap-4 font-barlow font-[600]">
+                      <div className="flex items-center gap-2 ">
+                        <Image width={20} height={20} src={item.icon1} alt="" />
+                        <span className="text-sm sm:text-base">
+                          {item.title1}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 ">
+                        <Image width={20} height={20} src={item.icon2} alt="" />
+                        <span className="text-sm sm:text-base">
+                          {item.title2}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="py-4 w-full ">
+                    <svg
+                      viewBox="0 0 465 3"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 1.5L58.145 0.78L116.237 0.48L232.473 0L348.763 0.48L406.855 0.78L465 1.5L406.855 2.22L348.763 2.52L232.473 3L116.237 2.52L58.145 2.22L0 1.5Z"
+                        fill="#F1D795"
+                      />
+                    </svg>
+                  </div>
+                  <div className="flex lg:flex-col flex-row justify-center h-full items-center">
+                    <div
+                      className={`${
+                        item.link === "" ? "w-full" : "w-3/5"
+                      } lg:w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-base  lg:text-sm flex  justify-center`}
+                    >
+                      {item.heroDesc}
+                    </div>
+
+                    <img
+                      onClick={() => {
+                        console.log(indexChar);
+                        setIsShown(true);
+                      }}
+                      className={`w-[35%] h-auto lg:w-[100%] hidden lg:block ${
+                        item.link === ""
+                          ? "opacity-0 invisible"
+                          : "opacity-1 visible"
+                      }`}
+                      src="/assets/images/youtube-frame.png"
+                      alt=""
+                    />
+                    <img
+                      onClick={() => setIsShown(true)}
+                      className={`w-[40%]  lg:hidden ${
+                        item.link === "" ? "hidden" : "block"
+                      }`}
+                      src="/assets/images/youtube-frame-mob.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-full overflow-hidden  lg:w-3/5  relative">
+              <img
+                className={`hidden translate-x-[-20%] lf:translate-x-[-8%]
+                 } lg:block h-screen fixed object-cover top-0 `}
+                src={item.heroImg}
+                loading="lazy"
+                alt=""
+              />
+              <img
+                className="block lg:hidden"
+                src={`${item.heroImg.split(".png")[0]}-mob.png`}
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      ))}
+      {/* <Swiper
         className="!h-screen "
         modules={[EffectFade]}
         effect={"fade"}
@@ -306,17 +396,7 @@ const Characters: React.FC = () => {
                         >
                           {item.heroDesc}
                         </div>
-                        {/* <div
-                          className="w-2/5 relative pt-[30%] sm:pt-[20%] lg:pt-[56.25%]  lg:w-full max-w-full"
-                          onClick={() => setIsShown(true)}
-                        >
-                          <iframe
-                            className="absolute top-0 left-0  w-full h-full "
-                            
-                            src={`${item.link}?autoplay=0&showinfo=0&controls=0`}
-                          ></iframe>
-                        </div> */}
-
+                      
                         <img
                           onClick={() => {
                             console.log(indexChar);
@@ -335,7 +415,6 @@ const Characters: React.FC = () => {
                           className={`w-[40%]  lg:hidden ${
                             item.link === "" ? "hidden" : "block"
                           }`}
-                          // className="w-[40%] block lg:hidden"
                           src="/assets/images/youtube-frame-mob.png"
                           alt=""
                         />
@@ -348,6 +427,7 @@ const Characters: React.FC = () => {
                     className={`hidden translate-x-[-20%] lf:translate-x-[-8%]
                     } lg:block h-screen fixed object-cover top-0 `}
                     src={item.heroImg}
+                    loading="lazy"
                     alt=""
                   />
                   <img
@@ -360,7 +440,7 @@ const Characters: React.FC = () => {
             </div>
           </SwiperSlide>
         ))}
-      </Swiper>
+      </Swiper> */}
       <div className="block relative lg:hidden bg-[#010a1a] py-4">
         <Swiper
           slideToClickedSlide

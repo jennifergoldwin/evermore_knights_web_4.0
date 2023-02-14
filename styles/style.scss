@@ -514,3 +514,16 @@ html {
   border: 3.8px solid transparent;
   background: linear-gradient(45deg, #e6cd99, #a06e05) border-box;
 }
+
+.slide-char.inactive {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: all 0.5s ease-in;
+}
+.slide-char.active {
+  opacity: 1;
+  position: relative;
+  visibility: visible;
+  transition: all 0.5s ease-in;
+}
