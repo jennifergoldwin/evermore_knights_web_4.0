@@ -531,3 +531,8 @@ html {
   z-index: 1;
   transition: all 0.5s ease-in;
 }
+.btn-footer:hover {
+  color: rgba(255, 255, 255, 1);
+  filter: drop-shadow(0 0 0.75rem black);
+  // box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
+}
