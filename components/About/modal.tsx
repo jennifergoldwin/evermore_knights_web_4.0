@@ -28,7 +28,7 @@ const Modal: React.FC<Imodal> = ({ isShown, setIsShown, src, id }) => {
     <div
       className={`${
         isShown ? "block" : "hidden"
-      } absolute text-[#E6CD99] w-full h-full z-10 bg-[#1D1B1B] bg-opacity-[0.8] `}
+      } absolute text-[#E6CD99] w-full h-full z-40 bg-[#1D1B1B] bg-opacity-[0.8] `}
       id="channelModal"
     >
       <motion.div
