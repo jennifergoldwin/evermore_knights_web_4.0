@@ -572,6 +572,7 @@ const World = () => {
               onClick={() => handleShowModal(1)}
               id="yanshu_point"
               data-name="yanshu_point"
+              className="cursor-pointer"
               transform="translate(312.225 335.024)"
             >
               <g id="Group_5751_2" data-name="Group 5751_2">
@@ -625,6 +626,7 @@ const World = () => {
               onClick={() => handleShowModal(0)}
               id="arriane_point"
               data-name="arriane_point"
+              className="cursor-pointer"
               transform="translate(451.958 477.798)"
             >
               <g id="Group_5751" data-name="Group 5751">
@@ -678,6 +680,7 @@ const World = () => {
               onClick={() => handleShowModal(2)}
               id="sanahara_point"
               data-name="sanahara_point"
+              className="cursor-pointer"
               transform="translate(755.2 189.448)"
             >
               <g id="Group_5751_3" data-name="Group 5751_3">
@@ -731,6 +734,7 @@ const World = () => {
               onClick={() => handleShowModal(5)}
               id="valensia_point"
               data-name="valensia_point"
+              className="cursor-pointer"
               transform="translate(859.642 370.91)"
             >
               <g id="Group_5751_6" data-name="Group 5751_6">
@@ -784,6 +788,7 @@ const World = () => {
               onClick={() => handleShowModal(4)}
               id="grandar_point"
               data-name="grandar_point"
+              className="cursor-pointer"
               transform="translate(1163.605 320.948)"
             >
               <g id="Group_5751_5" data-name="Group 5751_5">
@@ -837,6 +842,7 @@ const World = () => {
               onClick={() => handleShowModal(6)}
               id="faringrad_point"
               data-name="faringrad_point"
+              className="cursor-pointer"
               transform="translate(1232.437 200.593)"
             >
               <g id="Group_5751_4" data-name="Group 5751_4">
@@ -875,6 +881,7 @@ const World = () => {
               </g>
             </motion.g>
             <motion.g
+              className="cursor-pointer"
               onHoverStart={() => {
                 setIsHover(true);
                 setHoverIdx(3);

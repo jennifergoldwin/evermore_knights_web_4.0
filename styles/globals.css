@@ -274,7 +274,7 @@ body {
     #010a1a 66.34%
   );
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .bg-gradient-black {
     background: transparent;
   }

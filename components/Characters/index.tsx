@@ -22,6 +22,7 @@ const characterLists = [
     title2: "Staff",
     link: "/assets/video/grana.mp4",
     star: "/assets/images/5_star.png",
+    youtube: "/assets/images/grana-youtube.png",
   },
   {
     bg: "bg-[url(/assets/images/bg-laslow.png)]",
@@ -36,6 +37,7 @@ const characterLists = [
     title2: "Staff",
     link: "/assets/video/laslow.mp4",
     star: "/assets/images/4_star.png",
+    youtube: "/assets/images/laslow-youtube.png",
   },
   {
     bg: "bg-[url(/assets/images/bg-quinn.png)]",
@@ -50,6 +52,7 @@ const characterLists = [
     title2: "Bow",
     link: "/assets/video/quinn.mp4",
     star: "/assets/images/4_star.png",
+    youtube: "/assets/images/quinn-youtube.png",
   },
   {
     bg: "bg-[url(/assets/images/bg-curtis.png)]",
@@ -64,6 +67,7 @@ const characterLists = [
     title2: "Staff",
     link: "/assets/video/curtis.mp4",
     star: "/assets/images/4_star.png",
+    youtube: "/assets/images/curtis-youtube.png",
   },
   {
     bg: "bg-[url(/assets/images/bg-gashani.png)]",
@@ -78,6 +82,7 @@ const characterLists = [
     title2: "Staff",
     link: "",
     star: "/assets/images/5_star.png",
+    youtube: "/assets/images/youtube-frame.png",
   },
   {
     bg: "bg-[url(/assets/images/bg-trista.png)]",
@@ -92,6 +97,7 @@ const characterLists = [
     title2: "Sword",
     link: "",
     star: "/assets/images/5_star.png",
+    youtube: "/assets/images/youtube-frame.png",
   },
 ];
 const Characters: React.FC = () => {
@@ -138,7 +144,7 @@ const Characters: React.FC = () => {
         src={characterLists[indexChar].link}
       />
 
-      <div className="hidden lg:flex gap-0 lg:gap-2 justify-center h-full  flex-col  absolute m-auto right-0 z-10">
+      <div className="hidden md:flex gap-0 lg:gap-2 justify-center h-full  flex-col  absolute m-auto right-0 z-10">
         <div className="cursor-pointer" onClick={() => handleClick(0)}>
           <img
             className={`${
@@ -233,43 +239,60 @@ const Characters: React.FC = () => {
       <div
         className={`${characterLists[indexChar].bg} h-full bg-cover bg-center `}
       >
-        <div className="ml-0 lg:ml-[8%] lg:pl-0 lgf:ml-0 lgf:pl-[8%] pt-6 relative w-full h-full flex flex-col-reverse lg:flex-row justify-end lg:justify-center items-center">
-          <div className="bg-gradient-black w-full lg:w-2/5 absolute z-[2] bottom-[0%] flex flex-col lg:static">
-            <div className="p-2 lg:p-0 flex justify-center items-center lg:flex-col">
+        <div className="ml-0 md:ml-4 lg:ml-[8%] lg:pl-0 lgf:ml-0 lgf:pl-[8%] pt-6 relative w-full h-full flex flex-col-reverse md:flex-row justify-end md:justify-center items-center">
+          <div className="bg-gradient-black w-full md:w-2/5 absolute z-[2] bottom-[0%] flex flex-col md:static">
+            <div className="p-2 md:p-0 flex justify-center items-center md:flex-col">
               <div className="md:p-3 lg:pr-0">
-                <div className="flex items-center font-friz-bold gap-4">
-                  <h1 className="text-xl sm:text-2xl lg:text-4xl">
-                    {characterLists[indexChar].heroName}
-                  </h1>
-                  <span className="title-text font-bold text-sm sm:text-base lg:text-lg">
-                    {characterLists[indexChar].heroSubName}
-                  </span>
-                </div>
-                <div className="flex items-center gap-6">
-                  <img src={characterLists[indexChar].star} alt="" />
-                  <div className="flex gap-4 font-barlow font-[600]">
-                    <div className="flex items-center gap-2 ">
-                      <Image
-                        width={20}
-                        height={20}
-                        src={characterLists[indexChar].icon1}
-                        alt=""
-                      />
-                      <span className="text-sm sm:text-base">
-                        {characterLists[indexChar].title1}
+                <div className="flex justify-between items-center">
+                  <div className="flex flex-col w-5/6  sm:w-1/2 md:w-full">
+                    <div className="flex items-center font-friz-bold gap-3">
+                      <h1 className="text-xl sm:text-2xl lg:text-4xl">
+                        {characterLists[indexChar].heroName}
+                      </h1>
+                      <span className="title-text font-bold text-base sm:text-base lg:text-lg">
+                        {characterLists[indexChar].heroSubName}
                       </span>
                     </div>
-                    <div className="flex items-center gap-2 ">
-                      <Image
-                        width={20}
-                        height={20}
-                        src={characterLists[indexChar].icon2}
-                        alt=""
-                      />
-                      <span className="text-sm sm:text-base">
-                        {characterLists[indexChar].title2}
-                      </span>
+                    <div className="flex items-center gap-3">
+                      <img src={characterLists[indexChar].star} alt="" />
+                      <div className="flex gap-4 font-barlow font-[600]">
+                        <div className="flex items-center gap-2 ">
+                          <Image
+                            width={20}
+                            height={20}
+                            src={characterLists[indexChar].icon1}
+                            alt=""
+                          />
+                          <span className="text-xs sm:text-base">
+                            {characterLists[indexChar].title1}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2 ">
+                          <Image
+                            width={20}
+                            height={20}
+                            src={characterLists[indexChar].icon2}
+                            alt=""
+                          />
+                          <span className="text-xs sm:text-base">
+                            {characterLists[indexChar].title2}
+                          </span>
+                        </div>
+                      </div>
                     </div>
+                  </div>
+                  <div
+                    onClick={() => setIsShown(true)}
+                    className={`${
+                      characterLists[indexChar].link === "" ? "hidden" : "flex"
+                    } cursor-pointer w-1/6 sm:w-1/2 md:w-auto justify-start pr-0 sm:justify-end sm:pr-2 items-center md:hidden`}
+                  >
+                    <img
+                      src={`${
+                        characterLists[indexChar].youtube.split(".png")[0]
+                      }-mob.png`}
+                      alt=""
+                    />
                   </div>
                 </div>
                 <div className="py-4 w-full ">
@@ -284,40 +307,77 @@ const Characters: React.FC = () => {
                     />
                   </svg>
                 </div>
-                <div className="flex lg:flex-col flex-row justify-center h-full items-center">
+                <div className="flex md:flex-col flex-row justify-center h-full items-center">
                   <div
-                    className={`${
-                      characterLists[indexChar].link === "" ? "w-full" : "w-3/5"
-                    } lg:w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-base  lg:text-sm flex  justify-center`}
+                    className={` w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-base  lg:text-sm flex  justify-center`}
                   >
                     {characterLists[indexChar].heroDesc}
                   </div>
 
-                  <img
-                    onClick={() => {
-                      console.log(indexChar);
-                      setIsShown(true);
-                    }}
-                    className={`w-[35%] h-auto lg:w-[100%] hidden lg:block ${
+                  <div
+                    className={`hidden md:block ${
                       characterLists[indexChar].link === ""
                         ? "opacity-0 invisible"
                         : "opacity-1 visible"
-                    }`}
-                    src="/assets/images/youtube-frame.png"
-                    alt=""
-                  />
-                  <img
+                    } outer-video cursor-pointer w-[100%] h-auto`}
+                    onClick={() => {
+                      setIsShown(true);
+                    }}
+                  >
+                    <div className="absolute top-0 left-0 z-20">
+                      <img
+                        src="/assets/images/arrow.png"
+                        alt=""
+                        className="w-[40px] h-[40px] rotate-[315deg] p-2"
+                      />
+                    </div>
+                    <div className="absolute top-0 right-0 z-20">
+                      <img
+                        src="/assets/images/arrow.png"
+                        alt=""
+                        className="w-[40px] h-[40px] rotate-[45deg] p-2"
+                      />
+                    </div>
+                    <div className="absolute bottom-0 left-0 z-20">
+                      <img
+                        src="/assets/images/arrow.png"
+                        alt=""
+                        className="w-[40px] h-[40px] rotate-[225deg] p-2"
+                      />
+                    </div>
+                    <div className="absolute bottom-0 right-0 z-20">
+                      <img
+                        src="/assets/images/arrow.png"
+                        alt=""
+                        className="w-[40px] h-[40px] rotate-[135deg] p-2"
+                      />
+                    </div>
+                    <div className="absolute w-full h-full flex justify-center items-center  z-20">
+                      <img
+                        src="/assets/images/play.png"
+                        alt=""
+                        className=" p-2"
+                      />
+                    </div>
+                    <div className="overlay" />
+                    <img
+                      className={``}
+                      src={characterLists[indexChar].youtube}
+                      alt=""
+                    />
+                  </div>
+                  {/* <img
                     onClick={() => setIsShown(true)}
-                    className={`w-[40%]  lg:hidden ${
+                    className={`w-[40%]  md:hidden ${
                       characterLists[indexChar].link === "" ? "hidden" : "block"
                     }`}
                     src="/assets/images/youtube-frame-mob.png"
                     alt=""
-                  />
+                  /> */}
                 </div>
               </div>
             </div>
-            <div className="block relative lg:hidden bg-[#010a1a] py-4">
+            <div className="block relative md:hidden bg-[#010a1a] py-4">
               <Swiper
                 slideToClickedSlide
                 centeredSlides
@@ -365,16 +425,16 @@ const Characters: React.FC = () => {
               <div className="absolute w-full h-[2px] bg-line bottom-[22.5%]"></div>
             </div>
           </div>
-          <div className="w-full overflow-hidden  lg:w-3/5  relative">
+          <div className="w-full overflow-hidden  md:w-3/5  relative">
             <img
               className={`hidden translate-x-[-20%] lf:translate-x-[-8%]
-                    } lg:block h-screen fixed object-cover top-0 `}
+                    } md:block h-screen fixed object-cover top-0 `}
               src={characterLists[indexChar].heroImg}
               loading="lazy"
               alt=""
             />
             <img
-              className="block lg:hidden"
+              className="block md:hidden"
               src={`${
                 characterLists[indexChar].heroImg.split(".png")[0]
               }-mob.png`}

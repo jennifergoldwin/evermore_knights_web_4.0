@@ -59,15 +59,56 @@ const About = () => {
                 allowFullScreen
               ></iframe>
             </div> */}
-              <img
+              {/* <img
                 onClick={() => setIsShown(true)}
                 className="cursor-pointer w-full lf:w-[80%] h-auto"
                 src="/assets/images/youtube-frame.png"
                 alt=""
-              />
+                
+              /> */}
+              <div
+                className={` outer-video cursor-pointer w-[100%]  lf:w-[80%] h-auto`}
+                onClick={() => {
+                  setIsShown(true);
+                }}
+              >
+                <div className="absolute top-0 left-0 z-20">
+                  <img
+                    src="/assets/images/arrow.png"
+                    alt=""
+                    className="w-[40px] h-[40px] rotate-[315deg] p-2"
+                  />
+                </div>
+                <div className="absolute top-0 right-0 z-20">
+                  <img
+                    src="/assets/images/arrow.png"
+                    alt=""
+                    className="w-[40px] h-[40px] rotate-[45deg] p-2"
+                  />
+                </div>
+                <div className="absolute bottom-0 left-0 z-20">
+                  <img
+                    src="/assets/images/arrow.png"
+                    alt=""
+                    className="w-[40px] h-[40px] rotate-[225deg] p-2"
+                  />
+                </div>
+                <div className="absolute bottom-0 right-0 z-20">
+                  <img
+                    src="/assets/images/arrow.png"
+                    alt=""
+                    className="w-[40px] h-[40px] rotate-[135deg] p-2"
+                  />
+                </div>
+                <div className="absolute w-full h-full flex justify-center items-center  z-20">
+                  <img src="/assets/images/play.png" alt="" className=" p-2" />
+                </div>
+                <div className="overlay" />
+                <img src="/assets/images/about-youtube.png" alt="" />
+              </div>
             </div>
 
-            <div className="absolute hidden lf:flex  bottom-0 z-  lg:-bottom-[20%] -left-[10%]">
+            <div className="absolute hidden lf:flex  bottom-0 z-30  lg:-bottom-[20%] -left-[10%]">
               <img src="/assets/images/leaf.png" alt="" />
             </div>
           </div>
