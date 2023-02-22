@@ -62,18 +62,18 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
         </div> */}
         <div className="home-mob-style ">
           <div className="absolute bg-gradient-black-1 h-[400px] bottom-0 w-full z-[1]"></div>
-          {/* <div className="lg:absolute bottom-[10%] lg:bottom-0 flex gap-2 right-0 lg:p-3">
-            <img
+          <div className="lg:absolute bottom-[10%] lg:bottom-0 flex gap-2 right-0 lg:p-3 z-[2]">
+            {/* <img
               className="w-36 sm:w-auto h-auto md:z-20"
               src="/assets/images/appstore.png"
               alt=""
-            />
+            /> */}
             <img
-              className="w-36 sm:w-auto h-auto md:z-20"
+              className="w-36 sm:w-auto h-auto "
               src="/assets/images/googleplay.png"
               alt=""
             />
-          </div> */}
+          </div>
 
           <div className="lg:hidden grid grid-cols-6 gap-3 z-[2]">
             <a

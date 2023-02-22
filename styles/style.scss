@@ -414,7 +414,9 @@ html {
   opacity: 1;
   z-index: 1;
 }
-
+.fullpage-wrapper .ek.world.fp-section {
+  background: #624d28;
+}
 .fullpage-wrapper .ek.fp-section {
   width: 100% !important;
   position: absolute;
@@ -515,24 +517,19 @@ html {
   background: linear-gradient(45deg, #e6cd99, #a06e05) border-box;
 }
 
-.slide-char.inactive {
-  opacity: 0;
-  visibility: hidden;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  position: absolute;
-  transition: all 0.5s ease-in;
-}
-.slide-char.active {
-  opacity: 1;
-  position: relative;
-  visibility: visible;
-  z-index: 1;
-  transition: all 0.5s ease-in;
-}
 .btn-footer:hover {
   color: rgba(255, 255, 255, 1);
   filter: drop-shadow(0 0 0.75rem black);
   // box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
+}
+.fp-viewing-lastPage #fullpage .feature {
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+  transition: all 0.8s ease;
+  opacity: 1;
+}
+.fp-viewing-lastPage #fullpage .lastPage {
+  position: relative;
 }

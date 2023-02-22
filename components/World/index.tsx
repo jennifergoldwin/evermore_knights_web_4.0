@@ -38,215 +38,28 @@ const World = () => {
       filter: "drop-shadow(0 0 0.55rem #ffc700)",
     },
   };
+  const imgMotion = {
+    rest: {
+      // height: "100px",
+      transform: "scale(1)",
+    },
+    play: {
+      transform: "scale(1.18)",
+      // height: "200px",
+      transition: {
+        type: "spring",
+        duration: 0.4,
+        ease: "easeIn",
+      },
+    },
+  };
   const handleShowModal = (idx: number) => {
     setIdxModal(idx);
     setHiddenModal(!hiddenModal);
   };
 
   return (
-    <div className="relative">
-      <motion.div
-        variants={overlayWorld_trans}
-        onClick={() => setHiddenOverlay(true)}
-        initial="rest"
-        animate={hiddenOverlay ? "play" : "rest"}
-        className="bg-popup-world absolute w-full h-full flex justify-around items-center flex-col "
-      >
-        <div className="font-friz-bold flex flex-col justify-center items-center">
-          <span className=" text-white text-base">WORLD MAP</span>
-          <span className="title-feature text-3xl">TEMERIS</span>
-          <svg
-            width="28"
-            height="16"
-            viewBox="0 0 28 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M6.75349 6.58999L4.94197 4.77649L2 7.72167L5.38432 11.1027L14.484 2L19.0058 6.53376"
-              stroke="#B59E78"
-              strokeWidth="1.5"
-              strokeMiterlimit="10"
-              strokeLinecap="round"
-            />
-            <path
-              d="M21.9555 9.41502L23.767 11.2285L26.709 8.29036L23.3246 4.90234L14.2319 14.012L9.70312 9.47828"
-              stroke="#B59E78"
-              strokeWidth="1.5"
-              strokeMiterlimit="10"
-              strokeLinecap="round"
-            />
-            <path
-              d="M17.3244 8.00347L14.3555 5.03125L11.3865 8.00347L14.3555 10.9757L17.3244 8.00347Z"
-              stroke="#B59E78"
-              strokeWidth="1.5"
-              strokeMiterlimit="10"
-              strokeLinecap="round"
-            />
-          </svg>
-        </div>
-        <div className="flex title-feature font-friz-regular justify-center items-center text-lg">
-          Explore
-          <svg
-            width="61"
-            height="72"
-            viewBox="0 0 61 72"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g filter="url(#filter0_dd_331_1502)">
-              <path
-                d="M41.1298 21.0589L33.8349 31.9878L41.0248 42.9859L30.096 35.6911L19.0978 42.881L26.3927 31.9521L19.2028 20.954L30.1316 28.2488L41.1298 21.0589Z"
-                fill="url(#paint0_linear_331_1502)"
-                stroke="url(#paint1_linear_331_1502)"
-                strokeWidth="0.5"
-              />
-              <path
-                d="M29.5971 4.1758L26.8051 27.3481L4.21005 30.8692L26.2022 34.6785L29.477 56.5685L33.2368 34.0353L56.0122 30.4977L32.5771 26.8203L29.5971 4.1758Z"
-                fill="url(#paint2_linear_331_1502)"
-                stroke="url(#paint3_linear_331_1502)"
-              />
-              <circle
-                cx="30.083"
-                cy="30.8174"
-                r="19.6768"
-                stroke="url(#paint4_linear_331_1502)"
-                strokeWidth="1.5"
-              />
-              <path
-                d="M30.0855 67.4102L17.4483 45.5219L30.0855 51.7396L42.7227 45.5219L30.0855 67.4102Z"
-                fill="url(#paint5_linear_331_1502)"
-              />
-            </g>
-            <defs>
-              <filter
-                id="filter0_dd_331_1502"
-                x="0.125"
-                y="0.109375"
-                width="59.9648"
-                height="71.3008"
-                filterUnits="userSpaceOnUse"
-                colorInterpolationFilters="sRGB"
-              >
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feColorMatrix
-                  in="SourceAlpha"
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                  result="hardAlpha"
-                />
-                <feOffset />
-                <feGaussianBlur stdDeviation="2" />
-                <feComposite in2="hardAlpha" operator="out" />
-                <feColorMatrix
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"
-                />
-                <feBlend
-                  mode="normal"
-                  in2="BackgroundImageFix"
-                  result="effect1_dropShadow_331_1502"
-                />
-                <feColorMatrix
-                  in="SourceAlpha"
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                  result="hardAlpha"
-                />
-                <feOffset />
-                <feGaussianBlur stdDeviation="2" />
-                <feComposite in2="hardAlpha" operator="out" />
-                <feColorMatrix
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"
-                />
-                <feBlend
-                  mode="normal"
-                  in2="effect1_dropShadow_331_1502"
-                  result="effect2_dropShadow_331_1502"
-                />
-                <feBlend
-                  mode="normal"
-                  in="SourceGraphic"
-                  in2="effect2_dropShadow_331_1502"
-                  result="shape"
-                />
-              </filter>
-              <linearGradient
-                id="paint0_linear_331_1502"
-                x1="8.22131"
-                y1="24.9619"
-                x2="59.2163"
-                y2="43.2351"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#E6CD99" />
-                <stop offset="1" stopColor="#A06E05" />
-              </linearGradient>
-              <linearGradient
-                id="paint1_linear_331_1502"
-                x1="8.22131"
-                y1="24.9619"
-                x2="59.2163"
-                y2="43.2351"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#E6CD99" />
-                <stop offset="1" stopColor="#A06E05" />
-              </linearGradient>
-              <linearGradient
-                id="paint2_linear_331_1502"
-                x1="-2.08806"
-                y1="51.2076"
-                x2="75.7181"
-                y2="5.28166"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#E6CD99" />
-                <stop offset="1" stopColor="#A06E05" />
-              </linearGradient>
-              <linearGradient
-                id="paint3_linear_331_1502"
-                x1="-2.08806"
-                y1="51.2076"
-                x2="75.7181"
-                y2="5.28166"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#E6CD99" />
-                <stop offset="1" stopColor="#A06E05" />
-              </linearGradient>
-              <linearGradient
-                id="paint4_linear_331_1502"
-                x1="3.22685"
-                y1="44.812"
-                x2="67.6084"
-                y2="14.0208"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#E6CD99" />
-                <stop offset="1" stopColor="#A06E05" />
-              </linearGradient>
-              <linearGradient
-                id="paint5_linear_331_1502"
-                x1="1.5"
-                y1="53"
-                x2="72"
-                y2="36"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#E6CD99" />
-                <stop offset="1" stopColor="#A06E05" />
-              </linearGradient>
-            </defs>
-          </svg>
-          Temeris
-        </div>
-        <p className="w-[100%] px-4 sm:px-0 lf:w-[55%] text-center">
-          Gather a team of adventurers to explore the fantastical continent in
-          the World of Temeris
-        </p>
-      </motion.div>
+    <div className="relative h-full">
       <div className="hidden lf:block">
         <SwiperWorld
           idx={idxModal}
@@ -254,13 +67,24 @@ const World = () => {
           setIsShown={setHiddenModal}
         />
       </div>
-      <div className="w-full h-full  hidden lf:block">
+      <div className="w-full h-full  justify-center items-center  hidden lf:flex">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
           viewBox="0 0 1536 714"
         >
           <defs>
+            <linearGradient
+              id="gradient-world"
+              x1="0"
+              x2="100%"
+              y1="0"
+              y2="100%"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#E6CD99" offset="0%" />
+              <stop stop-color="#A06E05" offset="10%" />
+            </linearGradient>
             <clipPath id="clip-path">
               <rect
                 id="Rectangle_52"
@@ -575,7 +399,13 @@ const World = () => {
               className="cursor-pointer"
               transform="translate(312.225 335.024)"
             >
-              <g id="Group_5751_2" data-name="Group 5751_2">
+              <motion.g
+                initial="rest"
+                variants={imgMotion}
+                animate={isHover && hoverIdx === 1 ? "play" : "rest"}
+                id="Group_5751_2"
+                data-name="Group 5751_2"
+              >
                 <g id="Group_5750_2" data-name="Group 5750_2">
                   <path
                     id="Union_3"
@@ -589,7 +419,7 @@ const World = () => {
                     d="M341.582,390.593l-.154-.231H309.4c-8.128,0-14.717-5.7-14.717-12.736s6.589-12.735,14.717-12.735H390.59c8.128,0,14.718,5.7,14.718,12.735s-6.59,12.736-14.718,12.736H358.559l-.155.231L349.994,403.2Z"
                     transform="translate(-292.58 -363.11)"
                     fill="rgba(0,0,0,0.4)"
-                    stroke="#707070"
+                    stroke="#A06E05"
                     strokeWidth="1"
                   />
                 </g>
@@ -612,7 +442,7 @@ const World = () => {
                     transform="translate(-316.234 -372.693)"
                   />
                 </g>
-              </g>
+              </motion.g>
             </motion.g>
             <motion.g
               onHoverStart={() => {
@@ -629,7 +459,13 @@ const World = () => {
               className="cursor-pointer"
               transform="translate(451.958 477.798)"
             >
-              <g id="Group_5751" data-name="Group 5751">
+              <motion.g
+                initial="rest"
+                variants={imgMotion}
+                animate={isHover && hoverIdx === 0 ? "play" : "rest"}
+                id="Group_5751"
+                data-name="Group 5751"
+              >
                 <g id="Group_5750" data-name="Group 5750">
                   <path
                     id="Union"
@@ -643,7 +479,7 @@ const World = () => {
                     d="M472.582,545.273l-.154-.231H440.4c-8.128,0-14.717-5.7-14.717-12.736s6.589-12.736,14.717-12.736H521.59c8.128,0,14.718,5.7,14.718,12.736s-6.59,12.736-14.718,12.736H489.56l-.155.231-8.411,12.607Z"
                     transform="translate(-423.58 -517.789)"
                     fill="rgba(0,0,0,0.4)"
-                    stroke="#707070"
+                    stroke="#A06E05"
                     strokeWidth="1"
                   />
                 </g>
@@ -666,7 +502,7 @@ const World = () => {
                     transform="translate(-443.957 -527.549)"
                   />
                 </g>
-              </g>
+              </motion.g>
             </motion.g>
             <motion.g
               onHoverStart={() => {
@@ -683,7 +519,13 @@ const World = () => {
               className="cursor-pointer"
               transform="translate(755.2 189.448)"
             >
-              <g id="Group_5751_3" data-name="Group 5751_3">
+              <motion.g
+                initial="rest"
+                variants={imgMotion}
+                animate={isHover && hoverIdx === 2 ? "play" : "rest"}
+                id="Group_5751_3"
+                data-name="Group 5751_3"
+              >
                 <g id="Group_5750_3" data-name="Group 5750_3">
                   <path
                     id="Union_5"
@@ -697,7 +539,7 @@ const World = () => {
                     d="M756.871,232.878l-.154-.231H724.687c-8.129,0-14.718-5.7-14.718-12.735s6.589-12.736,14.718-12.736h81.193c8.128,0,14.718,5.7,14.718,12.736s-6.59,12.735-14.718,12.735H773.849l-.155.231-8.411,12.608Z"
                     transform="translate(-707.869 -205.395)"
                     fill="rgba(0,0,0,0.4)"
-                    stroke="#707070"
+                    stroke="#A06E05"
                     strokeWidth="1"
                   />
                 </g>
@@ -720,7 +562,7 @@ const World = () => {
                     transform="translate(-719.785 -214.127)"
                   />
                 </g>
-              </g>
+              </motion.g>
             </motion.g>
             <motion.g
               onHoverStart={() => {
@@ -737,7 +579,13 @@ const World = () => {
               className="cursor-pointer"
               transform="translate(859.642 370.91)"
             >
-              <g id="Group_5751_6" data-name="Group 5751_6">
+              <motion.g
+                initial="rest"
+                variants={imgMotion}
+                animate={isHover && hoverIdx === 5 ? "play" : "rest"}
+                id="Group_5751_6"
+                data-name="Group 5751_6"
+              >
                 <g id="Group_5750_6" data-name="Group 5750_6">
                   <path
                     id="Union_11"
@@ -751,7 +599,7 @@ const World = () => {
                     d="M854.785,429.472l-.154-.231H822.6c-8.129,0-14.718-5.7-14.718-12.736s6.589-12.735,14.718-12.735h81.192c8.128,0,14.718,5.7,14.718,12.735s-6.59,12.736-14.718,12.736H871.762l-.155.231L863.2,442.078Z"
                     transform="translate(-805.783 -401.989)"
                     fill="rgba(0,0,0,0.4)"
-                    stroke="#707070"
+                    stroke="#A06E05"
                     strokeWidth="1"
                   />
                 </g>
@@ -774,7 +622,7 @@ const World = () => {
                     transform="translate(-823.505 -410.72)"
                   />
                 </g>
-              </g>
+              </motion.g>
             </motion.g>
             <motion.g
               onHoverStart={() => {
@@ -791,7 +639,13 @@ const World = () => {
               className="cursor-pointer"
               transform="translate(1163.605 320.948)"
             >
-              <g id="Group_5751_5" data-name="Group 5751_5">
+              <motion.g
+                initial="rest"
+                variants={imgMotion}
+                animate={isHover && hoverIdx === 4 ? "play" : "rest"}
+                id="Group_5751_5"
+                data-name="Group 5751_5"
+              >
                 <g id="Group_5750_5" data-name="Group 5750_5">
                   <path
                     id="Union_9"
@@ -805,7 +659,7 @@ const World = () => {
                     d="M1139.752,375.343l-.16-.231H1107.56c-8.128,0-14.72-5.7-14.72-12.736s6.592-12.735,14.72-12.735h81.195c8.128,0,14.72,5.7,14.72,12.735s-6.592,12.736-14.72,12.736h-32.032l-.149.231-8.416,12.608Z"
                     transform="translate(-1090.75 -347.86)"
                     fill="rgba(0,0,0,0.4)"
-                    stroke="#707070"
+                    stroke="#A06E05"
                     strokeWidth="1"
                   />
                 </g>
@@ -828,7 +682,7 @@ const World = () => {
                     transform="translate(-1107.31 -356.591)"
                   />
                 </g>
-              </g>
+              </motion.g>
             </motion.g>
             <motion.g
               onHoverStart={() => {
@@ -845,7 +699,13 @@ const World = () => {
               className="cursor-pointer"
               transform="translate(1232.437 200.593)"
             >
-              <g id="Group_5751_4" data-name="Group 5751_4">
+              <motion.g
+                initial="rest"
+                variants={imgMotion}
+                animate={isHover && hoverIdx === 6 ? "play" : "rest"}
+                id="Group_5751_4"
+                data-name="Group 5751_4"
+              >
                 <g id="Group_5750_4" data-name="Group 5750_4">
                   <path
                     id="Union_7"
@@ -859,7 +719,7 @@ const World = () => {
                     d="M1204.281,244.953l-.149-.231H1172.1c-8.128,0-14.72-5.7-14.72-12.736s6.592-12.736,14.72-12.736h81.195c8.128,0,14.72,5.7,14.72,12.736s-6.592,12.736-14.72,12.736h-32.032l-.149.231-8.416,12.607Z"
                     transform="translate(-1155.279 -217.469)"
                     fill="rgba(0,0,0,0.4)"
-                    stroke="#707070"
+                    stroke="#A06E05"
                     strokeWidth="1"
                   />
                 </g>
@@ -878,7 +738,7 @@ const World = () => {
                     transform="translate(-1167.39 -226.201)"
                   />
                 </g>
-              </g>
+              </motion.g>
             </motion.g>
             <motion.g
               className="cursor-pointer"
@@ -895,7 +755,13 @@ const World = () => {
               data-name="zanto_point"
               transform="translate(673.067 577.773)"
             >
-              <g id="Group_5751_7" data-name="Group 5751_7">
+              <motion.g
+                initial="rest"
+                variants={imgMotion}
+                animate={isHover && hoverIdx === 3 ? "play" : "rest"}
+                id="Group_5751_7"
+                data-name="Group 5751_7"
+              >
                 <g id="Group_5750_7" data-name="Group 5750_7">
                   <path
                     id="Union_13"
@@ -909,7 +775,7 @@ const World = () => {
                     d="M679.871,653.585l-.154-.231H647.687c-8.129,0-14.718-5.7-14.718-12.735s6.589-12.736,14.718-12.736h81.193c8.128,0,14.718,5.7,14.718,12.736s-6.59,12.735-14.718,12.735H696.849l-.155.231-8.411,12.608Z"
                     transform="translate(-630.869 -626.102)"
                     fill="rgba(0,0,0,0.4)"
-                    stroke="#707070"
+                    stroke="#A06E05"
                     strokeWidth="1"
                   />
                 </g>
@@ -932,15 +798,52 @@ const World = () => {
                     transform="translate(-658 -634.834)"
                   />
                 </g>
-              </g>
+              </motion.g>
             </motion.g>
+            <text
+              transform="translate(427.067 667.773)"
+              id="DESC_TEXT"
+              data-name="DESC_TEXT"
+              fill="#fff"
+              font-size="20"
+              font-family="Inter"
+            >
+              <tspan x="0" y="22">
+                Gather a team of adventurers to explore the fantastical
+                continent in the World of Temeris
+              </tspan>
+            </text>
+            <g transform="translate(707.067 67.773)">
+              <text
+                transform="translate(14, -5)"
+                id="WORLD_MAP"
+                data-name="WORLD_MAP"
+                fill="#fff"
+                font-size="16"
+                font-family="Friz Quadrata Std Bold"
+              >
+                <tspan x="0" y="22">
+                  WORLD MAP
+                </tspan>
+              </text>
+              <text
+                transform="translate(0, 25)"
+                id="TEMERIS"
+                data-name="TEMERIS"
+                fill="url(#gradient-world)"
+                font-size="32"
+                font-family="Friz Quadrata Std Bold"
+              >
+                <tspan x="0" y="22">
+                  TEMERIS
+                </tspan>
+              </text>
+            </g>
           </g>
         </svg>
       </div>
       <div className="block lf:hidden h-screen bg-[url(/assets/images/world.png)] bg-cover bg-center">
-        <div
-          className={`${hiddenOverlay ? "block" : "hidden"} lf:hidden h-full`}
-        >
+        <div className={`block lf:hidden h-full`}>
           <SwiperWorldMob />
         </div>
       </div>

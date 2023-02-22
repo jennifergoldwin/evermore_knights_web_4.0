@@ -22,6 +22,7 @@ const Modal: React.FC<Imodal> = ({ isShown, setIsShown, src, id }) => {
       video.play();
     } else {
       video.pause();
+      video.currentTime = 0;
     }
   };
   return (

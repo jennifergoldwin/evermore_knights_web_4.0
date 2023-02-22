@@ -68,20 +68,18 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
   idx,
 }) => {
   const [swiper, setSwiper] = React.useState(useSwiper());
+  const [idxModal, setIndexModal] = React.useState(idx);
   React.useEffect(() => {
-    if (swiper != null) {
-      swiper.slideTo(idx, 1);
-    }
-  }, [idx, swiper]);
+    setIndexModal(idx);
+  }, [idx]);
 
   return (
     <div
-      //   onClick={}
       className={`${
         isShownModal ? "" : "hidden"
       } w-full h-full absolute bg-[#1D1B1B] bg-opacity-[0.8]  flex justify-center items-center flex-col overflow-hidden`}
     >
-      <Swiper
+      {/* <Swiper
         id="swiperWorld"
         modules={[Navigation]}
         initialSlide={3}
@@ -101,8 +99,27 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
         <div className="swiper-button-next">
           <img src="/assets/images/arrow-right.png" />
         </div>
-        {worldList.map((item) => (
-          <SwiperSlide className="flex justify-center" key={item.title}>
+       
+      </Swiper> */}
+      <div
+        className="w-full h-full absolute z-[3]"
+        onClick={() => setIsShown(!isShownModal)}
+      />
+
+      <div className="flex justify-center items-center gap-6 relative z-[4]">
+        <div
+          className="cursor-pointer"
+          onClick={() => (idxModal === 0 ? {} : setIndexModal(idxModal - 1))}
+        >
+          <img src="/assets/images/arrow-left.png" />
+        </div>
+        {worldList.map((item: any, index: number) => (
+          <div
+            className={`flex justify-center modal-world ${
+              idxModal === index ? "active" : ""
+            }`}
+            key={item.title}
+          >
             <div className="h-full w-fit flex justify-center items-center flex-col">
               <div className="bg-[url(/assets/images/bg-swiper-world.png)] bg-center bg-cover relative flex flex-col w-fit">
                 <img
@@ -138,9 +155,17 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
                 Tap to close
               </div>
             </div>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
+        <div
+          className="cursor-pointer"
+          onClick={() =>
+            idxModal === worldList.length - 1 ? {} : setIndexModal(idxModal + 1)
+          }
+        >
+          <img src="/assets/images/arrow-right.png" />
+        </div>
+      </div>
     </div>
   );
 };

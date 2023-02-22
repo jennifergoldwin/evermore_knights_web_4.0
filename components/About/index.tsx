@@ -1,10 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Navbar from "../Navbar";
 import Modal from "./modal";
-
+import { motion } from "framer-motion";
 const About = () => {
   const [isShown, setIsShown] = React.useState(false);
+  const imgMotion = {
+    rest: {
+      transform: "scale(1) translateX(0px)",
+    },
+    play: {
+      transform: "scale(1.05) translateX(5px)",
+      transition: {
+        type: "spring",
+        duration: 0.4,
+        ease: "easeIn",
+      },
+    },
+  };
   return (
     <div className="relative overflow-hidden h-screen">
       <Modal
@@ -66,7 +78,10 @@ const About = () => {
                 alt=""
                 
               /> */}
-              <div
+              <motion.div
+                initial="rest"
+                animate="rest"
+                whileHover="play"
                 className={` outer-video cursor-pointer w-[100%]  lf:w-[80%] h-auto`}
                 onClick={() => {
                   setIsShown(true);
@@ -104,8 +119,12 @@ const About = () => {
                   <img src="/assets/images/play.png" alt="" className=" p-2" />
                 </div>
                 <div className="overlay" />
-                <img src="/assets/images/about-youtube.png" alt="" />
-              </div>
+                <motion.img
+                  variants={imgMotion}
+                  src="/assets/images/about-youtube.png"
+                  alt=""
+                />
+              </motion.div>
             </div>
 
             <div className="absolute hidden lf:flex  bottom-0 z-30  lg:-bottom-[20%] -left-[10%]">

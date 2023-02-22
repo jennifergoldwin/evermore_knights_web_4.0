@@ -126,6 +126,7 @@ export default function Home() {
     "uFeaturePage",
     "worldPage",
     "featurePage",
+    "lastPage",
   ];
 
   return (
@@ -139,11 +140,14 @@ export default function Home() {
 
         <Navbar />
         <ReactFullpage
-          scrollOverflow
-          lazyLoading
+          scrollOverflow={false}
+          lazyLoading={true}
           anchors={anchors}
           menu="#menu"
           css3
+          afterRender={() => {
+            console.log("rendered");
+          }}
           afterLoad={(destination) => {
             let header = document.getElementById("header-top") as HTMLElement;
             let arrow = document.getElementById("explore-arrow") as HTMLElement;
@@ -205,18 +209,30 @@ export default function Home() {
               >
                 <UFeature />
               </div>
-              <div className="ek section" id="panel6" data-anchor="worldPage">
+              <div
+                className="ek section world"
+                id="panel6"
+                data-anchor="worldPage"
+              >
                 <World />
               </div>
-              <div className="ek section" id="panel7" data-anchor="featurePage">
+              <div
+                className="ek feature section"
+                id="panel7"
+                data-anchor="featurePage"
+              >
                 <Feature />
-                <Footer fullpageApi={fullpageApi} />
               </div>
               {/* <div className="ek section" id="panel8" data-anchor="blogPage">
                 <Blog title="LATEST NEWS" isAvailNewsPage />
                 
               </div> */}
-              {/* <div className="w-full section lastPage fp-auto-height"></div> */}
+              <div
+                className="section fp-auto-height lastPage"
+                data-anchor="lastPage"
+              >
+                <Footer fullpageApi={fullpageApi} />
+              </div>
             </ReactFullpage.Wrapper>
           )}
         />

@@ -227,7 +227,7 @@ const Story = () => {
               <div className="z-20 flex flex-col items-center justify-center absolute h-fit bottom-[20%] sm:bottom-0  sm:h-full ">
                 <div className="w-[90%] sm:w-[65%]">
                   <div className="w-full flex justify-center title-story-slide font-friz-bold  text-4xl text-center">
-                    <div>{item.title}</div>
+                    <span>{item.title}</span>
                   </div>
                   <div className="flex justify-center desc-story-slide relative mt-4">
                     <div className="absolute top-[-10px] w-full flex justify-center">

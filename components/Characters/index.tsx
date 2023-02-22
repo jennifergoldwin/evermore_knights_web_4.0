@@ -7,7 +7,7 @@ import { useSwiper } from "swiper/react";
 import "swiper/css/effect-fade";
 import "swiper/css";
 import Modal from "../About/modal";
-import { motion, AnimatePresence, useAnimationControls } from "framer-motion";
+import { motion } from "framer-motion";
 const characterLists = [
   {
     bg: "bg-[url(/assets/images/bg-grana.png)]",
@@ -114,20 +114,15 @@ const Characters: React.FC = () => {
     }, 1000);
     // swiper.slideTo(x);
   };
-  const animSlide = {
+  const imgMotion = {
     rest: {
-      opacity: "0",
-      transition: {
-        // type: "keyframes",
-        duration: 1.4,
-        ease: "easeIn",
-      },
+      transform: "scale(1) translateX(0px)",
     },
     play: {
-      opacity: "1",
+      transform: "scale(1.05) translateX(5px)",
       transition: {
-        // type: "keyframes",
-        duration: 1.4,
+        type: "spring",
+        duration: 0.4,
         ease: "easeIn",
       },
     },
@@ -236,7 +231,7 @@ const Characters: React.FC = () => {
           />
         </div>
       </div>
-      <div
+      {/* <div
         className={`${characterLists[indexChar].bg} h-full bg-cover bg-center `}
       >
         <div className="ml-0 md:ml-4 lg:ml-[8%] lg:pl-0 lgf:ml-0 lgf:pl-[8%] pt-6 relative w-full h-full flex flex-col-reverse md:flex-row justify-end md:justify-center items-center">
@@ -297,12 +292,14 @@ const Characters: React.FC = () => {
                 </div>
                 <div className="py-4 w-full ">
                   <svg
-                    viewBox="0 0 465 3"
+                    width="276"
+                    height="3"
+                    viewBox="0 0 276 3"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M0 1.5L58.145 0.78L116.237 0.48L232.473 0L348.763 0.48L406.855 0.78L465 1.5L406.855 2.22L348.763 2.52L232.473 3L116.237 2.52L58.145 2.22L0 1.5Z"
+                      d="M0 1.5L34.5119 0.78L68.9921 0.48L137.984 0L207.008 0.48L241.488 0.78L276 1.5L241.488 2.22L207.008 2.52L137.984 3L68.9921 2.52L34.5119 2.22L0 1.5Z"
                       fill="#F1D795"
                     />
                   </svg>
@@ -314,7 +311,10 @@ const Characters: React.FC = () => {
                     {characterLists[indexChar].heroDesc}
                   </div>
 
-                  <div
+                  <motion.div
+                    initial="rest"
+                    animate="rest"
+                    whileHover="play"
                     className={`hidden md:block ${
                       characterLists[indexChar].link === ""
                         ? "opacity-0 invisible"
@@ -360,20 +360,14 @@ const Characters: React.FC = () => {
                       />
                     </div>
                     <div className="overlay" />
-                    <img
+                    <motion.img
+                      variants={imgMotion}
                       className={``}
                       src={characterLists[indexChar].youtube}
                       alt=""
                     />
-                  </div>
-                  {/* <img
-                    onClick={() => setIsShown(true)}
-                    className={`w-[40%]  md:hidden ${
-                      characterLists[indexChar].link === "" ? "hidden" : "block"
-                    }`}
-                    src="/assets/images/youtube-frame-mob.png"
-                    alt=""
-                  /> */}
+                  </motion.div>
+                  
                 </div>
               </div>
             </div>
@@ -442,106 +436,211 @@ const Characters: React.FC = () => {
             />
           </div>
         </div>
-      </div>
-      {/* {characterLists.map((item: any, idx: number) => (
+      </div> */}
+      {characterLists.map((item: any, idx: number) => (
         <div
           key={idx}
-          className={` slide-char ${
-            indexChar === idx ? "active" : "inactive"
-          } h-full `}
+          className={` slide-char ${indexChar === idx ? "active" : ""} h-full `}
         >
-          <div className="ml-0 lg:ml-[8%] lg:pl-0 lgf:ml-0 lgf:pl-[8%] pt-6 relative w-full h-full  flex flex-col-reverse lg:flex-row justify-end lg:justify-center items-center">
-            <div className="bg-gradient-black w-full lg:w-2/5 absolute z-[2] bottom-[0%] lg:static">
-              <div className="p-2 lg:p-0 flex justify-center items-center lg:flex-col">
+          <div className="ml-0 md:ml-4 lg:ml-[8%] lg:pl-0 lgf:ml-0 lgf:pl-[8%] pt-6 relative w-full h-full flex flex-col-reverse md:flex-row justify-end md:justify-center items-center">
+            <div className="bg-gradient-black w-full md:w-2/5 absolute z-[2] bottom-[0%] flex flex-col md:static">
+              <div className="p-2 md:p-0 flex justify-center items-center md:flex-col">
                 <div className="md:p-3 lg:pr-0">
-                  <div className="flex items-center font-friz-bold gap-4">
-                    <h1 className="text-xl sm:text-2xl lg:text-4xl">
-                      {item.heroName}
-                    </h1>
-                    <span className="title-text font-bold text-sm sm:text-base lg:text-lg">
-                      {item.heroSubName}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-6">
-                    <img src={item.star} alt="" />
-                    <div className="flex gap-4 font-barlow font-[600]">
-                      <div className="flex items-center gap-2 ">
-                        <Image width={20} height={20} src={item.icon1} alt="" />
-                        <span className="text-sm sm:text-base">
-                          {item.title1}
+                  <div className="flex justify-between items-center">
+                    <div className="flex flex-col w-5/6  sm:w-1/2 md:w-full">
+                      <div className="flex items-center font-friz-bold gap-3">
+                        <h1 className="text-xl sm:text-2xl lg:text-4xl">
+                          {item.heroName}
+                        </h1>
+                        <span className="title-text font-bold text-base sm:text-base lg:text-lg">
+                          {item.heroSubName}
                         </span>
                       </div>
-                      <div className="flex items-center gap-2 ">
-                        <Image width={20} height={20} src={item.icon2} alt="" />
-                        <span className="text-sm sm:text-base">
-                          {item.title2}
-                        </span>
+                      <div className="flex items-center gap-3">
+                        <img src={item.star} alt="" />
+                        <div className="flex gap-4 font-barlow font-[600]">
+                          <div className="flex items-center gap-2 ">
+                            <Image
+                              width={20}
+                              height={20}
+                              src={item.icon1}
+                              alt=""
+                            />
+                            <span className="text-xs sm:text-base">
+                              {item.title1}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2 ">
+                            <Image
+                              width={20}
+                              height={20}
+                              src={item.icon2}
+                              alt=""
+                            />
+                            <span className="text-xs sm:text-base">
+                              {item.title2}
+                            </span>
+                          </div>
+                        </div>
                       </div>
+                    </div>
+                    <div
+                      onClick={() => setIsShown(true)}
+                      className={`${
+                        item.link === "" ? "hidden" : "flex"
+                      } cursor-pointer w-1/6 sm:w-1/2 md:w-auto justify-start pr-0 sm:justify-end sm:pr-2 items-center md:hidden`}
+                    >
+                      <img
+                        src={`${item.youtube.split(".png")[0]}-mob.png`}
+                        alt=""
+                      />
                     </div>
                   </div>
                   <div className="py-4 w-full ">
                     <svg
-                      viewBox="0 0 465 3"
+                      width="276"
+                      height="3"
+                      viewBox="0 0 276 3"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M0 1.5L58.145 0.78L116.237 0.48L232.473 0L348.763 0.48L406.855 0.78L465 1.5L406.855 2.22L348.763 2.52L232.473 3L116.237 2.52L58.145 2.22L0 1.5Z"
+                        d="M0 1.5L34.5119 0.78L68.9921 0.48L137.984 0L207.008 0.48L241.488 0.78L276 1.5L241.488 2.22L207.008 2.52L137.984 3L68.9921 2.52L34.5119 2.22L0 1.5Z"
                         fill="#F1D795"
                       />
                     </svg>
                   </div>
-                  <div className="flex lg:flex-col flex-row justify-center h-full items-center">
+                  <div className="flex md:flex-col flex-row justify-center h-full items-center">
                     <div
-                      className={`${
-                        item.link === "" ? "w-full" : "w-3/5"
-                      } lg:w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-base  lg:text-sm flex  justify-center`}
+                      className={` w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-base  lg:text-sm flex  justify-center`}
                     >
                       {item.heroDesc}
                     </div>
 
-                    <img
-                      onClick={() => {
-                        console.log(indexChar);
-                        setIsShown(true);
-                      }}
-                      className={`w-[35%] h-auto lg:w-[100%] hidden lg:block ${
+                    <motion.div
+                      initial="rest"
+                      animate="rest"
+                      whileHover="play"
+                      className={`hidden md:block ${
                         item.link === ""
                           ? "opacity-0 invisible"
                           : "opacity-1 visible"
-                      }`}
-                      src="/assets/images/youtube-frame.png"
-                      alt=""
-                    />
-                    <img
-                      onClick={() => setIsShown(true)}
-                      className={`w-[40%]  lg:hidden ${
-                        item.link === "" ? "hidden" : "block"
-                      }`}
-                      src="/assets/images/youtube-frame-mob.png"
-                      alt=""
-                    />
+                      } outer-video cursor-pointer w-[100%] h-auto`}
+                      onClick={() => {
+                        setIsShown(true);
+                      }}
+                    >
+                      <div className="absolute top-0 left-0 z-20">
+                        <img
+                          src="/assets/images/arrow.png"
+                          alt=""
+                          className="w-[40px] h-[40px] rotate-[315deg] p-2"
+                        />
+                      </div>
+                      <div className="absolute top-0 right-0 z-20">
+                        <img
+                          src="/assets/images/arrow.png"
+                          alt=""
+                          className="w-[40px] h-[40px] rotate-[45deg] p-2"
+                        />
+                      </div>
+                      <div className="absolute bottom-0 left-0 z-20">
+                        <img
+                          src="/assets/images/arrow.png"
+                          alt=""
+                          className="w-[40px] h-[40px] rotate-[225deg] p-2"
+                        />
+                      </div>
+                      <div className="absolute bottom-0 right-0 z-20">
+                        <img
+                          src="/assets/images/arrow.png"
+                          alt=""
+                          className="w-[40px] h-[40px] rotate-[135deg] p-2"
+                        />
+                      </div>
+                      <div className="absolute w-full h-full flex justify-center items-center  z-20">
+                        <img
+                          src="/assets/images/play.png"
+                          alt=""
+                          className=" p-2"
+                        />
+                      </div>
+                      <div className="overlay" />
+                      <motion.img
+                        variants={imgMotion}
+                        className={``}
+                        src={item.youtube}
+                        alt=""
+                      />
+                    </motion.div>
                   </div>
                 </div>
               </div>
+              <div className="block relative md:hidden bg-[#010a1a] py-4">
+                <Swiper
+                  slideToClickedSlide
+                  centeredSlides
+                  slidesPerView={"auto"}
+                  spaceBetween={10}
+                  onActiveIndexChange={(swiperr: any) => {
+                    handleClick(swiperr.activeIndex);
+                  }}
+                >
+                  {[...Array(6)].map((item: any, idx: number) => (
+                    <SwiperSlide className="!w-fit" key={idx}>
+                      <div className="relative flex flex-col justify-center items-center">
+                        <img
+                          src={`/assets/images/btn-${idx + 1}-mob.png`}
+                          alt=""
+                        />
+                        <svg
+                          width="22"
+                          height="22"
+                          viewBox="0 0 32 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            x="1.15242"
+                            y="16.2344"
+                            width="21.2932"
+                            height="21.2932"
+                            transform="rotate(-45 1.15242 16.2344)"
+                            stroke={idx != indexChar ? "transparent" : "white"}
+                          />
+                          <rect
+                            x="7.17188"
+                            y="15.957"
+                            width="12.7942"
+                            height="12.7942"
+                            transform="rotate(-45 7.17188 15.957)"
+                            fill={idx != indexChar ? "#161F2C" : "white"}
+                          />
+                        </svg>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+                <div className="absolute w-full h-[2px] bg-line bottom-[22.5%]"></div>
+              </div>
             </div>
-            <div className="w-full overflow-hidden  lg:w-3/5  relative">
+            <div className="w-full overflow-hidden  md:w-3/5 h-screen relative">
               <img
-                className={`hidden translate-x-[-20%] lf:translate-x-[-8%]
-                 } lg:block h-screen fixed object-cover top-0 `}
+                className={`hidden 
+                    } md:block h-full fixed object-cover right-0 img-char`}
                 src={item.heroImg}
                 loading="lazy"
                 alt=""
               />
               <img
-                className="block lg:hidden"
+                className="block md:hidden"
                 src={`${item.heroImg.split(".png")[0]}-mob.png`}
                 alt=""
               />
             </div>
           </div>
         </div>
-      ))} */}
+      ))}
       {/* <Swiper
         className="!h-screen "
         modules={[EffectFade]}

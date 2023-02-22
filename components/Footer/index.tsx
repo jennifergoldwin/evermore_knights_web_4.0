@@ -24,7 +24,7 @@ const Footer: React.FC<IFooter> = ({ fullpageApi }) => {
       whileInView="play"
       initial="rest"
       animate="rest"
-      className="flex w-full bg-[#1D1B1B] flex-col justify-center items-center gap-5 py-5 align-bottom"
+      className="relative flex w-full bg-[#1D1B1B] flex-col justify-center items-center gap-5 py-5 align-bottom h-auto"
     >
       <motion.div
         onClick={() => fullpageApi.moveTo(1, "homePage")}
