@@ -47,7 +47,7 @@ const Footer: React.FC<IFooter> = ({ fullpageApi }) => {
       <motion.div
         onClick={() => fullpageApi.moveTo(1, "homePage")}
         variants={arrow_trans}
-        className="flex flex-col justify-center items-center"
+        className="flex flex-col justify-center items-center cursor-pointer"
       >
         <svg
           width="72"

@@ -164,11 +164,11 @@ const Story = () => {
           }
         }}
         onAutoplayStart={(swiper: any) => {
-          // (
-          //   document.getElementById(
-          //     `video${swiper.activeIndex + 1}`
-          //   ) as HTMLVideoElement
-          // ).load();
+          (
+            document.getElementById(
+              `video${swiper.activeIndex + 1}`
+            ) as HTMLVideoElement
+          ).load();
           (
             document.getElementById(
               `video${swiper.activeIndex + 1}`
@@ -176,7 +176,7 @@ const Story = () => {
           ).play();
         }}
       >
-        <div className="swiper-pagination hidden  sm:hidden md:block"></div>
+        <div className="swiper-pagination hidden md:block"></div>
         <div className="w-full absolute flex justify-center items-center bottom-[10%]">
           <div className="swiper-pagi-mob gap-5 items-center sm:gap-0  grid grid-cols-5  sm:grid sm:grid-cols-5 md:hidden">
             <span
@@ -224,17 +224,25 @@ const Story = () => {
           </div>
           <div className="swiper-line block sm:block md:hidden w-full h-[2px] bg-black-01 absolute z-[4] " />
         </div>
-        <div className="swiper-button-prev !top-[unset] bottom-[52px] !left-[10%] !hidden sm:!hidden md:!flex">
+        <div className="swiper-button-prev !top-[unset] bottom-[52px] !left-[2%] lg:!left-[10%] !hidden sm:!hidden md:!flex">
           <img src="/assets/images/arrow-left.png" alt="" />
         </div>
-        <div className="swiper-button-next !top-[unset] bottom-[52px] !right-[10%] !hidden sm:!hidden md:!flex">
+        <div className="swiper-button-next !top-[unset] bottom-[52px] !right-[2%] lg:!right-[10%] !hidden sm:!hidden md:!flex">
           <img src="/assets/images/arrow-right.png" alt="" />
         </div>
         {storyList.map((item: any, idx: number) => (
           <SwiperSlide className="h-full" key={idx + 1}>
             <div className="flex flex-col h-screen">
               <video
-                data-keepplaying
+                onLoadedData={() => {
+                  console.log(`loaded video ${this} ${idx + 1}`);
+                }}
+                onLoad={() => {
+                  console.log(`start video ${idx + 1}`);
+                }}
+                onWaiting={() => {
+                  console.log(`wait video ${idx + 1}`);
+                }}
                 muted
                 preload="none"
                 id={`video${idx + 1}`}

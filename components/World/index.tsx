@@ -74,7 +74,7 @@ const World = () => {
   return (
     <div
       className={`relative h-full ${
-        playAnimation ? "opacity-1 flex" : "opacity-0 hidden"
+        playAnimation ? "opacity-1 visible" : "opacity-0 invisible"
       }`}
     >
       <div className="hidden lf:block">
