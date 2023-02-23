@@ -123,7 +123,9 @@ const Feature = () => {
     <>
       <div
         className={` flex-col w-full h-screen pt-12 pb-12 ${
-          playAnimation ? "opacity-1 flex lg:hidden" : "opacity-0 hidden"
+          playAnimation
+            ? "opacity-1 flex lg:hidden visible"
+            : "opacity-0 invisible"
         }`}
       >
         <div className="flex justify-center items-center flex-col pt-8 pb-8">

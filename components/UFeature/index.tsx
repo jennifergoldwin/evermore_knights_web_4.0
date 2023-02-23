@@ -49,7 +49,9 @@ const UFeature = () => {
         className={`${
           tabs[selectedTab].bg
         } transition-opacity w-full  md:justify-center  items-center flex-col h-screen relative overflow-hidden pt-8 ${
-          playAnimation ? "opacity-1 flex" : "opacity-0 hidden"
+          playAnimation
+            ? "opacity-1 flex visible"
+            : "opacity-0 hidden invisible"
         }`}
       >
         <div className="border-b-[1.5pt] border-underline w-fit pt-8 mb-8 md:mb-0 ">

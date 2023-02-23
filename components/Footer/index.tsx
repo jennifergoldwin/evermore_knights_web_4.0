@@ -41,7 +41,7 @@ const Footer: React.FC<IFooter> = ({ fullpageApi }) => {
       initial="rest"
       animate="rest"
       className={`relative  w-full bg-[#1D1B1B] flex-col justify-center items-center gap-5 py-5 align-bottom h-auto ${
-        playAnimation ? "opacity-1 flex" : "opacity-0 hidden"
+        playAnimation ? "opacity-1 flex visible" : "opacity-0 hidden invisible"
       }`}
     >
       <motion.div

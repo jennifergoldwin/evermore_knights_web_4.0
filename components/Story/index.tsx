@@ -90,7 +90,7 @@ const Story = () => {
   return (
     <div
       className={`h-screen ${
-        playAnimation ? "opacity-1 flex" : "opacity-0 hidden"
+        playAnimation ? "opacity-1 visible" : "opacity-0 invisible"
       }`}
     >
       <Swiper
@@ -101,7 +101,6 @@ const Story = () => {
           setSwiper(swiper);
         }}
         effect="fade"
-        // loop
         allowTouchMove={false}
         fadeEffect={{ crossFade: true }}
         // onSlideChange={handleVideo}
@@ -234,15 +233,6 @@ const Story = () => {
           <SwiperSlide className="h-full" key={idx + 1}>
             <div className="flex flex-col h-screen">
               <video
-                onLoadedData={() => {
-                  console.log(`loaded video ${this} ${idx + 1}`);
-                }}
-                onLoad={() => {
-                  console.log(`start video ${idx + 1}`);
-                }}
-                onWaiting={() => {
-                  console.log(`wait video ${idx + 1}`);
-                }}
                 muted
                 preload="none"
                 id={`video${idx + 1}`}

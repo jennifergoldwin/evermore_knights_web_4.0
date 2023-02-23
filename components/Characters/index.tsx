@@ -149,7 +149,7 @@ const Characters: React.FC = () => {
       className={`relative overflow-hidden h-screen ${
         characterLists[indexChar].bg
       } bg-center bg-cover ${
-        playAnimation ? "opacity-1 flex" : "opacity-0 hidden"
+        playAnimation ? "opacity-1 flex visible" : "opacity-0 hidden invisible"
       }`}
     >
       <Modal

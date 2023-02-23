@@ -36,7 +36,7 @@ const About = () => {
   return (
     <div
       className={`relative overflow-hidden h-screen ${
-        playAnimation ? "opacity-1 flex" : "opacity-0 hidden"
+        playAnimation ? "opacity-1 visible" : "opacity-0 invisible"
       }`}
     >
       <Modal

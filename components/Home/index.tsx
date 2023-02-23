@@ -42,7 +42,7 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
     <div
       id="home-section"
       className={`relative  h-screen ${
-        playAnimation ? "opacity-1 flex" : "opacity-0 hidden"
+        playAnimation ? "opacity-1 flex visible" : "opacity-0 hidden invisible"
       }`}
     >
       {/* <iframe
