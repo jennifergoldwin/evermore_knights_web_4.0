@@ -236,7 +236,7 @@ const Story = () => {
               <video
                 data-keepplaying
                 muted
-                preload="none"
+                preload="auto"
                 id={`video${idx + 1}`}
                 className="object-cover h-full w-full relative"
               >
