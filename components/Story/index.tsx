@@ -41,7 +41,22 @@ const storyList = [
 const Story = () => {
   const [isPlaying, setIsPlaying] = React.useState(1);
   const [swiper, setSwiper] = React.useState(useSwiper());
+  const [playAnimation, setPlayAnimation] = React.useState(false);
 
+  React.useEffect(() => {
+    const onPageLoad = () => {
+      setPlayAnimation(true);
+    };
+
+    // Check if the page has already loaded
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    }
+  }, []);
   // React.useEffect(() => {
   //   (document.getElementById(`video${isPlaying}`) as HTMLVideoElement).play();
   // }, [isPlaying]);
@@ -73,7 +88,11 @@ const Story = () => {
     }
   };
   return (
-    <div className="h-screen">
+    <div
+      className={`h-screen ${
+        playAnimation ? "opacity-1 flex" : "opacity-0 hidden"
+      }`}
+    >
       <Swiper
         id="storyView"
         modules={[Navigation, Pagination, EffectFade, Autoplay]}
