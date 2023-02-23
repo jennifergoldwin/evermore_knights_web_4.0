@@ -449,17 +449,17 @@ const Characters: React.FC = () => {
                   <div className="flex justify-between items-center">
                     <div className="flex flex-col w-5/6  sm:w-1/2 md:w-full">
                       <div className="flex items-center font-friz-bold gap-3">
-                        <h1 className="text-xl sm:text-2xl lg:text-4xl">
+                        <h1 className="text-xl sm:text-2xl lg:text-4xl anim-slide-up">
                           {item.heroName}
                         </h1>
-                        <span className="title-text font-bold text-base sm:text-base lg:text-lg">
+                        <span className="anim-slide-up title-text font-bold text-base sm:text-base lg:text-lg">
                           {item.heroSubName}
                         </span>
                       </div>
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-3 anim-slide-up">
                         <img src={item.star} alt="" />
                         <div className="flex gap-4 font-barlow font-[600]">
-                          <div className="flex items-center gap-2 ">
+                          <div className=" flex items-center gap-2 ">
                             <Image
                               width={20}
                               height={20}
@@ -470,7 +470,7 @@ const Characters: React.FC = () => {
                               {item.title1}
                             </span>
                           </div>
-                          <div className="flex items-center gap-2 ">
+                          <div className=" flex items-center gap-2 ">
                             <Image
                               width={20}
                               height={20}
@@ -510,9 +510,9 @@ const Characters: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <div className="flex md:flex-col flex-row justify-center h-full items-center">
+                  <div className=" flex md:flex-col flex-row justify-center h-full items-center">
                     <div
-                      className={` w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-base  lg:text-sm flex  justify-center`}
+                      className={`anim-slide-up w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-base  lg:text-sm flex  justify-center`}
                     >
                       {item.heroDesc}
                     </div>
@@ -524,7 +524,7 @@ const Characters: React.FC = () => {
                       className={`hidden md:block ${
                         item.link === ""
                           ? "opacity-0 invisible"
-                          : "opacity-1 visible"
+                          : " visible anim-opacity "
                       } outer-video cursor-pointer w-[100%] h-auto`}
                       onClick={() => {
                         setIsShown(true);
@@ -626,14 +626,14 @@ const Characters: React.FC = () => {
             </div>
             <div className="w-full overflow-hidden  md:w-3/5 h-screen relative">
               <img
-                className={`hidden 
-                    } md:block h-full fixed object-cover right-0 img-char`}
+                className={`hidden anim-slide-left
+                    } md:block h-full absolute object-cover  img-char`}
                 src={item.heroImg}
                 loading="lazy"
                 alt=""
               />
               <img
-                className="block md:hidden"
+                className="block md:hidden anim-slide-left"
                 src={`${item.heroImg.split(".png")[0]}-mob.png`}
                 alt=""
               />

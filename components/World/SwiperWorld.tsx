@@ -3,6 +3,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
+import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useSwiper } from "swiper/react";
@@ -72,6 +73,19 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
   React.useEffect(() => {
     setIndexModal(idx);
   }, [idx]);
+  const imgMotion = {
+    rest: {
+      transform: "scale(0.8)",
+    },
+    play: {
+      transform: "scale(1)",
+      transition: {
+        type: "spring",
+        duration: 0.4,
+        ease: "easeIn",
+      },
+    },
+  };
 
   return (
     <div
@@ -104,15 +118,25 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
       <div
         className="w-full h-full absolute z-[3]"
         onClick={() => setIsShown(!isShownModal)}
-      />
+      >
+        <div className="absolute w-full bottom-2 text-white text-center font-lato font-[700] cursor-pointer py-2">
+          Tap to close
+        </div>
+      </div>
 
       <div className="flex justify-center items-center gap-6 relative z-[4]">
-        <div
+        <motion.div
+          initial="rest"
+          animate="rest"
+          whileHover="play"
           className="cursor-pointer"
           onClick={() => (idxModal === 0 ? {} : setIndexModal(idxModal - 1))}
         >
-          <img src="/assets/images/arrow-left.png" />
-        </div>
+          <motion.img
+            variants={imgMotion}
+            src="/assets/images/arrow-left.png"
+          />
+        </motion.div>
         {worldList.map((item: any, index: number) => (
           <div
             className={`flex justify-center modal-world ${
@@ -148,23 +172,23 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
                   </div>
                 </div>
               </div>
-              <div
-                className="text-white text-center font-lato font-[700] cursor-pointer py-2"
-                onClick={() => setIsShown(false)}
-              >
-                Tap to close
-              </div>
             </div>
           </div>
         ))}
-        <div
+        <motion.div
+          initial="rest"
+          animate="rest"
+          whileHover="play"
           className="cursor-pointer"
           onClick={() =>
             idxModal === worldList.length - 1 ? {} : setIndexModal(idxModal + 1)
           }
         >
-          <img src="/assets/images/arrow-right.png" />
-        </div>
+          <motion.img
+            variants={imgMotion}
+            src="/assets/images/arrow-right.png"
+          />
+        </motion.div>
       </div>
     </div>
   );

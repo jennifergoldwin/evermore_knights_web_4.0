@@ -40,12 +40,10 @@ const World = () => {
   };
   const imgMotion = {
     rest: {
-      // height: "100px",
       transform: "scale(1)",
     },
     play: {
       transform: "scale(1.18)",
-      // height: "200px",
       transition: {
         type: "spring",
         duration: 0.4,
@@ -82,8 +80,8 @@ const World = () => {
               y2="100%"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#E6CD99" offset="0%" />
-              <stop stop-color="#A06E05" offset="10%" />
+              <stop stopColor="#E6CD99" offset="0%" />
+              <stop stopColor="#A06E05" offset="10%" />
             </linearGradient>
             <clipPath id="clip-path">
               <rect
@@ -139,14 +137,25 @@ const World = () => {
               height="100%"
               viewBox="0 0 247 128"
             >
-              <image
+              <motion.image
+                animate={
+                  isHover && hoverIdx !== 3
+                    ? { opacity: 0, transition: { duration: 0.5 } }
+                    : { opacity: 1, transition: { duration: 0.5 } }
+                }
                 width="247"
                 height="128"
-                xlinkHref={
+                xlinkHref="/assets/images/world-zanto.png"
+              />
+              <motion.image
+                animate={
                   isHover && hoverIdx !== 3
-                    ? "/assets/images/world-zanto-dark.png"
-                    : "/assets/images/world-zanto.png"
+                    ? { opacity: 1, transition: { duration: 0.5 } }
+                    : { opacity: 0, transition: { duration: 0.5 } }
                 }
+                width="247"
+                height="128"
+                xlinkHref="/assets/images/world-zanto-dark.png"
               />
             </pattern>
             <pattern
@@ -156,14 +165,25 @@ const World = () => {
               height="100%"
               viewBox="0 0 558 432"
             >
-              <image
+              <motion.image
+                animate={
+                  isHover && hoverIdx !== 5
+                    ? { opacity: 1, transition: { duration: 0.5 } }
+                    : { opacity: 0, transition: { duration: 0.5 } }
+                }
                 width="558"
                 height="432"
-                xlinkHref={
+                xlinkHref="/assets/images/world-valensia-dark.png"
+              />
+              <motion.image
+                animate={
                   isHover && hoverIdx !== 5
-                    ? "/assets/images/world-valensia-dark.png"
-                    : "/assets/images/world-valensia.png"
+                    ? { opacity: 0, transition: { duration: 0.5 } }
+                    : { opacity: 1, transition: { duration: 0.5 } }
                 }
+                width="558"
+                height="432"
+                xlinkHref="/assets/images/world-valensia.png"
               />
             </pattern>
             <pattern
@@ -173,14 +193,25 @@ const World = () => {
               height="100%"
               viewBox="0 0 317 358"
             >
-              <image
+              <motion.image
+                animate={
+                  isHover && hoverIdx !== 4
+                    ? { opacity: 1, transition: { duration: 0.5 } }
+                    : { opacity: 0, transition: { duration: 0.5 } }
+                }
                 width="317"
                 height="358"
-                xlinkHref={
+                xlinkHref="/assets/images/world-grandar-dark.png"
+              />
+              <motion.image
+                animate={
                   isHover && hoverIdx !== 4
-                    ? "/assets/images/world-grandar-dark.png"
-                    : "/assets/images/world-grandar.png"
+                    ? { opacity: 0, transition: { duration: 0.5 } }
+                    : { opacity: 1, transition: { duration: 0.5 } }
                 }
+                width="317"
+                height="358"
+                xlinkHref="/assets/images/world-grandar.png"
               />
             </pattern>
             <pattern
@@ -190,14 +221,25 @@ const World = () => {
               height="100%"
               viewBox="0 0 320 333"
             >
-              <image
+              <motion.image
+                animate={
+                  isHover && hoverIdx !== 6
+                    ? { opacity: 1, transition: { duration: 0.5 } }
+                    : { opacity: 0, transition: { duration: 0.5 } }
+                }
                 width="320"
                 height="333"
-                xlinkHref={
+                xlinkHref="/assets/images/world-faringrad-dark.png"
+              />
+              <motion.image
+                animate={
                   isHover && hoverIdx !== 6
-                    ? "/assets/images/world-faringrad-dark.png"
-                    : "/assets/images/world-faringrad.png"
+                    ? { opacity: 0, transition: { duration: 0.5 } }
+                    : { opacity: 1, transition: { duration: 0.5 } }
                 }
+                width="320"
+                height="333"
+                xlinkHref="/assets/images/world-faringrad.png"
               />
             </pattern>
             <pattern
@@ -207,14 +249,25 @@ const World = () => {
               height="100%"
               viewBox="0 0 557 686"
             >
-              <image
+              <motion.image
+                animate={
+                  isHover && hoverIdx !== 1
+                    ? { opacity: 0, transition: { duration: 0.5 } }
+                    : { opacity: 1, transition: { duration: 0.5 } }
+                }
                 width="557"
                 height="686"
-                xlinkHref={
+                xlinkHref="/assets/images/world-yanshu.png"
+              />
+              <motion.image
+                animate={
                   isHover && hoverIdx !== 1
-                    ? "/assets/images/world-yanshu-dark.png"
-                    : "/assets/images/world-yanshu.png"
+                    ? { opacity: 1, transition: { duration: 0.5 } }
+                    : { opacity: 0, transition: { duration: 0.5 } }
                 }
+                width="557"
+                height="686"
+                xlinkHref="/assets/images/world-yanshu-dark.png"
               />
             </pattern>
             <pattern
@@ -224,14 +277,25 @@ const World = () => {
               height="100%"
               viewBox="0 0 410 407"
             >
-              <image
+              <motion.image
+                animate={
+                  isHover && hoverIdx !== 0
+                    ? { opacity: 0, transition: { duration: 0.5 } }
+                    : { opacity: 1, transition: { duration: 0.5 } }
+                }
                 width="410"
                 height="407"
-                xlinkHref={
+                xlinkHref="/assets/images/world-arriane.png"
+              />
+              <motion.image
+                animate={
                   isHover && hoverIdx !== 0
-                    ? "/assets/images/world-arriane-dark.png"
-                    : "/assets/images/world-arriane.png"
+                    ? { opacity: 1, transition: { duration: 0.5 } }
+                    : { opacity: 0, transition: { duration: 0.5 } }
                 }
+                width="410"
+                height="407"
+                xlinkHref="/assets/images/world-arriane-dark.png"
               />
             </pattern>
             <pattern
@@ -241,14 +305,25 @@ const World = () => {
               height="100%"
               viewBox="0 0 1059 508"
             >
-              <image
+              <motion.image
+                animate={
+                  isHover && hoverIdx !== 2
+                    ? { opacity: 1, transition: { duration: 0.5 } }
+                    : { opacity: 0, transition: { duration: 0.5 } }
+                }
                 width="1059"
                 height="508"
-                xlinkHref={
+                xlinkHref="/assets/images/world-sanahara-dark.png"
+              />
+              <motion.image
+                animate={
                   isHover && hoverIdx !== 2
-                    ? "/assets/images/world-sanahara-dark.png"
-                    : "/assets/images/world-sanahara.png"
+                    ? { opacity: 0, transition: { duration: 0.5 } }
+                    : { opacity: 1, transition: { duration: 0.5 } }
                 }
+                width="1059"
+                height="508"
+                xlinkHref="/assets/images/world-sanahara.png"
               />
             </pattern>
           </defs>
@@ -805,8 +880,8 @@ const World = () => {
               id="DESC_TEXT"
               data-name="DESC_TEXT"
               fill="#fff"
-              font-size="20"
-              font-family="Inter"
+              fontSize="20"
+              fontFamily="Inter"
             >
               <tspan x="0" y="22">
                 Gather a team of adventurers to explore the fantastical
@@ -819,8 +894,8 @@ const World = () => {
                 id="WORLD_MAP"
                 data-name="WORLD_MAP"
                 fill="#fff"
-                font-size="16"
-                font-family="Friz Quadrata Std Bold"
+                fontSize="16"
+                fontFamily="Friz Quadrata Std Bold"
               >
                 <tspan x="0" y="22">
                   WORLD MAP
@@ -831,8 +906,8 @@ const World = () => {
                 id="TEMERIS"
                 data-name="TEMERIS"
                 fill="url(#gradient-world)"
-                font-size="32"
-                font-family="Friz Quadrata Std Bold"
+                fontSize="32"
+                fontFamily="Friz Quadrata Std Bold"
               >
                 <tspan x="0" y="22">
                   TEMERIS

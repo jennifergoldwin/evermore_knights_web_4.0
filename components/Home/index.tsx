@@ -31,6 +31,7 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
       ></iframe> */}
       <video
         data-keepplaying
+        preload="auto"
         loop
         autoPlay
         muted
@@ -40,6 +41,7 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
       </video>
       <video
         data-keepplaying
+        preload="auto"
         loop
         autoPlay
         muted
