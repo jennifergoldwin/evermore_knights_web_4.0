@@ -127,10 +127,30 @@ const Characters: React.FC = () => {
       },
     },
   };
+  const [playAnimation, setPlayAnimation] = React.useState(false);
+
+  React.useEffect(() => {
+    const onPageLoad = () => {
+      setPlayAnimation(true);
+    };
+
+    // Check if the page has already loaded
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    }
+  }, []);
 
   return (
     <div
-      className={`relative overflow-hidden h-screen ${characterLists[indexChar].bg} bg-center bg-cover`}
+      className={`relative overflow-hidden h-screen ${
+        characterLists[indexChar].bg
+      } bg-center bg-cover ${
+        playAnimation ? "opacity-1 flex" : "opacity-0 hidden"
+      }`}
     >
       <Modal
         id="character"

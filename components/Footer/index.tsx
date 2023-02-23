@@ -18,13 +18,31 @@ const Footer: React.FC<IFooter> = ({ fullpageApi }) => {
       },
     },
   };
+  const [playAnimation, setPlayAnimation] = React.useState(false);
+
+  React.useEffect(() => {
+    const onPageLoad = () => {
+      setPlayAnimation(true);
+    };
+
+    // Check if the page has already loaded
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    }
+  }, []);
   return (
     <motion.div
       id="footer"
       whileInView="play"
       initial="rest"
       animate="rest"
-      className="relative flex w-full bg-[#1D1B1B] flex-col justify-center items-center gap-5 py-5 align-bottom h-auto"
+      className={`relative  w-full bg-[#1D1B1B] flex-col justify-center items-center gap-5 py-5 align-bottom h-auto ${
+        playAnimation ? "opacity-1 flex" : "opacity-0 hidden"
+      }`}
     >
       <motion.div
         onClick={() => fullpageApi.moveTo(1, "homePage")}

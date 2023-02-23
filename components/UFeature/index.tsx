@@ -25,31 +25,32 @@ const UFeature = () => {
     },
   ];
   const [selectedTab, setSelectedTab] = React.useState(0);
-  const tabAnim = {
-    rest: {
-      opacity: "0",
-      transition: {
-        type: "keyframes",
-        duration: 1.4,
-        // ease: "easeIn",
-      },
-    },
-    play: {
-      opacity: "1",
-      transition: {
-        type: "keyframes",
-        duration: 1.4,
-        // ease: "easeIn",
-      },
-    },
-  };
+  const [playAnimation, setPlayAnimation] = React.useState(false);
+  React.useEffect(() => {
+    const onPageLoad = () => {
+      setPlayAnimation(true);
+    };
+
+    // Check if the page has already loaded
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    }
+  }, []);
   return (
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, default: { ease: "easeInOut" } }}
-        className={`${tabs[selectedTab].bg} transition-opacity w-full flex md:justify-center  items-center flex-col h-screen relative overflow-hidden pt-8 `}
+        className={`${
+          tabs[selectedTab].bg
+        } transition-opacity w-full  md:justify-center  items-center flex-col h-screen relative overflow-hidden pt-8 ${
+          playAnimation ? "opacity-1 flex" : "opacity-0 hidden"
+        }`}
       >
         <div className="border-b-[1.5pt] border-underline w-fit pt-8 mb-8 md:mb-0 ">
           <ul className="flex gap-4">

@@ -101,9 +101,29 @@ const Feature = () => {
   };
 
   const [index, setIndex] = React.useState(0);
+  const [playAnimation, setPlayAnimation] = React.useState(false);
+
+  React.useEffect(() => {
+    const onPageLoad = () => {
+      setPlayAnimation(true);
+    };
+
+    // Check if the page has already loaded
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    }
+  }, []);
   return (
     <>
-      <div className="flex lg:hidden flex-col w-full h-screen pt-12 pb-12">
+      <div
+        className={` flex-col w-full h-screen pt-12 pb-12 ${
+          playAnimation ? "opacity-1 flex lg:hidden" : "opacity-0 hidden"
+        }`}
+      >
         <div className="flex justify-center items-center flex-col pt-8 pb-8">
           <h1 className="font-friz-bold title-feature text-3xl">
             ALL FEATURES
@@ -182,7 +202,11 @@ const Feature = () => {
           <p className="font-lato font-normal">{featureList[index].subtitle}</p>
         </div>
       </div>
-      <div className="w-full h-screen hidden bg-[#1D1C1C] lg:flex">
+      <div
+        className={`w-full h-screen  bg-[#1D1C1C]  ${
+          playAnimation ? "opacity-1 hidden lg:flex" : "opacity-0 hidden"
+        }`}
+      >
         {featureList.map((item: any, idx: number) => (
           <motion.div
             key={idx + 1}

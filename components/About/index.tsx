@@ -17,8 +17,28 @@ const About = () => {
       },
     },
   };
+  const [playAnimation, setPlayAnimation] = React.useState(false);
+
+  React.useEffect(() => {
+    const onPageLoad = () => {
+      setPlayAnimation(true);
+    };
+
+    // Check if the page has already loaded
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    }
+  }, []);
   return (
-    <div className="relative overflow-hidden h-screen">
+    <div
+      className={`relative overflow-hidden h-screen ${
+        playAnimation ? "opacity-1 flex" : "opacity-0 hidden"
+      }`}
+    >
       <Modal
         id="about"
         isShown={isShown}

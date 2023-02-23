@@ -55,9 +55,28 @@ const World = () => {
     setIdxModal(idx);
     setHiddenModal(!hiddenModal);
   };
+  const [playAnimation, setPlayAnimation] = React.useState(false);
+  React.useEffect(() => {
+    const onPageLoad = () => {
+      setPlayAnimation(true);
+    };
+
+    // Check if the page has already loaded
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    }
+  }, []);
 
   return (
-    <div className="relative h-full">
+    <div
+      className={`relative h-full ${
+        playAnimation ? "opacity-1 flex" : "opacity-0 hidden"
+      }`}
+    >
       <div className="hidden lf:block">
         <SwiperWorld
           idx={idxModal}
