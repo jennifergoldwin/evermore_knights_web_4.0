@@ -48,10 +48,12 @@ const Feature = () => {
     rest: {
       display: "none",
       opacity: 0,
+      transform: "translateY(20%)",
     },
     play: {
       display: "block",
       opacity: 1,
+      transform: "translateY(0%)",
       transition: {
         type: "spring",
         duration: 2,
