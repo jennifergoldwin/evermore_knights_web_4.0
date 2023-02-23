@@ -14,7 +14,24 @@ interface IHomePage {
   fullpageApi: any;
 }
 const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
+  const [playAnimation, setPlayAnimation] = React.useState(false);
+  const initLoad = () => {
+    const onPageLoad = () => {
+      setPlayAnimation(!playAnimation);
+    };
+
+    if (document.readyState === "complete") {
+      console.log("complete home");
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    }
+  };
+
   React.useEffect(() => {
+    initLoad();
     let header = document.getElementById("header-top") as HTMLElement;
     let arrow = document.getElementById("explore-arrow") as HTMLElement;
     header.classList.add("!hidden");
@@ -22,7 +39,12 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
   }, []);
 
   return (
-    <div id="home-section" className="relative flex h-screen">
+    <div
+      id="home-section"
+      className={`relative  h-screen ${
+        playAnimation ? "opacity-1 flex" : "opacity-0 hidden"
+      }`}
+    >
       {/* <iframe
         className="w-full h-full"
         src="https://www.youtube.com/embed/-ERMKXPYQl4?controls=0?autoplay=1"
