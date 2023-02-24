@@ -133,7 +133,7 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
             src="/assets/images/arrow-left.png"
           />
         </motion.div>
-        <div className="flex flex-col">
+        <div className="flex flex-col relative justify-center items-center p-8">
           {worldList.map((item: any, index: number) => (
             <div
               className={`flex justify-center modal-world ${
@@ -148,7 +148,7 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
                     alt=""
                     className="absolute left-[-11%] top-[-11%]"
                   />
-                  <div className="w-[795px] h-auto p-8">
+                  <div className="w-[695px] h-auto p-8">
                     <div className="w-full flex justify-center items-center">
                       <img
                         className="w-[85%] lf:w-full"
@@ -174,7 +174,7 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
           ))}
           <div
             onClick={() => setIsShown(!isShownModal)}
-            className=" w-full bottom-0 text-white text-center font-lato font-[700] cursor-pointer py-2"
+            className="absolute bottom-0 text-white text-center font-lato font-[700] cursor-pointer py-2"
           >
             Tap to close
           </div>

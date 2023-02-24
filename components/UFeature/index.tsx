@@ -99,8 +99,8 @@ const UFeature = () => {
         >
           <div className="pt-6 pb-6 md:pt-[0rem] flex justify-center">
             <Image
-              width={selectedTab === 1 ? 810 : 750}
-              height={selectedTab === 1 ? 810 : 750}
+              width={selectedTab === 1 ? 900 : 820}
+              height={selectedTab === 1 ? 900 : 820}
               src={tabs[selectedTab].img}
               alt=""
             />
