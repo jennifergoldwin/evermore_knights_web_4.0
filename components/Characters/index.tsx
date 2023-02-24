@@ -422,11 +422,15 @@ const Characters: React.FC = () => {
                   src={item.heroImg}
                   placeholder="blur"
                   priority
+                  loading="eager"
                   alt=""
                 />
                 <Image
                   className="block md:hidden anim-slide-left max-h-[600px] w-auto"
                   src={item.heroImgMob}
+                  placeholder="blur"
+                  priority
+                  loading="eager"
                   alt=""
                 />
               </div>
