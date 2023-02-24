@@ -419,7 +419,7 @@ const Characters: React.FC = () => {
                   className={`hidden anim-slide-left
                     } md:block h-full absolute object-cover img-char`}
                   src={item.heroImg}
-                  loading="lazy"
+                  placeholder="blur"
                   alt=""
                 />
                 <Image
