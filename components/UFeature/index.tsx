@@ -99,9 +99,8 @@ const UFeature = () => {
         >
           <div className="pt-6 pb-6 md:pt-[0rem] flex justify-center">
             <Image
-              className={`${
-                selectedTab === 1 ? "lg:w-[75%]" : "lg:w-[85%]"
-              } w-auto`}
+              width={selectedTab === 1 ? 810 : 750}
+              height={selectedTab === 1 ? 810 : 750}
               src={tabs[selectedTab].img}
               alt=""
             />

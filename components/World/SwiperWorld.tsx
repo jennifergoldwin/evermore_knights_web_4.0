@@ -118,11 +118,7 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
       <div
         className="w-full h-full absolute z-[3]"
         onClick={() => setIsShown(!isShownModal)}
-      >
-        <div className="absolute w-full bottom-0 text-white text-center font-lato font-[700] cursor-pointer py-2">
-          Tap to close
-        </div>
-      </div>
+      ></div>
 
       <div className="flex justify-center items-center gap-6 relative z-[4]">
         <motion.div
@@ -137,44 +133,52 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
             src="/assets/images/arrow-left.png"
           />
         </motion.div>
-        {worldList.map((item: any, index: number) => (
-          <div
-            className={`flex justify-center modal-world ${
-              idxModal === index ? "active" : ""
-            }`}
-            key={item.title}
-          >
-            <div className="h-full w-fit flex justify-center items-center flex-col">
-              <div className="bg-[url(/assets/images/bg-swiper-world.png)] bg-center bg-cover relative flex flex-col w-fit">
-                <img
-                  src={item.flag}
-                  alt=""
-                  className="absolute left-[-11%] top-[-11%]"
-                />
-                <div className="w-[795px] h-auto p-8">
-                  <div className="w-full flex justify-center items-center">
-                    <img
-                      className="w-[85%] lf:w-full"
-                      src={item.url}
-                      alt="arriane"
-                    />
-                  </div>
-                  <div className=" flex flex-col justify-center items-center text-center">
-                    <h1 className="font-friz-bold text-xl text-black pt-3">
-                      {item.title}
-                    </h1>
-                    <span className="font-friz-medium text-sm text-black pb-3">
-                      {item.subtitle}
-                    </span>
-                    <p className="font-lato text-xs text-black text-opacity-[0.5]">
-                      {item.desc}
-                    </p>
+        <div className="flex flex-col">
+          {worldList.map((item: any, index: number) => (
+            <div
+              className={`flex justify-center modal-world ${
+                idxModal === index ? "active" : ""
+              }`}
+              key={item.title}
+            >
+              <div className="h-full w-fit flex justify-center items-center flex-col">
+                <div className="bg-[url(/assets/images/bg-swiper-world.png)] bg-center bg-cover relative flex flex-col w-fit">
+                  <img
+                    src={item.flag}
+                    alt=""
+                    className="absolute left-[-11%] top-[-11%]"
+                  />
+                  <div className="w-[795px] h-auto p-8">
+                    <div className="w-full flex justify-center items-center">
+                      <img
+                        className="w-[85%] lf:w-full"
+                        src={item.url}
+                        alt="arriane"
+                      />
+                    </div>
+                    <div className=" flex flex-col justify-center items-center text-center">
+                      <h1 className="font-friz-bold text-xl text-black pt-3">
+                        {item.title}
+                      </h1>
+                      <span className="font-friz-medium text-sm text-black pb-3">
+                        {item.subtitle}
+                      </span>
+                      <p className="font-lato text-xs text-black text-opacity-[0.5]">
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+          ))}
+          <div
+            onClick={() => setIsShown(!isShownModal)}
+            className=" w-full bottom-0 text-white text-center font-lato font-[700] cursor-pointer py-2"
+          >
+            Tap to close
           </div>
-        ))}
+        </div>
         <motion.div
           initial="rest"
           animate="rest"
