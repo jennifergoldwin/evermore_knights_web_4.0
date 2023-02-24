@@ -37,6 +37,7 @@ import quinnMob from "../../public/assets/images/quinn-mob.png";
 import curtisMob from "../../public/assets/images/curtis-mob.png";
 import gashaniMob from "../../public/assets/images/gashani-mob.png";
 import tristaMob from "../../public/assets/images/trista-mob.png";
+import { ThreeDots } from "react-loader-spinner";
 const characterLists = [
   {
     bg: "bg-[url(/assets/images/bg-grana.png)]",
@@ -420,6 +421,7 @@ const Characters: React.FC = () => {
                     } md:block h-full absolute object-cover img-char`}
                   src={item.heroImg}
                   placeholder="blur"
+                  priority
                   alt=""
                 />
                 <Image
