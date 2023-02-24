@@ -13,19 +13,20 @@ import f_adult_desktop from "../../public/assets/images/f_adult_desktop.png";
 import m_adult_desktop from "../../public/assets/images/m_adult_desktop.png";
 import bg_ab_char from "../../public/assets/images/bg-ab-char.png";
 import bg_ab_weapon from "../../public/assets/images/bg-ab-weapon.png";
-
+import char_gif from "../../public/assets/video/char.gif";
+import weapon_gif from "../../public/assets/video/weap.gif";
 const UFeature = () => {
   const tabs = [
     {
       bg: "bg-nft-char",
-      img: "/assets/video/char.gif",
+      img: char_gif,
       label: "NFT CHARACTER",
       desc: "Every character will be unique in both appearance and attributes. Build them as you wish to better assist you in your adventure!",
       abImg: bg_ab_char,
     },
     {
       bg: "bg-nft-weapon",
-      img: "/assets/video/weap.gif",
+      img: weapon_gif,
       label: "NFT WEAPON",
       desc: "Every weapon will be unique in both appearance and attributes. Build them as you wish to better assist you in your adventure!",
       abImg: bg_ab_weapon,
@@ -97,10 +98,10 @@ const UFeature = () => {
           transition={{ duration: 0.5, type: "keyframes" }}
         >
           <div className="pt-6 pb-6 md:pt-[0rem] flex justify-center">
-            <img
+            <Image
               className={`${
-                selectedTab === 1 ? "lg:w-[85%]" : "lg:w-[95%]"
-              } w-full`}
+                selectedTab === 1 ? "lg:w-[75%]" : "lg:w-[85%]"
+              } w-auto`}
               src={tabs[selectedTab].img}
               alt=""
             />
