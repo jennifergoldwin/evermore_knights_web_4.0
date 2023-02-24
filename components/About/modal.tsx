@@ -1,7 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
+//img
+import Image from "next/image";
+import arrow from "../../public/assets/images/arrow.png";
 interface Imodal {
   isShown: boolean;
   setIsShown: any;
@@ -54,31 +56,39 @@ const Modal: React.FC<Imodal> = ({ isShown, setIsShown, src, id }) => {
           </button>
           <div className="outer-video w-full h-full">
             <div className="absolute top-0 left-0 z-20">
-              <img
-                src="/assets/images/arrow.png"
+              <Image
+                src={arrow}
                 alt=""
-                className="w-[40px] h-[40px] rotate-[315deg] p-2"
+                width={40}
+                height={40}
+                className="rotate-[315deg]  p-2"
               />
             </div>
             <div className="absolute top-0 right-0 z-10">
-              <img
-                src="/assets/images/arrow.png"
+              <Image
+                src={arrow}
                 alt=""
-                className="w-[40px] h-[40px] rotate-[45deg] p-2"
+                width={40}
+                height={40}
+                className="rotate-[45deg]  p-2"
               />
             </div>
             <div className="absolute bottom-0 left-0 z-10">
-              <img
-                src="/assets/images/arrow.png"
+              <Image
+                src={arrow}
                 alt=""
-                className="w-[40px] h-[40px] rotate-[225deg] p-2"
+                width={40}
+                height={40}
+                className="rotate-[225deg]  p-2"
               />
             </div>
             <div className="absolute bottom-0 right-0 z-10">
-              <img
-                src="/assets/images/arrow.png"
+              <Image
+                src={arrow}
                 alt=""
-                className="w-[40px] h-[40px] rotate-[135deg] p-2"
+                width={40}
+                height={40}
+                className="rotate-[135deg]  p-2"
               />
             </div>
             <video

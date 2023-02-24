@@ -10,6 +10,10 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { RiInstagramFill } from "react-icons/ri";
+//img
+import googleplay from "../../public/assets/images/googleplay.png";
+import logo from "../../public/assets/images/logo_shine.png";
+import Image from "next/image";
 interface IHomePage {
   fullpageApi: any;
 }
@@ -72,14 +76,8 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
         <source src="/assets/video/landpage_mob.mp4" type="video/mp4" />
       </video>
       <div className="flex absolute w-full h-full">
-        <div className="flex justify-center items-center absolute w-full translate-y-[40%] sf:translate-y-[15%]  lf:translate-y-[12%] md:translate-y-[15%]">
-          <motion.img
-            whileInView="play"
-            initial="rest"
-            animate="rest"
-            src="/assets/images/logo_shine.png"
-            alt=""
-          />
+        <div className="flex justify-center items-center absolute w-full translate-y-[40%] sf:translate-y-[15%]  lf:translate-y-[2%] md:translate-y-[15%]">
+          <Image src={logo} alt="" />
         </div>
         {/* <div className="flex absolute justify-center w-full top-[50%]">
           <img src="/assets/images/leaf.png" alt="" />
@@ -92,11 +90,7 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
               src="/assets/images/appstore.png"
               alt=""
             /> */}
-            <img
-              className="w-36 sm:w-auto h-auto "
-              src="/assets/images/googleplay.png"
-              alt=""
-            />
+            <Image src={googleplay} alt="" />
           </div>
 
           <div className="lg:hidden grid grid-cols-6 gap-3 z-[2]">

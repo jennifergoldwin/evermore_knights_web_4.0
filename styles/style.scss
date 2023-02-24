@@ -542,3 +542,9 @@ html {
 .fp-viewing-lastPage #fullpage .lastPage {
   position: relative;
 }
+
+#btn-char-mob > .swiper-wrapper {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}

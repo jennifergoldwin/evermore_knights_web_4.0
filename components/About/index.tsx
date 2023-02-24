@@ -1,7 +1,13 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Modal from "./modal";
 import { motion } from "framer-motion";
+//img
+import Image from "next/image";
+import arrow from "../../public/assets/images/arrow.png";
+import youtubeBg from "../../public/assets/images/about-youtube.png";
+import play from "../../public/assets/images/play.png";
+import char from "../../public/assets/images/about-char.png";
+import leaf from "../../public/assets/images/leaf.png";
 const About = () => {
   const [isShown, setIsShown] = React.useState(false);
   const imgMotion = {
@@ -79,25 +85,7 @@ const About = () => {
                 turn the tide of battle. Witness awesome abilities and pristine
                 gameplay.
               </div>
-              {/* <div
-              className="relative w-full overflow-hidden flex justify-center lf:justify-start"
-              onClick={() => setIsShown(true)}
-            >
-              <iframe
-                className="w-[90%] h-[280px]  lg:h-[400px]  lf:h-[280px]"
-                loading="lazy"
-                src="https://www.youtube.com/embed/-ERMKXPYQl4?autoplay=1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div> */}
-              {/* <img
-                onClick={() => setIsShown(true)}
-                className="cursor-pointer w-full lf:w-[80%] h-auto"
-                src="/assets/images/youtube-frame.png"
-                alt=""
-                
-              /> */}
+
               <motion.div
                 initial="rest"
                 animate="rest"
@@ -108,71 +96,58 @@ const About = () => {
                 }}
               >
                 <div className="absolute top-0 left-0 z-20">
-                  <img
-                    src="/assets/images/arrow.png"
+                  <Image
+                    src={arrow}
                     alt=""
-                    className="w-[40px] h-[40px] rotate-[315deg] p-2"
+                    width={40}
+                    height={40}
+                    className="rotate-[315deg]  p-2"
                   />
                 </div>
                 <div className="absolute top-0 right-0 z-20">
-                  <img
-                    src="/assets/images/arrow.png"
+                  <Image
+                    src={arrow}
                     alt=""
-                    className="w-[40px] h-[40px] rotate-[45deg] p-2"
+                    width={40}
+                    height={40}
+                    className="rotate-[45deg]  p-2"
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 z-20">
-                  <img
-                    src="/assets/images/arrow.png"
+                  <Image
+                    src={arrow}
                     alt=""
-                    className="w-[40px] h-[40px] rotate-[225deg] p-2"
+                    width={40}
+                    height={40}
+                    className="rotate-[225deg]  p-2"
                   />
                 </div>
                 <div className="absolute bottom-0 right-0 z-20">
-                  <img
-                    src="/assets/images/arrow.png"
+                  <Image
+                    src={arrow}
                     alt=""
-                    className="w-[40px] h-[40px] rotate-[135deg] p-2"
+                    width={40}
+                    height={40}
+                    className="rotate-[135deg]  p-2"
                   />
                 </div>
                 <div className="absolute w-full h-full flex justify-center items-center  z-20">
-                  <img src="/assets/images/play.png" alt="" className=" p-2" />
+                  <Image src={play} className="p-2" alt="" placeholder="blur" />
                 </div>
                 <div className="overlay" />
-                <motion.img
-                  variants={imgMotion}
-                  src="/assets/images/about-youtube.png"
-                  alt=""
-                />
+                <motion.div variants={imgMotion}>
+                  <Image src={youtubeBg} alt="" />
+                </motion.div>
               </motion.div>
             </div>
 
             <div className="absolute hidden lf:flex  bottom-0 z-30  lg:-bottom-[20%] -left-[10%]">
-              <img src="/assets/images/leaf.png" alt="" />
+              <Image src={leaf} alt="" />
             </div>
           </div>
 
-          {/* <div className="mt-4 flex lg:hidden items-center gap-2 justify-center lg:justify-end lg:w-2/5 w-full">
-          <img
-            className=" w-36 sm:w-auto h-auto"
-            src="/assets/images/appstore.png"
-            alt=""
-          />
-          <img
-            className=" w-36 sm:w-auto h-auto"
-            src="/assets/images/googleplay.png"
-            alt=""
-          />
-        </div> */}
-          {/* <div className="overflow-hidden h-screen  w-full lf:w-1/2 relative">
-            <img
-              className="hidden lf:block h-screen object-cover w-auto fixed bottom-0 top-0  right-0 translate-x-[10%] lgd:translate-x-[0%]"
-              src="/assets/images/about-char.png"
-              alt=""
-            />
-          </div> */}
-          <div className="hidden lf:flex h-screen justify-end w-auto">
-            <img src="/assets/images/about-char.png" alt="" />
+          <div className="hidden lf:flex items-center h-screen justify-end w-auto lf:w-1/2">
+            <Image src={char} alt="" className="object-fill  w-auto h-full" />
           </div>
         </div>
       </div>

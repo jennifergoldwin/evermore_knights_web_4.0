@@ -11,7 +11,8 @@ import {
 import { RiInstagramFill } from "react-icons/ri";
 import { CgMenu } from "react-icons/cg";
 import { MdClose } from "react-icons/md";
-import Navbar from "../Navbar";
+import logo from "../../public/assets/images/logo.png";
+import Image from "next/image";
 const Header = () => {
   const [active, setActive] = React.useState(false);
   const [activeLink, setActiveLink] = React.useState([
@@ -41,7 +42,7 @@ const Header = () => {
       >
         <h1 className="hidden sm:flex logo main w-1/2 sm:w-1/3">
           <a href="#firstPage" title="evermore knights">
-            <img src="/assets/images/logo.png" alt="evermore knights" />
+            <Image src={logo} alt="evermore knights" />
           </a>
         </h1>
         <div className="hidden sm:flex">

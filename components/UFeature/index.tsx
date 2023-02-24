@@ -7,6 +7,13 @@ import { Pagination, Navigation, EffectCoverflow } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
+import f_adult from "../../public/assets/images/f_adult.png";
+import m_adult from "../../public/assets/images/m_adult.png";
+import f_adult_desktop from "../../public/assets/images/f_adult_desktop.png";
+import m_adult_desktop from "../../public/assets/images/m_adult_desktop.png";
+import bg_ab_char from "../../public/assets/images/bg-ab-char.png";
+import bg_ab_weapon from "../../public/assets/images/bg-ab-weapon.png";
+
 const UFeature = () => {
   const tabs = [
     {
@@ -14,14 +21,14 @@ const UFeature = () => {
       img: "/assets/video/char.gif",
       label: "NFT CHARACTER",
       desc: "Every character will be unique in both appearance and attributes. Build them as you wish to better assist you in your adventure!",
-      abImg: "/assets/images/bg-ab-char.png",
+      abImg: bg_ab_char,
     },
     {
       bg: "bg-nft-weapon",
       img: "/assets/video/weap.gif",
       label: "NFT WEAPON",
       desc: "Every weapon will be unique in both appearance and attributes. Build them as you wish to better assist you in your adventure!",
-      abImg: "/assets/images/bg-ab-weapon.png",
+      abImg: bg_ab_weapon,
     },
   ];
   const [selectedTab, setSelectedTab] = React.useState(0);
@@ -100,16 +107,16 @@ const UFeature = () => {
           </div>
 
           {selectedTab === 0 && (
-            <img
+            <Image
               className="absolute bottom-[0%] right-[-20%] lg:right-0"
-              src="/assets/images/f_adult_desktop.png"
+              src={f_adult_desktop}
               alt=""
             />
           )}
           {selectedTab === 0 && (
-            <img
+            <Image
               className="absolute bottom-[0%] left-[-20%] lg:left-0"
-              src="/assets/images/m_adult_desktop.png"
+              src={m_adult_desktop}
               alt=""
             />
           )}
@@ -163,21 +170,21 @@ const UFeature = () => {
           </Swiper>
           <div className="swiper-pagination swiper-pagination-ufeature-mob" />
           {selectedTab === 0 && (
-            <img
+            <Image
               className="absolute bottom-[-20%] right-0"
-              src="/assets/images/f_adult.png"
+              src={f_adult}
               alt=""
             />
           )}
           {selectedTab === 0 && (
-            <img
+            <Image
               className="absolute bottom-[-20%] left-0"
-              src="/assets/images/m_adult.png"
+              src={m_adult}
               alt=""
             />
           )}
           <div className="flex w-full justify-center pt-8 relative">
-            <img className=" " src={tabs[selectedTab].abImg} alt="" />
+            <Image className=" " src={tabs[selectedTab].abImg} alt="" />
             <div className="flex w-full justify-center absolute h-full items-center left-0 right-0">
               <span className="text-center w-[85%] font-lato font-[400] pb-4 ">
                 {tabs[selectedTab].desc}

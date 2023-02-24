@@ -1,6 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { motion } from "framer-motion";
+
+//img
+import logo from "../../public/assets/images/logo.png";
+import nomina from "../../public/assets/images/nomina.png";
+import creo from "../../public/assets/images/creoengine.png";
+import muse from "../../public/assets/images/muse.png";
+import Image from "next/image";
 interface IFooter {
   fullpageApi: any;
 }
@@ -132,15 +139,15 @@ const Footer: React.FC<IFooter> = ({ fullpageApi }) => {
         <div className="font-inter font-bold text-white">Back to Top</div>
       </motion.div>
       <div className="grid grid-cols-3">
-        <img src="/assets/images/nomina.png" alt="" />
-        <img src="/assets/images/muse.png" alt="" />
-        <img src="/assets/images/creoengine.png" alt="" />
+        <Image src={nomina} alt="" />
+        <Image src={muse} alt="" />
+        <Image src={creo} alt="" />
       </div>
       <p className="text-white text-sm sm:text-base text-opacity-50 w-[100%] px-4 sm:px-0 sm:w-[55%] text-center font-inter">
         © 2022 Nomina Games, Muse, Creo Engine and any associated logos are
         trademarks, service marks, and/or registered trademarks of Nomina Games
       </p>
-      <img src="/assets/images/logo.png" alt="" />
+      <Image src={logo} alt="" />
       <span className="text-white text-opacity-50 font-inter text-sm sm:text-base">
         © 2022 Evermore Knights
       </span>

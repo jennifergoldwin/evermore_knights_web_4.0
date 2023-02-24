@@ -5,6 +5,9 @@ import { Navigation, Pagination, EffectFade, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import arrow_left from "../../public/assets/images/arrow-left.png";
+import arrow_right from "../../public/assets/images/arrow-right.png";
+import Image from "next/image";
 const listArray = ["slide1", "slide2", "slide3", "slide4", "slide5"];
 const storyList = [
   {
@@ -182,7 +185,7 @@ const Story = () => {
               className=" w-[32px] h-[32px] justify-self-start"
               onClick={() => swiper.slidePrev()}
             >
-              <img src="/assets/images/arrow-left.png" alt="" />
+              <Image src={arrow_left} alt="" />
             </span>
             <span
               className={`before flex justify-center items-center ${
@@ -218,16 +221,16 @@ const Story = () => {
               className=" w-[32px] h-[32px] justify-self-end"
               onClick={() => swiper.slideNext()}
             >
-              <img src="/assets/images/arrow-right.png" alt="" />
+              <Image src={arrow_right} alt="" />
             </span>
           </div>
           <div className="swiper-line block sm:block md:hidden w-full h-[2px] bg-black-01 absolute z-[4] " />
         </div>
         <div className="swiper-button-prev !top-[unset] bottom-[52px] !left-[2%] lg:!left-[10%] !hidden sm:!hidden md:!flex">
-          <img src="/assets/images/arrow-left.png" alt="" />
+          <Image src={arrow_left} alt="" />
         </div>
         <div className="swiper-button-next !top-[unset] bottom-[52px] !right-[2%] lg:!right-[10%] !hidden sm:!hidden md:!flex">
-          <img src="/assets/images/arrow-right.png" alt="" />
+          <Image src={arrow_right} alt="" />
         </div>
         {storyList.map((item: any, idx: number) => (
           <SwiperSlide className="h-full" key={idx + 1}>
