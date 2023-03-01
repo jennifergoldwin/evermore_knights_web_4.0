@@ -117,7 +117,7 @@ const characterLists = [
     title2: "Staff",
     link: "",
     star: fivestar,
-    youtube: "/assets/images/youtube-frame.png",
+    youtube: "/assets/images/curtis-youtube.png",
   },
   {
     bg: "bg-[url(/assets/images/bg-trista.png)]",
@@ -133,7 +133,7 @@ const characterLists = [
     title2: "Sword",
     link: "",
     star: fivestar,
-    youtube: "/assets/images/youtube-frame.png",
+    youtube: "/assets/images/curtis-youtube.png",
   },
 ];
 const Characters: React.FC = () => {
@@ -271,8 +271,8 @@ const Characters: React.FC = () => {
               indexChar === idx ? "active" : ""
             }  w-full`}
           >
-            <div className="h-full ml-0 md:ml-4 lg:ml-[8%] lg:pl-0 lgf:ml-0 lgf:pl-[8%] pt-6 relative w-full  flex flex-col-reverse md:flex-row justify-end md:justify-center items-center">
-              <div className="bg-gradient-black w-full md:w-2/5  absolute z-[2] bottom-[0%] flex flex-col md:static">
+            <div className="h-full ml-0 md:ml-4 lg:ml-[8%] lg:pl-0 lgf:ml-0 lgf:pl-[8%] pt-6 relative w-full">
+              <div className="bg-gradient-black w-full md:w-1/2 lg:w-2/5 absolute z-[2] bottom-[0%] md:h-full justify-center flex ">
                 <div className="p-2 md:p-0 flex justify-center items-center md:flex-col">
                   <div className="md:p-3 lg:pr-0">
                     <div className="flex justify-between items-center">
@@ -348,10 +348,10 @@ const Characters: React.FC = () => {
                         />
                       </svg>
                     </div>
-                    <div className=" flex md:flex-col flex-row justify-center h-full items-center">
+                    <div className=" flex md:flex-col flex-row justify-center items-center">
                       <div
                         id="hero-desc"
-                        className={`w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-base  lg:text-sm flex  justify-center`}
+                        className={`min-h-[100px] hero-desc-container w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-xs  lg:text-sm flex  justify-center`}
                       >
                         {item.heroDesc}
                       </div>
@@ -425,10 +425,10 @@ const Characters: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full overflow-hidden  md:w-3/5 h-full object-cover md:h-screen relative">
+              <div className="w-full z-0 overflow-hidden  h-full  absolute md:right-[-200px] lg:right-[-250px] top-0">
                 <Image
                   className={`hidden 
-                    } md:block h-full absolute object-cover img-char`}
+                    } md:block h-full absolute object-contain img-char`}
                   src={item.heroImg}
                   priority
                   loading="eager"
