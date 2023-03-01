@@ -38,7 +38,7 @@ const worldList = [
     flag: "/assets/images/zanto-flag.png",
     url: "/assets/images/zanto.png",
     title: "Zanto",
-    subtitle: "Land of Endless Meadow",
+    subtitle: "Land of Enlightenment",
     desc: "Iei Zanto isn't known for her patience nor is she shameful about it. Despite ruling over the smallest nation in Temeris, she still stands tall and proud. Many had tried to invade and claim her nation, including other nations during the conflict, but she stood her ground with her people and fought off all who dared stand against her and her domain. She holds everything she has dearly and protects them all from harm. Indeed the people of Zanto love their goddess very much. This includes the Kami and the Yokai, which are the local Aeons of Zanto. Despite their differences and origins, they adopted Iei as one of their own.",
   },
   {
@@ -125,15 +125,16 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
           initial="rest"
           animate="rest"
           whileHover="play"
-          className="cursor-pointer"
-          onClick={() => (idxModal === 0 ? {} : setIndexModal(idxModal - 1))}
+          className="cursor-pointer absolute left-[-50px]"
         >
           <motion.img
+            onClick={() => (idxModal === 0 ? {} : setIndexModal(idxModal - 1))}
+            className="relative z-[5]"
             variants={imgMotion}
             src="/assets/images/arrow-left.png"
           />
         </motion.div>
-        <div className="flex flex-col relative justify-center items-center p-8">
+        <div className="flex flex-col relative justify-center items-center">
           {worldList.map((item: any, index: number) => (
             <div
               className={`flex justify-center modal-world ${
@@ -148,7 +149,7 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
                     alt=""
                     className="absolute left-[-11%] top-[-11%]"
                   />
-                  <div className="w-[695px] h-auto p-8">
+                  <div className="w-[695px] h-[520px] p-8">
                     <div className="w-full flex justify-center items-center">
                       <img
                         className="w-[85%] lf:w-full"
@@ -174,7 +175,7 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
           ))}
           <div
             onClick={() => setIsShown(!isShownModal)}
-            className="absolute bottom-0 text-white text-center font-lato font-[700] cursor-pointer py-2"
+            className="absolute bottom-[-40px] text-white text-center font-lato font-[700] cursor-pointer py-2"
           >
             Tap to close
           </div>
@@ -183,7 +184,7 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
           initial="rest"
           animate="rest"
           whileHover="play"
-          className="cursor-pointer"
+          className="cursor-pointer absolute right-[-50px]"
           onClick={() =>
             idxModal === worldList.length - 1 ? {} : setIndexModal(idxModal + 1)
           }

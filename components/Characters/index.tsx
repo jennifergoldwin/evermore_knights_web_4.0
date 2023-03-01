@@ -263,29 +263,38 @@ const Characters: React.FC = () => {
         </div>
       </div>
 
-      <div>
+      <div className="flex flex-col h-screen">
         {characterLists.map((item: any, idx: number) => (
           <div
             key={idx}
-            className={` slide-char ${
+            className={` slide-char h-screen ${
               indexChar === idx ? "active" : ""
             }  w-full`}
           >
-            <div className="ml-0 md:ml-4 lg:ml-[8%] lg:pl-0 lgf:ml-0 lgf:pl-[8%] pt-6 relative w-full  flex flex-col-reverse md:flex-row justify-end md:justify-center items-center">
-              <div className="bg-gradient-black w-full md:w-2/5 absolute z-[2] bottom-[0%] flex flex-col md:static">
+            <div className="h-full ml-0 md:ml-4 lg:ml-[8%] lg:pl-0 lgf:ml-0 lgf:pl-[8%] pt-6 relative w-full  flex flex-col-reverse md:flex-row justify-end md:justify-center items-center">
+              <div className="bg-gradient-black w-full md:w-2/5  absolute z-[2] bottom-[0%] flex flex-col md:static">
                 <div className="p-2 md:p-0 flex justify-center items-center md:flex-col">
                   <div className="md:p-3 lg:pr-0">
                     <div className="flex justify-between items-center">
                       <div className="flex flex-col w-5/6  sm:w-1/2 md:w-full">
                         <div className="flex items-center font-friz-bold gap-3">
-                          <h1 className="text-xl sm:text-2xl lg:text-4xl anim-slide-up">
+                          <h1
+                            className="text-xl sm:text-2xl lg:text-4xl"
+                            id="hero-name"
+                          >
                             {item.heroName}
                           </h1>
-                          <span className="anim-slide-up title-text font-bold text-base sm:text-base lg:text-lg">
+                          <span
+                            id="hero-subname"
+                            className="title-text font-bold text-base sm:text-base lg:text-lg"
+                          >
                             {item.heroSubName}
                           </span>
                         </div>
-                        <div className="flex items-center gap-3 anim-slide-up">
+                        <div
+                          className="flex items-center gap-3"
+                          id="hero-detail"
+                        >
                           <Image src={item.star} alt="" />
                           <div className="flex gap-4 font-barlow font-[600]">
                             <div className=" flex items-center gap-2 ">
@@ -325,7 +334,7 @@ const Characters: React.FC = () => {
                         />
                       </div>
                     </div>
-                    <div className="py-4 w-full ">
+                    <div className="py-4 w-full line">
                       <svg
                         width="276"
                         height="3"
@@ -341,7 +350,8 @@ const Characters: React.FC = () => {
                     </div>
                     <div className=" flex md:flex-col flex-row justify-center h-full items-center">
                       <div
-                        className={`anim-slide-up w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-base  lg:text-sm flex  justify-center`}
+                        id="hero-desc"
+                        className={`w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-base  lg:text-sm flex  justify-center`}
                       >
                         {item.heroDesc}
                       </div>
@@ -353,7 +363,7 @@ const Characters: React.FC = () => {
                         className={`hidden md:block ${
                           item.link === ""
                             ? "opacity-0 invisible"
-                            : " visible anim-opacity "
+                            : " visible youtube-hero"
                         } outer-video cursor-pointer w-[100%] h-auto`}
                         onClick={() => {
                           setIsShown(true);
@@ -415,17 +425,18 @@ const Characters: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full overflow-hidden  md:w-3/5 md:h-screen relative">
+              <div className="w-full overflow-hidden  md:w-3/5 h-full object-cover md:h-screen relative">
                 <Image
-                  className={`hidden anim-slide-left
+                  className={`hidden 
                     } md:block h-full absolute object-cover img-char`}
                   src={item.heroImg}
                   priority
                   loading="eager"
                   alt=""
                 />
+                {/* <img src="/assets/images/grana-mob.png" /> */}
                 <Image
-                  className="block md:hidden anim-slide-left max-h-[600px] w-auto"
+                  className="block md:hidden h-full w-auto object-cover"
                   src={item.heroImgMob}
                   priority
                   loading="eager"
@@ -435,59 +446,59 @@ const Characters: React.FC = () => {
             </div>
           </div>
         ))}
-      </div>
-      <div className="block relative md:hidden bg-[#010a1a] h-full">
-        <Swiper
-          id="btn-char-mob"
-          slideToClickedSlide
-          centeredSlides
-          slidesPerView={"auto"}
-          spaceBetween={10}
-          onActiveIndexChange={(swiperr: any) => {
-            handleClick(swiperr.activeIndex);
-          }}
-        >
-          {[...Array(6)].map((item: any, idx: number) => (
-            <SwiperSlide
-              className="!w-fit flex justify-center items-center"
-              key={idx}
-            >
-              <div className="relative flex flex-col justify-center items-center">
-                <Image
-                  width={90}
-                  height={90}
-                  src={`/assets/images/btn-${idx + 1}-mob.png`}
-                  alt=""
-                />
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="1.15242"
-                    y="16.2344"
-                    width="21.2932"
-                    height="21.2932"
-                    transform="rotate(-45 1.15242 16.2344)"
-                    stroke={idx != indexChar ? "transparent" : "white"}
+        <div className="block py-4 relative md:hidden bg-[#010a1a] ">
+          <Swiper
+            id="btn-char-mob"
+            slideToClickedSlide
+            centeredSlides
+            slidesPerView={"auto"}
+            spaceBetween={10}
+            onActiveIndexChange={(swiperr: any) => {
+              handleClick(swiperr.activeIndex);
+            }}
+          >
+            {[...Array(6)].map((item: any, idx: number) => (
+              <SwiperSlide
+                className="!w-fit flex justify-center items-center"
+                key={idx}
+              >
+                <div className="relative flex flex-col justify-center items-center">
+                  <Image
+                    width={90}
+                    height={90}
+                    src={`/assets/images/btn-${idx + 1}-mob.png`}
+                    alt=""
                   />
-                  <rect
-                    x="7.17188"
-                    y="15.957"
-                    width="12.7942"
-                    height="12.7942"
-                    transform="rotate(-45 7.17188 15.957)"
-                    fill={idx != indexChar ? "#161F2C" : "white"}
-                  />
-                </svg>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className="absolute w-full h-[2px] bg-line bottom-[31%]"></div>
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="1.15242"
+                      y="16.2344"
+                      width="21.2932"
+                      height="21.2932"
+                      transform="rotate(-45 1.15242 16.2344)"
+                      stroke={idx != indexChar ? "transparent" : "white"}
+                    />
+                    <rect
+                      x="7.17188"
+                      y="15.957"
+                      width="12.7942"
+                      height="12.7942"
+                      transform="rotate(-45 7.17188 15.957)"
+                      fill={idx != indexChar ? "#161F2C" : "white"}
+                    />
+                  </svg>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="absolute w-full h-[2px] bg-line bottom-[24.5%]"></div>
+        </div>
       </div>
     </div>
   );

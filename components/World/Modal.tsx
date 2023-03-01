@@ -22,8 +22,14 @@ const Modal: React.FC<Imodal> = ({ url, desc, showModal, setShowModal }) => {
                 style={{ backgroundSize: "100% 100%" }}
               >
                 <div className="relative p-6 flex-auto">
-                  <img src={url} alt="" />
-                  <p className="font-lato text-opacity-[0.5] text-black text-[0.6rem] sm:text-xs py-6">
+                  <div className="h-[180px] w-auto">
+                    <img
+                      src={url}
+                      alt=""
+                      className="object-cover h-full w-full"
+                    />
+                  </div>
+                  <p className="font-lato font-[600] text-black text-[0.75rem] sm:text-xs py-6">
                     {desc}
                   </p>
                 </div>

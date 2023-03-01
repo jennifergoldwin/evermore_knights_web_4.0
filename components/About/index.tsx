@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "./modal";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 //img
 import Image from "next/image";
 import arrow from "../../public/assets/images/arrow.png";
@@ -9,6 +9,8 @@ import play from "../../public/assets/images/play.png";
 import char from "../../public/assets/images/about-char.png";
 import leaf from "../../public/assets/images/leaf.png";
 const About = () => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: false });
   const [isShown, setIsShown] = React.useState(false);
   const imgMotion = {
     rest: {
@@ -23,6 +25,21 @@ const About = () => {
       },
     },
   };
+  // const textMotion = {
+  //   rest: {
+  //     transform: "translateY(20%)",
+  //     opacity: 0,
+  //   },
+  //   play: {
+  //     transform: "translateY(20%)",
+  //     opacity: 1,
+  //     transition: {
+  //       type: "spring",
+  //       duration: 0.4,
+  //       ease: "easeIn",
+  //     },
+  //   },
+  // };
   const [playAnimation, setPlayAnimation] = React.useState(false);
 
   React.useEffect(() => {
@@ -39,6 +56,9 @@ const About = () => {
       return () => window.removeEventListener("load", onPageLoad);
     }
   }, []);
+  // React.useEffect(() => {
+  //   console.log(isInView);
+  // });
   return (
     <div
       className={`relative overflow-hidden h-screen ${
@@ -56,18 +76,25 @@ const About = () => {
         className={`bg-[url(/assets/images/bg-about.png)] bg-left bg-cover h-full `}
       >
         <div className="pl-0 lf:pl-[6%] flex flex-col lf:flex-row justify-center items-center min-h-screen w-full relative">
-          <div className="text-center lf:text-left w-full md:w-[80%] lg:w-[70%] lf:w-1/2 px-4 lf:px-6 relative h-full flex justify-center items-center">
+          <div
+            ref={ref}
+            className={`text-center lf:text-left w-full md:w-[80%] lg:w-[70%] lf:w-1/2 px-4 lf:px-6 relative h-full flex justify-center items-center`}
+          >
             <div className="h-full flex flex-col justify-center items-center lf:items-start">
-              <div className="font-friz-regular text-xl lg:text-2xl">
+              <div
+                id="about-title-1"
+                className="font-friz-regular text-xl lg:text-2xl"
+              >
                 FREE TO PLAY
               </div>
               <h1
+                id="about-title"
                 data-content="turn-based"
                 className="font-friz-bold title-text title-shadow text-3xl lg:text-4xl "
               >
                 TURN BASED RPG COMBAT
               </h1>
-              <div className="py-4 w-full">
+              <div className="py-4 w-full line">
                 <svg
                   viewBox="0 0 465 3"
                   fill="none"
@@ -80,13 +107,17 @@ const About = () => {
                 </svg>
               </div>
 
-              <div className="font-lato pb-3 lg:pb-6 text-base  lg:text-xl">
+              <div
+                id="about-desc"
+                className="font-lato font-[500] pb-3 lg:pb-6 text-base  lg:text-xl"
+              >
                 Anime - inspired RPG combat! Strategy and planning can easily
                 turn the tide of battle. Witness awesome abilities and pristine
                 gameplay.
               </div>
 
               <motion.div
+                id="about-video"
                 initial="rest"
                 animate="rest"
                 whileHover="play"

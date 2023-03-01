@@ -60,9 +60,29 @@ const Story = () => {
       return () => window.removeEventListener("load", onPageLoad);
     }
   }, []);
-  // React.useEffect(() => {
-  //   (document.getElementById(`video${isPlaying}`) as HTMLVideoElement).play();
-  // }, [isPlaying]);
+  React.useEffect(() => {
+    let curr = document.querySelector(".current") as HTMLElement;
+    let before = document.querySelector(".before") as HTMLElement;
+    let after = document.querySelector(".after") as HTMLElement;
+    curr.classList.add("anim-scale");
+    if (isPlaying !== 1) {
+      before.classList.add("anim-slide-left");
+    }
+    if (isPlaying !== storyList.length) {
+      after.classList.add("anim-slide-right");
+    }
+
+    setTimeout(() => {
+      curr.classList.remove("anim-scale");
+      if (isPlaying != 1) {
+        before.classList.remove("anim-slide-left");
+      }
+      if (isPlaying !== storyList.length) {
+        after.classList.remove("anim-slide-right");
+      }
+    }, 1000);
+    // (document.getElementById(`video${isPlaying}`) as HTMLVideoElement).play();
+  }, [isPlaying]);
 
   // React.useEffect(() => {
   //   for (let i = 1; i < storyList.length; i++) {
@@ -199,7 +219,7 @@ const Story = () => {
                 alt=""
               />
             </span>
-            <span className="current  flex justify-center items-center">
+            <span className="current flex justify-center items-center">
               <img
                 src={`/assets/images/bg-world-paging_active0${isPlaying}.png`}
                 alt=""
@@ -281,7 +301,7 @@ const Story = () => {
                         />
                       </svg>
                     </div>
-                    <p className="w-full lf:w-[80%] text-center font-lato text-sm sm:text-base md:text-lg lg:text-xl p-4">
+                    <p className="w-full lf:w-[80%] text-center font-lato font-[400] text-sm sm:text-base md:text-lg lg:text-xl p-4">
                       {item.subtitle}
                     </p>
                   </div>

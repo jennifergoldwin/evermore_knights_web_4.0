@@ -56,14 +56,14 @@ const UFeature = () => {
         transition={{ delay: 0.5, default: { ease: "easeInOut" } }}
         className={`${
           tabs[selectedTab].bg
-        } transition-opacity w-full  md:justify-center  items-center flex-col h-screen relative overflow-hidden pt-8 ${
+        } transition-opacity w-full pt-12 justify-center  items-center flex-col h-screen relative overflow-hidden  ${
           playAnimation
             ? "opacity-1 flex visible"
             : "opacity-0 hidden invisible"
         }`}
       >
-        <div className="border-b-[1.5pt] border-underline w-fit pt-8 mb-8 md:mb-0 ">
-          <ul className="flex gap-4">
+        <div className="border-b-[1.5pt] border-underline w-fit  mb-4 md:mb-0 ">
+          <ul className="grid grid-cols-2">
             {tabs.map((item: any, idx: number) => (
               <li
                 key={item.label}
@@ -75,7 +75,7 @@ const UFeature = () => {
                   idx == 0
                     ? "border-r-[1.5pt] pr-4 border-gradient-underline"
                     : ""
-                } my-2 text-base sm:text-xl cursor-pointer`}
+                } my-2 text-base sm:text-xl cursor-pointer flex justify-center`}
                 onClick={() => {
                   setSelectedTab(idx);
                 }}
@@ -108,14 +108,14 @@ const UFeature = () => {
 
           {selectedTab === 0 && (
             <Image
-              className="absolute bottom-[0%] right-[-20%] lg:right-0"
+              className="absolute bottom-[0%] right-[-20%] lg:right-0 -z-[1]"
               src={f_adult_desktop}
               alt=""
             />
           )}
           {selectedTab === 0 && (
             <Image
-              className="absolute bottom-[0%] left-[-20%] lg:left-0"
+              className="absolute bottom-[0%] left-[-20%] lg:left-0 -z-[1]"
               src={m_adult_desktop}
               alt=""
             />
@@ -171,22 +171,22 @@ const UFeature = () => {
           <div className="swiper-pagination swiper-pagination-ufeature-mob" />
           {selectedTab === 0 && (
             <Image
-              className="absolute bottom-[-20%] right-0"
+              className="absolute bottom-[-20%] right-0 -z-[1]"
               src={f_adult}
               alt=""
             />
           )}
           {selectedTab === 0 && (
             <Image
-              className="absolute bottom-[-20%] left-0"
+              className="absolute bottom-[-20%] left-0 -z-[1]"
               src={m_adult}
               alt=""
             />
           )}
-          <div className="flex w-full justify-center pt-8 relative">
+          <div className="flex w-full justify-center relative">
             <Image className=" " src={tabs[selectedTab].abImg} alt="" />
-            <div className="flex w-full justify-center absolute h-full items-center left-0 right-0">
-              <span className="text-center w-[85%] font-lato font-[400] pb-4 ">
+            <div className="flex w-full justify-center absolute h-full  items-center left-0 right-0">
+              <span className="text-center w-[85%] font-lato font-[400] text-sm sm:text-base ">
                 {tabs[selectedTab].desc}
               </span>
             </div>

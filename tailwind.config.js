@@ -19,7 +19,7 @@ module.exports = {
         "friz-italic": ["Friz Quadrata Std Italic", "sans-serif"],
         "friz-medium": ["Friz Quadrata Std Medium", "sans-serif"],
         "friz-regular": ["FrizQuadrataRegular", "sans-serif"],
-        lato: ["Lato", "sans-serif"],
+        lato: ["LatoWebLight", "sans-serif"],
         barlow: ["Barlow", "sans-serif"],
         inter: ["Inter", "sans-serif"],
       },

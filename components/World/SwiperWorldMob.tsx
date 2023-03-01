@@ -31,7 +31,7 @@ const worldMobList = [
   {
     url: "/assets/images/zanto-flag-mob.png",
     title: "Zanto",
-    subtitle: "Land of Endless Meadow",
+    subtitle: "Land of Enlightenment",
     urlModal: "/assets/images/zanto.png",
     desc: "Iei Zanto isn't known for her patience nor is she shameful about it. Despite ruling over the smallest nation in Temeris, she still stands tall and proud. Many had tried to invade and claim her nation, including other nations during the conflict, but she stood her ground with her people and fought off all who dared stand against her and her domain. She holds everything she has dearly and protects them all from harm. Indeed the people of Zanto love their goddess very much. This includes the Kami and the Yokai, which are the local Aeons of Zanto. Despite their differences and origins, they adopted Iei as one of their own.",
   },

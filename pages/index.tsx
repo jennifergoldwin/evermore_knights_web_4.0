@@ -161,6 +161,7 @@ export default function Home() {
             // let blog = document.querySelector(
             //   ".header-link.blog"
             // ) as HTMLElement;
+
             if (window.location.href.includes("#homePage")) {
               game.classList.remove("active");
               // blog.classList.remove("active");
@@ -192,11 +193,15 @@ export default function Home() {
               <div className="ek section" id="panel2" data-anchor="storyPage">
                 <Story />
               </div>
-              <div className="ek section" id="panel3" data-anchor="aboutPage">
+              <div
+                className="ek section about"
+                id="panel3"
+                data-anchor="aboutPage"
+              >
                 <About />
               </div>
               <div
-                className="ek section"
+                className="ek section character"
                 id="panel4"
                 data-anchor="characterPage"
               >

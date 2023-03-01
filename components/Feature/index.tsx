@@ -32,7 +32,7 @@ const featureList = [
   },
   {
     url: "/assets/images/feature-5.png",
-    title: "DREAD TOWER",
+    title: "DARK SPIRE",
     subtitle:
       "Mysterious towers rise from the depths of the sea. Many brave souls race to enter and prove their strength by challenging the monsters guarding each floor.",
   },
@@ -122,13 +122,13 @@ const Feature = () => {
   return (
     <>
       <div
-        className={` flex-col w-full h-screen pt-12 pb-12 ${
+        className={` flex-col w-full h-screen justify-center items-center ${
           playAnimation
             ? "opacity-1 flex lg:hidden visible"
             : "opacity-0 invisible"
         }`}
       >
-        <div className="flex justify-center items-center flex-col pt-8 pb-8">
+        <div className="flex justify-center items-center flex-col mt-8 mb-4">
           <h1 className="font-friz-bold title-feature text-3xl">
             ALL FEATURES
           </h1>
@@ -171,7 +171,7 @@ const Feature = () => {
           effect="coverflow"
           coverflowEffect={{
             rotate: 0,
-            stretch: 100,
+            stretch: 80,
             depth: 0,
             modifier: 1.5,
             slideShadows: true,
@@ -192,18 +192,24 @@ const Feature = () => {
         >
           {featureList.map((item: any, idx: number) => (
             <SwiperSlide key={idx + 1} className="slideFeature !w-fit !h-fit">
-              <div className=" object-cover w-fit h-auto relative">
+              <div className=" w-auto h-[390px] relative">
                 <div className="overlay" />
-                <img src={`/assets/images/feature-${idx + 1}-mob.png`} alt="" />
+                <img
+                  src={`/assets/images/feature-${idx + 1}-mob.png`}
+                  alt=""
+                  className="h-full object-contain w-full"
+                />
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="p-6 sm:p-8">
-          <h1 className="font-friz-regular font-medium title-feature text-2xl">
+        <div className="p-3 sm:p-8 min-h-[120px] w-full overflow-scroll">
+          <h1 className="font-friz-regular font-medium title-feature my-1 text-xl sm:text-2xl">
             {featureList[index].title}
           </h1>
-          <p className="font-lato font-normal">{featureList[index].subtitle}</p>
+          <p className="font-lato font-normal text-sm">
+            {featureList[index].subtitle}
+          </p>
         </div>
       </div>
       <div

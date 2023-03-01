@@ -548,3 +548,52 @@ html {
   justify-content: center;
   align-self: center;
 }
+.fullpage-wrapper
+  .ek.about.fp-section.active
+  > div
+  > div:last-child
+  > div
+  > div:first-child
+  > div:first-child {
+  #about-title,
+  #about-title-1,
+  #about-desc,
+  #about-video {
+    -webkit-animation: fadeslideUp 4s ease-in-out;
+    -moz-animation: fadeslideUp 4s ease-in-out;
+    -o-animation: fadeslideUp 4s ease-in-out;
+    animation: fadeslideUp 4s ease-in-out;
+  }
+  .line {
+    -webkit-animation: fadeslideRight 8s ease-in-out;
+    -moz-animation: fadeslideRight 8s ease-in-out;
+    -o-animation: fadeslideRight 8s ease-in-out;
+    animation: fadeslideRight 8s ease-in-out;
+  }
+}
+.fullpage-wrapper .ek.character.fp-section.active {
+  .slide-char.active {
+    #hero-desc,
+    #hero-subname,
+    #hero-detail,
+    #hero-name,
+    .youtube-hero {
+      -webkit-animation: fadeslideUp 5s ease-in-out;
+      -moz-animation: fadeslideUp 5s ease-in-out;
+      -o-animation: fadeslideUp 5s ease-in-out;
+      animation: fadeslideUp 5s ease-in-out;
+    }
+    .img-char {
+      -webkit-animation: fadeslideLeft 4s ease-in-out;
+      -moz-animation: fadeslideLeft 4s ease-in-out;
+      -o-animation: fadeslideLeft 4s ease-in-out;
+      animation: fadeslideLeft 4s ease-in-out;
+    }
+    .line {
+      -webkit-animation: fadeslideRight 8s ease-in-out;
+      -moz-animation: fadeslideRight 8s ease-in-out;
+      -o-animation: fadeslideRight 8s ease-in-out;
+      animation: fadeslideRight 8s ease-in-out;
+    }
+  }
+}
