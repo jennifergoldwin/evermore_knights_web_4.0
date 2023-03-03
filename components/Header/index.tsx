@@ -35,13 +35,17 @@ const Header = () => {
     );
   };
   return (
-    <header className="opacity-100 fixed w-full top-0 z-10">
+    <header className="opacity-100 fixed w-full top-0 z-40">
       <div
         id="header-top"
         className=" hidden lg:flex relative  bg-navbar  justify-between items-center px-6 py-3 font-friz-bold w-full"
       >
         <h1 className="hidden sm:flex logo main w-1/2 sm:w-1/3">
-          <a href="#firstPage" title="evermore knights">
+          <a
+            href="#homePage"
+            title="Evermore Knights"
+            className="cursor-pointer"
+          >
             <Image src={logo} alt="evermore knights" />
           </a>
         </h1>
