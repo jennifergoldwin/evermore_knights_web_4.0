@@ -263,11 +263,11 @@ const Characters: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-col h-screen">
+      <div className="h-full">
         {characterLists.map((item: any, idx: number) => (
           <div
             key={idx}
-            className={` slide-char h-screen ${
+            className={` slide-char h-full ${
               indexChar === idx ? "active" : ""
             }  w-full`}
           >
@@ -446,59 +446,59 @@ const Characters: React.FC = () => {
             </div>
           </div>
         ))}
-        <div className="block py-4 relative md:hidden bg-[#010a1a] ">
-          <Swiper
-            id="btn-char-mob"
-            slideToClickedSlide
-            centeredSlides
-            slidesPerView={"auto"}
-            spaceBetween={10}
-            onActiveIndexChange={(swiperr: any) => {
-              handleClick(swiperr.activeIndex);
-            }}
-          >
-            {[...Array(6)].map((item: any, idx: number) => (
-              <SwiperSlide
-                className="!w-fit flex justify-center items-center"
-                key={idx}
-              >
-                <div className="relative flex flex-col justify-center items-center">
-                  <Image
-                    width={90}
-                    height={90}
-                    src={`/assets/images/btn-${idx + 1}-mob.png`}
-                    alt=""
+      </div>
+      <div className="block py-4 relative md:hidden bg-[#010a1a] ">
+        <Swiper
+          id="btn-char-mob"
+          slideToClickedSlide
+          centeredSlides
+          slidesPerView={"auto"}
+          spaceBetween={10}
+          onActiveIndexChange={(swiperr: any) => {
+            handleClick(swiperr.activeIndex);
+          }}
+        >
+          {[...Array(6)].map((item: any, idx: number) => (
+            <SwiperSlide
+              className="!w-fit flex justify-center items-center"
+              key={idx}
+            >
+              <div className="relative flex flex-col justify-center items-center">
+                <Image
+                  width={90}
+                  height={90}
+                  src={`/assets/images/btn-${idx + 1}-mob.png`}
+                  alt=""
+                />
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="1.15242"
+                    y="16.2344"
+                    width="21.2932"
+                    height="21.2932"
+                    transform="rotate(-45 1.15242 16.2344)"
+                    stroke={idx != indexChar ? "transparent" : "white"}
                   />
-                  <svg
-                    width="22"
-                    height="22"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="1.15242"
-                      y="16.2344"
-                      width="21.2932"
-                      height="21.2932"
-                      transform="rotate(-45 1.15242 16.2344)"
-                      stroke={idx != indexChar ? "transparent" : "white"}
-                    />
-                    <rect
-                      x="7.17188"
-                      y="15.957"
-                      width="12.7942"
-                      height="12.7942"
-                      transform="rotate(-45 7.17188 15.957)"
-                      fill={idx != indexChar ? "#161F2C" : "white"}
-                    />
-                  </svg>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <div className="absolute w-full h-[2px] bg-line bottom-[24.5%]"></div>
-        </div>
+                  <rect
+                    x="7.17188"
+                    y="15.957"
+                    width="12.7942"
+                    height="12.7942"
+                    transform="rotate(-45 7.17188 15.957)"
+                    fill={idx != indexChar ? "#161F2C" : "white"}
+                  />
+                </svg>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="absolute w-full h-[2px] bg-line bottom-[24.5%]"></div>
       </div>
     </div>
   );
