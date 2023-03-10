@@ -75,7 +75,7 @@ const About = () => {
       <div
         className={`bg-[url(/assets/images/bg-about.png)] bg-left bg-cover h-full `}
       >
-        <div className="pl-0 lf:pl-[6%] flex flex-col lf:flex-row justify-center items-center min-h-screen w-full relative">
+        <div className="pl-0 lf:pl-[6%] flex flex-col lf:flex-row justify-center items-center h-full w-full relative">
           <div
             ref={ref}
             className={`text-center lf:text-left w-full md:w-[80%] lg:w-[70%] lf:w-1/2 px-4 lf:px-6 relative h-full flex justify-center items-center`}
