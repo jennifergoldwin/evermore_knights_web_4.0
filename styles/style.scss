@@ -228,13 +228,16 @@
 .bg-black-01 {
   background: rgba(217, 217, 217, 0.1);
 }
-
+#swiperUFeatureMob {
+  margin-bottom: 1rem;
+}
 /*SWIPER WORLD MOBILE*/
 .swiper-pagination.swiper-pagination-sw-mob {
   bottom: 5% !important;
 }
 .swiper-pagination.swiper-pagination-ufeature-mob {
-  bottom: -20px !important;
+  // bottom: -20px !important;
+  // margin-top: 20px;
 }
 .swiper-pagination.swiper-pagination-ufeature-mob {
   // bottom: 5% !important;
@@ -570,6 +573,10 @@ html {
     -o-animation: fadeslideRight 8s ease-in-out;
     animation: fadeslideRight 8s ease-in-out;
   }
+}
+
+.img-char {
+  object-position: 50% 20%;
 }
 .fullpage-wrapper .ek.character.fp-section.active {
   .slide-char.active {

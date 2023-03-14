@@ -15,6 +15,7 @@ import bg_ab_char from "../../public/assets/images/bg-ab-char.png";
 import bg_ab_weapon from "../../public/assets/images/bg-ab-weapon.png";
 import char_gif from "../../public/assets/video/char.gif";
 import weapon_gif from "../../public/assets/video/weap.gif";
+import image1 from "../../public/assets/images/1.png";
 const UFeature = () => {
   const tabs = [
     {
@@ -62,6 +63,7 @@ const UFeature = () => {
             : "opacity-0 hidden invisible"
         }`}
       >
+        {/* tabing */}
         <div className="border-b-[1.5pt] border-underline w-fit  mb-4 md:mb-0 ">
           <ul className="grid grid-cols-2">
             {tabs.map((item: any, idx: number) => (
@@ -75,7 +77,7 @@ const UFeature = () => {
                   idx == 0
                     ? "border-r-[1.5pt] pr-4 border-gradient-underline"
                     : ""
-                } my-2 text-base sm:text-xl cursor-pointer flex justify-center`}
+                } my-2 text-sm sm:text-xl cursor-pointer flex justify-center`}
                 onClick={() => {
                   setSelectedTab(idx);
                 }}
@@ -89,7 +91,7 @@ const UFeature = () => {
             ))}
           </ul>
         </div>
-        {/* <AnimatePresence> */}
+
         <motion.div
           className="hidden items-center justify-center flex-col md:flex "
           key={selectedTab ? tabs[selectedTab].label : "empty"}
@@ -126,7 +128,6 @@ const UFeature = () => {
         </motion.div>
         <div className="overflow-hidden  flex flex-col md:hidden ">
           <Swiper
-            className="!h-fit "
             id="swiperUFeatureMob"
             modules={[Pagination, Navigation, EffectCoverflow]}
             slidesPerView={"auto"}
@@ -157,8 +158,14 @@ const UFeature = () => {
           >
             {[...Array(selectedTab == 0 ? 10 : 11)].map(
               (item: any, idx: number) => (
-                <SwiperSlide key={idx} className="!h-fit !w-fit">
+                <SwiperSlide key={idx} className=" !w-fit">
+                  {/* <Image
+                    className="h-full w-full object-contain"
+                    src={image1}
+                    alt={`img${idx + 1}`}
+                  /> */}
                   <img
+                    className="w-full h-full"
                     src={`/assets/images/${idx + 1}${
                       selectedTab == 0 ? "" : "-1"
                     }.png`}
@@ -183,8 +190,8 @@ const UFeature = () => {
               alt=""
             />
           )}
-          <div className="flex w-full justify-center relative">
-            <Image className=" " src={tabs[selectedTab].abImg} alt="" />
+          <div className="flex w-full justify-center relative bottom-0">
+            <Image className="w-[75%]" src={tabs[selectedTab].abImg} alt="" />
             <div className="flex w-full justify-center absolute h-full  items-center left-0 right-0">
               <span className="text-center w-[85%] font-lato font-[400] text-sm sm:text-base ">
                 {tabs[selectedTab].desc}
@@ -192,7 +199,6 @@ const UFeature = () => {
             </div>
           </div>
         </div>
-        {/* </AnimatePresence> */}
       </motion.div>
     </AnimatePresence>
   );

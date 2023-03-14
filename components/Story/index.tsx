@@ -170,11 +170,11 @@ const Story = () => {
               ).classList.add("done");
             }
           }
-          (
-            document.getElementById(
-              `video${swiper.activeIndex + 1}`
-            ) as HTMLVideoElement
-          ).load();
+          // (
+          //   document.getElementById(
+          //     `video${swiper.activeIndex + 1}`
+          //   ) as HTMLVideoElement
+          // ).load();
           (
             document.getElementById(
               `video${swiper.activeIndex + 1}`
@@ -186,16 +186,11 @@ const Story = () => {
           }
         }}
         onAutoplayStart={(swiper: any) => {
-          (
-            document.getElementById(
-              `video${swiper.activeIndex + 1}`
-            ) as HTMLVideoElement
-          ).load();
-          (
-            document.getElementById(
-              `video${swiper.activeIndex + 1}`
-            ) as HTMLVideoElement
-          ).play();
+          const vd = document.getElementById(
+            `video${swiper.activeIndex + 1}`
+          ) as HTMLVideoElement;
+
+          vd.play();
         }}
       >
         <div className="swiper-pagination hidden md:block"></div>

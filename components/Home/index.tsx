@@ -76,7 +76,7 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
         <source src="/assets/video/landpage_mob.mp4" type="video/mp4" />
       </video>
       <div className="flex absolute w-full h-full">
-        <div className="flex justify-center items-center absolute w-full translate-y-[40%] sf:translate-y-[15%]  lf:translate-y-[2%] md:translate-y-[15%]">
+        <div className="flex justify-center items-center absolute w-full translate-y-[30%] sf:translate-y-[15%]  lf:translate-y-[2%] md:translate-y-[15%]">
           <Image src={logo} alt="" />
         </div>
         {/* <div className="flex absolute justify-center w-full top-[50%]">

@@ -192,7 +192,7 @@ const Feature = () => {
         >
           {featureList.map((item: any, idx: number) => (
             <SwiperSlide key={idx + 1} className="slideFeature !w-fit !h-fit">
-              <div className=" w-auto h-[390px] relative">
+              <div className=" w-auto h-auto relative">
                 <div className="overlay" />
                 <img
                   src={`/assets/images/feature-${idx + 1}-mob.png`}

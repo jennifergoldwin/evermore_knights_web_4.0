@@ -14,6 +14,8 @@ import btn3 from "../../public/assets/images/btn-3.png";
 import btn4 from "../../public/assets/images/btn-4.png";
 import btn5 from "../../public/assets/images/btn-5.png";
 import btn6 from "../../public/assets/images/btn-6.png";
+import btn7 from "../../public/assets/images/btn-7.png";
+import btn8 from "../../public/assets/images/btn-8.png";
 import play from "../../public/assets/images/play.png";
 import arrow from "../../public/assets/images/arrow.png";
 import fivestar from "../../public/assets/images/5_star.png";
@@ -31,6 +33,8 @@ import quinn from "../../public/assets/images/quinn.png";
 import curtis from "../../public/assets/images/curtis.png";
 import gashani from "../../public/assets/images/gashani.png";
 import trista from "../../public/assets/images/trista.png";
+import astra from "../../public/assets/images/astra.png";
+import helen from "../../public/assets/images/helen.png";
 import granaMob from "../../public/assets/images/grana-mob.png";
 import laslowMob from "../../public/assets/images/laslow-mob.png";
 import quinnMob from "../../public/assets/images/quinn-mob.png";
@@ -135,6 +139,38 @@ const characterLists = [
     star: fivestar,
     youtube: "/assets/images/curtis-youtube.png",
   },
+  {
+    bg: "bg-[url(/assets/images/bg-about.png)]",
+    heroName: "ASTRA",
+    heroSubName: "Vallant Galor",
+    heroDesc:
+      "Captain of Evermore Knight’s investigative squad. The Commissioner’s second in command and Grana’s childhood friend. As an investigative knight, she upholds herself with a keen sense and a sharp mind to recognize the truth from the fake. In that regard, she can be strict and a little stubborn, but her compassion enables her to get along with everyone.",
+    heroImg: astra,
+    heroImgMob: tristaMob,
+    icon1: natural,
+    title1: "Neutral",
+    icon2: "/assets/images/sword.png",
+    title2: "Sword",
+    link: "",
+    star: fivestar,
+    youtube: "/assets/images/curtis-youtube.png",
+  },
+  {
+    bg: "bg-[url(/assets/images/bg-hellen.png)]",
+    heroName: "HELLEN",
+    heroSubName: "The Unrelenting Lioness",
+    heroDesc:
+      "A beautiful lady hailing from the fallen village of Lusataine, with her sharp wits and piercing beauty, she is known by many as the Dawn Huntress. Her skills for the bow are just as impressive as her approach to magic. Always on her side and aiding her battles is Finnel, her conjured lightning familiar. She is set on a dangerous goal to eradicate the Dread and avenge her lost home and family.",
+    heroImg: helen,
+    heroImgMob: tristaMob,
+    icon1: "/assets/images/nature.png",
+    title1: "Nature",
+    icon2: "/assets/images/shield.png",
+    title2: "Shield",
+    link: "",
+    star: fivestar,
+    youtube: "/assets/images/curtis-youtube.png",
+  },
 ];
 const Characters: React.FC = () => {
   const [swiper, setSwiper] = React.useState(useSwiper());
@@ -194,14 +230,14 @@ const Characters: React.FC = () => {
         src={characterLists[indexChar].link}
       />
 
-      <div className="hidden md:flex gap-0 lg:gap-2 justify-center h-full  flex-col  absolute m-auto right-0 z-10">
+      <div className="hidden lg:flex gap-0 lg:gap-0 justify-center h-full  flex-col  absolute m-auto right-0 z-10">
         <div className="cursor-pointer" onClick={() => handleClick(0)}>
           <Image
             className={`${
               indexChar == 0
-                ? "translate-x-[55%] lg:translate-x-[50%] transition-all"
-                : "translate-x-[65%] lg:translate-x-[60%]"
-            } `}
+                ? "lg:translate-x-[60%] transition-all"
+                : "lg:translate-x-[65%]"
+            } w-[85%]`}
             src={indexChar == 0 ? btn1 : btn1}
             alt=""
           />
@@ -210,9 +246,9 @@ const Characters: React.FC = () => {
           <Image
             className={`${
               indexChar == 1
-                ? "translate-x-[55%] lg:translate-x-[50%] transition-all"
-                : "translate-x-[65%] lg:translate-x-[60%]"
-            }  `}
+                ? "lg:translate-x-[60%] transition-all"
+                : "lg:translate-x-[65%]"
+            }  w-[85%]`}
             src={indexChar == 1 ? btn2 : btn2}
             alt=""
           />
@@ -221,9 +257,9 @@ const Characters: React.FC = () => {
           <Image
             className={`${
               indexChar == 2
-                ? "translate-x-[55%] lg:translate-x-[50%] transition-all"
-                : "translate-x-[65%] lg:translate-x-[60%]"
-            }  `}
+                ? "lg:translate-x-[60%] transition-all"
+                : "lg:translate-x-[65%]"
+            }  w-[85%]`}
             src={indexChar == 2 ? btn3 : btn3}
             alt=""
           />
@@ -232,9 +268,9 @@ const Characters: React.FC = () => {
           <Image
             className={`${
               indexChar == 3
-                ? "translate-x-[55%] lg:translate-x-[50%] transition-all"
-                : "translate-x-[65%] lg:translate-x-[60%]"
-            }  `}
+                ? "lg:translate-x-[60%] transition-all"
+                : "lg:translate-x-[65%]"
+            }  w-[85%]`}
             src={indexChar == 3 ? btn4 : btn4}
             alt=""
           />
@@ -243,9 +279,9 @@ const Characters: React.FC = () => {
           <Image
             className={`${
               indexChar == 4
-                ? "translate-x-[55%] lg:translate-x-[50%] transition-all"
-                : "translate-x-[65%] lg:translate-x-[60%]"
-            }  `}
+                ? "lg:translate-x-[60%] transition-all"
+                : "lg:translate-x-[65%]"
+            }  w-[85%]`}
             src={indexChar == 4 ? btn5 : btn5}
             alt=""
           />
@@ -254,10 +290,32 @@ const Characters: React.FC = () => {
           <Image
             className={`${
               indexChar == 5
-                ? "translate-x-[55%] lg:translate-x-[50%] transition-all"
-                : "translate-x-[65%] lg:translate-x-[60%]"
-            } `}
+                ? "lg:translate-x-[60%] transition-all"
+                : " lg:translate-x-[65%]"
+            } w-[85%]`}
             src={indexChar == 5 ? btn6 : btn6}
+            alt=""
+          />
+        </div>
+        <div className="cursor-pointer" onClick={() => handleClick(6)}>
+          <Image
+            className={`${
+              indexChar == 6
+                ? "lg:translate-x-[60%] transition-all"
+                : "lg:translate-x-[65%]"
+            } w-[85%]`}
+            src={indexChar == 6 ? btn7 : btn7}
+            alt=""
+          />
+        </div>
+        <div className="cursor-pointer" onClick={() => handleClick(7)}>
+          <Image
+            className={`${
+              indexChar == 7
+                ? "lg:translate-x-[60%] transition-all"
+                : "lg:translate-x-[65%]"
+            } w-[85%]`}
+            src={indexChar == 7 ? btn8 : btn8}
             alt=""
           />
         </div>
@@ -271,12 +329,12 @@ const Characters: React.FC = () => {
               indexChar === idx ? "active" : ""
             }  w-full`}
           >
-            <div className="h-full ml-0 md:ml-4 lg:ml-[8%] lg:pl-0 lgf:ml-0 lgf:pl-[8%] pt-6 relative w-full">
-              <div className="bg-gradient-black w-full md:w-1/2 lg:w-2/5 absolute z-[2] bottom-[0%] md:h-full justify-center flex ">
-                <div className="p-2 md:p-0 flex justify-center items-center md:flex-col">
-                  <div className="md:p-3 lg:pr-0">
+            <div className="h-full ml-0 lg:ml-[8%] lg:pl-0 lgf:ml-0 lgf:pl-[8%] pt-6 relative w-full">
+              <div className="bg-gradient-black w-full  lg:w-2/5 absolute z-[2] bottom-[0%] lg:h-full justify-center flex ">
+                <div className="p-2 lg:p-0 flex justify-center items-center lg:flex-col">
+                  <div className="lg:p-3 lg:pr-0">
                     <div className="flex justify-between items-center">
-                      <div className="flex flex-col w-5/6  sm:w-1/2 md:w-full">
+                      <div className="flex flex-col w-5/6  sm:w-1/2 lg:w-full">
                         <div className="flex items-center font-friz-bold gap-3">
                           <h1
                             className="text-xl sm:text-2xl lg:text-4xl"
@@ -326,7 +384,7 @@ const Characters: React.FC = () => {
                         onClick={() => setIsShown(true)}
                         className={`${
                           item.link === "" ? "hidden" : "flex"
-                        } cursor-pointer w-1/6 sm:w-1/2 md:w-auto justify-start pr-0 sm:justify-end sm:pr-2 items-center md:hidden`}
+                        } cursor-pointer w-1/6 sm:w-1/2 lg:w-auto justify-start pr-0 sm:justify-end sm:pr-2 items-center lg:hidden`}
                       >
                         <img
                           src={`${item.youtube.split(".png")[0]}-mob.png`}
@@ -348,10 +406,10 @@ const Characters: React.FC = () => {
                         />
                       </svg>
                     </div>
-                    <div className=" flex md:flex-col flex-row justify-center items-center">
+                    <div className=" flex lg:flex-col flex-row justify-center items-center">
                       <div
                         id="hero-desc"
-                        className={`min-h-[100px] hero-desc-container w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-xs  lg:text-sm flex  justify-center`}
+                        className={`min-h-[100px] hero-desc-container w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-xs md:text-base lg:text-sm flex  justify-center`}
                       >
                         {item.heroDesc}
                       </div>
@@ -360,7 +418,7 @@ const Characters: React.FC = () => {
                         initial="rest"
                         animate="rest"
                         whileHover="play"
-                        className={`hidden md:block ${
+                        className={`hidden lg:block ${
                           item.link === ""
                             ? "opacity-0 invisible"
                             : " visible youtube-hero"
@@ -425,29 +483,34 @@ const Characters: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full z-0 overflow-hidden  h-full  absolute md:right-[-200px] lg:right-[-250px] top-0">
+              <div
+                className={`w-full z-0 overflow-hidden  h-full ${
+                  idx === 6 ? "lg:right-[-0%]" : "lg:right-[-8.5%]"
+                }  absolute flex justify-end
+                } top-0`}
+              >
                 <Image
-                  className={`hidden 
-                    } md:block h-full absolute object-contain img-char`}
+                  className={` 
+                    }  h-full absolute object-cover img-char`}
                   src={item.heroImg}
                   priority
                   loading="eager"
                   alt=""
                 />
                 {/* <img src="/assets/images/grana-mob.png" /> */}
-                <Image
+                {/* <Image
                   className="block md:hidden h-full w-auto object-cover"
                   src={item.heroImgMob}
                   priority
                   loading="eager"
                   alt=""
-                />
+                /> */}
               </div>
             </div>
           </div>
         ))}
       </div>
-      <div className="block py-4 relative md:hidden bg-[#010a1a] ">
+      <div className="block py-4 relative lg:hidden bg-[#010a1a] ">
         <Swiper
           id="btn-char-mob"
           slideToClickedSlide
@@ -458,7 +521,7 @@ const Characters: React.FC = () => {
             handleClick(swiperr.activeIndex);
           }}
         >
-          {[...Array(6)].map((item: any, idx: number) => (
+          {[...Array(8)].map((item: any, idx: number) => (
             <SwiperSlide
               className="!w-fit flex justify-center items-center"
               key={idx}
