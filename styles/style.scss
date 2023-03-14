@@ -578,6 +578,12 @@ html {
 .img-char {
   object-position: 50% 20%;
 }
+@media screen and (max-width: 768px) {
+  .img-char {
+    scale: 1.28;
+    overflow: hidden;
+  }
+}
 .fullpage-wrapper .ek.character.fp-section.active {
   .slide-char.active {
     #hero-desc,

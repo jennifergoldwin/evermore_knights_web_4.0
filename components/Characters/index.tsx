@@ -230,14 +230,14 @@ const Characters: React.FC = () => {
         src={characterLists[indexChar].link}
       />
 
-      <div className="hidden lg:flex gap-0 lg:gap-0 justify-center h-full  flex-col  absolute m-auto right-0 z-10">
+      <div className="scale-[0.85] hidden lg:flex gap-0 lg:gap-0 justify-center h-full  flex-col  absolute m-auto right-0 z-10">
         <div className="cursor-pointer" onClick={() => handleClick(0)}>
           <Image
             className={`${
               indexChar == 0
-                ? "lg:translate-x-[60%] transition-all"
-                : "lg:translate-x-[65%]"
-            } w-[85%]`}
+                ? "lg:translate-x-[50%] transition-all"
+                : "lg:translate-x-[55%]"
+            } `}
             src={indexChar == 0 ? btn1 : btn1}
             alt=""
           />
@@ -246,9 +246,9 @@ const Characters: React.FC = () => {
           <Image
             className={`${
               indexChar == 1
-                ? "lg:translate-x-[60%] transition-all"
-                : "lg:translate-x-[65%]"
-            }  w-[85%]`}
+                ? "lg:translate-x-[50%] transition-all"
+                : "lg:translate-x-[55%]"
+            } `}
             src={indexChar == 1 ? btn2 : btn2}
             alt=""
           />
@@ -257,9 +257,9 @@ const Characters: React.FC = () => {
           <Image
             className={`${
               indexChar == 2
-                ? "lg:translate-x-[60%] transition-all"
-                : "lg:translate-x-[65%]"
-            }  w-[85%]`}
+                ? "lg:translate-x-[50%] transition-all"
+                : "lg:translate-x-[55%]"
+            }  `}
             src={indexChar == 2 ? btn3 : btn3}
             alt=""
           />
@@ -268,9 +268,9 @@ const Characters: React.FC = () => {
           <Image
             className={`${
               indexChar == 3
-                ? "lg:translate-x-[60%] transition-all"
-                : "lg:translate-x-[65%]"
-            }  w-[85%]`}
+                ? "lg:translate-x-[50%] transition-all"
+                : "lg:translate-x-[55%]"
+            } `}
             src={indexChar == 3 ? btn4 : btn4}
             alt=""
           />
@@ -279,9 +279,9 @@ const Characters: React.FC = () => {
           <Image
             className={`${
               indexChar == 4
-                ? "lg:translate-x-[60%] transition-all"
-                : "lg:translate-x-[65%]"
-            }  w-[85%]`}
+                ? "lg:translate-x-[50%] transition-all"
+                : "lg:translate-x-[55%]"
+            } `}
             src={indexChar == 4 ? btn5 : btn5}
             alt=""
           />
@@ -290,9 +290,9 @@ const Characters: React.FC = () => {
           <Image
             className={`${
               indexChar == 5
-                ? "lg:translate-x-[60%] transition-all"
-                : " lg:translate-x-[65%]"
-            } w-[85%]`}
+                ? "lg:translate-x-[50%] transition-all"
+                : " lg:translate-x-[55%]"
+            }`}
             src={indexChar == 5 ? btn6 : btn6}
             alt=""
           />
@@ -301,9 +301,9 @@ const Characters: React.FC = () => {
           <Image
             className={`${
               indexChar == 6
-                ? "lg:translate-x-[60%] transition-all"
-                : "lg:translate-x-[65%]"
-            } w-[85%]`}
+                ? "lg:translate-x-[50%] transition-all"
+                : "lg:translate-x-[55%]"
+            }`}
             src={indexChar == 6 ? btn7 : btn7}
             alt=""
           />
@@ -312,9 +312,9 @@ const Characters: React.FC = () => {
           <Image
             className={`${
               indexChar == 7
-                ? "lg:translate-x-[60%] transition-all"
-                : "lg:translate-x-[65%]"
-            } w-[85%]`}
+                ? "lg:translate-x-[50%] transition-all"
+                : "lg:translate-x-[55%]"
+            }`}
             src={indexChar == 7 ? btn8 : btn8}
             alt=""
           />
@@ -485,13 +485,15 @@ const Characters: React.FC = () => {
               </div>
               <div
                 className={`w-full z-0 overflow-hidden  h-full ${
-                  idx === 6 ? "lg:right-[-0%]" : "lg:right-[-8.5%]"
+                  idx === 6 ? "sm:right-[-0%]" : "lg:right-[-8.5%] lgd:right-0"
                 }  absolute flex justify-end
                 } top-0`}
               >
                 <Image
                   className={` 
-                    }  h-full absolute object-cover img-char`}
+                    }  h-full absolute object-contain sm:object-cover img-char ${
+                      idx === 6 ? "right-[10%] sm:right-0" : ""
+                    }`}
                   src={item.heroImg}
                   priority
                   loading="eager"
@@ -528,8 +530,9 @@ const Characters: React.FC = () => {
             >
               <div className="relative flex flex-col justify-center items-center">
                 <Image
-                  width={90}
-                  height={90}
+                  // className="w-full h-full"
+                  width={80}
+                  height={80}
                   src={`/assets/images/btn-${idx + 1}-mob.png`}
                   alt=""
                 />
