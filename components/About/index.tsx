@@ -75,10 +75,10 @@ const About = () => {
       <div
         className={`bg-[url(/assets/images/bg-about.png)] bg-left bg-cover h-full `}
       >
-        <div className="pl-0 lf:pl-[6%] flex flex-col lf:flex-row justify-center items-center h-full w-full relative">
+        <div className="pl-0 lf:pl-[6%] flex  justify-center lf:justify-start items-center h-full w-full relative">
           <div
             ref={ref}
-            className={`text-center lf:text-left w-full md:w-[80%] lg:w-[70%] lf:w-1/2 px-4 lf:px-6 relative h-full flex justify-center items-center`}
+            className={`text-center lf:text-left w-full md:w-3/4 lf:w-1/2 px-4 lf:px-6 absolute h-auto flex justify-center`}
           >
             <div className="h-full flex flex-col justify-center items-center lf:items-start">
               <div
@@ -177,8 +177,12 @@ const About = () => {
             </div>
           </div>
 
-          <div className="hidden lf:flex items-center h-screen justify-end w-auto lf:w-1/2">
-            <Image src={char} alt="" className="object-fill  w-auto h-full" />
+          <div className="hidden lf:flex items-center h-screen justify-end w-full absolute right-0 ">
+            <Image
+              src={char}
+              alt=""
+              className="object-cover img-about h-full"
+            />
           </div>
         </div>
       </div>
