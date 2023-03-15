@@ -134,6 +134,12 @@ export default function Home() {
       <div>
         <Head>
           <title>Evermore Knights</title>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no ,viewport-fit=cover"
+          />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+          <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="description" content="Evermore Knights version 4.0" />
           <link rel="icon" href="/logo-ek.ico" />
         </Head>

@@ -78,7 +78,7 @@ const About = () => {
         <div className="pl-0 lf:pl-[6%] flex  justify-center lf:justify-start items-center h-full w-full relative">
           <div
             ref={ref}
-            className={`text-center lf:text-left w-full md:w-3/4 lf:w-1/2 px-4 lf:px-6 absolute h-auto flex justify-center`}
+            className={`text-center lf:text-left w-full md:w-3/4 lf:w-1/2 px-4 lf:px-6 absolute z-[10] h-auto flex justify-center`}
           >
             <div className="h-full flex flex-col justify-center items-center lf:items-start">
               <div
