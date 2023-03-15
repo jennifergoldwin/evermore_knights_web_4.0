@@ -575,13 +575,16 @@ html {
   }
 }
 
-.img-char {
-  object-position: 50% 20%;
+@media screen and (min-width: 768px) {
+  .img-char {
+    object-position: 50% 20%;
+  }
 }
 @media screen and (max-width: 768px) {
   .img-char {
-    scale: 1.28;
+    scale: 1.48;
     overflow: hidden;
+    object-position: 50% 50%;
   }
 }
 .fullpage-wrapper .ek.character.fp-section.active {

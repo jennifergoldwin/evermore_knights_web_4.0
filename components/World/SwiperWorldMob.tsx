@@ -1,11 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Pagination, Navigation, EffectCoverflow } from "swiper";
 import "swiper/css";
 // import "swiper/css/navigation";
 // import "swiper/css/pagination";
 import Modal from "./Modal";
+import Image from "next/image";
+import arriane from "../../public/assets/images/arriane-flag-mob.png";
 const worldMobList = [
   {
     url: "/assets/images/arriane-flag-mob.png",
@@ -85,71 +87,77 @@ const SwiperWorldMob = () => {
           <SwiperSlide
             onClick={() => setShowModal(!showModal)}
             key={index + 1}
-            className="h-full flex justify-center items-center"
+            className=""
           >
-            <div className="text-center flex justify-center items-center flex-col relative">
-              <h1 className="title-feature font-friz-bold text-4xl">
-                {item.title}
-              </h1>
-              <span className="font-friz-regular">{item.subtitle}</span>
-              <svg
-                width="28"
-                height="16"
-                viewBox="0 0 28 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.75349 6.58999L4.94197 4.77649L2 7.72167L5.38432 11.1027L14.484 2L19.0058 6.53376"
-                  stroke="#B59E78"
-                  strokeWidth="1.5"
-                  strokeMiterlimit="10"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M21.9555 9.41502L23.767 11.2285L26.709 8.29036L23.3246 4.90234L14.2319 14.012L9.70312 9.47828"
-                  stroke="#B59E78"
-                  strokeWidth="1.5"
-                  strokeMiterlimit="10"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M17.3283 8.00347L14.3594 5.03125L11.3904 8.00347L14.3594 10.9757L17.3283 8.00347Z"
-                  stroke="#B59E78"
-                  strokeWidth="1.5"
-                  strokeMiterlimit="10"
-                  strokeLinecap="round"
-                />
-              </svg>
-
-              <img src={item.url} alt="" />
-              <div className="flex justify-center items-center font-friz-medium text-sm cursor-pointer">
-                <svg
-                  width="17"
-                  height="17"
-                  viewBox="0 0 17 17"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="8.5"
-                    y="0.381282"
-                    width="11.4816"
-                    height="11.4816"
-                    transform="rotate(45 8.5 0.381282)"
-                    stroke="white"
-                    strokeWidth="0.539214"
-                  />
-                  <rect
-                    x="8.5"
-                    y="3.62891"
-                    width="6.89883"
-                    height="6.89883"
-                    transform="rotate(45 8.5 3.62891)"
-                    fill="white"
-                  />
-                </svg>
-                <span className="pl-1">Tap to see the full info</span>
+            <div className="text-center h-full relative">
+              <div className="flex flex-col justify-center items-center h-full">
+                <div className="title-feature font-friz-bold text-4xl">
+                  {item.title}
+                </div>
+                <span className="font-friz-regular text-base">
+                  {item.subtitle}
+                </span>
+                <div>
+                  <svg
+                    width="28"
+                    height="16"
+                    viewBox="0 0 28 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.75349 6.58999L4.94197 4.77649L2 7.72167L5.38432 11.1027L14.484 2L19.0058 6.53376"
+                      stroke="#B59E78"
+                      strokeWidth="1.5"
+                      strokeMiterlimit="10"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M21.9555 9.41502L23.767 11.2285L26.709 8.29036L23.3246 4.90234L14.2319 14.012L9.70312 9.47828"
+                      stroke="#B59E78"
+                      strokeWidth="1.5"
+                      strokeMiterlimit="10"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M17.3283 8.00347L14.3594 5.03125L11.3904 8.00347L14.3594 10.9757L17.3283 8.00347Z"
+                      stroke="#B59E78"
+                      strokeWidth="1.5"
+                      strokeMiterlimit="10"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </div>
+                {/* <img src={item.url} alt="" className="w-[70%] h-auto" /> */}
+                <Image src={item.url} alt="" height={200} width={200} />
+                <div className="flex justify-center items-center font-friz-medium text-sm cursor-pointer">
+                  <svg
+                    width="17"
+                    height="17"
+                    viewBox="0 0 17 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="8.5"
+                      y="0.381282"
+                      width="11.4816"
+                      height="11.4816"
+                      transform="rotate(45 8.5 0.381282)"
+                      stroke="white"
+                      strokeWidth="0.539214"
+                    />
+                    <rect
+                      x="8.5"
+                      y="3.62891"
+                      width="6.89883"
+                      height="6.89883"
+                      transform="rotate(45 8.5 3.62891)"
+                      fill="white"
+                    />
+                  </svg>
+                  <span className="pl-1">Tap to see the full info</span>
+                </div>
               </div>
               <div className="absolute bottom-0 ">
                 <Modal

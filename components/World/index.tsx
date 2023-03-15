@@ -2,7 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import SwiperWorld from "./SwiperWorld";
 import SwiperWorldMob from "./SwiperWorldMob";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, EffectCoverflow } from "swiper";
 const World = () => {
   const [hoverIdx, setHoverIdx] = React.useState(-1);
   const [isHover, setIsHover] = React.useState(false);
@@ -73,7 +74,7 @@ const World = () => {
 
   return (
     <div
-      className={`relative h-full ${
+      className={`relative h-screen  ${
         playAnimation ? "opacity-1 visible" : "opacity-0 invisible"
       }`}
     >
@@ -936,10 +937,8 @@ const World = () => {
           </g>
         </svg>
       </div>
-      <div className="block lf:hidden h-screen bg-[url(/assets/images/world.png)] bg-cover bg-center">
-        <div className={`block lf:hidden h-full`}>
-          <SwiperWorldMob />
-        </div>
+      <div className="lf:hidden h-full  bg-[url(/assets/images/world.png)] bg-cover bg-center">
+        <SwiperWorldMob />
       </div>
     </div>
   );
