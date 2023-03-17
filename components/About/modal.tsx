@@ -4,15 +4,33 @@ import { motion } from "framer-motion";
 //img
 import Image from "next/image";
 import arrow from "../../public/assets/images/arrow.png";
+import { ModalContext } from "../../context/ModalContext";
 interface Imodal {
   isShown: boolean;
   setIsShown: any;
   src: any;
   id: any;
+  fullpageApi: any;
 }
-const Modal: React.FC<Imodal> = ({ isShown, setIsShown, src, id }) => {
+const Modal: React.FC<Imodal> = ({
+  isShown,
+  setIsShown,
+  src,
+  id,
+  fullpageApi,
+}) => {
   React.useEffect(() => {
-    handleClick();
+    if (document.readyState === "complete") {
+      const ebModal = document.getElementById(
+        "channelModalContent"
+      ) as HTMLElement;
+      window.onclick = function (event) {
+        if (event.target == ebModal) {
+          setIsShown(false);
+        }
+      };
+      handleClick();
+    }
   });
 
   const handleClick = () => {
@@ -22,16 +40,24 @@ const Modal: React.FC<Imodal> = ({ isShown, setIsShown, src, id }) => {
     // video.src = src;
     if (isShown) {
       video.play();
+      if (fullpageApi) {
+        fullpageApi.setAllowScrolling(false);
+      }
     } else {
+      if (fullpageApi) {
+        fullpageApi.setAllowScrolling(true);
+      }
       video.pause();
       video.currentTime = 0;
     }
   };
+  const { state, dispatch } = React.useContext(ModalContext);
+
   return (
     <div
       className={`${
         isShown ? "block" : "hidden"
-      } absolute text-[#E6CD99] w-full h-full z-40 bg-[#1D1B1B] bg-opacity-[0.8] `}
+      } fixed top-0 text-[#E6CD99] w-full h-full z-40 bg-[#1D1B1B] bg-opacity-[0.8] `}
       id="channelModal"
     >
       <motion.div
@@ -41,11 +67,13 @@ const Modal: React.FC<Imodal> = ({ isShown, setIsShown, src, id }) => {
         }
         transition={{ duration: 0.8 }}
         className="h-full flex justify-center items-center flex-col"
+        id="channelModalContent"
       >
         <div className="w-[95%] h-auto lg:w-[60%] flex flex-col">
           <button
             onClick={() => {
               setIsShown(false);
+              // dispatch(addIsShownBool(false));
               handleClick();
             }}
             type="button"
@@ -96,7 +124,7 @@ const Modal: React.FC<Imodal> = ({ isShown, setIsShown, src, id }) => {
               preload="none"
               controls
               id={`video-modal-${id}`}
-              src={src}
+              src={state.srcVideo}
             />
           </div>
 

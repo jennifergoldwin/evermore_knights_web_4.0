@@ -11,82 +11,20 @@ import UFeature from "../components/UFeature";
 import World from "../components/World";
 import Story from "../components/Story";
 import HomePage from "../components/Home";
-import Blog from "../components/Blog";
 import $ from "jquery";
-import { myPage } from "../service";
-import Layout from "../components/Layout";
-import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Footer from "../components/Footer";
-export default function Home() {
-  const navbar_hidden = {
-    rest: {
-      display: "block",
-    },
-    play: {
-      display: "none",
-      transition: {
-        type: "spring",
-        duration: 1.4,
-        ease: "easeIn",
-      },
-    },
-  };
-
-  function isScrolledIntoView(elem: any) {
-    var $elem = $(elem);
-    var $window = $(window);
-    var docViewTop = $window.scrollTop();
-    var docViewBottom = docViewTop! + $window.height()!;
-
-    var elemTop = $elem.offset()!.top;
-    var elemBottom = elemTop + $elem.height()!;
-
-    return elemBottom <= docViewBottom && elemTop >= docViewTop!;
+import Modal from "../components/About/modal";
+import { addFullPageApi, modalReducer } from "../context/reducer";
+import { initialModalState } from "../context/state";
+import { ModalContext } from "../context/ModalContext";
+declare global {
+  interface Window {
+    fullpage_api: any;
   }
-
-  // React.useEffect(() => {
-  //   if (homeVisible) {
-  //     (document.getElementById("panel1") as HTMLElement).style.visibility =
-  //       "visible";
-  //     (document.getElementById("panel2") as HTMLElement).style.visibility =
-  //       "hidden";
-  //   } else if (!homeVisible) {
-  //     (document.getElementById("panel1") as HTMLElement).style.visibility =
-  //       "hidden";
-  //   }
-  // }, [homeVisible]);
-
-  // React.useEffect(() => {
-  //   if (storyVisible) {
-  //     (document.getElementById("panel2") as HTMLElement).style.visibility =
-  //       "visible";
-  //     console.log("story true");
-  //   } else if (!storyVisible) {
-  //     (document.getElementById("panel2") as HTMLElement).style.visibility =
-  //       "hidden";
-  //     console.log("story false");
-  //   }
-  // }, [storyVisible]);
-  // React.useEffect(() => {
-  //   const scrollFunc = () => {
-  //     let sections = document.querySelectorAll(
-  //       ".section"
-  //     ) as NodeListOf<HTMLElement>;
-  //     sections.forEach((element) => {
-  //       if (isScrolledIntoView(element)) {
-  //         element.style.visibility = "visible";
-  //       } else {
-  //         element.style.visibility = "hidden";
-  //       }
-  //     });
-  //   };
-  //   window.removeEventListener("scroll", scrollFunc);
-  //   window.addEventListener("scroll", scrollFunc, { passive: true });
-  //   return () => window.removeEventListener("scroll", scrollFunc);
-  // }, []);
-
+}
+export default function Home() {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   React.useEffect(() => {
     let menu = document.querySelectorAll(
       ".nav-burger"
@@ -117,7 +55,7 @@ export default function Home() {
       arrow.classList.remove("hidden");
       header.classList.add("!hidden");
     }
-  }, []);
+  });
   const anchors = [
     "homePage",
     "storyPage",
@@ -128,17 +66,19 @@ export default function Home() {
     "featurePage",
     "lastPage",
   ];
+  const [state, dispatch] = React.useReducer(modalReducer, initialModalState);
+  const [isShown, setIsShown] = React.useState(false);
 
   return (
     <>
-      <div>
+      <ModalContext.Provider value={{ state, dispatch }}>
         <Head>
           <title>Evermore Knights</title>
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no ,viewport-fit=cover"
           />
-          <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge"></meta>
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="description" content="Evermore Knights version 4.0" />
           <link rel="icon" href="/logo-ek.ico" />
@@ -152,7 +92,7 @@ export default function Home() {
           menu="#menu"
           css3
           afterRender={() => {
-            console.log("rendered");
+            dispatch(addFullPageApi(window.fullpage_api));
           }}
           afterLoad={(destination) => {
             let header = document.getElementById("header-top") as HTMLElement;
@@ -160,25 +100,6 @@ export default function Home() {
             let menu = document.querySelectorAll(
               ".nav-burger"
             ) as NodeListOf<HTMLElement>;
-            let game = document.querySelector(
-              ".header-link.game"
-            ) as HTMLElement;
-
-            // let blog = document.querySelector(
-            //   ".header-link.blog"
-            // ) as HTMLElement;
-
-            if (window.location.href.includes("#homePage")) {
-              game.classList.remove("active");
-              // blog.classList.remove("active");
-            } else {
-              game.classList.add("active");
-            }
-
-            // if (window.location.href.includes("#blogPage")) {
-            //   game.classList.remove("active");
-            //   blog.classList.add("active");
-            // }
             if (window.location.href.includes("#homePage")) {
               header.classList.add("!hidden");
               arrow.classList.remove("hidden");
@@ -204,14 +125,14 @@ export default function Home() {
                 id="panel3"
                 data-anchor="aboutPage"
               >
-                <About />
+                <About setIsShown={setIsShown} />
               </div>
               <div
                 className="ek section character"
                 id="panel4"
                 data-anchor="characterPage"
               >
-                <Characters />
+                <Characters setIsShown={setIsShown} />
               </div>
               <div
                 className="ek section"
@@ -247,46 +168,15 @@ export default function Home() {
             </ReactFullpage.Wrapper>
           )}
         />
-        {/* <div className="fullPage-wrapper relative">
-          <div
-            className="fp-section section relative active"
-            id="panel1"
-            ref={homeRef}
-          >
-            <a id="homePage"></a>
-            <HomePage />
-          </div>
-          <div className="fp-section section" id="panel2" ref={storyRef}>
-            <a id="storyPage"></a>
-            <Story />
-          </div> */}
-        {/* <div className="section" id="panel3">
-            <a id="aboutPage"></a>
-            <About />
-          </div>
-
-          <div className="section" id="panel4">
-            <a id="characterPage"></a>
-            <Characters />
-          </div>
-          <div className="section" id="panel5">
-            <a id="uFeaturePage"></a>
-            <UFeature />
-          </div>
-          <div className="section" id="panel6">
-            <a id="worldPage"></a>
-            <World />
-          </div>
-          <div className="section" id="panel7">
-            <a id="featurePage"></a>
-            <Feature />
-          </div>
-          <div className="section" id="panel8">
-            <a id="blogPage"></a>
-            <Blog title="LATEST NEWS" isAvailNewsPage />
-          </div> */}
-        {/* </div> */}
-      </div>
+        <Modal
+          fullpageApi={state.fullpageApi}
+          id="modal"
+          isShown={isShown}
+          setIsShown={setIsShown}
+          // src="https://www.youtube-nocookie.com/embed/-ERMKXPYQl4"
+          src={state.srcVideo}
+        />
+      </ModalContext.Provider>
     </>
   );
 }

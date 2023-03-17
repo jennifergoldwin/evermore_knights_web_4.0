@@ -575,16 +575,16 @@ html {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 639px) {
   .img-char {
     object-position: 50% 20%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 639px) {
   .img-char {
-    scale: 1.48;
+    scale: 1.38;
     overflow: hidden;
-    object-position: 50% 50%;
+    object-position: center;
   }
 }
 .img-about {

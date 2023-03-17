@@ -42,6 +42,8 @@ import curtisMob from "../../public/assets/images/curtis-mob.png";
 import gashaniMob from "../../public/assets/images/gashani-mob.png";
 import tristaMob from "../../public/assets/images/trista-mob.png";
 import { ThreeDots } from "react-loader-spinner";
+import { ModalContext } from "../../context/ModalContext";
+import { addSrcVideo } from "../../context/reducer";
 const characterLists = [
   {
     bg: "bg-[url(/assets/images/bg-grana.png)]",
@@ -172,11 +174,12 @@ const characterLists = [
     youtube: "/assets/images/curtis-youtube.png",
   },
 ];
-const Characters: React.FC = () => {
-  const [swiper, setSwiper] = React.useState(useSwiper());
+interface ICharPage {
+  setIsShown: any;
+}
+const Characters: React.FC<ICharPage> = ({ setIsShown }) => {
   const [statusClick, setStatusClick] = React.useState(false);
   const [indexChar, setIndexChar] = React.useState(0);
-  const [isShown, setIsShown] = React.useState(false);
   const handleClick = (x: number) => {
     setIndexChar(x);
 
@@ -214,7 +217,7 @@ const Characters: React.FC = () => {
       return () => window.removeEventListener("load", onPageLoad);
     }
   }, []);
-
+  const { dispatch } = React.useContext(ModalContext);
   return (
     <div
       className={`relative overflow-hidden h-screen flex-col ${
@@ -223,12 +226,13 @@ const Characters: React.FC = () => {
         playAnimation ? "opacity-1 flex visible" : "opacity-0 hidden invisible"
       }`}
     >
-      <Modal
+      {/* <Modal
+        fullpageApi={fullpageApi}
         id="character"
         isShown={isShown}
         setIsShown={setIsShown}
         src={characterLists[indexChar].link}
-      />
+      /> */}
 
       <div className="scale-[0.85] hidden lg:flex gap-0 lg:gap-0 justify-center h-full  flex-col  absolute m-auto right-0 z-10">
         <div className="cursor-pointer" onClick={() => handleClick(0)}>
@@ -381,7 +385,10 @@ const Characters: React.FC = () => {
                         </div>
                       </div>
                       <div
-                        onClick={() => setIsShown(true)}
+                        onClick={() => {
+                          setIsShown(true);
+                          dispatch(addSrcVideo(characterLists[indexChar].link));
+                        }}
                         className={`${
                           item.link === "" ? "hidden" : "flex"
                         } cursor-pointer w-1/6 sm:w-1/2 lg:w-auto justify-start pr-0 sm:justify-end sm:pr-2 items-center lg:hidden`}
@@ -425,6 +432,7 @@ const Characters: React.FC = () => {
                         } outer-video cursor-pointer w-[100%] h-auto`}
                         onClick={() => {
                           setIsShown(true);
+                          dispatch(addSrcVideo(characterLists[indexChar].link));
                         }}
                       >
                         <div className="absolute top-0 left-0 z-20">

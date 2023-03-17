@@ -15,6 +15,22 @@ import logo from "../../public/assets/images/logo.png";
 import Image from "next/image";
 const Header = () => {
   const [active, setActive] = React.useState(false);
+  const [playAnimation, setPlayAnimation] = React.useState(false);
+
+  React.useEffect(() => {
+    const onPageLoad = () => {
+      setPlayAnimation(true);
+    };
+
+    // Check if the page has already loaded
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    }
+  }, []);
   const [activeLink, setActiveLink] = React.useState([
     { idx: 0, status: true },
     { idx: 1, status: false },
@@ -35,7 +51,11 @@ const Header = () => {
     );
   };
   return (
-    <header className="opacity-100 fixed w-full top-0 z-40">
+    <header
+      className={` ${
+        playAnimation ? "opacity-100 visible" : "opacity-0 invisible"
+      }  fixed w-full top-0 z-40 `}
+    >
       <div
         id="header-top"
         className=" hidden lg:flex relative  bg-navbar  justify-between items-center px-6 py-3 font-friz-bold w-full"
@@ -51,7 +71,7 @@ const Header = () => {
         </h1>
         <div className="hidden sm:flex">
           <ul id="menu" className="flex justify-around gap-4">
-            <li data-menuanchor="storyPage" id="story">
+            {/* <li data-menuanchor="storyPage" id="story">
               <a
                 className="header-link game"
                 href="#storyPage"
@@ -59,7 +79,7 @@ const Header = () => {
               >
                 GAME INTRO
               </a>
-            </li>
+            </li> */}
             {/* <li dadata-menuanchor="blogPage">
               <a
                 className="header-link blog"

@@ -25,7 +25,6 @@ const HomePage: React.FC<IHomePage> = ({ fullpageApi }) => {
     };
 
     if (document.readyState === "complete") {
-      console.log("complete home");
       onPageLoad();
     } else {
       window.addEventListener("load", onPageLoad);

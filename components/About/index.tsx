@@ -8,10 +8,12 @@ import youtubeBg from "../../public/assets/images/about-youtube.png";
 import play from "../../public/assets/images/play.png";
 import char from "../../public/assets/images/about-char.png";
 import leaf from "../../public/assets/images/leaf.png";
-const About = () => {
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: false });
-  const [isShown, setIsShown] = React.useState(false);
+import { ModalContext } from "../../context/ModalContext";
+import { addSrcVideo } from "../../context/reducer";
+interface IAboutPage {
+  setIsShown: any;
+}
+const About: React.FC<IAboutPage> = ({ setIsShown }) => {
   const imgMotion = {
     rest: {
       transform: "scale(1) translateX(0px)",
@@ -41,7 +43,7 @@ const About = () => {
   //   },
   // };
   const [playAnimation, setPlayAnimation] = React.useState(false);
-
+  const { dispatch } = React.useContext(ModalContext);
   React.useEffect(() => {
     const onPageLoad = () => {
       setPlayAnimation(true);
@@ -65,19 +67,11 @@ const About = () => {
         playAnimation ? "opacity-1 visible" : "opacity-0 invisible"
       }`}
     >
-      <Modal
-        id="about"
-        isShown={isShown}
-        setIsShown={setIsShown}
-        // src="https://www.youtube-nocookie.com/embed/-ERMKXPYQl4"
-        src="/assets/video/trailer.mp4"
-      />
       <div
         className={`bg-[url(/assets/images/bg-about.png)] bg-left bg-cover h-full `}
       >
         <div className="pl-0 lf:pl-[6%] flex  justify-center lf:justify-start items-center h-full w-full relative">
           <div
-            ref={ref}
             className={`text-center lf:text-left w-full md:w-3/4 lf:w-1/2 px-4 lf:px-6 absolute z-[10] h-auto flex justify-center`}
           >
             <div className="h-full flex flex-col justify-center items-center lf:items-start">
@@ -124,6 +118,7 @@ const About = () => {
                 className={` outer-video cursor-pointer w-[100%]  lf:w-[80%] h-auto`}
                 onClick={() => {
                   setIsShown(true);
+                  dispatch(addSrcVideo("/assets/video/trailer.mp4"));
                 }}
               >
                 <div className="absolute top-0 left-0 z-20">
