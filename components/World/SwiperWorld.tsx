@@ -164,7 +164,7 @@ const SwiperWorld: React.FC<ISwiperWorld> = ({
                       <span className="font-friz-medium text-sm text-black pb-3">
                         {item.subtitle}
                       </span>
-                      <p className="font-lato text-xs text-black text-opacity-[0.5]">
+                      <p className="font-lato text-xs text-[#4d4d4d]">
                         {item.desc}
                       </p>
                     </div>

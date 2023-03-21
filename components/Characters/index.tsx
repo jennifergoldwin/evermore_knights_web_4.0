@@ -239,8 +239,8 @@ const Characters: React.FC<ICharPage> = ({ setIsShown }) => {
           <Image
             className={`${
               indexChar == 0
-                ? "lg:translate-x-[50%] transition-all"
-                : "lg:translate-x-[55%]"
+                ? "lg:translate-x-[40%] transition-all scale-105"
+                : "lg:translate-x-[50%]"
             } `}
             src={indexChar == 0 ? btn1 : btn1}
             alt=""
@@ -250,8 +250,8 @@ const Characters: React.FC<ICharPage> = ({ setIsShown }) => {
           <Image
             className={`${
               indexChar == 1
-                ? "lg:translate-x-[50%] transition-all"
-                : "lg:translate-x-[55%]"
+                ? "lg:translate-x-[40%] transition-all scale-105"
+                : "lg:translate-x-[50%]"
             } `}
             src={indexChar == 1 ? btn2 : btn2}
             alt=""
@@ -261,8 +261,8 @@ const Characters: React.FC<ICharPage> = ({ setIsShown }) => {
           <Image
             className={`${
               indexChar == 2
-                ? "lg:translate-x-[50%] transition-all"
-                : "lg:translate-x-[55%]"
+                ? "lg:translate-x-[40%] transition-all scale-105"
+                : "lg:translate-x-[50%]"
             }  `}
             src={indexChar == 2 ? btn3 : btn3}
             alt=""
@@ -272,8 +272,8 @@ const Characters: React.FC<ICharPage> = ({ setIsShown }) => {
           <Image
             className={`${
               indexChar == 3
-                ? "lg:translate-x-[50%] transition-all"
-                : "lg:translate-x-[55%]"
+                ? "lg:translate-x-[40%] transition-all scale-105"
+                : "lg:translate-x-[50%]"
             } `}
             src={indexChar == 3 ? btn4 : btn4}
             alt=""
@@ -283,8 +283,8 @@ const Characters: React.FC<ICharPage> = ({ setIsShown }) => {
           <Image
             className={`${
               indexChar == 4
-                ? "lg:translate-x-[50%] transition-all"
-                : "lg:translate-x-[55%]"
+                ? "lg:translate-x-[40%] transition-all scale-105"
+                : "lg:translate-x-[50%]"
             } `}
             src={indexChar == 4 ? btn5 : btn5}
             alt=""
@@ -294,8 +294,8 @@ const Characters: React.FC<ICharPage> = ({ setIsShown }) => {
           <Image
             className={`${
               indexChar == 5
-                ? "lg:translate-x-[50%] transition-all"
-                : " lg:translate-x-[55%]"
+                ? "lg:translate-x-[40%] transition-all scale-105"
+                : " lg:translate-x-[50%]"
             }`}
             src={indexChar == 5 ? btn6 : btn6}
             alt=""
@@ -305,8 +305,8 @@ const Characters: React.FC<ICharPage> = ({ setIsShown }) => {
           <Image
             className={`${
               indexChar == 6
-                ? "lg:translate-x-[50%] transition-all"
-                : "lg:translate-x-[55%]"
+                ? "lg:translate-x-[40%] transition-all scale-105"
+                : "lg:translate-x-[50%]"
             }`}
             src={indexChar == 6 ? btn7 : btn7}
             alt=""
@@ -316,8 +316,8 @@ const Characters: React.FC<ICharPage> = ({ setIsShown }) => {
           <Image
             className={`${
               indexChar == 7
-                ? "lg:translate-x-[50%] transition-all"
-                : "lg:translate-x-[55%]"
+                ? "lg:translate-x-[40%] transition-all scale-105"
+                : "lg:translate-x-[50%]"
             }`}
             src={indexChar == 7 ? btn8 : btn8}
             alt=""
@@ -416,7 +416,7 @@ const Characters: React.FC<ICharPage> = ({ setIsShown }) => {
                     <div className=" flex lg:flex-col flex-row justify-center items-center">
                       <div
                         id="hero-desc"
-                        className={`min-h-[100px] hero-desc-container w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-xs md:text-base lg:text-sm flex  justify-center`}
+                        className={`min-h-[100px] hero-desc-container w-full font-lato mb-0 sm:mb-2 lg:mb-4 text-xs sm:text-xs md:text-base lg:text-lg flex  justify-center`}
                       >
                         {item.heroDesc}
                       </div>
@@ -500,7 +500,7 @@ const Characters: React.FC<ICharPage> = ({ setIsShown }) => {
                 <Image
                   className={` 
                     }  h-full absolute object-contain sm:object-cover img-char ${
-                      idx === 6 ? "right-[10%] sm:right-0" : ""
+                      idx === 6 ? "right-[10%] sm:right-0 lg:right-[8%]" : ""
                     }`}
                   src={item.heroImg}
                   priority
